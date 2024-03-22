@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="overflow-hidden xl:p-36 p-10 md:p-20 bg-center bg-no-repeat bg-cover h-full relative transition-all duration-1000 ease-out"
+      className="overflow-hidden xl:p-36 p-10 md:p-20 bg-center bg-no-repeat bg-cover h-full relative transition-all duration-1000 ease-out md:pb-0 xl:pb-0"
       style={{
         backgroundImage: `url(${
           bgSlides[currentBGSlideIndex]?.background || "/kuwiya_bg.png"

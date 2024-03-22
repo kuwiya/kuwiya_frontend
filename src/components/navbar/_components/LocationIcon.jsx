@@ -3,7 +3,7 @@ import React from "react";
 const LocationIcon = (props) => {
   return (
     <svg
-      width={props.width || "10"}
+      width={props.width || "20"}
       height={props.height || "14"}
       viewBox="0 0 10 14"
       fill="none"

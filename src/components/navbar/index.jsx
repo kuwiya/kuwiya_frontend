@@ -9,8 +9,8 @@ import {
 import { Link } from "react-router-dom";
 import images from "../../constants/images";
 import Button from "../button";
-import SearchIcon from "./components/SearchIcon";
-import LocationIcon from "./components/LocationIcon";
+import SearchIcon from "./_components/SearchIcon";
+import LocationIcon from "./_components/LocationIcon";
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -48,7 +48,7 @@ const Navbar = () => {
           )}
         </Link>
         {scrolling && (
-          <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8">
+          <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8 md:ml-12">
             <div className="md:space-x-6 hidden md:flex items-center ">
               <div className="flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] text-black">
                 <div className="px-3 py-3 flex items-center gap-2 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
