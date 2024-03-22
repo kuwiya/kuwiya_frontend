@@ -1,8 +1,9 @@
-import { IoMdStar } from 'react-icons/io';
-import { FeaturedDeals } from '../../../../constants';
-import DiscountTag from './discount_tag';
-import ArrowIcon from './arrow_icon'
-import { useEffect, useRef, useState } from 'react';
+// import { IoMdStar } from "react-icons/io";
+import { FeaturedDeals } from "../../../../constants";
+import DiscountTag from "./discount_tag";
+import ArrowIcon from "./arrow_icon";
+import { useEffect, useRef, useState } from "react";
+import StarIcon from "./start_icon";
 
 const FeaturedCard = () => {
   const scrollRef = useRef(null);
@@ -15,19 +16,19 @@ const FeaturedCard = () => {
       const scrollContainer = scrollRef.current;
 
       //Left arrow key
-      if (e.key === 'ArrowLeft') {
+      if (e.key === "ArrowLeft") {
         scrollContainer.scrollLeft -= 50;
       }
       //Right arrow key
-      else if (e.key === 'ArrowRight') {
+      else if (e.key === "ArrowRight") {
         scrollContainer.scrollLeft += 50;
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -87,9 +88,9 @@ const FeaturedCard = () => {
             <div className="md:space-x-4 space-x-2">
               <span className="text-sm md:text-base font-medium opacity-45">
                 ₦ {deal.old_price}
-              </span>{' '}
+              </span>{" "}
               <div className="absolute top-[26.7rem] left-0">
-                <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{' '}
+                <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{" "}
                 <p className="-rotate-[19.98deg] border-b-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>
               </div>
               <span className="text-sm md:text-base font-medium">
@@ -106,7 +107,8 @@ const FeaturedCard = () => {
             <span className="font-normal text-sm md:text-base flex items-center gap-2">
               {deal.rating}
               <span className="flex">
-                <IoMdStar color="#FFCE31" size={20} />
+                {/* <IoMdStar color="#FFCE31" size={20} /> */}
+                <StarIcon />
               </span>
             </span>
             <div className="absolute top-8 left-[-14px]">
@@ -127,7 +129,7 @@ const FeaturedCard = () => {
         <div
           onClick={handleLeftArrow}
           className={`${
-            isLeftArrowVisible ? 'bg-[#101010]' : 'bg-transparent'
+            isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
           } cursor-pointer rotate-180 w-fit px-5 py-4 rounded-[100%]`}
         >
           {isLeftArrowVisible && <ArrowIcon />}

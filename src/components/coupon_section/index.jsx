@@ -1,6 +1,6 @@
-import React from 'react';
-import Button from '../button';
-import CouponCard from './_components/coupon_card';
+import React from "react";
+import Button from "../button";
+import CouponCard from "./_components/coupon_card";
 
 const CouponSection = () => {
   return (
@@ -18,9 +18,9 @@ const CouponSection = () => {
         <Button
           children="view all"
           className={
-            'uppercase w-auto md:w-fit text-center hover:scale-105 transition-all font-medium'
+            "uppercase w-auto md:w-fit text-center hover:scale-105 transition-all font-medium"
           }
-          padding={'10px 35px'}
+          padding={"10px 30px"}
         />
       </div>
     </div>

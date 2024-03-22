@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 // import { GoogleMap, useLoadScript } from '@react-google-maps/api';
-import images from '../../../../constants/images';
+import images from "../../../../constants/images";
 
 // const mapContainerStyle = {
 //   width: '100%',

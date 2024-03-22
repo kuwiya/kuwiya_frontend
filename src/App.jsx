@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import {
   BannerSection,
   CitiesAndCountries,
@@ -9,8 +9,8 @@ import {
   InfoSection,
   Navbar,
   PopularResturants,
-} from './components';
-import NearMeSection from './components/near-me_section';
+} from "./components";
+import NearMeSection from "./components/near-me_section";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import images from '../../constants/images';
-import BottomFooter from './_components/bottom_footer';
+import { Link } from "react-router-dom";
+import images from "../../constants/images";
+import BottomFooter from "./_components/bottom_footer";
 
 const Footer = () => {
   return (

@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { LuX } from 'react-icons/lu';
+import React, { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { LuX } from "react-icons/lu";
 import {
   IoCartOutline,
   IoPersonOutline,
   IoHelpCircleOutline,
-  IoLocationOutline,
-  IoSearchSharp,
-} from 'react-icons/io5';
-import { Link } from 'react-router-dom';
-import images from '../../constants/images';
-import Button from '../button';
+} from "react-icons/io5";
+import { Link } from "react-router-dom";
+import images from "../../constants/images";
+import Button from "../button";
+import SearchIcon from "./components/SearchIcon";
+import LocationIcon from "./components/LocationIcon";
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleScroll = () => {
@@ -32,8 +32,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`flex items-center px-6 xl:px-28 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-screen transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in ${
-          scrolling ? 'bg-primary transition-all ease  ' : ''
+        className={`flex items-center px-6 lg:px-16 xl:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in ${
+          scrolling ? "bg-primary transition-all ease  " : ""
         }`}
       >
         <Link to="/" className="text-xl md:text-2xl">
@@ -49,30 +49,28 @@ const Navbar = () => {
         </Link>
         {scrolling && (
           <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8">
-            <div className="md:space-x-6 hidden md:flex items-center md:w-[90%] xl:w-5/6 ">
-              <div className="flex items-center gap-2 xl:gap-4 md:w-[1000px] font-work-sans font-medium text-[16px] text-black relative p-2 rounded-[10px]">
-                <IoLocationOutline
-                  className="absolute md:left-[2%] rounded-[10px] left-[20%] "
-                  size={20}
-                  color="#000"
-                />
-                <input
-                  type="text"
-                  placeholder="Location"
-                  name="location"
-                  className="outline-none text-sm border-2 rounded-[10px] px-12 py-3 w-[250px] placeholder-slate-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Enter your search..."
-                  name="resturant_name"
-                  className="outline-none text-sm border-2 font-medium font-work-sans rounded-[10px] px-4 py-3 placeholder-slate-500 w-[110%]"
-                />
-                <IoSearchSharp
-                  className="rounded-[10px] w-[62px] bg-black px-4 py-2 absolute md:right-0 m-3"
-                  color="#ffffff"
-                  size={40}
-                />
+            <div className="md:space-x-6 hidden md:flex items-center ">
+              <div className="flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] text-black">
+                <div className="px-3 py-3 flex items-center gap-2 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
+                  <LocationIcon />
+                  <input
+                    type="text"
+                    placeholder="Location"
+                    name="location"
+                    className="outline-none w-full"
+                  />
+                </div>
+                <div className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
+                  <input
+                    type="text"
+                    placeholder="Enter your search..."
+                    name="resturant_name"
+                    className="outline-none w-full"
+                  />
+                  <span className="bg-[#131313] py-2 px-4 rounded-[10px]">
+                    <SearchIcon />
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -81,11 +79,11 @@ const Navbar = () => {
         <div className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10">
           <Button
             children="Marketplace"
-            backgroundColor={'transparent'}
-            className={`xl:w-[160px] md:w-[110px] w-[10%] rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
-              scrolling ? '!bg-darkyellow hover:!bg-black' : ''
+            backgroundColor={"transparent"}
+            className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
+              scrolling ? "!bg-darkyellow hover:!bg-black" : ""
             }`}
-            padding={'10px'}
+            padding={"10px 30px"}
           />
           {/* <Button
             children="Discounts"
@@ -113,7 +111,7 @@ const Navbar = () => {
 
         <div className="md:hidden block cursor-pointer">
           <GiHamburgerMenu
-            color={`${scrolling ? '#000' : '#fff'}`}
+            color={`${scrolling ? "#000" : "#fff"}`}
             fontSize={27}
             onClick={() => setToggleMenu(true)}
           />
@@ -166,9 +164,9 @@ const Navbar = () => {
             <Link to="/">
               <Button
                 className="hover:scale-95 font-extrabold duration-300 center"
-                textColor={'#000'}
+                textColor={"#000"}
                 children="Sign Up"
-                padding={'20px'}
+                padding={"20px"}
               />
             </Link>
           </div>

@@ -1,4 +1,3 @@
-
 const CitiesAndCountries = () => {
   return (
     <main className="md:py-24 md:px-40 py-16 px-10 space-y-20">
@@ -85,7 +84,9 @@ const CitiesAndCountries = () => {
             </p>
           </div>
           <div className="space-y-5">
-            <p className="uppercase md:text-2xl text-xl font-medium text-[#101010]">usa</p>
+            <p className="uppercase md:text-2xl text-xl font-medium text-[#101010]">
+              usa
+            </p>
             <p className="uppercase md:text-2xl text-xl font-medium text-[#101010]">
               france
             </p>

@@ -1,9 +1,9 @@
-import { Button } from '..';
-import { NavLink } from 'react-router-dom';
+import { Button } from "..";
+import { NavLink } from "react-router-dom";
 // import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import images from '../../constants/images';
-import Restaurants from './_components/restaurants';
-import { FeaturedResturants } from '../../constants';
+import images from "../../constants/images";
+import Restaurants from "./_components/restaurants";
+import { FeaturedResturants } from "../../constants";
 
 // // const libraries: string[] = ["places"];
 // const mapContainerClassName = "map-container";
@@ -39,10 +39,10 @@ const NearMeSection = () => {
         </span>
       </div>
       <div className="flex flex-col items-start justify-between md:flex-row space-y-10 md:space-y-0 md:gap-3 xl:gap-4 my-6">
-        <div className="md:w-[60%] w-full">
-          <img src={images.map} className='w-full' alt="map" />
+        <div className="flex-[60%]">
+          <img src={images.map} className="w-full" alt="map" />
         </div>
-        <div className="space-y-7 w-full md:w-[40%]">
+        <div className="space-y-6 flex-[40%]">
           {FeaturedResturants.map((restaurant) => (
             <Restaurants restaurant={restaurant} />
           ))}
@@ -52,9 +52,9 @@ const NearMeSection = () => {
         <Button
           children="view all"
           className={
-            'uppercase w-auto md:w-fit text-center hover:scale-105 transition-all font-medium'
+            "uppercase text-center hover:scale-105 transition-all font-medium"
           }
-          padding={'10px 35px'}
+          padding={"10px 30px"}
         />
       </NavLink>
     </div>
