@@ -15,46 +15,46 @@ export default {
       fontFamily: {
         'work-sans': ['"Work Sans", sans-serif'],
       },
+
+      keyframes: {
+        fade_in: {
+          from: { opacity: '0' },
+          to: { opacity: '100' },
+        },
+      },
+      animation: {
+        'fade_in': 'fade_in 0.8s ease-out',
+      },
+      
       keyframes: {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'translate(360deg)' },
         },
       },
+     
+      // slide up animation
+      keyframes: {
+        slide_up: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(2rem)',
+          },
+          '50%': {
+            opacity: '50',
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            opacity: '100',
+            transform: 'translateY(0)',
+          },
+        },
+      },
       animation: {
-        spin: 'spin 4.5s linear infinite',
+        'slide_up': 'slide_up .7s ease-out',
       },
 
-      // slide up animation
-      // keyframes: {
-      //   slide_up: {
-      //     '0%': {
-      //       opacity: '0',
-      //       transform: 'translateY(2rem)',
-      //     },
-      //     '50%': {
-      //       opacity: '50',
-      //       transform: 'translateY(0)',
-      //     },
-      //     '100%': {
-      //       opacity: '100',
-      //       transform: 'translateY(0)',
-      //     },
-      //   },
-      // },
-      // animation: {
-      //   slide_up: 'slide_up .7s ease-out',
-      // },
       // fade in animation
-      // keyframes: {
-      //   fade_in: {
-      //     from: { opacity: '0' },
-      //     to: { opacity: '100' },
-      //   },
-      // },
-      // animation: {
-      //   fade_in: 'fade_in 0.8s ease-out',
-      // },
     },
   },
   plugins: [],

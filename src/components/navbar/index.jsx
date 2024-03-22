@@ -32,8 +32,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`flex items-center px-6 xl:px-28 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-screen transition-all ease-in-out duration-75 xl:gap-0 md:gap-8 ${
-          scrolling ? 'bg-primary transition-all ease ' : ''
+        className={`flex items-center px-6 xl:px-28 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-screen transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in ${
+          scrolling ? 'bg-primary transition-all ease  ' : ''
         }`}
       >
         <Link to="/" className="text-xl md:text-2xl">
