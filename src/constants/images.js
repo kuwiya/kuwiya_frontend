@@ -30,5 +30,5 @@ export default {
   ghana,
   naija,
   apple,
-  play_store
+  play_store,
 };

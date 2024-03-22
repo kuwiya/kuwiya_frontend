@@ -192,3 +192,54 @@ export const heroBgSlides = [
     text: 'Discount on all featured restaurant.'
   }
 ]
+
+export const FeaturedResturants = [
+  {
+    id: 0,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  },
+  {
+    id: 1,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  },
+  {
+    id: 2,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  },
+  {
+    id: 3,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  },
+  {
+    id: 4,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  },
+  {
+    id: 5,
+    label: "Drizzy's Bites",
+    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
+    distance: '1KM away',
+    logo: '/drizzy.webp',
+
+  }
+]

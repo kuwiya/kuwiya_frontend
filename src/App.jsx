@@ -1,15 +1,16 @@
 import './App.css';
 import {
   BannerSection,
+  CitiesAndCountries,
   CouponSection,
   FeaturedSection,
   Footer,
   HeroSection,
   InfoSection,
-  MapSection,
   Navbar,
   PopularResturants,
 } from './components';
+import NearMeSection from './components/near-me_section';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       <CouponSection />
       <PopularResturants />
       <InfoSection />
-      <MapSection />
       <BannerSection />
+      <NearMeSection />
+      <CitiesAndCountries />
       <Footer />
     </>
   );
