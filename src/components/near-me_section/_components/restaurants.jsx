@@ -2,7 +2,7 @@ import React from 'react';
 
 const Restaurants = ({ restaurant }) => {
   return (
-    <div className="border-[1px] border-[#000000] bg-[#D9D9D9] font-work-sans rounded-[20px] flex items-center gap-3 p-4">
+    <div className="border-[1px] border-[#000000] bg-[#D9D9D9] font-work-sans rounded-[20px] flex items-center gap-3 p-4 w-fit px-14 md:py-2 xl:py-6">
       <img src={restaurant.logo} alt="drizzy_logo" />
       <div className="space-y-[2px] text-[#000000]">
         <p className="flex justify-between items-baseline">

@@ -234,12 +234,5 @@ export const FeaturedResturants = [
     logo: '/drizzy.webp',
 
   },
-  {
-    id: 5,
-    label: "Drizzy's Bites",
-    text: 'Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas',
-    distance: '1KM away',
-    logo: '/drizzy.webp',
-
-  }
+ 
 ]

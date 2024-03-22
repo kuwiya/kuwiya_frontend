@@ -38,11 +38,11 @@ const NearMeSection = () => {
           Featured restaurants around you.
         </span>
       </div>
-      <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:gap-3 xl:gap-4 my-6">
-        <div className="md:w-1/2 w-full">
-          <img src={images.map} alt="map" />
+      <div className="flex flex-col items-start justify-between md:flex-row space-y-10 md:space-y-0 md:gap-3 xl:gap-4 my-6">
+        <div className="md:w-[60%] w-full">
+          <img src={images.map} className='w-full' alt="map" />
         </div>
-        <div className="space-y-7 w-full md:w-[50%]">
+        <div className="space-y-7 w-full md:w-[40%]">
           {FeaturedResturants.map((restaurant) => (
             <Restaurants restaurant={restaurant} />
           ))}

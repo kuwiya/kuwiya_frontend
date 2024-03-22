@@ -23,16 +23,16 @@ export default {
         },
       },
       animation: {
-        'fade_in': 'fade_in 0.8s ease-out',
+        fade_in: 'fade_in 0.8s ease-out',
       },
-      
+
       keyframes: {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'translate(360deg)' },
         },
       },
-     
+
       // slide up animation
       keyframes: {
         slide_up: {
@@ -51,13 +51,9 @@ export default {
         },
       },
       animation: {
-        'slide_up': 'slide_up .7s ease-out',
+        slide_up: 'slide_up .7s ease-out',
       },
-
-      // fade in animation
     },
   },
   plugins: [],
 };
-
-// cubic-bezier(0.250, 0.460, 0.450, 0.940) both
