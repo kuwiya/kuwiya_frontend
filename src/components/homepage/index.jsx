@@ -24,7 +24,6 @@ const Homepage = () => {
       <BannerSection />
       <NearmeSection />
       <CitiesAndCountries />
-      <Footer />
     </main>
   );
 };
