@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const CouponCard = () => {
   return (
     <section className="px-10 my-16 mb-20 space-y-5">
-      <h1 className="text-[19px] font-medium text-[#000000]">Coupon</h1>
+      <h1 className="text-2xl font-semibold text-[#000000]">Coupon</h1>
       <div className="grid lg:grid-cols-2 gap-6">
         {couponMarketplace.map((detail) => (
           <div key={detail.id} className="flex relative">
