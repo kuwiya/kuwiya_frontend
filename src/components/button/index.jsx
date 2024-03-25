@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Button = ({
   width,
@@ -48,13 +48,13 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  border: '1px solid #F8A434',
-  backgroundColor: '#F8A434',
-  textColor: '#ffffff',
-  borderRadius: '6px',
-  height: '100%',
+  border: "1px solid #F8A434",
+  backgroundColor: "#F8A434",
+  textColor: "#ffffff",
+  borderRadius: "6px",
+  height: "100%",
   // padding: '6px 20px',
-  width: '',
+  width: "",
 };
 
 export default Button;

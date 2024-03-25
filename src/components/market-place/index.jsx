@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowLeft } from "./_components";
+import {
+  AffordableYummy,
+  ArrowDown,
+  ArrowLeft,
+  AvailableDiscCard,
+  CouponCard,
+} from "./_components";
 import LocationIcon from "../navbar/_components/LocationIcon";
+import { AllYummy, AllYummy2 } from "../../constants/images";
 
 const MarketPlace = () => {
   return (
     <main className="font-sans">
-      <section className="flex justify-between px-6">
+      <section className="flex justify-between px-10 py-6">
         <div className="flex gap-3 items-center">
           <Link to="/">
             <ArrowLeft />
@@ -21,6 +28,14 @@ const MarketPlace = () => {
           <ArrowDown />
         </div>
       </section>
+
+      <AvailableDiscCard />
+
+      <AffordableYummy image={AllYummy} />
+
+      <CouponCard />
+
+      <AffordableYummy image={AllYummy2} />
     </main>
   );
 };

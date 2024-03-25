@@ -4,8 +4,8 @@ import BottomFooter from "./_components/bottom_footer";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col md:pt-0 p-10 md:justify-center bg-black">
-      <div className="md:flex py-20 md:pt-0 justify-evenly items-center md:space-x-28 md:px-0 ">
+    <footer className="flex flex-col p-10 md:justify-center bg-black">
+      <div className="md:flex flex-wrap py-20 md:pt-0 justify-evenly items-center md:space-x-28 md:px-0 ">
         <div>
           <img src={images.logo} className="w-[50px]" alt="" />
         </div>

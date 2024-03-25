@@ -4,7 +4,7 @@ import Button from "../../../button";
 
 const BottomFooter = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center justify-around w-full mx-auto text-primary font-work-sans space-y-10 pt-20 md:pt-40">
+    <div className="flex md:flex-row flex-wrap flex-col items-center justify-around w-full mx-auto text-primary font-work-sans space-y-10 pt-20 md:pt-40">
       <div className="flex gap-4">
         <Button
           border={"none"}

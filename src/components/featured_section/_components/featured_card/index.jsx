@@ -55,21 +55,23 @@ const FeaturedCard = () => {
     }
   };
 
-  //Handles trackpad movement
   const handleWheel = (e) => {
     if (!scrollRef.current) return;
 
     const scrollContainer = scrollRef.current;
-    const { deltaX } = e;
-
-    scrollContainer.scrollLeft += deltaX;
+    if (scrollContainer.scrollLeft < 1) {
+      setIsLeftArrowVisible(false);
+    } else {
+      setIsLeftArrowVisible(true);
+    }
   };
+
   return (
     <div className="relative mx-auto max-w-full px-10 flex-1 flex">
       <div
         ref={scrollRef}
         onWheel={handleWheel}
-        className="flex w-fit no-scrollbar overflow-x-hidden md:flex-row items-center md:gap-10 py-6 gap-8 pl-0 md:pl-2"
+        className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 pl-0 md:pl-2"
       >
         {FeaturedDeals.map((deal) => (
           <div
