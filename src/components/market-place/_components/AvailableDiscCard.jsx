@@ -43,8 +43,8 @@ const AvailableDiscCard = () => {
   };
 
   return (
-    <section className="px-10">
-      <h1 className="text-base font-medium text-[#00000067] py-3">
+    <section className="px-10 space-y-4">
+      <h1 className="text-2xl font-semibold text-[#00000067] py-3">
         Available Discount
       </h1>
       <div className="relative">
