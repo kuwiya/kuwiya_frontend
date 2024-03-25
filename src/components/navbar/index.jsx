@@ -76,7 +76,10 @@ const Navbar = () => {
           </div>
         )}
 
-        <div className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10">
+        <Link
+          to="/market-place"
+          className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10"
+        >
           <Button
             children="Marketplace"
             backgroundColor={"transparent"}
@@ -107,7 +110,7 @@ const Navbar = () => {
       <Link to="/" className="text-white text-xl flex gap-2 items-center">
         <IoNotificationsOutline color="#fff" size={30} />
       </Link> */}
-        </div>
+        </Link>
 
         <div className="md:hidden block cursor-pointer">
           <GiHamburgerMenu
@@ -137,7 +140,7 @@ const Navbar = () => {
             <hr className="z-20- h-6 my-8 text-[#395d88] w-[70%] mx-auto" />
             <li className="m-6 mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/" className="text-white font-semibold">
+                <Link to="/market-place" className="text-white font-semibold">
                   Marketplace
                 </Link>
                 <IoPersonOutline color="#fff" size={23} />

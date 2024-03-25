@@ -4,7 +4,6 @@ import {
   CitiesAndCountries,
   CouponSection,
   FeaturedSection,
-  Footer,
   HeroSection,
   InfoSection,
   Navbar,
