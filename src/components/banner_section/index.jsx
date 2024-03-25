@@ -1,5 +1,4 @@
 import React from "react";
-import images from "../../constants/images";
 import Button from "../button";
 
 const BannerSection = () => {

@@ -69,7 +69,7 @@ const FeaturedCard = () => {
       <div
         ref={scrollRef}
         onWheel={handleWheel}
-        className="flex w-fit no-scrollbar overflow-x-hidden md:overflow-x-scroll overflow-y-hidden flex-col md:flex-row items-center md:gap-10 py-6 gap-8 pl-0 md:pl-2"
+        className="flex w-fit no-scrollbar overflow-x-hidden md:flex-row items-center md:gap-10 py-6 gap-8 pl-0 md:pl-2"
       >
         {FeaturedDeals.map((deal) => (
           <div

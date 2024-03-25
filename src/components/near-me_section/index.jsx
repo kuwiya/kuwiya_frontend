@@ -44,7 +44,7 @@ const NearMeSection = () => {
         </div>
         <div className="space-y-6 flex-[40%]">
           {FeaturedResturants.map((restaurant) => (
-            <Restaurants restaurant={restaurant} />
+            <Restaurants key={restaurant.id} restaurant={restaurant} />
           ))}
         </div>
       </div>
@@ -62,5 +62,3 @@ const NearMeSection = () => {
 };
 
 export default NearMeSection;
-
-// AIzaSyBpR1GxKboCdQtryRUFyxsOf7oTDeFB3p8

@@ -27,5 +27,7 @@ export {
   Footer,
 };
 
+export { default as MarketPlace } from "./market-place/index";
+export { default as Homepage } from "./homepage/index";
 //My suggestion is we can use this way so we don't have to import and export
 // export {default as Navbar} from "./navbar/index"
