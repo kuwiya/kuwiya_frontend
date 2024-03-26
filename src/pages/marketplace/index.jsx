@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   AffordableYummy,
+  AllRestaurants,
   ArrowDown,
   ArrowLeft,
   AvailableDiscCard,
   CouponCard,
+  LogoBanner,
 } from './_components';
 import { AllYummy, AllYummy2 } from '../../constants/images';
 import LocationIcon from '../../components/ui/navbar/_components/LocationIcon';
@@ -36,6 +38,9 @@ const MarketPlace = () => {
       <CouponCard />
 
       <AffordableYummy image={AllYummy2} />
+      
+        <LogoBanner />
+        <AllRestaurants />
     </main>
   );
 };

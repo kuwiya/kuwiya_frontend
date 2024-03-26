@@ -6,8 +6,8 @@ import {
   IoPersonOutline,
   IoHelpCircleOutline,
 } from 'react-icons/io5';
+import images from '../../../constants/images'
 import { Link } from 'react-router-dom';
-import images from '../../../constants/images';
 import Button from '../button';
 import SearchIcon from './_components/SearchIcon';
 import LocationIcon from './_components/LocationIcon';

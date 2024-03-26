@@ -14,6 +14,7 @@ export default {
       // kuwiya custom fonts
       fontFamily: {
         "work-sans": ['"Work Sans", sans-serif'],
+        "lato": ['"Lato", sans-serif'],
       },
 
       keyframes: {

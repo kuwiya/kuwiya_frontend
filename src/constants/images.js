@@ -33,5 +33,17 @@ export default {
   play_store,
 };
 
+export { default as gps } from "../assets/images/gps.png";
+export { default as heart } from "../assets/images/heart.png";
+export { default as star } from "../assets/images/star.png";
+export { default as kfc_brand } from "../assets/images/kfc_brand.png";
+export { default as cr_brand } from "../assets/images/cr_brand.png";
+export { default as killimanjaro_brand } from "../assets/images/killimanjaro_brand.png";
+export { default as mc_brand } from "../assets/images/mc_brand.png";
+export { default as dominoes_brand } from "../assets/images/dominoes_brand.png";
+export { default as item_brand } from "../assets/images/item_brand.png";
+export { default as place_brand } from "../assets/images/place_brand.png";
+export { default as biggs_brand } from "../assets/images/biggs_brand.png";
+export { default as tantalizer_brand } from "../assets/images/tantalizer_brand.png";
 export { default as AllYummy } from "../assets/images/allYummy.png";
 export { default as AllYummy2 } from "../assets/images/allYummy2.png";
