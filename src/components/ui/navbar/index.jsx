@@ -12,29 +12,16 @@ import Button from '../button';
 import SearchIcon from './_components/SearchIcon';
 import LocationIcon from './_components/LocationIcon';
 
-const Navbar = () => {
-  const [scrolling, setScrolling] = useState(false);
+const Navbar = ({scrolling, shadow}) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
-  };
 
   return (
     <>
       <div
-        className={`flex items-center px-6 lg:px-16 xl:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in ${
+        className={`flex items-center px-6 lg:px-16 xl:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in  ${
           scrolling ? 'bg-primary transition-all ease  ' : ''
-        }`}
+        } ${shadow && 'shadow-lg'}`}
       >
         <Link to="/" className="text-xl md:text-2xl">
           {scrolling ? (

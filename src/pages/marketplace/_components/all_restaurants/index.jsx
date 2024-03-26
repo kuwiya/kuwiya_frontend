@@ -27,7 +27,7 @@ const AllRestaurants = () => {
             <img src={restaurant.image} alt="restaurant logo" />
             <div className="flex flex-col p-2 w-full">
               <div className="flex items-center justify-between font-work-sans">
-                <span className="font-lato md:text-sm xl:text-base font-semibold">
+                <span className="font-lato md:text-sm xl:text-base font-medium">
                   {restaurant.title}
                 </span>
                 <img src={heart} alt="like" />

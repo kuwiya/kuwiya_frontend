@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   AffordableYummy,
@@ -11,10 +11,13 @@ import {
 } from './_components';
 import { AllYummy, AllYummy2 } from '../../constants/images';
 import LocationIcon from '../../components/ui/navbar/_components/LocationIcon';
+import { Navbar } from '../../components/ui';
 
 const MarketPlace = () => {
   return (
-    <main className="font-sans">
+    <>
+    <Navbar scrolling shadow />
+    <main className="font-lato py-[9rem]">
       <section className="flex justify-between px-10 py-6">
         <div className="flex gap-3 items-center">
           <Link to="/">
@@ -42,6 +45,7 @@ const MarketPlace = () => {
         <LogoBanner />
         <AllRestaurants />
     </main>
+    </>
   );
 };
 

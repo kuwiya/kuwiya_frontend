@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from '../../components/ui';
 import {
   BannerSection,
@@ -12,9 +12,24 @@ import {
 } from './_components';
 
 const Homepage = () => {
+  const [scrolling, setScrolling] = useState(false);
+ 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+  
   return (
     <main>
-      <Navbar />
+      <Navbar scrolling={scrolling} />
       <HeroSection />
       <FeaturedSection />
       <CouponSection />
