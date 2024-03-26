@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { LuX } from 'react-icons/lu';
+import React, { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { LuX } from "react-icons/lu";
 import {
   IoCartOutline,
   IoPersonOutline,
   IoHelpCircleOutline,
-} from 'react-icons/io5';
-import images from '../../../constants/images'
-import { Link } from 'react-router-dom';
-import Button from '../button';
-import SearchIcon from './_components/SearchIcon';
-import LocationIcon from './_components/LocationIcon';
+} from "react-icons/io5";
+import images from "../../../constants/images";
+import { Link } from "react-router-dom";
+import Button from "../button";
+import SearchIcon from "./_components/SearchIcon";
+import LocationIcon from "./_components/LocationIcon";
 
-const Navbar = ({scrolling, shadow}) => {
+const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
-
 
   return (
     <>
       <div
         className={`flex items-center px-6 lg:px-16 xl:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in  ${
-          scrolling ? 'bg-primary transition-all ease  ' : ''
-        } ${shadow && 'shadow-lg'}`}
+          scrolling ? "bg-primary transition-all ease  " : ""
+        } ${shadow && "shadow-lg"}`}
       >
         <Link to="/" className="text-xl md:text-2xl">
           {scrolling ? (
@@ -67,14 +66,24 @@ const Navbar = ({scrolling, shadow}) => {
           to="/market-place"
           className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10"
         >
-          <Button
-            children="Marketplace"
-            backgroundColor={'transparent'}
-            className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
-              scrolling ? '!bg-darkyellow hover:!bg-black' : ''
-            }`}
-            padding={'10px 30px'}
-          />
+          {!bgBlack && (
+            <Button
+              children="Marketplace"
+              backgroundColor={"transparent"}
+              className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
+                scrolling ? "!bg-darkyellow hover:!bg-black" : ""
+              }`}
+              padding={"10px 30px"}
+            />
+          )}
+          {bgBlack && (
+            <Button
+              children="Marketplace"
+              backgroundColor={"#000000"}
+              className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base `}
+              padding={"10px 30px"}
+            />
+          )}
           {/* <Button
             children="Discounts"
             backgroundColor={'#ffffff'}
@@ -101,7 +110,7 @@ const Navbar = ({scrolling, shadow}) => {
 
         <div className="md:hidden block cursor-pointer">
           <GiHamburgerMenu
-            color={`${scrolling ? '#000' : '#fff'}`}
+            color={`${scrolling ? "#000" : "#fff"}`}
             fontSize={27}
             onClick={() => setToggleMenu(true)}
           />
@@ -154,9 +163,9 @@ const Navbar = ({scrolling, shadow}) => {
             <Link to="/">
               <Button
                 className="hover:scale-95 font-extrabold duration-300 center"
-                textColor={'#000'}
+                textColor={"#000"}
                 children="Sign Up"
-                padding={'20px'}
+                padding={"20px"}
               />
             </Link>
           </div>

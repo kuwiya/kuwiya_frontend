@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArrowIcon = () => {
+const ArrowIcon = ({ fillColor }) => {
   return (
     <svg
       width={"12"}
@@ -11,7 +11,7 @@ const ArrowIcon = () => {
     >
       <path
         d="M1 21L11 11L1 0.999999"
-        stroke="#FDFCFB"
+        stroke={fillColor || "#FDFCFB"}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

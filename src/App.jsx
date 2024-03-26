@@ -1,8 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Homepage from './pages/homepage';
-import MarketPlace from './pages/marketplace';
-import { Footer } from './components/ui';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Homepage from "./pages/homepage";
+import MarketPlace from "./pages/marketplace";
+import { Footer } from "./components/ui";
+import RestaurantPage from "./pages/restaurant";
 
 function App() {
   // const pathname = window.location.pathname;
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/marketplace" element={<MarketPlace />} />
+        <Route path="/restaurants/:id" element={<RestaurantPage />} />
       </Routes>
       <Footer />
     </>

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Restaurants } from '../../../../constants';
-import { heart, star, gps } from '../../../../constants/images';
-import Pagination from './_components/pagination';
+import React, { useState } from "react";
+import { Restaurants } from "../../../../constants";
+import { heart, star, gps } from "../../../../constants/images";
+import Pagination from "./_components/pagination";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [restaurantPerPage] = useState(9);
 
-  // pagination 
+  // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
   const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
   const currentRestaurant = Restaurants.slice(
@@ -49,13 +49,12 @@ const AllRestaurants = () => {
             </div>
           </div>
         ))}
-       
       </div>
       <Pagination
-          nPages={nPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        nPages={nPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
