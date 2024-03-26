@@ -4,7 +4,7 @@ const AffordableYummy = ({ image }) => {
   return (
     <section className="mx-10 my-16 relative">
       <div className="flex ">
-        <div className="flex-[67%] rounded-l-xl flex flex-col justify-center items-center gap-6 text-white bg-gradient-to-r from-[#F29309] from-[0%] via-[14%] via-[#8D5D1E] to-[#000000] to-[50%]">
+        <div className="flex-[67%] rounded-l-[4px] flex flex-col justify-center items-center gap-6 text-white bg-gradient-to-r from-[#F29309] from-[0%] via-[14%] via-[#8D5D1E] to-[#000000] to-[50%]">
           <h1 className="font-bold text-xl lg:text-5xl">
             Affordable yummy tasty
           </h1>
