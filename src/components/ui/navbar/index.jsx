@@ -63,7 +63,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
         )}
 
         <Link
-          to="/market-place"
+          to="/marketplace"
           className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10"
         >
           {!bgBlack && (

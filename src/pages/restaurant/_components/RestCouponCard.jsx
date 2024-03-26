@@ -24,7 +24,7 @@ const RestCouponCard = () => {
               </div>
               <p className="flex gap-1 items-center">
                 <span>
-                  <Clock />
+                  <Clock fillColor={"#FFFFFF"} />
                 </span>
                 <span>{detail.duration}</span>
               </p>
