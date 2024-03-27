@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Restaurants } from "../../../../constants";
 import { heart, star, gps } from "../../../../constants/images";
 import Pagination from "./_components/pagination";
+import { Link } from "react-router-dom";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +24,7 @@ const AllRestaurants = () => {
       </span>
       <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10">
         {currentRestaurant.map((restaurant) => (
-          <div className="flex flex-col bg-primary w-auto" key={restaurant.id}>
+          <Link to={`/restaurants/${restaurant.id}`} className="flex flex-col bg-primary w-auto hover:cursor-pointer hover:scale-105 transition-all ease-in" key={restaurant.id}>
             <img src={restaurant.image} alt="restaurant logo" />
             <div className="flex flex-col p-2 w-full">
               <div className="flex items-center justify-between font-work-sans">
@@ -47,7 +48,7 @@ const AllRestaurants = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <Pagination

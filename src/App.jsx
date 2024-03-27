@@ -4,6 +4,7 @@ import Homepage from "./pages/homepage";
 import MarketPlace from "./pages/marketplace";
 import { Footer } from "./components/ui";
 import RestaurantPage from "./pages/restaurant";
+import RestaurantsListing from "./pages/all_restaurants";
 
 function App() {
   // const pathname = window.location.pathname;
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/marketplace" element={<MarketPlace />} />
+        <Route path="/restaurants" element={<RestaurantsListing />} />
         <Route path="/restaurants/:id" element={<RestaurantPage />} />
       </Routes>
       <Footer />

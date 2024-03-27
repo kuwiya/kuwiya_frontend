@@ -45,5 +45,6 @@ export { default as item_brand } from "../assets/images/item_brand.png";
 export { default as place_brand } from "../assets/images/place_brand.png";
 export { default as biggs_brand } from "../assets/images/biggs_brand.png";
 export { default as tantalizer_brand } from "../assets/images/tantalizer_brand.png";
+export { default as sort } from "../assets/images/sort.png";
 export { default as AllYummy } from "../assets/images/allYummy.png";
 export { default as AllYummy2 } from "../assets/images/allYummy2.png";
