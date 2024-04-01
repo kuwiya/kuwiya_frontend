@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Restaurants } from '../../constants';
-import { Navbar } from '../../components/ui';
-import { heart, star, gps, sort } from '../../constants/images';
-import Pagination from './_components/pagination';
-import ArrowLeft from './_components/arrow';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Restaurants } from "../../constants";
+import { Navbar } from "../../components/ui";
+import { heart, star, gps, sort } from "../../constants/images";
+import Pagination from "./_components/pagination";
+import ArrowLeft from "./_components/arrow";
+import { Link } from "react-router-dom";
 
 const RestaurantsListing = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +20,7 @@ const RestaurantsListing = () => {
   const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
 
   const handleSort = () => {
-    console.log('sort clicked');
+    console.log("sort clicked");
   };
 
   return (
@@ -30,7 +30,7 @@ const RestaurantsListing = () => {
       <div className="px-10 bg-primary py-28">
         <div className="flex justify-between w-full font-work-sans py-10">
           <div className="flex items-center space-x-3">
-            <Link to={'/'} className="hover:cursor-pointer">
+            <Link to={"/"} className="hover:cursor-pointer">
               <ArrowLeft />
             </Link>
             <span className="uppercase font-semibold text-xl">restaurant</span>
@@ -45,10 +45,10 @@ const RestaurantsListing = () => {
             />
           </div>
         </div>
-        <span className="font-work-sans font-medium text-xl">
+        <span className="font-work-sans font-medium text-xl lg:px-[88px]">
           All Restaurants on Kuwiya
         </span>
-        <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10">
+        <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10 lg:px-[88px]">
           {currentRestaurant.map((restaurant) => (
             <Link
               to={`/restaurants/${restaurant.id}`}

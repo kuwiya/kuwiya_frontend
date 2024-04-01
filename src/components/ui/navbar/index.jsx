@@ -136,7 +136,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
             <hr className="z-20- h-6 my-8 text-[#395d88] w-[70%] mx-auto" />
             <li className="m-6 mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/market-place" className="text-white font-semibold">
+                <Link to="/marketplace" className="text-white font-semibold">
                   Marketplace
                 </Link>
                 <IoPersonOutline color="#fff" size={23} />

@@ -4,7 +4,7 @@ import { Button } from "../../../../components/ui";
 
 const CouponSection = () => {
   return (
-    <div className="py-8 text-center flex flex-col">
+    <div className="py-8 text-center flex flex-col lg:px-32">
       <div className="flex flex-col pb-10 md:pb-20 px-8 md:space-y-2 space-y-1">
         <span className="uppercase font-bold text-base md:text-[28px]">
           coupon hot deals

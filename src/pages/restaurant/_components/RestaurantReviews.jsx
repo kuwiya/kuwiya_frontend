@@ -3,7 +3,7 @@ import CustomersReviews from "./CustomersReviews";
 
 const RestaurantReviews = () => {
   return (
-    <section className="px-10 py-20 space-y-10">
+    <section className="px-10 py-20 lg:px-36 space-y-10">
       <h1 className="text-[23px] text-center font-semibold text-[#000000] uppercase ">
         reviews
       </h1>

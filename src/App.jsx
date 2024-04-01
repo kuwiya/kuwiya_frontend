@@ -7,8 +7,6 @@ import RestaurantPage from "./pages/restaurant";
 import RestaurantsListing from "./pages/all_restaurants";
 
 function App() {
-  // const pathname = window.location.pathname;
-  // console.log(pathname);
   return (
     <>
       <Routes>

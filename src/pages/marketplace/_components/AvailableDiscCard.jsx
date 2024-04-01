@@ -59,9 +59,9 @@ const AvailableDiscCard = () => {
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
                 }}
-                className="relative bg-no-repeat bg-cover h-[256px] w-[320px] rounded-t-xl"
+                className="relative bg-no-repeat bg-cover h-[256px] w-[310px] rounded-t-xl"
               >
-                <p className="flex flex-col gap-1 text-white">
+                <p className="flex flex-col gap-1 justify-between text-white">
                   <span className="bg-[#3187FA] w-fit p-3 pr-10 rounded-r-2xl mt-8">
                     #{availableDisc.id} most liked
                   </span>

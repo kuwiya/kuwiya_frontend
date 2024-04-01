@@ -17,7 +17,7 @@ const RestaurantPage = () => {
       <main className="mt-32">
         <section className="px-10 py-10">
           <div className="flex gap-3 items-center">
-            <Link to="/marketplace">
+            <Link to="/restaurants">
               <ArrowLeft />
             </Link>
             <h1 className="text-[23px] font-medium text-[#000000] uppercase">

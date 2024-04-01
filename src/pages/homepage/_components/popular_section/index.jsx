@@ -1,6 +1,7 @@
-import React from 'react';
-import images from '../../../../constants/images';
-import Button from '../../../../components/ui/button';
+import React from "react";
+import images from "../../../../constants/images";
+import Button from "../../../../components/ui/button";
+import { Link } from "react-router-dom";
 
 const PopularResturants = () => {
   return (
@@ -24,14 +25,16 @@ const PopularResturants = () => {
           Lorem ipsum dolor sit amet consectetur. Cras quisque ultrices arcu
           blandit tempor facilisi tellus. Amet in eget ornare sit egestas.
         </span>
-        <Button
-          children="explore"
-          borderRadius={'5px'}
-          padding={'10px 30px'}
-          className={
-            'xl:text-base md:text-sm uppercase font-work-sans font-medium'
-          }
-        />
+        <Link to="/restaurants">
+          <Button
+            children="explore"
+            borderRadius={"5px"}
+            padding={"10px 30px"}
+            className={
+              "xl:text-base md:text-sm uppercase font-work-sans font-medium hover:scale-90 transition-transform delay-200 ease-linear"
+            }
+          />
+        </Link>
       </div>
     </div>
   );

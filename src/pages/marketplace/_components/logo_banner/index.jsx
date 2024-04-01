@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   biggs_brand,
   cr_brand,
@@ -9,12 +9,12 @@ import {
   mc_brand,
   place_brand,
   tantalizer_brand,
-} from '../../../../constants/images';
+} from "../../../../constants/images";
 
 const LogoBanner = () => {
   return (
-    <div className="bg-primary py-6">
-      <div className="flex justify-around items-center">
+    <div className="bg-primary py-6 lg:px-32">
+      <div className="flex justify-between items-center">
         <img src={item_brand} alt="item" />
         <img src={kfc_brand} alt="kfc" />
         <img src={cr_brand} alt="chickenrepublic" />

@@ -18,13 +18,17 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
 
   return (
-    <div className="px-10 py-20 bg-lightGray">
+    <div className="px-10 lg:px-32 py-20 bg-lightGray">
       <span className="font-work-sans font-medium text-xl">
         All Restaurants on Kuwiya
       </span>
       <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10">
         {currentRestaurant.map((restaurant) => (
-          <Link to={`/restaurants/${restaurant.id}`} className="flex flex-col bg-primary w-auto hover:cursor-pointer hover:scale-105 transition-all ease-in" key={restaurant.id}>
+          <Link
+            to={`/restaurants/${restaurant.id}`}
+            className="flex flex-col bg-primary w-auto hover:cursor-pointer hover:scale-105 transition-all ease-in"
+            key={restaurant.id}
+          >
             <img src={restaurant.image} alt="restaurant logo" />
             <div className="flex flex-col p-2 w-full">
               <div className="flex items-center justify-between font-work-sans">

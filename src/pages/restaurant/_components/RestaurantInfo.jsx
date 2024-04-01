@@ -6,7 +6,7 @@ import { Button } from "../../../components/ui";
 
 const RestaurantInfo = () => {
   return (
-    <section className="text-[#000000] font-normal flex justify-between px-10 py-20 gap-5">
+    <section className="text-[#000000] font-normal flex justify-between px-10 py-20 lg:px-36 gap-5">
       <div className="flex-[57.72%] space-y-4 lg:pr-20">
         <div className="flex gap-2 justify-between items-start">
           <div className="space-y-4">

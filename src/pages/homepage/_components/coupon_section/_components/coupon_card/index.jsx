@@ -12,7 +12,7 @@ const CouponCard = () => {
             key={deal.id}
           >
             <div className="flex items-center justify-between">
-              <img src={deal.bg} className="relative" alt="" />
+              <img src={deal.bg} className="" alt="" />
               <div className="absolute flex items-center justify-start gap-10">
                 <img src={deal.logo} className="pl-10" alt="brand_logo" />
                 <img src={deal.divider} alt="" />
@@ -39,7 +39,7 @@ const CouponCard = () => {
                     border={"none"}
                     borderRadius={"15px"}
                     className={
-                      "uppercase font-work-sans font-medium text-[10.5px] w-fit"
+                      "uppercase font-work-sans font-medium text-[10.5px] w-fit mb-2"
                     }
                   />
                 </div>
