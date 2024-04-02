@@ -3,10 +3,12 @@ import useInterval from "../../../../hooks/useInterval";
 import { heroBgSlides } from "../../../../constants";
 import { useEffect, useState } from "react";
 import { Button } from "../../../../components/ui";
+import { UserSubscriptionPopUp } from "../../../../components";
 
 const HeroSection = () => {
   const [bgSlides, setBGSlides] = useState([]);
   const [currentBGSlideIndex, setCurrentBGSlideIndex] = useState(-1);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   // console.log(bgSlides.length);
   useInterval(
     () => {
@@ -45,8 +47,9 @@ const HeroSection = () => {
             <Button
               children="Get Started"
               backgroundColor={"transparent"}
-              className="w-fit uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow  hover:!text-[#000] text-sm md:text-base"
+              className="w-fit uppercase font-work-sans font-medium transition-colors delay-200 ease-in-out hover:!bg-darkyellow  hover:!text-[#000] text-sm md:text-base"
               padding={"10px 20px"}
+              onClick={() => setIsPopUpOpen(true)}
             />
           </div>
           <div className="flex md:flex-row gap-10 items-center font-work-sans">
@@ -75,6 +78,11 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+        {isPopUpOpen && (
+          <div className="absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%]">
+            <UserSubscriptionPopUp setIsOpen={setIsPopUpOpen} />
+          </div>
+        )}
       </div>
       <div className="mx-auto py-8 flex gap-1 justify-center items-center pl-24">
         <span

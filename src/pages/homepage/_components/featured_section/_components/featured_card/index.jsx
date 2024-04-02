@@ -75,7 +75,7 @@ const FeaturedCard = () => {
       >
         {FeaturedDeals.map((deal) => (
           <div
-            className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-105 hover:cursor-pointer transition-all"
+            className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img
