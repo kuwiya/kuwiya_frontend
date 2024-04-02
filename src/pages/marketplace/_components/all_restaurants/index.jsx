@@ -18,7 +18,7 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
 
   return (
-    <div className="px-10 lg:px-32 py-20 bg-lightGray">
+    <div className="px-20 xl:px-48 lg:px-32 py-20 bg-lightGray">
       <span className="font-work-sans font-medium text-xl">
         All Restaurants on Kuwiya
       </span>
