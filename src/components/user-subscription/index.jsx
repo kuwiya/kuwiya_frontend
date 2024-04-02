@@ -28,6 +28,7 @@ const UserSubscriptionPopUp = ({ setIsOpen }) => {
             className={
               "lg:text-base md:text-sm uppercase font-work-sans font-medium hover:scale-90 transition-all delay-200 ease-linear"
             }
+            onClick={() => window.open("/subscription-plan", "_blank")}
           />
         </form>
         <div
