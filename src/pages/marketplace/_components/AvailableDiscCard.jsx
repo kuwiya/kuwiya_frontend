@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Clock, Star } from "./index";
 import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
 import { useDiscountedDealsData } from "../../../hooks";
-import { useHref } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
 
 const AvailableDiscCard = () => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
@@ -22,7 +22,7 @@ const AvailableDiscCard = () => {
 
   const availableDiscounts = data?.data;
 
-  console.log(pathname);
+  // console.log(pathname);
 
   // console.log(availableDiscounts);
 
@@ -77,7 +77,11 @@ const AvailableDiscCard = () => {
           className="bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6"
         >
           {availableDiscounts.map((availableDisc) => (
-            <div key={availableDisc.id} className="bg-white rounded-t-xl">
+            <Link
+              to={`/marketplace/${availableDisc.id}`}
+              key={availableDisc.id}
+              className="bg-white rounded-t-xl"
+            >
               <div
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
@@ -121,7 +125,7 @@ const AvailableDiscCard = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         {pathname === "/marketplace" && (

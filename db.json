@@ -124,7 +124,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     },
     {
       "id": 2,
@@ -136,7 +138,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     },
     {
       "id": 3,
@@ -148,7 +152,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     },
     {
       "id": 4,
@@ -160,7 +166,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     },
     {
       "id": 5,
@@ -172,7 +180,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     },
     {
       "id": 6,
@@ -184,7 +194,9 @@
       "price": 1500,
       "duration": "12:00-01:00 PM",
       "rating": 4.5,
-      "reviewCount": 483
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     }
   ]
 }

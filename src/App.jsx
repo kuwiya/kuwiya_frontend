@@ -6,7 +6,7 @@ import { Footer } from "./components/ui";
 import RestaurantPage from "./pages/restaurant";
 import RestaurantsListing from "./pages/all_restaurants";
 import SubscriptionPage from "./pages/subscription-page";
-import DetailPage from "./pages/detail-page";
+import DetailPage from "./pages/details-featured-page";
 
 function App() {
   return (
