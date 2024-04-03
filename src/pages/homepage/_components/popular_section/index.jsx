@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const PopularResturants = () => {
   return (
-    <div className="flex md:flex-row justify-between flex-col px-10 xl:px-40 md:px-28 py-20 md:gap-10 xl:gap-0 w-[100%] mx-auto overflow-hidden">
+    <div className="flex md:flex-row justify-between flex-col px-10 xl:px-40 md:px-28 py-20 pt-24 md:gap-10 xl:gap-0 w-[100%] mx-auto overflow-hidden">
       <img
         src={images.resturant_circle}
         className="xl:w-[40%] md:w-1/2 w-full animate-[spin_4.5s_linear_infinite] mt-0"

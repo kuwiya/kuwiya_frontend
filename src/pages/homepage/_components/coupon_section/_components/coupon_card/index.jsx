@@ -32,7 +32,7 @@ const CouponCard = () => {
                   >
                     {deal.brand}
                   </span>
-                  <Link to={`/coupon-detail/${deal.id}`}>
+                  <Link to={`/coupon/${deal.id}`}>
                   <Button
                     children="claim"
                     backgroundColor={`${deal.id === 4 ? "#1F1F1F" : "#ffffff"}`}
