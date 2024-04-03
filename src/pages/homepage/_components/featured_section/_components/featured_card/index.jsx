@@ -4,6 +4,8 @@ import ArrowIcon from "./arrow_icon";
 import { useEffect, useRef, useState } from "react";
 import StarIcon from "./start_icon";
 import { FeaturedDeals } from "../../../../../../constants";
+import { Link } from "react-router-dom";
+import { useFeaturedDealsData } from "../../../../../../hooks";
 
 const FeaturedCard = () => {
   const scrollRef = useRef(null);
@@ -31,6 +33,19 @@ const FeaturedCard = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  const { isError, error, isLoading, data } = useFeaturedDealsData();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{error.message}</p>;
+  }
+
+  const deals = data?.data;
+  // console.log(deals);
 
   //Handles arrow movement
   const handleLeftArrow = () => {
@@ -71,11 +86,12 @@ const FeaturedCard = () => {
       <div
         ref={scrollRef}
         onWheel={handleWheel}
-        className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 pl-0 md:pl-2"
+        className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 md:pl-6"
       >
-        {FeaturedDeals.map((deal) => (
-          <div
-            className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-105 hover:cursor-pointer transition-all"
+        {deals.map((deal) => (
+          <Link
+            to={`/featured/${deal.id}`}
+            className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img
@@ -124,7 +140,7 @@ const FeaturedCard = () => {
                 OFF
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">

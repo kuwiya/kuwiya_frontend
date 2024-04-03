@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedCard from "./_components/featured_card";
 import { Button } from "../../../../components/ui";
+import { Link } from "react-router-dom";
 
 const FeaturedSection = () => {
   return (
@@ -15,11 +16,13 @@ const FeaturedSection = () => {
       </div>
       <FeaturedCard />
       <div className="my-10">
-        <Button
-          children="view all"
-          className={"uppercase text-center hover:scale-105 transition-all "}
-          padding={"10px 30px"}
-        />
+        <Link to="/marketplace">
+          <Button
+            children="view all"
+            className={"uppercase text-center hover:scale-105 transition-all "}
+            padding={"10px 30px"}
+          />
+        </Link>
       </div>
     </div>
   );

@@ -1,11 +1,30 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Clock, Star } from "./index";
 import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
-import { availableDiscounts } from "../../../constants";
+import { useDiscountedDealsData } from "../../../hooks";
+import { Link, useHref } from "react-router-dom";
 
 const AvailableDiscCard = () => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
   const scrollRef = useRef(null);
+
+  const pathname = useHref();
+
+  const { isLoading, data, isError, error } = useDiscountedDealsData();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error}</div>;
+  }
+
+  const availableDiscounts = data?.data;
+
+  // console.log(pathname);
+
+  // console.log(availableDiscounts);
 
   //To check for left scroll and to handle the arrow visibility change
   const handleWheel = (e) => {
@@ -43,10 +62,14 @@ const AvailableDiscCard = () => {
   };
 
   return (
-    <section className="px-10 space-y-4">
-      <h1 className="text-2xl font-semibold text-[#000000] py-3">
-        Available Discount
-      </h1>
+    <section
+      className={`px-10 ${pathname !== "/marketplace" ? "px-0" : ""} space-y-4`}
+    >
+      {pathname === "/marketplace" && (
+        <h1 className="text-2xl font-semibold text-[#000000] py-3">
+          Available Discount
+        </h1>
+      )}
       <div className="relative">
         <div
           ref={scrollRef}
@@ -54,7 +77,11 @@ const AvailableDiscCard = () => {
           className="bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6"
         >
           {availableDiscounts.map((availableDisc) => (
-            <div key={availableDisc.id} className="bg-white rounded-t-xl">
+            <Link
+              to={`/marketplace/${availableDisc.id}`}
+              key={availableDisc.id}
+              className="bg-white rounded-t-xl"
+            >
               <div
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
@@ -98,25 +125,27 @@ const AvailableDiscCard = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-        <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
-          <div
-            onClick={handleLeftArrow}
-            className={`${
-              isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
-            } cursor-pointer rotate-180 w-fit px-5 py-4 rounded-[100%]`}
-          >
-            {isLeftArrowVisible && <ArrowIcon />}
+        {pathname === "/marketplace" && (
+          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+            <div
+              onClick={handleLeftArrow}
+              className={`${
+                isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
+              } cursor-pointer rotate-180 w-fit px-5 py-4 rounded-[100%]`}
+            >
+              {isLeftArrowVisible && <ArrowIcon />}
+            </div>
+            <div
+              onClick={handleRightArrow}
+              className="bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]"
+            >
+              <ArrowIcon />
+            </div>
           </div>
-          <div
-            onClick={handleRightArrow}
-            className="bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]"
-          >
-            <ArrowIcon />
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

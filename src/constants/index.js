@@ -871,3 +871,30 @@ export const customersReviews = [
     rating_count: 5.0,
   },
 ];
+
+export const subscriptionPlans = [
+  {
+    id: 1,
+    planType: "FREE",
+    amount: 0,
+    planDesc: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc2: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc3: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+  },
+  {
+    id: 2,
+    planType: "BASIC",
+    amount: 45,
+    planDesc: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc2: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc3: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+  },
+  {
+    id: 3,
+    planType: "ADVANCED",
+    amount: 120,
+    planDesc: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc2: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+    planDesc3: "Lorem ipsum dolor sit amet consectetur. Dolor et diam ",
+  },
+];

@@ -1,69 +1,72 @@
 import { Link } from "react-router-dom";
 import BottomFooter from "./_components/bottom_footer";
-import images from "../../../constants/images";
+import { FooterLogo } from "../../../assets/icons";
 
 const Footer = () => {
   return (
     <footer className="flex flex-col p-10 md:justify-center bg-black">
-      <div className="md:flex flex-wrap py-20 md:pt-0 justify-evenly items-center md:space-x-28 md:px-0 ">
-        <div>
-          <img src={images.logo} className="w-[50px]" alt="" />
-        </div>
-        <div className="flex-col space-y-6 flex text-primary md:ml-6">
-          <div className="pt-8 md:pt-0 font-medium font-work-sans text-2xl uppercase">
-            contact
+      <div className="md:flex flex-wrap justify-evenly lg:space-x-28">
+        <Link to="/">
+          <FooterLogo />
+        </Link>
+        <div className="flex-col space-y-6 flex text-primary">
+          <div className="font-medium font-work-sans text-2xl uppercase">
+            pages
           </div>
-          <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link className="font-work-sans text-xl  font-light">
-              Enquiry Form
-            </Link>
-            <Link className="font-work-sans text-xl  font-light">Careers</Link>
-          </div>
-        </div>
-        <div className="flex-col space-y-6 flex text-primary md:ml-6">
-          <div className="pt-8 md:pt-0 font-medium font-work-sans text-2xl uppercase">
-            resturants
-          </div>
-          <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link className="font-work-sans text-xl  font-light">
-              Map Search
-            </Link>
-            <Link className="font-work-sans text-xl  font-light">
+          <div className="space-y-4 text-[16px] flex flex-col text-primary font-semibold">
+            <Link
+              to="/marketplace"
+              className="font-work-sans text-xl font-light"
+            >
               Marketplace
             </Link>
+            <Link to="/" className="font-work-sans text-xl font-light">
+              Subscribe
+            </Link>
+            <Link
+              to="/subscription-plan"
+              className="font-work-sans text-xl font-light"
+            >
+              Subscription plans
+            </Link>
+            <Link to="/" className="font-work-sans text-xl font-light">
+              Referrals
+            </Link>
+            <Link to="/" className="font-work-sans text-xl font-light">
+              Admin Dashboard
+            </Link>
           </div>
         </div>
-        <div className="flex-col space-y-6 flex text-primary md:ml-6 md:pt-8">
-          <div className="pt-8 md:pt-0 font-medium font-work-sans text-2xl uppercase">
+        <div className="flex-col space-y-6 flex text-primary">
+          <div className="font-medium font-work-sans text-2xl uppercase">
+            About us
+          </div>
+          <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
+            <Link to="/" className="font-work-sans text-xl  font-light">
+              About Us
+            </Link>
+            <Link to="/" className="font-work-sans text-xl  font-light">
+              How It Works
+            </Link>
+            <Link to="/" className="font-work-sans text-xl  font-light">
+              FAQs
+            </Link>
+          </div>
+        </div>
+        <div className="flex-col space-y-6 flex text-primary">
+          <div className="font-medium font-work-sans text-2xl uppercase">
             support
           </div>
           <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link className="font-work-sans text-xl  font-light">
+            <Link to="/" className="font-work-sans text-xl  font-light">
               Customer Care
             </Link>
-            <Link className="font-work-sans text-xl  font-light">Help</Link>
-            <Link className="font-work-sans text-xl  font-light">
+            <Link to="/" className="font-work-sans text-xl  font-light">
+              Help Center
+            </Link>
+            <Link to="/" className="font-work-sans text-xl  font-light">
               Report an issue
             </Link>
-          </div>
-        </div>
-
-        <div className="flex-col space-y-6 flex text-primary ">
-          <div className="pt-8 md:pt-0 font-medium font-work-sans text-2xl uppercase md:mt-[6.5rem]">
-            how it works
-          </div>
-          <div className="space-y-4 text-[16px] flex flex-col text-primary font-semibold">
-            <Link className="font-work-sans text-xl font-light">
-              For Members
-            </Link>
-            <Link className="font-work-sans text-xl font-light">
-              For Restaurants
-            </Link>
-            <Link className="font-work-sans text-xl font-light">
-              For Afiliates
-            </Link>
-            <Link className="font-work-sans text-xl font-light">About Us</Link>
-            <Link className="font-work-sans text-xl font-light">FAQ's</Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import CouponCard from "./_components/coupon_card";
 import { Button } from "../../../../components/ui";
+import { Link } from "react-router-dom";
 
 const CouponSection = () => {
   return (
@@ -14,7 +15,7 @@ const CouponSection = () => {
         </span>
         <CouponCard />
       </div>
-      <div className="my-2">
+      <Link to="/marketplace" className="my-2">
         <Button
           children="view all"
           className={
@@ -22,7 +23,7 @@ const CouponSection = () => {
           }
           padding={"10px 30px"}
         />
-      </div>
+      </Link>
     </div>
   );
 };
