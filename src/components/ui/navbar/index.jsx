@@ -11,9 +11,27 @@ import { Link } from "react-router-dom";
 import Button from "../button";
 import SearchIcon from "./_components/SearchIcon";
 import LocationIcon from "./_components/LocationIcon";
+import { ArrowDown } from "../../../pages/marketplace/_components";
+
+const cities = [
+  "Lagos",
+  "Abuja",
+  "Ibadan",
+  "Ilorin",
+  "Ogun",
+  "Ilorin",
+  "Osun",
+  "Port Harcourt",
+  "Uyo",
+  "Benin",
+  "Anambra",
+  "Cross River",
+];
 
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false); // initialize the dropdown for choosing location
+  const [location, setLocation] = useState("Location");
 
   return (
     <>
@@ -36,15 +54,36 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
         {scrolling && (
           <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8 md:ml-12">
             <div className="md:space-x-6 hidden md:flex items-center ">
-              <div className="flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] text-black">
-                <div className="px-3 py-3 flex items-center gap-2 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
-                  <LocationIcon />
-                  <input
-                    type="text"
-                    placeholder="Location"
-                    name="location"
-                    className="outline-none w-full"
-                  />
+              <div className="relative flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] text-black">
+                <div className="px-3 py-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]">
+                  <div className="flex items-center gap-2">
+                    <LocationIcon />
+                    <span className="text-slate-500 whitespace-nowrap">
+                      {location}
+                    </span>
+                  </div>
+                  <div
+                    onClick={() => setIsDropDownOpen(!isDropDownOpen)}
+                    className={`${isDropDownOpen ? "rotate-180" : ""}`}
+                  >
+                    <ArrowDown />
+                  </div>
+                  {isDropDownOpen && (
+                    <div className="absolute top-[100%] left-0 z-[999] flex flex-col gap-2 font-work-sans text-darkyellow bg-[#f5f5f5] rounded-b-lg font-medium text-center px-[34px] py-3">
+                      {cities.map((city, index) => (
+                        <span
+                          key={index}
+                          onClick={() => {
+                            setLocation(city);
+                            setIsDropDownOpen(false);
+                          }}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {city}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
                   <input
