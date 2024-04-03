@@ -1,6 +1,3 @@
-import { AdvancedPlan, BasicPlan, FreePlan } from "../assets/icons";
-import { Button } from "../components/ui";
-
 export const FeaturedDeals = [
   {
     id: 0,

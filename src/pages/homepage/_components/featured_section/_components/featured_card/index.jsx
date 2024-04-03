@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import StarIcon from "./start_icon";
 import { FeaturedDeals } from "../../../../../../constants";
 import { Link } from "react-router-dom";
+import { useFeaturedDealsData } from "../../../../../../hooks";
 
 const FeaturedCard = () => {
   const scrollRef = useRef(null);
@@ -32,6 +33,19 @@ const FeaturedCard = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  const { isError, error, isLoading, data } = useFeaturedDealsData();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{error.message}</p>;
+  }
+
+  const deals = data?.data;
+  // console.log(deals);
 
   //Handles arrow movement
   const handleLeftArrow = () => {
@@ -74,9 +88,9 @@ const FeaturedCard = () => {
         onWheel={handleWheel}
         className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 md:pl-6"
       >
-        {FeaturedDeals.map((deal) => (
+        {deals.map((deal) => (
           <Link
-            to="/"
+            to={`/featured/${deal.id}`}
             className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
