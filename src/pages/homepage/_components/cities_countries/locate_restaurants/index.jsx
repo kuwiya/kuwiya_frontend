@@ -12,13 +12,13 @@ const LocateRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [restaurantPerPage] = useState(9);
 
-  const f = () => {
-    const x = currentRestaurant
+  const filteredItems = () => {
+    const items = currentRestaurant
       ?.filter((restaurant) => restaurant.location === location)
       .map((restaurant) => (
         <Card restaurant={restaurant} key={restaurant.id} />
       ));
-    return x;
+    return items;
   };
   // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
@@ -27,14 +27,14 @@ const LocateRestaurants = () => {
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );
-  const x = currentRestaurant
+  const item = currentRestaurant
   ?.filter((restaurant) => restaurant.location === location)
+
   const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
 
   const handleSort = () => {
     console.log("sort clicked");
   };
-console.log(x)
   return (
     <>
       <Navbar scrolling bgBlack />
@@ -62,10 +62,10 @@ console.log(x)
             All Restaurants in {location}
           </span>
           <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10 lg:px-[88px]">
-            {location !== "" && f()}
+            {location !== "" && filteredItems()}
           </div>
         </div>
-        {x.length === 0 && (
+        {item.length === 0 && (
           <span className="flex justify-center py-10 uppercase text-xl">
             not available, check back later
           </span>
