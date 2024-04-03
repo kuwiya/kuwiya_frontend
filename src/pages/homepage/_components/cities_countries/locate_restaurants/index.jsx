@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { Restaurants } from "../../constants";
-import Card from './_components/card'
-import { Navbar } from "../../components/ui";
-import { sort } from "../../constants/images";
-import Pagination from "./_components/pagination";
-import ArrowLeft from "./_components/arrow";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Restaurants } from "../../../../../constants";
+import { Navbar } from "../../../../../components/ui";
+import ArrowLeft from "../../../../all_restaurants/_components/arrow";
+import { sort } from "../../../../../constants/images";
+import Pagination from "../../../../all_restaurants/_components/pagination";
+import Card from "../../../../all_restaurants/_components/card";
 
-const RestaurantsListing = () => {
+const LocateRestaurants = () => {
+  const { location } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const [restaurantPerPage] = useState(9);
 
+  const f = () => {
+    const x = currentRestaurant
+      ?.filter((restaurant) => restaurant.location === location)
+      .map((restaurant) => (
+        <Card restaurant={restaurant} key={restaurant.id} />
+      ));
+    return x;
+  };
   // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
   const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
@@ -18,12 +27,14 @@ const RestaurantsListing = () => {
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );
+  const x = currentRestaurant
+  ?.filter((restaurant) => restaurant.location === location)
   const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
 
   const handleSort = () => {
     console.log("sort clicked");
   };
-
+console.log(x)
   return (
     <>
       <Navbar scrolling bgBlack />
@@ -47,15 +58,18 @@ const RestaurantsListing = () => {
           </div>
         </div>
         <div className="xl:px-40 md:px-20">
-          <span className="font-work-sans font-medium text-xl lg:px-[88px]">
-            All Restaurants on Kuwiya
+          <span className="font-work-sans font-medium text-xl lg:px-[88px] capitalize">
+            All Restaurants in {location}
           </span>
           <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10 lg:px-[88px]">
-            {currentRestaurant.map((restaurant) => (
-              <Card restaurant={restaurant} />
-            ))}
+            {location !== "" && f()}
           </div>
         </div>
+        {x.length === 0 && (
+          <span className="flex justify-center py-10 uppercase text-xl">
+            not available, check back later
+          </span>
+        )}
         <Pagination
           nPages={nPages}
           currentPage={currentPage}
@@ -66,4 +80,4 @@ const RestaurantsListing = () => {
   );
 };
 
-export default RestaurantsListing;
+export default LocateRestaurants;

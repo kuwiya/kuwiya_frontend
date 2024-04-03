@@ -17,7 +17,7 @@ const MarketPlace = () => {
   return (
     <>
       <Navbar scrolling shadow />
-      <main className="font-lato py-[9rem]">
+      <main className="font-lato py-[9rem] overflow-hidden">
         <section className="flex justify-between px-10 py-6">
           <div className="flex gap-3 items-center">
             <Link to="/">

@@ -373,11 +373,134 @@ export const couponMarketplace = [
   },
 ];
 
+export const cities = [
+  {
+    id: 0,
+    location: "lagos",
+  },
+  {
+    id: 1,
+    location: "abuja",
+  },
+  {
+    id: 2,
+    location: "porthacourt",
+  },
+  {
+    id: 3,
+    location: "illorin",
+  },
+  {
+    id: 4,
+    location: "akure",
+  },
+  {
+    id: 5,
+    location: "ibadan",
+  },
+  {
+    id: 5,
+    location: "oshogbo",
+  },
+  {
+    id: 0,
+    location: "lagos",
+  },
+  {
+    id: 1,
+    location: "abuja",
+  },
+  {
+    id: 2,
+    location: "porthacourt",
+  },
+  {
+    id: 0,
+    location: "lagos",
+  },
+  {
+    id: 1,
+    location: "abuja",
+  },
+  {
+    id: 2,
+    location: "porthacourt",
+  },
+];
+
+export const countries = [
+  {
+    id: 0,
+    location: "nigeria",
+  },
+  {
+    id: 1,
+    location: "ghana",
+  },
+  {
+    id: 2,
+    location: "south africa",
+  },
+  {
+    id: 3,
+    location: "ethopia",
+  },
+  {
+    id: 4,
+    location: "usa",
+  },
+  {
+    id: 5,
+    location: "france",
+  },
+  {
+    id: 5,
+    location: "united kingdom",
+  },
+  {
+    id: 0,
+    location: "canada",
+  },
+  {
+    id: 1,
+    location: "brazil",
+  },
+  {
+    id: 2,
+    location: "germany",
+  },
+  {
+    id: 0,
+    location: "jamaica",
+  },
+  {
+    id: 1,
+    location: "spain",
+  },
+  {
+    id: 2,
+    location: "italy",
+  },
+  {
+    id: 2,
+    location: "ireland",
+  },
+  {
+    id: 2,
+    location: "mexico",
+  },
+  {
+    id: 2,
+    location: "india",
+  },
+];
+
 export const Restaurants = [
   {
     id: 0,
     image: "/place.svg",
     title: "The Place - Jerusalem Bus Stop",
+    location: "lagos",
     distance: "10 km",
     ratings: "4.5 (483)",
     status: "open",
@@ -386,6 +509,7 @@ export const Restaurants = [
     id: 1,
     image: "/mc.svg",
     title: "McDonald's - Allen",
+    location: "abuja",
     distance: "10 km",
     ratings: "4.5 (483)",
     status: "open",
@@ -395,6 +519,7 @@ export const Restaurants = [
     image: "/dominoes.svg",
     title: "Domino's pizza",
     distance: "10 km",
+    location: "porthacourt",
     ratings: "4.5 (483)",
     status: "open",
   },
@@ -403,6 +528,7 @@ export const Restaurants = [
     image: "/biggs.svg",
     title: "Mr Bigg’s- Allen Bus Stop",
     distance: "10 km",
+    location: "ibadan",
     ratings: "4.5 (483)",
     status: "open",
   },
@@ -411,6 +537,7 @@ export const Restaurants = [
     image: "/kfc.svg",
     title: "Mr Bigg’s- Allen Bus Stop",
     distance: "10 km",
+    location: "illorin",
     ratings: "4.5 (483)",
     status: "open",
   },
@@ -419,6 +546,7 @@ export const Restaurants = [
     image: "/cr.svg",
     title: "Chicken Republic - Ikotun",
     distance: "10 km",
+    location: "lagos",
     ratings: "4.5 (483)",
     status: "open",
   },
@@ -427,6 +555,7 @@ export const Restaurants = [
     image: "/item.svg",
     title: "The Place - Jerusalem Bus Stop",
     distance: "10 km",
+    location: "lagos",
     ratings: "4.5 (483)",
     status: "open",
   },
@@ -435,6 +564,7 @@ export const Restaurants = [
     image: "/killimanjaro.svg",
     title: "Mr Bigg’s- Allen Bus Stop",
     distance: "10 km",
+    location: "benin",
     ratings: "4.5 (483)",
     status: "open",
   },

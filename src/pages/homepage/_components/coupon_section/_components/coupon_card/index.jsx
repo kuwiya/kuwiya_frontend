@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../../../../../../components/ui";
 import { CouponDeals } from "../../../../../../constants";
+import { Link } from "react-router-dom";
 
 const CouponCard = () => {
   return (
@@ -31,6 +32,7 @@ const CouponCard = () => {
                   >
                     {deal.brand}
                   </span>
+                  <Link to={`/coupon-detail/${deal.id}`}>
                   <Button
                     children="claim"
                     backgroundColor={`${deal.id === 4 ? "#1F1F1F" : "#ffffff"}`}
@@ -42,6 +44,7 @@ const CouponCard = () => {
                       "uppercase font-work-sans font-medium text-[10.5px] w-fit mb-2"
                     }
                   />
+                  </Link>
                 </div>
               </div>
             </div>

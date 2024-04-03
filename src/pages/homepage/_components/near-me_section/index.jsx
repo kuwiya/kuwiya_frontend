@@ -48,7 +48,7 @@ const NearMeSection = () => {
           ))}
         </div>
       </div>
-      <NavLink to="/all-restaurants" className="flex justify-center">
+      <NavLink to="/restaurants" className="flex justify-center">
         <Button
           children="view all"
           className={
