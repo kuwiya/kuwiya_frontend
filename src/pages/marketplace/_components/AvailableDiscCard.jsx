@@ -74,7 +74,7 @@ const AvailableDiscCard = () => {
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className="bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6"
+          className={`bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6 `}
         >
           {availableDiscounts.map((availableDisc) => (
             <Link

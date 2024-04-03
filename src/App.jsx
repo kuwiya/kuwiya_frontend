@@ -7,6 +7,7 @@ import RestaurantPage from "./pages/restaurant";
 import RestaurantsListing from "./pages/all_restaurants";
 import SubscriptionPage from "./pages/subscription-page";
 import DetailPage from "./pages/details-featured-page";
+import DiscountDetailsPage from "./pages/details-discounts-page";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/restaurants/:id" element={<RestaurantPage />} />
         <Route path="/subscription-plan" element={<SubscriptionPage />} />
         <Route path="/featured/:id" element={<DetailPage />} />
+        <Route path="/marketplace/:id" element={<DiscountDetailsPage />} />
       </Routes>
       <Footer />
     </>
