@@ -1,4 +1,6 @@
 import React from "react";
+import Slider from "react-infinite-logo-slider";
+
 import {
   biggs_brand,
   cr_brand,
@@ -13,18 +15,40 @@ import {
 
 const LogoBanner = () => {
   return (
-    <div className="bg-primary py-6 lg:px-32">
-      <div className="flex justify-between items-center">
-        <img src={item_brand} alt="item" />
-        <img src={kfc_brand} alt="kfc" />
-        <img src={cr_brand} alt="chickenrepublic" />
-        <img src={place_brand} alt="theplace" />
-        <img src={killimanjaro_brand} alt="" />
-        <img src={mc_brand} alt="mcdonalds" />
-        <img src={biggs_brand} alt="mrbiggs" />
-        <img src={dominoes_brand} alt="" />
-        <img src={kfc_brand} alt="kfc" />
-        <img src={tantalizer_brand} alt="tantalizer" />
+    <div className="bg-primary py-6 ">
+      <div className="flex">
+        <Slider width="100px" duration={10}>
+          <Slider.Slide>
+            <img src={item_brand} alt="item" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={kfc_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={cr_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={place_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={killimanjaro_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={mc_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={biggs_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={dominoes_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={kfc_brand} alt="kfc" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <img src={tantalizer_brand} alt="kfc" />
+          </Slider.Slide>
+        </Slider>
       </div>
     </div>
   );

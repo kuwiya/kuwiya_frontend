@@ -113,7 +113,7 @@ const FeaturedCard = () => {
                 <StarIcon />
               </span>
             </span>
-            <div className="absolute top-8 left-[-14px]">
+            <div className="absolute top-8 left-[2px]">
               <DiscountTag />
               <span className="text-white text-[11px] font-semibold absolute top-3 left-2">
                 {100 -
