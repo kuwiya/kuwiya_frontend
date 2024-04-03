@@ -7,3 +7,4 @@ export { default as LogoIcon } from "./Logo";
 export { default as FooterLogo } from "./FooterLogo";
 export { default as LikeIcon } from "./LikeIcon";
 export { default as GpsIcon } from "./GpsIcon";
+export { default as CouponText } from "./CouponText";

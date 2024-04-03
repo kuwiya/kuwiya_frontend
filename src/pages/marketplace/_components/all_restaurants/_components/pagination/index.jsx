@@ -8,22 +8,18 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
     <nav>
       <ul className="flex gap-6">
         {pageNumbers.map((pgNumber) => (
-          <li
+          <Link
+            to={`?page=${pgNumber}`}
+            onClick={() => setCurrentPage(pgNumber)}
             key={pgNumber}
-            className={`px-6 border transition-all ease-out  py-4 font-lato  ${
+            className={`px-6 border rounded-md transition-all ease-out  py-4 font-lato  ${
               currentPage == pgNumber
                 ? "border-none bg-darkyellow text-primary"
                 : "hover:bg-darkyellow hover:border-[#ffffff] hover:text-primary bg-transparent text-[#828282] border-[#828282]"
             } `}
           >
-            <Link
-              onClick={() => setCurrentPage(pgNumber)}
-              className="page-link"
-              href="#"
-            >
-              {pgNumber}
-            </Link>
-          </li>
+            <li className="page-link">{pgNumber}</li>
+          </Link>
         ))}
       </ul>
     </nav>

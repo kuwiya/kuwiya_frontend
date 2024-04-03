@@ -1,16 +1,44 @@
-import React from "react";
-import { couponMarketplace } from "../../../constants";
-import { Star, Clock } from "./index";
+import React, { useState } from "react";
+// import { couponMarketplace } from "../../../constants";
+import { Star, Clock, Pagination } from "./index";
 import { Link } from "react-router-dom";
 import { Button } from "../../../components/ui";
+import { useCouponsMarketplaceData } from "../../../hooks";
 
 const CouponCard = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const couponsPerPage = 6;
+
+  const { isLoading, data, isError, error } = useCouponsMarketplaceData();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const coupons = data?.data;
+
+  const nPages = Math.ceil(coupons.length / couponsPerPage);
+
+  // pagination
+  const lastCouponIndex = currentPage * couponsPerPage;
+  const firstCouponIndex = lastCouponIndex - couponsPerPage;
+  const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
+
   return (
     <section className="px-10 my-16 mb-20 space-y-5">
       <h1 className="text-2xl font-semibold text-[#000000]">Coupon</h1>
       <div className="grid lg:grid-cols-2 gap-6">
-        {couponMarketplace.map((detail) => (
-          <div key={detail.id} className="flex relative">
+        {currentCoupons.map((detail) => (
+          <Link
+            to={`/coupon/${detail.id}`}
+            key={detail.id}
+            className="flex relative"
+          >
             <div className="w-10 h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
             <div className="flex">
               <div className="flex-[70%] flex gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%]">
@@ -52,7 +80,7 @@ const CouponCard = () => {
                           <Star />
                         </span>
                         <span>{detail.rating}</span>
-                        <span>({detail.reviewCount})</span>
+                        <span>({detail.rating_count})</span>
                       </p>
                     </div>
                   </div>
@@ -70,19 +98,16 @@ const CouponCard = () => {
               </div>
             </div>
             <div className="w-10 h-10 rounded-full bg-white absolute top-[50%] -right-5 -translate-y-[50%]"></div>
-          </div>
+          </Link>
         ))}
       </div>
-      <Link to="/see-more" className="flex justify-center">
-        <Button
-          children="See More"
-          backgroundColor="#F8A434"
-          textColor="#000000"
-          padding="8px 15px"
-          className="font-medium mt-3"
-          borderRadius="10px"
+      <div>
+        <Pagination
+          nPages={nPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
-      </Link>
+      </div>
     </section>
   );
 };
