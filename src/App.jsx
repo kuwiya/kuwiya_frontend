@@ -10,6 +10,7 @@ import DetailPage from "./pages/details-featured-page";
 import LocateRestaurants from "./pages/homepage/_components/cities_countries/locate_restaurants";
 import DiscountDetailsPage from "./pages/details-discounts-page";
 import CouponDetailsPage from "./pages/details-coupon-page";
+import AboutUs from "./pages/about-us";
 
 function App() {
   return (
@@ -18,12 +19,16 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/marketplace" element={<MarketPlace />} />
         <Route path="/restaurants" element={<RestaurantsListing />} />
-        <Route path="/locaterestaurants/:location" element={<LocateRestaurants />} />
+        <Route
+          path="/locaterestaurants/:location"
+          element={<LocateRestaurants />}
+        />
         <Route path="/restaurants/:id" element={<RestaurantPage />} />
         <Route path="/subscription-plan" element={<SubscriptionPage />} />
         <Route path="/featured/:id" element={<DetailPage />} />
         <Route path="/marketplace/:id" element={<DiscountDetailsPage />} />
         <Route path="/coupon/:id" element={<CouponDetailsPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />
     </>
