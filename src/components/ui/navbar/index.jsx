@@ -58,7 +58,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
         {scrolling && (
           <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8 md:ml-12">
             <div className="md:space-x-6 hidden md:flex items-center ">
-              <div className="relative flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] text-black">
+              <div className="relative flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] xl:w-[700px] text-black">
                 <div
                   onClick={() => setIsDropDownOpen(!isDropDownOpen)}
                   className="px-3 py-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
