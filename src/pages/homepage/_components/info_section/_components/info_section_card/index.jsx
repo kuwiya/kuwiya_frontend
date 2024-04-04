@@ -24,7 +24,7 @@ const InfoSectionCard = () => {
           </div>
         ))}
       </div>
-      <NavLink to="/learn-more" className="flex justify-center">
+      <NavLink to="/about-us" className="flex justify-center">
         <Button
           children="learn more"
           className={
