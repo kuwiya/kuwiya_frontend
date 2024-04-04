@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Navbar } from "../../components/ui";
 import { ArrowLeft } from "../marketplace/_components";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import {
   RestaurantDiscounts,
@@ -9,8 +10,25 @@ import {
   RestaurantInfo,
   RestaurantReviews,
 } from "./_components";
+import { useRestaurantsData } from "../../hooks";
 
 const RestaurantPage = () => {
+  const { id } = useParams();
+
+  const { isLoading, data, isError, error } = useRestaurantsData(id);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error}</div>;
+  }
+
+  const restaurant = data?.data;
+
+  // console.log(restaurant);
+
   return (
     <>
       <Navbar scrolling bgBlack />
@@ -26,11 +44,11 @@ const RestaurantPage = () => {
           </div>
         </section>
 
-        <RestaurantHero />
+        <RestaurantHero restaurant={restaurant} />
 
-        <RestaurantInfo />
+        <RestaurantInfo restaurant={restaurant} />
 
-        <RestaurantDiscounts />
+        <RestaurantDiscounts restaurant={restaurant} />
 
         <RestaurantReviews />
       </main>

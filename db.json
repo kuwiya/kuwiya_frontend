@@ -111,6 +111,118 @@
       "rating_count": 4,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
       "distance": 789
+    },
+    {
+      "id": 8,
+      "title": "Burger & Chips Platter",
+      "image": "/feature_0.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "The Place's Burger",
+      "location": "Lagos, Nigeria",
+      "rating": "4.5",
+      "rating_count": 4,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 500
+    },
+    {
+      "id": 9,
+      "title": "Veggie Noodles & Egg",
+      "image": "/feature_1.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Kilimanjaro",
+      "location": "Lagos, Nigeria",
+      "rating": "5.0",
+      "rating_count": 5,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 500
+    },
+    {
+      "id": 10,
+      "title": "Chicken Shawarma",
+      "image": "/feature_2.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Mr Biggs' Bites",
+      "location": "Lagos, Nigeria",
+      "rating": "3.2",
+      "rating_count": 3,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 500
+    },
+    {
+      "id": 11,
+      "title": "Burger & Chips Platter",
+      "image": "/feature_0.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Chicken Republic Burger",
+      "location": "Lagos, Nigeria",
+      "rating": "5.0",
+      "rating_count": 5,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 500
+    },
+    {
+      "id": 12,
+      "title": "Veggie Noodles & Egg",
+      "image": "/feature_1.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "The Place",
+      "location": "Lagos, Nigeria",
+      "rating": "4.5",
+      "rating_count": 4,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
+    },
+    {
+      "id": 13,
+      "title": "Chicken Shawarma",
+      "image": "/feature_2.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Chicken Republic",
+      "location": "Lagos, Nigeria",
+      "rating": "5.0",
+      "rating_count": 5,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
+    },
+    {
+      "id": 14,
+      "title": "Burger & Chips Platter",
+      "image": "/feature_0.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Dominoes Burger",
+      "location": "Lagos, Nigeria",
+      "rating": "4.5",
+      "rating_count": 4,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
+    },
+    {
+      "id": 15,
+      "title": "Veggie Noodles & Egg",
+      "image": "/feature_1.png",
+      "tag": "/discount_tag.png",
+      "old_price": "12,500.00",
+      "new_price": "8,750.00",
+      "brand": "Dominoes",
+      "location": "Lagos, Nigeria",
+      "rating": "4.5",
+      "rating_count": 4,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789
     }
   ],
   "availableDiscounts": [
@@ -126,7 +238,8 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 2,
@@ -140,7 +253,8 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "Abuja, Nigeria"
     },
     {
       "id": 3,
@@ -154,7 +268,8 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "Ibadan, Nigeria"
     },
     {
       "id": 4,
@@ -168,7 +283,8 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "PortHarcourt, Nigeria"
     },
     {
       "id": 5,
@@ -182,7 +298,8 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "Ogun, Nigeria"
     },
     {
       "id": 6,
@@ -196,13 +313,284 @@
       "rating": 4.5,
       "reviewCount": 483,
       "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
-      "distance": 789
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
+    },
+    {
+      "id": 7,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal1.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Jollof Rice and Chicken",
+      "restaurantName": "The Place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ibadan, Nigeria"
+    },
+    {
+      "id": 8,
+      "discPercentage": 80,
+      "mealImageUrl": "/avai-disc-meal2.png",
+      "restaurantLogoUrl": "/discount-mr-biggs.png",
+      "mealName": "Fried Rice and Chicken",
+      "restaurantName": "Mr Bigg's",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Lagos, Nigeria"
+    },
+    {
+      "id": 9,
+      "discPercentage": 75,
+      "mealImageUrl": "/avai-disc-meal3.png",
+      "restaurantLogoUrl": "/discount-item7.png",
+      "mealName": "Special Rice and Chicken",
+      "restaurantName": "Item7",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Abuja, Nigeria"
+    },
+    {
+      "id": 10,
+      "discPercentage": 65,
+      "mealImageUrl": "/avai-disc-meal4.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Eba & Egusi",
+      "restaurantName": "The place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
+    },
+    {
+      "id": 11,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal5.png",
+      "restaurantLogoUrl": "/kfc.svg",
+      "mealName": "Jollof Rice and Beef",
+      "restaurantName": "KFC",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "PortHarcourt, Nigeria"
+    },
+    {
+      "id": 12,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal6.png",
+      "restaurantLogoUrl": "/cr.svg",
+      "mealName": "Jollof Rice, Chicken, and Plantain",
+      "restaurantName": "Chicken Republic",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ogun, Nigeria"
+    },
+    {
+      "id": 13,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal1.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Jollof Rice and Chicken",
+      "restaurantName": "The Place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ogun, Nigeria"
+    },
+    {
+      "id": 14,
+      "discPercentage": 80,
+      "mealImageUrl": "/avai-disc-meal2.png",
+      "restaurantLogoUrl": "/discount-mr-biggs.png",
+      "mealName": "Fried Rice and Chicken",
+      "restaurantName": "Mr Bigg's",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
+    },
+    {
+      "id": 15,
+      "discPercentage": 75,
+      "mealImageUrl": "/avai-disc-meal3.png",
+      "restaurantLogoUrl": "/discount-item7.png",
+      "mealName": "Special Rice and Chicken",
+      "restaurantName": "Item7",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "PortHarcourt, Nigeria"
+    },
+    {
+      "id": 16,
+      "discPercentage": 65,
+      "mealImageUrl": "/avai-disc-meal4.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Eba & Egusi",
+      "restaurantName": "The place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Lagos, Nigeria"
+    },
+    {
+      "id": 17,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal5.png",
+      "restaurantLogoUrl": "/kfc.svg",
+      "mealName": "Jollof Rice and Beef",
+      "restaurantName": "KFC",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ibadan, Nigeria"
+    },
+    {
+      "id": 18,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal6.png",
+      "restaurantLogoUrl": "/cr.svg",
+      "mealName": "Jollof Rice, Chicken, and Plantain",
+      "restaurantName": "Chicken Republic",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Abuja, Nigeria"
+    },
+    {
+      "id": 19,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal1.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Jollof Rice and Chicken",
+      "restaurantName": "The Place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
+    },
+    {
+      "id": 20,
+      "discPercentage": 80,
+      "mealImageUrl": "/avai-disc-meal2.png",
+      "restaurantLogoUrl": "/discount-mr-biggs.png",
+      "mealName": "Fried Rice and Chicken",
+      "restaurantName": "Mr Bigg's",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ogun, Nigeria"
+    },
+    {
+      "id": 21,
+      "discPercentage": 75,
+      "mealImageUrl": "/avai-disc-meal3.png",
+      "restaurantLogoUrl": "/discount-item7.png",
+      "mealName": "Special Rice and Chicken",
+      "restaurantName": "Item7",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
+    },
+    {
+      "id": 22,
+      "discPercentage": 65,
+      "mealImageUrl": "/avai-disc-meal4.png",
+      "restaurantLogoUrl": "/discount-theplace.png",
+      "mealName": "Eba & Egusi",
+      "restaurantName": "The place",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Abuja, Nigeria"
+    },
+    {
+      "id": 23,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal5.png",
+      "restaurantLogoUrl": "/kfc.svg",
+      "mealName": "Jollof Rice and Beef",
+      "restaurantName": "KFC",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "PortHarcourt, Nigeria"
+    },
+    {
+      "id": 24,
+      "discPercentage": 85,
+      "mealImageUrl": "/avai-disc-meal6.png",
+      "restaurantLogoUrl": "/cr.svg",
+      "mealName": "Jollof Rice, Chicken, and Plantain",
+      "restaurantName": "Chicken Republic",
+      "price": 1500,
+      "duration": "12:00-01:00 PM",
+      "rating": 4.5,
+      "reviewCount": 483,
+      "description": "The Place Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, r took a galley",
+      "distance": 789,
+      "location": "Lagos, Nigeria"
     }
   ],
   "couponMarketplace": [
     {
       "id": 1,
-      "restName": "item7",
+      "restName": "Mr Biggs",
       "restLogo": "/discount-mr-biggs.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -214,11 +602,12 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "Abuja, Nigeria"
     },
     {
       "id": 2,
-      "restName": "KFC",
+      "restName": "Item7",
       "restLogo": "/discount-item7.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -230,7 +619,8 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 3,
@@ -246,12 +636,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "Ibadan, Nigeria"
     },
     {
       "id": 4,
       "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restLogo": "/kfc-logo.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -262,12 +653,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "Ilorin, Nigeria"
     },
     {
       "id": 5,
-      "restName": "item7",
-      "restLogo": "/discount-mr-biggs.png",
+      "restName": "Chicken Republic",
+      "restLogo": "/cr.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -278,11 +670,12 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "Ogun, Nigeria"
     },
     {
       "id": 6,
-      "restName": "KFC",
+      "restName": "Item7",
       "restLogo": "/discount-item7.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -294,7 +687,8 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 789
+      "distance": 789,
+      "location": "PortHarcourt, Nigeria"
     },
     {
       "id": 7,
@@ -310,12 +704,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Abuja, Nigeria"
     },
     {
       "id": 8,
       "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restLogo": "/kfc-logo.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -326,12 +721,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 9,
-      "restName": "item7",
-      "restLogo": "/discount-mr-biggs.png",
+      "restName": "Chicken Republic",
+      "restLogo": "/cr.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -342,12 +738,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Ibadan, Nigeria"
     },
     {
       "id": 10,
-      "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restName": "Mr Biggs",
+      "restLogo": "/discount-mr-biggs.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -358,7 +755,8 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Ogun, Nigeria"
     },
     {
       "id": 11,
@@ -374,12 +772,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Ilorin, Nigeria"
     },
     {
       "id": 12,
       "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restLogo": "/kfc-logo.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -390,11 +789,12 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Abuja, Nigeria"
     },
     {
       "id": 13,
-      "restName": "item7",
+      "restName": "Mr Biggs",
       "restLogo": "/discount-mr-biggs.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -406,11 +806,12 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 14,
-      "restName": "KFC",
+      "restName": "Item7",
       "restLogo": "/discount-item7.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -422,12 +823,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Ibadan, Nigeria"
     },
     {
       "id": 15,
-      "restName": "The place",
-      "restLogo": "/discount-theplace.png",
+      "restName": "Chicken Republic",
+      "restLogo": "/cr.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -438,11 +840,12 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 16,
-      "restName": "KFC",
+      "restName": "Item7",
       "restLogo": "/discount-item7.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
@@ -454,12 +857,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Lagos, Nigeria"
     },
     {
       "id": 17,
       "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restLogo": "/kfc-logo.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -470,12 +874,13 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Abuja, Nigeria"
     },
     {
       "id": 18,
-      "restName": "KFC",
-      "restLogo": "/discount-item7.png",
+      "restName": "Mr Biggs",
+      "restLogo": "/discount-mr-biggs.png",
       "mealName": "Chicken & Fries",
       "originalPrice": 1500,
       "priceOff": 500,
@@ -486,7 +891,494 @@
       "duration": "12:00-01:00 pm",
       "rating": 4.5,
       "rating_count": 483,
-      "distance": 500
+      "distance": 500,
+      "location": "Lagos, Nigeria"
+    }
+  ],
+  "Restaurants": [
+    {
+      "id": 0,
+      "image": "/place.svg",
+      "images": [
+        "/place.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "fastfood",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 1,
+      "image": "/mc.svg",
+      "images": [
+        "/mc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "McDonald's - Allen",
+      "brand": "McDonald",
+      "location": "abuja , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "distance": "10 km",
+      "type": "fastfood",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 2,
+      "image": "/dominoes.svg",
+      "images": [
+        "/dominoes.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Domino's pizza",
+      "brand": "Dominos",
+      "distance": "10 km",
+      "location": "porthacourt , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "fastfood",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 3,
+      "image": "/biggs.svg",
+      "images": [
+        "/biggs.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "location": "ibadan , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "french",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 4,
+      "image": "/kfc.svg",
+      "images": [
+        "/kfc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "location": "illorin , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "french",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 5,
+      "image": "/cr.svg",
+      "images": [
+        "/cr.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "mexican",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 6,
+      "image": "/item.svg",
+      "images": [
+        "/item.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "distance": "10 km",
+      "type": "mexican",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 7,
+      "image": "/killimanjaro.svg",
+      "images": [
+        "/killimanjaro.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "location": "benin , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "type": "italian",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 8,
+      "image": "/tantalizer.svg",
+      "images": [
+        "/tantalizer.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "type": "italian",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 9,
+      "image": "/mc.svg",
+      "images": [
+        "/mc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "distance": "10 km",
+      "type": "local",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 10,
+      "image": "/biggs.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/biggs.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "McDonald's - Allen",
+      "distance": "10 km",
+      "brand": "McDonald",
+      "type": "local",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 11,
+      "image": "/place.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/place.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Domino's pizza",
+      "brand": "Dominos",
+      "distance": "10 km",
+      "type": "local",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 12,
+      "image": "/item.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/item.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "type": "chinese",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 13,
+      "image": "/cr.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/cr.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "type": "chinese",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 14,
+      "image": "/tantalizer.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/tantalizer.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "french",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 15,
+      "image": "/dominoes.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/dominoes.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "italian",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 16,
+      "image": "/kfc.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/kfc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "mexican",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 17,
+      "image": "/cr.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/cr.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "chinese",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 18,
+      "image": "/dominoes.svg",
+      "images": [
+        "/dominoes.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "fastfood",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 19,
+      "image": "/kfc.svg",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "images": [
+        "/kfc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "McDonald's - Allen",
+      "brand": "McDonald",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "local",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 20,
+      "image": "/mc.svg",
+      "images": [
+        "/mc.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Domino's pizza",
+      "brand": "Dominos",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "french",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 21,
+      "image": "/place.svg",
+      "images": [
+        "/place.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "mexican",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 22,
+      "image": "/cr.svg",
+      "images": [
+        "/cr.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "status": "open",
+      "type": "fastfood",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 23,
+      "image": "/biggs.svg",
+      "images": [
+        "/biggs.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "local",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 24,
+      "image": "/item.svg",
+      "images": [
+        "/item.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "The Place - Jerusalem Bus Stop",
+      "brand": "The Place",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "fastfood",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 25,
+      "image": "/killimanjaro.svg",
+      "images": [
+        "/killimanjaro.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Mr Bigg’s- Allen Bus Stop",
+      "brand": "Mr Biggs",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "chinese",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
+    },
+    {
+      "id": 26,
+      "image": "/item.svg",
+      "images": [
+        "/item.svg",
+        "/the-place-cover2.png",
+        "/the-place-cover3.png",
+        "/the-place-cover4.png"
+      ],
+      "title": "Chicken Republic - Ikotun",
+      "brand": "Chicken Republic",
+      "distance": "10 km",
+      "ratings": "4.5 (483)",
+      "location": "lagos , 45 Isaac John St, GRA 101233, Ikeja, Nigeria",
+      "status": "open",
+      "type": "mexican",
+      "about": "The Place is a trademark of Smackers Limited, a company set up in 2003 to explore opportunities in the Food sector in Nigeria. Over time, the company has expanded it operations to include Nightclubbing, Hospitality, Farming and currently operates out of Six locations: Isaac John GRA, Adeola Odeku Victoria Island, Admiralty Way, Lekki Phase one, Alausa Ikeja, Maryland Mall and Circle Mall in Lekki. The company's plan is to aggressively grow organically by establishing other outlets firstly focused on Lagos State (particularly the Island section of Lagos State) and other favourable locations such as Abuja."
     }
   ]
 }

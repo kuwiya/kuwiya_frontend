@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AffordableYummy,
@@ -12,8 +12,22 @@ import {
 import { AllYummy, AllYummy2 } from "../../constants/images";
 import LocationIcon from "../../components/ui/navbar/_components/LocationIcon";
 import { Navbar } from "../../components/ui";
+import { useLocation } from "react-router-dom";
 
 const MarketPlace = () => {
+  const [searchQueryValue, setSearchQueryValue] = useState("");
+  const [locationQueryValue, setLocationQueryValue] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get("q");
+    setSearchQueryValue(searchQuery);
+    const locationQuery = searchParams.get("l");
+    setLocationQueryValue(locationQuery);
+  }, [location.search]);
+
   return (
     <>
       <Navbar scrolling shadow />
@@ -27,15 +41,27 @@ const MarketPlace = () => {
               Market Place
             </h1>
           </div>
-          <div className="border-[1px] border-[#292D32] rounded-xl px-3 py-1 flex gap-1 items-center">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              window.location.href = `/marketplace?${
+                searchQueryValue ? `q=${searchQueryValue}&` : ""
+              }l=${locationQueryValue}`;
+            }}
+            action="/marketplace"
+            method="get"
+            className="border-[1px] border-[#292D32] rounded-xl px-3 py-1 flex gap-1 items-center"
+          >
             <LocationIcon />
             <input
+              value={locationQueryValue || ""}
+              onChange={(e) => setLocationQueryValue(e.target.value)}
               type="text"
               placeholder="location"
               className="outline-none"
             />
             <ArrowDown />
-          </div>
+          </form>
         </section>
 
         <AvailableDiscCard />

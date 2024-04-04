@@ -28,7 +28,7 @@ const DetailPage = () => {
     <>
       <Navbar scrolling />
       <main className="mt-24 font-work-sans text-[#000000] lg:px-32">
-        <section>
+        <section className="px-8">
           <div className="flex gap-2 items-center font-medium lg:text-[23px]">
             <Link to="/">
               <ArrowLeft fillColor={"#000000"} />
@@ -37,7 +37,7 @@ const DetailPage = () => {
           </div>
         </section>
 
-        <section className="py-7 space-y-5">
+        <section className="py-7 space-y-5 px-9">
           <div>
             <img
               src={deal.image}

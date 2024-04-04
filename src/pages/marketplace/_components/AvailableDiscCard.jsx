@@ -1,14 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Clock, Star } from "./index";
 import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
 import { useDiscountedDealsData } from "../../../hooks";
-import { Link, useHref } from "react-router-dom";
+import { Link, useHref, useLocation } from "react-router-dom";
 
 const AvailableDiscCard = () => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
-  const scrollRef = useRef(null);
+  const [query, setQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
 
+  const scrollRef = useRef(null);
+  const location = useLocation();
   const pathname = useHref();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const queryValue = searchParams.get("q");
+    const locationQueryValue = searchParams.get("l");
+    if (queryValue) {
+      setQuery(queryValue);
+    }
+    if (locationQueryValue) {
+      setLocationQuery(locationQueryValue);
+    }
+  }, [location.search]);
+
+  // console.log(query);
+  // console.log(locationQuery);
 
   const { isLoading, data, isError, error } = useDiscountedDealsData();
 
@@ -21,6 +39,30 @@ const AvailableDiscCard = () => {
   }
 
   const availableDiscounts = data?.data;
+
+  const filteredDiscounts = () => {
+    if (query) {
+      return availableDiscounts.filter((availableDisc) => {
+        return availableDisc.mealName
+          .toLowerCase()
+          .includes(query.toLowerCase());
+      });
+    } else {
+      return availableDiscounts;
+    }
+  };
+
+  const finalFilteredDiscounts = filteredDiscounts().filter((availableDisc) => {
+    if (locationQuery && locationQuery !== "Location") {
+      return availableDisc.location
+        .toLowerCase()
+        .includes(locationQuery.toLowerCase());
+    } else {
+      return availableDisc;
+    }
+  });
+
+  // console.log(finalFilteredDiscounts);
 
   // console.log(pathname);
 
@@ -74,13 +116,13 @@ const AvailableDiscCard = () => {
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className={`bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6 `}
+          className={`bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6`}
         >
-          {availableDiscounts.map((availableDisc) => (
+          {finalFilteredDiscounts.map((availableDisc) => (
             <Link
               to={`/marketplace/${availableDisc.id}`}
               key={availableDisc.id}
-              className="bg-white rounded-t-xl"
+              className="bg-white rounded-t-xl w-[310px]"
             >
               <div
                 style={{
@@ -141,6 +183,24 @@ const AvailableDiscCard = () => {
             <div
               onClick={handleRightArrow}
               className="bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]"
+            >
+              <ArrowIcon />
+            </div>
+          </div>
+        )}
+        {pathname !== "/marketplace" && (
+          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+            <div
+              onClick={handleLeftArrow}
+              className={`${
+                isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
+              } cursor-pointer rotate-180 w-fit px-4 py-3 rounded-[100%]`}
+            >
+              {isLeftArrowVisible && <ArrowIcon />}
+            </div>
+            <div
+              onClick={handleRightArrow}
+              className="bg-[#101010] cursor-pointer w-fit px-4 py-3 rounded-[100%]"
             >
               <ArrowIcon />
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { restaurantCoupon } from "../../../constants";
 import { Clock } from "../../marketplace/_components";
 
-const RestCouponCard = () => {
+const RestCouponCard = ({ restaurant }) => {
   return (
     <div className="flex flex-col gap-6">
       {restaurantCoupon.map((detail) => (
