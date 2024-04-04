@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Restaurants } from "../../constants";
 import Card from "./_components/card";
-import { Navbar } from "../../components/ui";
+import { Button, Navbar } from "../../components/ui";
 import { sort } from "../../constants/images";
 import Pagination from "./_components/pagination";
 import ArrowLeft from "./_components/arrow";
 import { Link } from "react-router-dom";
 
 const RestaurantsListing = () => {
+  const [filterValue, setFilterValue] = useState("");
   const [sortItems, setSortItems] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -30,27 +31,20 @@ const RestaurantsListing = () => {
   const handleSort = () => {
     setSortItems(!sortItems);
   };
+  const handleApply = () => {
+    setSortItems(false);
+    handleFilter(filterValue);
+  };
+  const handleReset = () => {
+    setSortItems(false);
+    setFilteredItems(currentRestaurant);
+  };
 
   const handleFilter = (e) => {
-    const items = currentRestaurant.filter((res) => e.target.value === res.type);
+    const items = currentRestaurant.filter((res) => e === res.type);
     setFilteredItems(items);
   };
-  // console.log(filteredItems);
-  const selectArrow = `
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='40' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 5px;
-    border: 1px solid #dfdfdf;
-    border-radius: 2px;
-    margin-right: 3rem;
-    padding: 1rem;
-    padding-right: 2rem;
-  }`;
+
   return (
     <>
       <Navbar scrolling bgBlack />
@@ -65,20 +59,80 @@ const RestaurantsListing = () => {
           </div>
           <div className="flex items-center space-x-3 relative">
             {sortItems && (
-              <select
-                className="pl-4 pr-10 outline-none py-3 mr-8 rounded-[12px] absolute left-[-10rem]"
-                onChange={handleFilter}
-              >
-                <option value="italian">Italian</option>
-                <option value="mexican">Mexican</option>
-                <option value="french">French</option>
-                <option value="chinese">Chinese</option>
-                <option value="fastfood">Fast Food</option>
-                <option value="local">Local</option>
-                <option value="null" selected disabled>
-                  By category
-                </option>
-              </select>
+              <div className="bg-primary space-y-4 border px-6 py-4 absolute top-[4rem] right-[-12px] animate-slide_up z-50">
+                <div className="flex justify-between items-center">
+                  <span>Sort</span>
+                  <span
+                    onClick={handleSort}
+                    className="hover:cursor-pointer text-xl"
+                  >
+                    x
+                  </span>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="fastfood"
+                    value="fastfood"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label htmlFor="italian" className="text-[18px] font-normal">
+                    Fast Food
+                  </label>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="local"
+                    value="local"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label htmlFor="" className="text-[18px] font-normal">
+                    Local Restaurants
+                  </label>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="chinese"
+                    value="chinese"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label htmlFor="" className="text-[18px] font-normal">
+                    Chinese Restaurants
+                  </label>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="italian"
+                    value="italian"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label htmlFor="" className="text-[18px] font-normal">
+                    Italian Restaurants
+                  </label>
+                </div>
+                <div className="flex justify-center items-center gap-4">
+                  <Button
+                    children="Reset"
+                    padding="5px 15px"
+                    backgroundColor="#000"
+                    className="uppercase"
+                    onClick={handleReset}
+                  />
+                  <Button
+                    children="Apply"
+                    padding="5px 15px"
+                    className="uppercase"
+                    onClick={handleApply}
+                  />
+                </div>
+              </div>
             )}
             <img
               src={sort}
@@ -105,7 +159,6 @@ const RestaurantsListing = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
-      <style>{selectArrow}</style>
     </>
   );
 };
