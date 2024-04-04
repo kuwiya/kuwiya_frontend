@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Star, Clock, Pagination } from "./index";
-import { Link, useLocation } from "react-router-dom";
-import { useCouponsMarketplaceData } from "../../../hooks";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCouponsMarketplaceData } from "../../hooks";
+import { Clock, Pagination, Star } from "../../pages/marketplace/_components";
 
-const CouponCard = () => {
+const CouponsFiltering = ({ restName }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
 
-  const location = useLocation();
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const queryValue = searchParams.get("q");
-    const locationQueryValue = searchParams.get("l");
-    if (queryValue) {
-      setQuery(queryValue);
-    }
-    if (locationQueryValue) {
-      setLocationQuery(locationQueryValue);
-    }
-  }, [location.search]);
+  const couponsPerPage = 4;
 
   const { isLoading, data, isError, error } = useCouponsMarketplaceData();
 
@@ -32,38 +18,17 @@ const CouponCard = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  const coupons = data?.data;
+  const coupons = data?.data.filter((detail) => detail.restName === restName);
 
-  const filteredCoupons = query
-    ? coupons.filter((availableCoupon) =>
-        availableCoupon.mealName.toLowerCase().includes(query.toLowerCase())
-      )
-    : coupons;
+  const nPages = Math.ceil(coupons.length / couponsPerPage);
 
-  const finalFilteredCoupons = filteredCoupons.filter((availableCoupon) => {
-    if (locationQuery && locationQuery !== "Location") {
-      return availableCoupon.location
-        .toLowerCase()
-        .includes(locationQuery.toLowerCase());
-    } else {
-      return availableCoupon;
-    }
-  });
-
-  const couponsPerPage = finalFilteredCoupons.length > 6 ? 6 : 4; // number of coupons per page
   // pagination
   const lastCouponIndex = currentPage * couponsPerPage;
   const firstCouponIndex = lastCouponIndex - couponsPerPage;
-  const currentCoupons = finalFilteredCoupons.slice(
-    firstCouponIndex,
-    lastCouponIndex
-  );
-
-  const nPages = Math.ceil(finalFilteredCoupons.length / couponsPerPage);
+  const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
 
   return (
     <section className="px-10 my-16 mb-20 space-y-5">
-      <h1 className="text-2xl font-semibold text-[#000000]">Coupon</h1>
       <div className="grid lg:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
           <Link
@@ -144,4 +109,4 @@ const CouponCard = () => {
   );
 };
 
-export default CouponCard;
+export default CouponsFiltering;

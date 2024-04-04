@@ -1,19 +1,10 @@
 import React, { useState } from "react";
-import theplacecover1 from "../../../assets/images/the-place-cover1.png";
-import theplacecover2 from "../../../assets/images/the-place-cover2.png";
-import theplacecover3 from "../../../assets/images/the-place-cover3.png";
-import theplacecover4 from "../../../assets/images/the-place-cover4.png";
 import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
 
-const bgImages = [
-  theplacecover1,
-  theplacecover2,
-  theplacecover3,
-  theplacecover4,
-];
-
-const RestaurantHero = () => {
+const RestaurantHero = ({ restaurant }) => {
   const [bgImageIndex, setBgImageIndex] = useState(0);
+
+  const bgImages = restaurant.images.map((image) => image);
 
   // Handle next and previous button clicks to change background image index
   const handleNext = () => {

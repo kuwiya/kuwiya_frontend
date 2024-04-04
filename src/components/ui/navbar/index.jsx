@@ -12,6 +12,7 @@ import Button from "../button";
 import SearchIcon from "./_components/SearchIcon";
 import LocationIcon from "./_components/LocationIcon";
 import { ArrowDown } from "../../../pages/marketplace/_components";
+import { useHref } from "react-router-dom";
 
 const cities = [
   "Lagos",
@@ -21,7 +22,7 @@ const cities = [
   "Ogun",
   "Ilorin",
   "Osun",
-  "Port Harcourt",
+  "PortHarcourt",
   "Uyo",
   "Benin",
   "Anambra",
@@ -32,6 +33,9 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
   const [isDropDownOpen, setIsDropDownOpen] = useState(false); // initialize the dropdown for choosing location
   const [location, setLocation] = useState("Location");
+  const [search, setSearch] = useState(""); // initialize search state to keep track of search input
+
+  const pathName = useHref();
 
   return (
     <>
@@ -85,17 +89,35 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
                     </div>
                   )}
                 </div>
-                <div className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    // redirect to marketplace page with search query in the url using window.location.href
+                    window.location.href = `/marketplace?q=${search}&l=${location}`;
+                    // setSearch(""); // clear search input after submitting
+                  }}
+                  action="/marketplace"
+                  method="GET"
+                  autoComplete="off"
+                  className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
+                >
                   <input
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    id="search"
                     type="text"
                     placeholder="Enter your search..."
                     name="resturant_name"
                     className="outline-none w-full"
                   />
-                  <span className="bg-[#131313] py-2 px-4 rounded-[10px]">
+                  <button
+                    type="submit"
+                    aria-label="search"
+                    className="bg-[#131313] py-2 px-4 rounded-[10px]"
+                  >
                     <SearchIcon />
-                  </span>
-                </div>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -104,6 +126,11 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
         <Link
           to="/marketplace"
           className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10"
+          onClick={() => {
+            pathName.includes("/marketplace")
+              ? (window.location.href = "/marketplace")
+              : "";
+          }}
         >
           {!bgBlack && (
             <Button

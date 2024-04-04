@@ -32,7 +32,9 @@ const RestaurantsListing = () => {
   };
 
   const handleFilter = (e) => {
-    const items = currentRestaurant.filter((res) => e.target.value === res.type);
+    const items = currentRestaurant.filter(
+      (res) => e.target.value === res.type
+    );
     setFilteredItems(items);
   };
   // console.log(filteredItems);

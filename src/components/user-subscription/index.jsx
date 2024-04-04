@@ -4,8 +4,8 @@ import { CloseIcon } from "../../assets/icons";
 
 const UserSubscriptionPopUp = ({ setIsOpen }) => {
   return (
-    <main className="bg-[#FFF9F0] px-10 py-24">
-      <section className="flex flex-col gap-10 items-center  text-center bg-[#FDFCFB] shadow-md relative rounded-[20px] text-[#000000] font-work-sans">
+    <main className="bg-transparent px-10 py-24">
+      <section className="flex flex-col gap-10 items-center bg-[#f9f9f9] z-[999] text-center shadow-md relative rounded-[20px] text-[#000000] font-work-sans">
         <div className="mt-10">
           <h1 className="text-[40px] font-semibold uppercase">subscribe</h1>
           <p className="text-2xl font-normal lg:px-36">
@@ -22,13 +22,13 @@ const UserSubscriptionPopUp = ({ setIsOpen }) => {
             />
           </div>
           <Button
+            type="submit"
             children="subscribe"
             borderRadius={"5px"}
             padding={"7px 35px"}
             className={
               "lg:text-base md:text-sm uppercase font-work-sans font-medium hover:scale-90 transition-all delay-200 ease-linear"
             }
-            onClick={() => window.open("/subscription-plan", "_blank")}
           />
         </form>
         <div

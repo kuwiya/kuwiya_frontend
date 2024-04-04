@@ -4,8 +4,11 @@ import { Navbar } from "../../components/ui";
 import { ArrowLeft, Clock, CouponCard, Star } from "../marketplace/_components";
 import { useCouponMarketplaceData } from "../../hooks";
 import { CouponText, GpsIcon, LikeIcon } from "../../assets/icons";
+import { CouponsFiltering } from "../../components";
 
 const CouponDetailsPage = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
   const [fillColor, setFillColor] = useState("#292D32");
 
   const { id } = useParams();
@@ -22,13 +25,13 @@ const CouponDetailsPage = () => {
 
   const coupon = data?.data;
 
-  // console.log(deal);
+  console.log(coupon.restName);
 
   return (
     <>
       <Navbar scrolling />
       <main className="mt-24 font-work-sans text-[#000000] lg:px-32">
-        <section>
+        <section className="px-8">
           <div className="flex gap-2 items-center font-medium lg:text-[23px]">
             <Link to="/marketplace">
               <ArrowLeft fillColor={"#000000"} />
@@ -37,7 +40,7 @@ const CouponDetailsPage = () => {
           </div>
         </section>
 
-        <section className="py-7 space-y-5">
+        <section className="py-7 space-y-5 px-9">
           <div className="flex relative">
             <div className="w-12 h-12 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
             <div className="flex bg-gradient-to-r from-[#000000] from-[0%] to-[#666666] to-[100%] rounded-lg p-2">
@@ -51,9 +54,25 @@ const CouponDetailsPage = () => {
                 <p className="lg:text-[28px] font-normal text-[#FFFFFFDE]">
                   Copy Code Below to claim Coupons
                 </p>
-                <div className="w-fit border-[1px] flex items-center border-white mt-4 rounded-[10px] px-16 py-2 border-dashed text-white font-semibold text-[40px]">
+                {isCopied && (
+                  <p className="text-green-600 font-medium text-xl">
+                    Coupon Code Copied!
+                  </p>
+                )}
+                <div
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `${coupon.couponNum}-${coupon.couponCode}`
+                    );
+                    setIsCopied(true);
+                    setTimeout(() => {
+                      setIsCopied(false);
+                    }, 4000);
+                  }}
+                  className="w-fit border-[1px] group flex items-center cursor-pointer hover:text-darkyellow hover:border-darkyellow border-white mt-4 rounded-[10px] px-16 py-2 border-dashed text-white font-semibold text-[40px]"
+                >
                   <h1 className="">{coupon.couponNum}</h1>
-                  <span className="bg-[#FFFFFF] h-0.5 w-2"></span>
+                  <span className="bg-[#FFFFFF] h-0.5 w-2 group-hover:bg-darkyellow"></span>
                   <h1 className="">{coupon.couponCode}</h1>
                 </div>
                 <div className="flex gap-3 items-center mt-5 lg:text-base font-normal text-[#FFFFFFBF]">
@@ -148,7 +167,8 @@ const CouponDetailsPage = () => {
 
         <section className="space-y-3 mt-7 mb-24">
           <p className="font-normal lg:text-[19px] pl-9">Similar Coupon</p>
-          <CouponCard />
+          {/* <CouponCard /> */}
+          <CouponsFiltering restName={coupon.restName} />
         </section>
       </main>
     </>

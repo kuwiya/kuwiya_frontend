@@ -1,12 +1,41 @@
 import React from "react";
-import { restaurantFeatured } from "../../../constants";
+// import { restaurantFeatured } from "../../../constants";
 import StarIcon from "../../homepage/_components/featured_section/_components/featured_card/start_icon";
+import { useFeaturedDealsData } from "../../../hooks";
+import { Link } from "react-router-dom";
 
-const RestFeatCard = () => {
+const RestFeatCard = ({ restaurant }) => {
+  const { isError, error, isLoading, data } = useFeaturedDealsData();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{error.message}</p>;
+  }
+
+  const deals = data?.data;
+
+  const filteredDeals = () => {
+    if (restaurant) {
+      return deals.filter((deal) => {
+        return deal.brand
+          .toLowerCase()
+          .includes(restaurant.brand.toLowerCase());
+      });
+    } else {
+      return deals;
+    }
+  };
+
+  console.log(filteredDeals());
+
   return (
     <div className="flex items-center gap-8">
-      {restaurantFeatured.map((deal) => (
-        <div
+      {filteredDeals().map((deal) => (
+        <Link
+          to={`/featured/${deal.id}`}
           className="relative w-[45%] flex flex-col gap-2 font-work-sans shadow-lg rounded-[10px] p-2 hover:scale-105 hover:cursor-pointer transition-all"
           key={deal.id}
         >
@@ -51,7 +80,7 @@ const RestFeatCard = () => {
               % OFF
             </span>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
