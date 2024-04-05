@@ -5,7 +5,7 @@ import { FooterLogo } from "../../../assets/icons";
 const Footer = () => {
   return (
     <footer className="flex flex-col p-10 md:justify-center bg-black">
-      <div className="md:flex flex-wrap justify-evenly lg:space-x-28">
+      <div className="md:flex flex-wrap justify-between lg:px-16">
         <Link to="/">
           <FooterLogo />
         </Link>
@@ -39,10 +39,23 @@ const Footer = () => {
         </div>
         <div className="flex-col space-y-6 flex text-primary">
           <div className="font-medium font-work-sans text-2xl uppercase">
+            restaurants
+          </div>
+          <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
+            <Link
+              to="/add-restaurant"
+              className="font-work-sans text-xl  font-light"
+            >
+              Add Restaurant
+            </Link>
+          </div>
+        </div>
+        <div className="flex-col space-y-6 flex text-primary">
+          <div className="font-medium font-work-sans text-2xl uppercase">
             About us
           </div>
           <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/about-us" className="font-work-sans text-xl  font-light">
               About Us
             </Link>
             <Link to="/" className="font-work-sans text-xl  font-light">
