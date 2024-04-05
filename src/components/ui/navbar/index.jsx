@@ -6,7 +6,7 @@ import {
   IoPersonOutline,
   IoHelpCircleOutline,
 } from "react-icons/io5";
-import images from "../../../constants/images";
+import images, { gps } from "../../../constants/images";
 import { Link } from "react-router-dom";
 import Button from "../button";
 import SearchIcon from "./_components/SearchIcon";
@@ -22,11 +22,12 @@ const cities = [
   "Ogun",
   "Ilorin",
   "Osun",
-  "PortHarcourt",
+  "Port Harcourt",
   "Uyo",
   "Benin",
   "Anambra",
   "Cross River",
+  "Current"
 ];
 
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
@@ -73,7 +74,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
                     <ArrowDown />
                   </div>
                   {isDropDownOpen && (
-                    <div className="absolute top-[100%] left-0 z-[999] flex flex-col gap-2 font-work-sans text-darkyellow bg-[#f5f5f5] rounded-b-lg font-medium text-center px-[34px] py-3">
+                    <div className="absolute top-[100%] left-[-6px] z-[999] flex flex-col gap-2 font-work-sans text-[#535252] bg-[#f5f5f5] rounded-b-lg font-medium text-center py-3">
                       {cities.map((city, index) => (
                         <span
                           key={index}
@@ -81,9 +82,11 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
                             setLocation(city);
                             setIsDropDownOpen(false);
                           }}
-                          className="hover:text-black cursor-pointer"
+                          className="hover:text-black cursor-pointer flex items-center px-[34px] last-of-type:pl-[10px] gap-2"
                         >
-                          {city}
+                          {city === 'Current' && <img src={gps} alt="" />}
+                          <span className={`${city === 'Current' && 'order-last'}`}>{city}</span>
+                          
                         </span>
                       ))}
                     </div>
