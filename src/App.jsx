@@ -11,6 +11,7 @@ import LocateRestaurants from "./pages/homepage/_components/cities_countries/loc
 import DiscountDetailsPage from "./pages/details-discounts-page";
 import CouponDetailsPage from "./pages/details-coupon-page";
 import AboutUs from "./pages/about-us";
+import ClaimCoupon from "./pages/claim-coupon";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/marketplace/:id" element={<DiscountDetailsPage />} />
         <Route path="/coupon/:id" element={<CouponDetailsPage />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/claim-coupon/:id" element={<ClaimCoupon />} />
       </Routes>
       <Footer />
     </>

@@ -25,7 +25,7 @@ const CouponDetailsPage = () => {
 
   const coupon = data?.data;
 
-  console.log(coupon.restName);
+  // console.log(coupon.restName);
 
   return (
     <>
