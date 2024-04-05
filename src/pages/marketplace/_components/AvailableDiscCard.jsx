@@ -25,9 +25,6 @@ const AvailableDiscCard = () => {
     }
   }, [location.search]);
 
-  // console.log(query);
-  // console.log(locationQuery);
-
   const { isLoading, data, isError, error } = useDiscountedDealsData();
 
   if (isLoading) {
@@ -61,12 +58,6 @@ const AvailableDiscCard = () => {
       return availableDisc;
     }
   });
-
-  // console.log(finalFilteredDiscounts);
-
-  // console.log(pathname);
-
-  // console.log(availableDiscounts);
 
   //To check for left scroll and to handle the arrow visibility change
   const handleWheel = (e) => {
@@ -103,6 +94,8 @@ const AvailableDiscCard = () => {
     }
   };
 
+  // console.log(scrollCont.scrollWidth);
+
   return (
     <section
       className={`px-10 ${pathname !== "/marketplace" ? "px-0" : ""} space-y-4`}
@@ -112,11 +105,12 @@ const AvailableDiscCard = () => {
           Available Discount
         </h1>
       )}
-      <div className="relative">
+      <div className={`relative `}>
         <div
           ref={scrollRef}
           onWheel={handleWheel}
           className={`bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6`}
+          id="scroll"
         >
           {finalFilteredDiscounts.map((availableDisc) => (
             <Link
@@ -182,7 +176,7 @@ const AvailableDiscCard = () => {
             </div>
             <div
               onClick={handleRightArrow}
-              className="bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]"
+              className={`bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]`}
             >
               <ArrowIcon />
             </div>
