@@ -57,7 +57,7 @@ const CouponCard = ({ detail, claim }) => {
             alt=""
           />
           <span className={`absolute top-[10px] left-0 ${claim ? 'bg-[#000000]' : 'bg-[#3187FA]'} text-white w-fit p-3 pr-8 rounded-r-2xl mt-2 uppercase`}>
-            #{detail.priceOff}{claim && '%'} off
+            {!claim && '₦'} {detail.priceOff}{claim && '%'} off
           </span>
         </div>
       </div>

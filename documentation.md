@@ -88,6 +88,10 @@ Kuwiya offers personalized **restaurant recommendations** based on your preferen
 ### Claim Coupons Page Implementation
 Each Coupon rendered on the home page has been linked to a personalized coupon details page, that can be accesssed by clicking the **claim it** button , on this page the clicked coupon details as well as similar coupons from the offering restaurant can be viewed.
 
+To run in development:
+1. Start the development server: npm run dev
+2. Start local server: npm run serve-json
+
 **Link to view in development** - <http://localhost:5173/claim-coupon/'couponid'>
 
 ## Contributing
