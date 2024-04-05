@@ -11,6 +11,7 @@ Welcome to the documentation for the Kuwiya web application. This documentation 
    - Explore Restaurant Details
    - Leave Reviews and Ratings
    - Personalized Recommendations
+   - Claim Coupons Page Implementation
 3. Contributing
 4. Contact
 
@@ -82,6 +83,11 @@ Kuwiya offers personalized **restaurant recommendations** based on your preferen
 
 1. Once you have created an account and logged in, the application will provide personalized recommendations on the homepage or in a dedicated recommendations section.
 2. Explore the recommended restaurants based on your unique preferences and dining history.
+
+
+### Claim Coupons Page Implementation
+Each Coupon rendered on the home page has been linked to a personalized coupon details page, that can be accesssed by clicking the **claim it** button , on this page the clicked coupon details as well as similar coupons from the offering restaurant can be viewed.
+**Link to view in development** - <http://localhost:5173/claim-coupon/'coupon id'>
 
 ## Contributing
 
