@@ -84,13 +84,18 @@ Kuwiya offers personalized **restaurant recommendations** based on your preferen
 1. Once you have created an account and logged in, the application will provide personalized recommendations on the homepage or in a dedicated recommendations section.
 2. Explore the recommended restaurants based on your unique preferences and dining history.
 
-
 ### Claim Coupons Page Implementation
+
 Each Coupon rendered on the home page has been linked to a personalized coupon details page, that can be accesssed by clicking the **claim it** button , on this page the clicked coupon details as well as similar coupons from the offering restaurant can be viewed.
 
 To run in development:
+
 1. Start the development server: npm run dev
 2. Start local server: npm run serve-json
+
+### Add Restaurant Page Implementation
+
+The add restaurant page implementation makes the restaurant owner register his/her restaurant and the data would be stored in Kuwiya's database. The pages gives the restaurant owner the priviledge to select the subscription plan after inputting the details. The submit button sends the restaurant details to the database. The link to the add restaurant page can be found among the footer links of the webpages.
 
 **Link to view in development** - <http://localhost:5173/claim-coupon/'couponid'>
 

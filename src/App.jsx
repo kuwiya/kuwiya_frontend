@@ -12,6 +12,7 @@ import DiscountDetailsPage from "./pages/details-discounts-page";
 import CouponDetailsPage from "./pages/details-coupon-page";
 import AboutUs from "./pages/about-us";
 import ClaimCoupon from "./pages/claim-coupon";
+import AddRestaurantPage from "./pages/add-restaurant";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/coupon/:id" element={<CouponDetailsPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/claim-coupon/:id" element={<ClaimCoupon />} />
+        <Route path="/add-restaurant" element={<AddRestaurantPage />} />
       </Routes>
       <Footer />
     </>
