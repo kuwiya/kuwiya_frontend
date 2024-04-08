@@ -5,7 +5,7 @@ import { CloseIcon } from "../../assets/icons";
 const UserSubscriptionPopUp = ({ setIsOpen }) => {
   return (
     <main className="bg-transparent px-10 py-24">
-      <section className="flex flex-col gap-10 items-center bg-[#f9f9f9] z-[999] text-center shadow-md relative rounded-[20px] text-[#000000] font-work-sans">
+      <section className="flex flex-col gap-10 items-center bg-[#f5f5f5] z-[999] text-center shadow-md relative rounded-[20px] text-[#000000] font-work-sans animate-slide_up delay-200 duration-1000 ease-in-out">
         <div className="mt-10">
           <h1 className="text-[40px] font-semibold uppercase">subscribe</h1>
           <p className="text-2xl font-normal lg:px-36">

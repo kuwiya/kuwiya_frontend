@@ -3,7 +3,7 @@ import { cities, countries } from "../../../../constants";
 
 const CitiesAndCountries = () => {
   return (
-    <main className="md:py-24 md:px-40 py-16 px-10 space-y-20">
+    <main className="md:py-24 lg:px-[136px] md:px-16 py-16 px-6 space-y-20">
       <div className="space-y-10">
         <h1 className="uppercase text-2xl md:text-[32px] font-[600] text-[#000000]">
           cities with kuwiya

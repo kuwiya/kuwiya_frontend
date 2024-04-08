@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const CouponSection = () => {
   return (
-    <div className="py-8 text-center flex flex-col lg:px-32">
-      <div className="flex flex-col pb-10 md:pb-20 px-8 md:space-y-2 space-y-1">
+    <div className="py-8 text-center flex flex-col lg:px-[136px] md:px-16 px-6">
+      <div className="flex flex-col pb-10 md:pb-20 md:space-y-2 space-y-1">
         <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
           coupon hot deals
         </span>
