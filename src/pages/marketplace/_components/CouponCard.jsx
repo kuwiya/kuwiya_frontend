@@ -62,8 +62,10 @@ const CouponCard = () => {
   const nPages = Math.ceil(finalFilteredCoupons.length / couponsPerPage);
 
   return (
-    <section className="px-10 my-16 mb-20 space-y-5">
-      <h1 className="text-2xl font-semibold text-[#000000]">Coupon</h1>
+    <section className="px-10 my-16 mb-20 space-y-5 font-work-sans">
+      <h1 className="lg:text-2xl md:text-xl text-base font-semibold text-[#000000] uppercase">
+        Coupon
+      </h1>
       <div className="grid lg:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
           <Link

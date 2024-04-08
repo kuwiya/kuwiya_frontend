@@ -23,7 +23,7 @@ const AddRestaurantPage = () => {
         <section className="text-black">
           <form
             action=""
-            className="flex flex-col gap-9 lg:text-lg text-base mb-52"
+            className="flex flex-col gap-9 lg:text-lg text-base mb-20"
           >
             <div className="flex flex-col gap-5">
               <h2 className="uppercase lg:text-2xl font-semibold text-xl text-[#00000099]">

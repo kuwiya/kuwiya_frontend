@@ -38,8 +38,8 @@ const AllRestaurants = () => {
                 <img src={heart} alt="like" />
               </div>
               <div className="flex items-start flex-col md:flex-row md:items-center justify-between pt-4 font-work-sans">
-                  <div className="xl:text-base md:text-sm text-black opacity-80">
-                    {restaurant.status}
+                <div className="xl:text-base md:text-sm text-black opacity-80">
+                  {restaurant.status}
                 </div>
                 <div className="text-base text-black opacity-80 flex items-center gap-2">
                   <img src={star} alt="ratings" />

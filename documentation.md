@@ -95,7 +95,7 @@ To run in development:
 
 ### Add Restaurant Page Implementation
 
-The add restaurant page implementation makes the restaurant owner register his/her restaurant and the data would be stored in Kuwiya's database. The pages gives the restaurant owner the priviledge to select the subscription plan after inputting the details. The submit button sends the restaurant details to the database. The link to the add restaurant page can be found among the footer links of the webpages.
+The add restaurant page implementation makes the restaurant owner register his/her restaurant and the data would be stored in Kuwiya's database. The page gives the restaurant owner the priviledge to select the subscription plan after inputting the details. The submit button sends the restaurant details to the database. The link to the add restaurant page can be found among the footer links of the webpages.
 
 **Link to view in development** - <http://localhost:5173/claim-coupon/'couponid'>
 

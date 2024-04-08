@@ -91,7 +91,7 @@ const FeaturedCard = () => {
         {deals.map((deal) => (
           <Link
             to={`/featured/${deal.id}`}
-            className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
+            className="relative my-6 md:my-0 min-w-[400px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img
@@ -103,11 +103,11 @@ const FeaturedCard = () => {
             <span className="font-medium text-base md:text-2xl">
               {deal.title}
             </span>
-            <div className="md:space-x-4 space-x-2">
+            <div className="md:space-x-4 space-x-2 relative">
               <span className="text-sm md:text-base font-medium opacity-45">
                 ₦ {deal.old_price}
               </span>{" "}
-              <div className="absolute top-[26.7rem] left-0">
+              <div className="absolute top-3 left-0">
                 <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{" "}
                 <p className="-rotate-[19.98deg] border-b-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>
               </div>

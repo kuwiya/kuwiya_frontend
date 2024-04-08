@@ -7,10 +7,10 @@ const FeaturedSection = () => {
   return (
     <div className="py-24 text-center flex flex-col">
       <div className="flex flex-col pb-10 md:pb-20 px-8 md:space-y-2 space-y-1">
-        <span className="uppercase font-bold text-base md:text-[28px]">
+        <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
           featured deals
         </span>
-        <span className="text-sm md:text-base font-normal font-work-sans">
+        <span className="text-sm md:text-base lg:text-lg font-normal font-work-sans">
           Discover some of our top picks for great dining deals in your area!
         </span>
       </div>

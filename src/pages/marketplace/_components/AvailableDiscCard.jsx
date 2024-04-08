@@ -101,7 +101,7 @@ const AvailableDiscCard = () => {
       className={`px-10 ${pathname !== "/marketplace" ? "px-0" : ""} space-y-4`}
     >
       {pathname === "/marketplace" && (
-        <h1 className="text-2xl font-semibold text-[#000000] py-3">
+        <h1 className="lg:text-2xl md:text-xl text-base font-semibold text-[#000000] py-3 uppercase">
           Available Discount
         </h1>
       )}
@@ -116,13 +116,13 @@ const AvailableDiscCard = () => {
             <Link
               to={`/marketplace/${availableDisc.id}`}
               key={availableDisc.id}
-              className="bg-white rounded-t-xl w-[310px]"
+              className="bg-white rounded-t-xl"
             >
               <div
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
                 }}
-                className="relative bg-no-repeat bg-cover h-[256px] w-[310px] rounded-t-xl"
+                className="relative bg-no-repeat bg-cover h-[256px] md:w-[300px] lg:w-[350px] rounded-t-xl"
               >
                 <p className="flex flex-col gap-1 justify-between text-white">
                   <span className="bg-[#3187FA] w-fit p-3 pr-10 rounded-r-2xl mt-8">

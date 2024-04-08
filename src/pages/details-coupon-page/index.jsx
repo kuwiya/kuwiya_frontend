@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Navbar } from "../../components/ui";
-import { ArrowLeft, Clock, CouponCard, Star } from "../marketplace/_components";
+import { ArrowLeft, Clock, Star } from "../marketplace/_components";
 import { useCouponMarketplaceData } from "../../hooks";
 import { CouponText, GpsIcon, LikeIcon } from "../../assets/icons";
 import { CouponsFiltering } from "../../components";
@@ -167,7 +167,6 @@ const CouponDetailsPage = () => {
 
         <section className="space-y-3 mt-7 mb-24">
           <p className="font-normal lg:text-[19px] pl-9">Similar Coupon</p>
-          {/* <CouponCard /> */}
           <CouponsFiltering restName={coupon.restName} />
         </section>
       </main>
