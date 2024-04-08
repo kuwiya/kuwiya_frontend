@@ -9,149 +9,129 @@ const AddRestaurantPage = () => {
       <Navbar scrolling />
 
       <main className="font-work-sans bg-[#FDFCFB] space-y-20 mt-40 lg:px-32 xl:px-40 md:px-20 px-6">
-        <section className="text-black text-center space-y-4 lg:px-10 md:px-6 px-4">
-          <h1 className="uppercase lg:text-[40pxpx] md:text-[30px] text-2xl font-bold">
+        <div className="text-black text-center space-y-4 lg:px-10 md:px-6 px-4 w-3/4 mx-auto">
+          <h1 className="uppercase lg:text-3xl md:text-[30px] text-2xl font-bold">
             add restaurant
           </h1>
-          <p className="font-normal lg:text-2xl text-lg">
+          <p className="font-normal lg:text-xl text-lg">
             Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas
             condimentum egestas nisi nibh dignissim. Placerat id sit mattis
             donec pharetra.
           </p>
-        </section>
+        </div>
 
         <section className="text-black">
           <form
             action=""
             className="flex flex-col gap-9 lg:text-lg text-base mb-52"
           >
-            <div className="flex flex-col gap-5">
-              <h2 className="uppercase lg:text-2xl font-semibold text-xl text-[#00000099]">
-                restaurant details
-              </h2>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="restaurant-name"
-                  className="font-semibold lg:text-2xl text-xl"
-                >
-                  Restaurant Name
-                </label>
-                <input
-                  type="text"
-                  className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
-                  name="restaurant-name"
-                  id="restaurant-name"
-                />
-              </div>
-              <div className="flex flex-col gap-2 mt-1">
-                <label
-                  htmlFor="address"
-                  className="font-semibold lg:text-2xl text-xl"
-                >
-                  Address
-                </label>
-                <input
-                  type="text"
-                  className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
-                  name="address"
-                  id="address"
-                />
-              </div>
-
-              <div className="flex gap-5 mt-1">
-                <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-5 bg-[#E9E9E9] mx-auto w-5/6 p-6">
+              <div className="w-[70%] mx-auto flex flex-col gap-6 py-10">
+                <h2 className="uppercase lg:text-2xl font-semibold text-xl text-[#00000099]">
+                  restaurant details
+                </h2>
+                <div className="flex items-center gap-2 w-full justify-between">
+                  <label
+                    htmlFor="restaurant-name"
+                    className="font-semibold lg:text-xl text-xl"
+                  >
+                    Restaurant Name
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
+                    name="restaurant-name"
+                    id="restaurant-name"
+                  />
+                </div>
+                <div className="flex items-center gap-2 w-full justify-between">
+                  <label
+                    htmlFor="address"
+                    className="font-semibold lg:text-xl text-xl"
+                  >
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
+                    name="address"
+                    id="address"
+                  />
+                </div>
+                <div className="flex items-center gap-2 w-full justify-between">
                   <label
                     htmlFor="email"
-                    className="font-semibold lg:text-2xl text-xl"
+                    className="font-semibold lg:text-xl text-xl"
                   >
-                    Mail
+                    Email
                   </label>
                   <input
                     type="email"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
                     name="email"
                     id="email"
                   />
                 </div>
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex items-center gap-2 w-full justify-between">
                   <label
                     htmlFor="phone-number"
-                    className="font-semibold lg:text-2xl text-xl"
+                    className="font-semibold lg:text-xl text-xl"
                   >
                     Phone Number
                   </label>
                   <input
-                    type="tel"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
+                    type="text"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
                     name="phone-number"
                     id="phone-number"
                   />
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-col gap-5 mt-5">
-              <h2 className="uppercase lg:text-2xl font-semibold text-xl text-[#00000099]">
-                restaurant admin details
-              </h2>
-              <div className="flex gap-5">
-                <div className="flex flex-col gap-2 w-full">
+              <div className="w-[70%] mx-auto flex flex-col gap-6 py-6">
+                <h2 className="uppercase lg:text-2xl font-semibold text-xl text-[#00000099]">
+                  restaurant admin details
+                </h2>
+                <div className="flex items-center gap-2 w-full justify-between">
                   <label
-                    htmlFor="first-name"
-                    className="font-semibold lg:text-2xl text-xl"
+                    htmlFor="full-name"
+                    className="font-semibold lg:text-xl text-xl"
                   >
-                    First Name
+                    Full Name
                   </label>
                   <input
                     type="text"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
-                    name="first-name"
-                    id="first-name"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
+                    name="full-name"
+                    id="full-name"
                   />
                 </div>
-                <div className="flex flex-col gap-2 w-full">
-                  <label
-                    htmlFor="last-name"
-                    className="font-semibold lg:text-2xl text-xl"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
-                    name="last-name"
-                    id="last-name"
-                  />
-                </div>
-              </div>
-
-              <div className="flex gap-5 mt-1">
-                <div className="flex flex-col gap-2 w-full">
-                  <label
-                    htmlFor="email"
-                    className="font-semibold lg:text-2xl text-xl"
-                  >
-                    Mail
-                  </label>
-                  <input
-                    type="email"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
-                    name="email"
-                    id="email"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex items-center gap-2 w-full justify-between">
                   <label
                     htmlFor="phone-number"
-                    className="font-semibold lg:text-2xl text-xl"
+                    className="font-semibold lg:text-xl text-xl"
                   >
                     Phone Number
                   </label>
                   <input
-                    type="tel"
-                    className="rounded-[10px] outline-none h-20 bg-[#E9E9E9]"
+                    type="text"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
                     name="phone-number"
                     id="phone-number"
+                  />
+                </div>
+                <div className="flex items-center gap-2 w-full justify-between">
+                  <label
+                    htmlFor="email"
+                    className="font-semibold lg:text-xl text-xl"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="rounded-[10px] outline-none py-4 px-2 w-[80%] bg-[#fff]"
+                    name="email"
+                    id="email"
                   />
                 </div>
               </div>

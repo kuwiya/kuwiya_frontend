@@ -88,7 +88,7 @@ const FeaturedCard = () => {
         onWheel={handleWheel}
         className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 md:pl-6"
       >
-        {deals.map((deal) => (
+        {deals?.map((deal) => (
           <Link
             to={`/featured/${deal.id}`}
             className="relative my-6 md:my-0 min-w-[450px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
