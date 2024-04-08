@@ -31,13 +31,13 @@ const MarketPlace = () => {
   return (
     <>
       <Navbar scrolling shadow />
-      <main className="font-lato py-[9rem] overflow-hidden">
+      <main className="font-work-sans py-[9rem] overflow-hidden">
         <section className="flex justify-between px-10 py-6">
           <div className="flex gap-3 items-center">
             <Link to="/">
               <ArrowLeft />
             </Link>
-            <h1 className="text-[23px] font-medium text-[#000000]">
+            <h1 className="lg:text-xl md:text-lg font-semibold text-[#000000] uppercase">
               Market Place
             </h1>
           </div>
@@ -60,7 +60,7 @@ const MarketPlace = () => {
               placeholder="location"
               className="outline-none"
             />
-            <ArrowDown />
+            {/* <ArrowDown /> */}
           </form>
         </section>
 

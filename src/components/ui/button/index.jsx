@@ -29,7 +29,7 @@ const Button = ({
       style={buttonStyle}
       type={type}
       onClick={onClick}
-      className={className}
+      className={`${className} lg:text-lg md:text-base text-xs font-semibold px-[30px] py-[10px]`}
     >
       {children}
     </button>

@@ -19,7 +19,7 @@ const CouponsFiltering = ({ restName }) => {
   }
 
   const coupons = data?.data.filter((detail) => detail.restName === restName);
-console.log(data.data)
+  // console.log(data.data)
   if (coupons.length === 0) {
     return (
       <div className="text-center uppercase">
@@ -39,7 +39,7 @@ console.log(data.data)
     <section className="px-10 my-16 mb-20 space-y-5">
       <div className="grid lg:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
-          <CouponCard detail={detail} />
+          <CouponCard key={detail.id} detail={detail} />
         ))}
       </div>
       <div>

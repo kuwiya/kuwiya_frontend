@@ -27,7 +27,7 @@ const cities = [
   "Benin",
   "Anambra",
   "Cross River",
-  "Current"
+  "Current",
 ];
 
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
@@ -41,7 +41,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
   return (
     <>
       <div
-        className={`flex items-center px-6 lg:px-16 xl:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-8 animate-fade_in  ${
+        className={`flex items-center px-6 lg:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-3 animate-fade_in  ${
           scrolling ? "bg-primary transition-all ease  " : ""
         } ${shadow && "shadow-lg"}`}
       >
@@ -57,78 +57,75 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
           )}
         </Link>
         {scrolling && (
-          <div className="md:px-0 px-6 xl:px-4 flex items-center justify-center space-x-8 md:ml-12">
-            <div className="md:space-x-6 hidden md:flex items-center ">
-              <div className="relative flex items-center gap-2 xl:gap-4 font-work-sans font-medium text-[16px] xl:w-[700px] text-black">
-                <div
-                  onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-                  className="px-3 py-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
-                >
-                  <div className="flex items-center gap-2">
-                    <LocationIcon />
-                    <span className="text-slate-500 whitespace-nowrap">
-                      {location}
-                    </span>
-                  </div>
-                  <div className={`${isDropDownOpen ? "rotate-180" : ""}`}>
-                    <ArrowDown />
-                  </div>
-                  {isDropDownOpen && (
-                    <div className="absolute top-[100%] left-[-6px] z-[999] flex flex-col gap-2 font-work-sans text-[#535252] bg-[#f5f5f5] rounded-b-lg font-medium text-center py-3">
-                      {cities.map((city, index) => (
-                        <span
-                          key={index}
-                          onClick={() => {
-                            setLocation(city);
-                            setIsDropDownOpen(false);
-                          }}
-                          className="hover:text-black cursor-pointer flex items-center px-[34px] last-of-type:pl-[10px] gap-2"
-                        >
-                          {city === 'Current' && <img src={gps} alt="" />}
-                          <span className={`${city === 'Current' && 'order-last'}`}>{city}</span>
-                          
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    // redirect to marketplace page with search query in the url using window.location.href
-                    window.location.href = `/marketplace?q=${search}&l=${location}`;
-                    // setSearch(""); // clear search input after submitting
-                  }}
-                  action="/marketplace"
-                  method="GET"
-                  autoComplete="off"
-                  className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
-                >
-                  <input
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    id="search"
-                    type="text"
-                    placeholder="Enter your search..."
-                    name="resturant_name"
-                    className="outline-none w-full"
-                  />
-                  <button
-                    type="submit"
-                    aria-label="search"
-                    className="bg-[#131313] py-2 px-4 rounded-[10px]"
-                  >
-                    <SearchIcon />
-                  </button>
-                </form>
+          <div className="relative hidden md:flex items-center gap-2 md:gap-4 font-work-sans font-medium text-[16px] xl:w-[700px] text-black">
+            <div
+              onClick={() => setIsDropDownOpen(!isDropDownOpen)}
+              className="px-3 py-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
+            >
+              <div className="flex items-center gap-2">
+                <LocationIcon />
+                <span className="text-slate-500 whitespace-nowrap">
+                  {location}
+                </span>
               </div>
+              <div className={`${isDropDownOpen ? "rotate-180" : ""}`}>
+                <ArrowDown />
+              </div>
+              {isDropDownOpen && (
+                <div className="absolute top-[100%] left-0 z-[999] flex flex-col gap-2 font-work-sans text-[#535252] bg-[#f5f5f5] rounded-b-lg font-medium text-center py-3">
+                  {cities.map((city, index) => (
+                    <span
+                      key={index}
+                      onClick={() => {
+                        setLocation(city);
+                        setIsDropDownOpen(false);
+                      }}
+                      className="hover:text-black cursor-pointer flex items-center px-[34px] last-of-type:pl-[10px] gap-2"
+                    >
+                      {city === "Current" && <img src={gps} alt="" />}
+                      <span className={`${city === "Current" && "order-last"}`}>
+                        {city}
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // redirect to marketplace page with search query in the url using window.location.href
+                window.location.href = `/marketplace?q=${search}&l=${location}`;
+                // setSearch(""); // clear search input after submitting
+              }}
+              action="/marketplace"
+              method="GET"
+              autoComplete="off"
+              className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
+            >
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                id="search"
+                type="text"
+                placeholder="Enter your search..."
+                name="resturant_name"
+                className="outline-none w-full"
+              />
+              <button
+                type="submit"
+                aria-label="search"
+                className="bg-[#131313] py-2 px-4 rounded-[10px]"
+              >
+                <SearchIcon />
+              </button>
+            </form>
           </div>
         )}
 
         <Link
           to="/marketplace"
-          className="items-center md:gap-4 xl:gap-8 hidden md:flex mx-10"
+          className="mr-10 hidden md:block"
           onClick={() => {
             pathName.includes("/marketplace")
               ? (window.location.href = "/marketplace")

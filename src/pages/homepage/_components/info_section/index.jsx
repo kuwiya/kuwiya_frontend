@@ -5,10 +5,10 @@ const InfoSection = () => {
   return (
     <div className="py-2 text-center flex flex-col mt-20">
       <div className="flex flex-col pb-10 md:pb-4 px-8 md:space-y-2 space-y-1">
-        <span className="uppercase font-bold text-base md:text-[28px]">
+        <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
           how does it work?
         </span>
-        <span className="text-sm md:text-base font-normal font-work-sans">
+        <span className="text-sm md:text-base lg:text-lg font-normal font-work-sans">
           Lorem ipsum dolor sit amet consectetur. Cras quisque ultrices arcu
           blandit tempor facilisi tellus.
         </span>

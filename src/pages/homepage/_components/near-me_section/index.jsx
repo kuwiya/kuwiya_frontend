@@ -29,12 +29,12 @@ const NearMeSection = () => {
   //   }
 
   return (
-    <div className="text-black py-10 px-10 md:py-20 md:px-40 ">
+    <div className="text-black py-10 px-6 md:py-20 md:px-16 lg:px-[136px] font-work-sans">
       <div className="flex flex-col">
-        <span className="text-xl md:text-[32px] font-semibold mb-2 uppercase">
+        <span className="text-xl md:text-[28px] lg::text-[32px] font-bold mb-2 uppercase">
           near me
         </span>
-        <span className="text-xl md:text-2xl font-work-sans">
+        <span className="text-sm md:text-base lg:text-lg ">
           Featured restaurants around you.
         </span>
       </div>

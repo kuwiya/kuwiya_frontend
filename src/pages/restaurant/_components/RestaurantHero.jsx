@@ -18,7 +18,7 @@ const RestaurantHero = ({ restaurant }) => {
   };
 
   return (
-    <section className="">
+    <section className="lg:px-[9rem] md:px-[5rem] px-[2rem]">
       <div className="relative">
         <div>
           <img

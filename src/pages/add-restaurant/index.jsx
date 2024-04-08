@@ -23,7 +23,7 @@ const AddRestaurantPage = () => {
         <section className="text-black">
           <form
             action=""
-            className="flex flex-col gap-9 lg:text-lg text-base mb-52"
+            className="flex flex-col gap-9 lg:text-lg text-base mb-20"
           >
             <div className="flex flex-col gap-5 bg-[#E9E9E9] mx-auto w-5/6 p-6">
               <div className="w-[70%] mx-auto flex flex-col gap-6 py-10">

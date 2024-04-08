@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 const CouponSection = () => {
   return (
-    <div className="py-8 text-center flex flex-col lg:px-32">
-      <div className="flex flex-col pb-10 md:pb-20 px-8 md:space-y-2 space-y-1">
-        <span className="uppercase font-bold text-base md:text-[28px]">
+    <div className="py-8 text-center flex flex-col lg:px-[136px] md:px-16 px-6">
+      <div className="flex flex-col pb-10 md:pb-20 md:space-y-2 space-y-1">
+        <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
           coupon hot deals
         </span>
-        <span className="text-sm md:text-base font-normal font-work-sans">
+        <span className="text-sm md:text-base lg:text-lg font-normal font-work-sans">
           Claim free coupons and save on your next meal.
         </span>
         <CouponCard />
