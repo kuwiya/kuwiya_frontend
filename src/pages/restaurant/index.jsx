@@ -33,7 +33,7 @@ const RestaurantPage = () => {
     <>
       <Navbar scrolling bgBlack />
       <main className="mt-32 font-work-sans">
-        <section className="px-10 py-10">
+        <section className="pl-[9.5rem] py-10">
           <div className="flex gap-3 items-center">
             <Link to="/restaurants">
               <ArrowLeft />

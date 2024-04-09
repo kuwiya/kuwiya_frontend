@@ -137,7 +137,7 @@ const AddRestaurantPage = () => {
               </div>
             </div>
 
-            <div className="space-y-12 mt-3">
+            <div className="space-y-12 mt-3 lg:px-32 xl:px-[9rem] md:px-20 py-10">
               <div className="text-[#00000099]">
                 <h2 className="uppercase lg:text-2xl font-semibold text-xl">
                   subscription plan
@@ -151,7 +151,7 @@ const AddRestaurantPage = () => {
                 {subscriptionPlans.map((plan) => (
                   <div
                     key={plan.id}
-                    className="rounded-[10px] px-6 py-12 shadow-md shadow-[#00000040] bg-[#FDFCFB] text-black font-work-sans flex flex-col gap-8 items-center"
+                    className="rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 shadow-md shadow-[#00000040] bg-[#FDFCFB] text-black font-work-sans flex flex-col gap-8 items-center"
                   >
                     <h2 className="lg:text-2xl font-semibold">
                       {plan.planType}
