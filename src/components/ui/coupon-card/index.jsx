@@ -8,7 +8,7 @@ const CouponCard = ({ detail, claim }) => {
       <div className="w-10 h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
       <div className="flex">
         <div
-          style={{ background: claim && detail.color }}
+          style={{ background: claim && '#000' }}
           className={`flex-[70%] flex gap-4 items-center rounded-l-xl ${
             !claim
               ? "bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] text-black"
