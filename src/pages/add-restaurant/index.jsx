@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Navbar } from "../../components/ui";
 import { Link } from "react-router-dom";
 import { subscriptionPlans } from "../../constants";
 
 const AddRestaurantPage = () => {
+  const [subscriptionPlanIndex, setSubscriptionPlanIndex] = useState();
+
+  const handleSubscriptionPlan = (index) => {
+    setSubscriptionPlanIndex(index);
+  };
+
   return (
     <>
       <Navbar scrolling />
@@ -151,7 +157,12 @@ const AddRestaurantPage = () => {
                 {subscriptionPlans.map((plan, index) => (
                   <div
                     key={plan.id}
-                    className="rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 shadow-md shadow-[#00000040] bg-[#FDFCFB] text-black font-work-sans flex flex-col gap-8 items-center"
+                    className={`rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 shadow-md shadow-[#00000040] ${
+                      subscriptionPlanIndex === index
+                        ? "bg-[#F8A434]"
+                        : "bg-[#FDFCFB]"
+                    } text-black font-work-sans flex flex-col gap-8 items-center"`}
+                    onClick={() => handleSubscriptionPlan(index)}
                   >
                     <h2 className="lg:text-2xl md:text-xl text-lg font-semibold">
                       {plan.planType}
