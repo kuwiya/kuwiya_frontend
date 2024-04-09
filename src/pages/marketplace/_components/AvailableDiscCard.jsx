@@ -185,16 +185,18 @@ const AvailableDiscCard = () => {
           </div>
         )}
         {pathname === "/marketplace" && (
-          <div className="mt-2 md:hidden flex gap-3 justify-center">
+          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex md:hidden justify-between">
             <div
               onClick={handleLeftArrow}
-              className={`bg-[#10101070] cursor-pointer rotate-180 w-fit px-2 py-2 rounded-md`}
+              className={`${
+                isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
+              } cursor-pointer rotate-180 w-fit px-2 py-2 rounded-[100%]`}
             >
-              {<ArrowIcon width={14} height={14} />}
+              {isLeftArrowVisible && <ArrowIcon width={14} height={14} />}
             </div>
             <div
               onClick={handleRightArrow}
-              className={`bg-[#10101070] cursor-pointer w-fit px-2 py-2 rounded-md`}
+              className={`bg-[#101010] cursor-pointer w-fit px-2 py-2 rounded-[100%]`}
             >
               <ArrowIcon width={14} height={14} />
             </div>
