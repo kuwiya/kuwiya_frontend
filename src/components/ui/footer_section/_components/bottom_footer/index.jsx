@@ -5,7 +5,7 @@ import { YoutubeIcon } from "../../../../../assets/icons";
 
 const BottomFooter = () => {
   return (
-    <div className="text-primary font-work-sans mt-10 lg:px-20">
+    <div className="text-primary font-work-sans mb-44 mt-10 md:mb-0 lg:px-20">
       <div className="flex flex-col items-center gap-6">
         <div className="flex items-center gap-3">
           <Link

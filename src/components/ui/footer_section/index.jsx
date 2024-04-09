@@ -5,7 +5,7 @@ import { FooterLogo } from "../../../assets/icons";
 const Footer = () => {
   return (
     <footer className="flex flex-col py-10 px-6 md:px-16 lg:px-[136px] md:justify-center bg-black">
-      <div className="md:flex flex-wrap justify-between space-y-10 md:space-y-0">
+      <div className="md:flex flex-wrap justify-between space-y-10 lg:space-y-0">
         <Link to="/">
           <FooterLogo />
         </Link>
