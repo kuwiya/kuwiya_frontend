@@ -3,6 +3,7 @@ import { RestaurantItems } from "../../../../constants";
 import { heart, star, gps } from "../../../../constants/images";
 import Pagination from "./_components/pagination";
 import { Link } from "react-router-dom";
+import { LikeIcon } from "../../../../assets/icons";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,8 +19,8 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(RestaurantItems.length / restaurantPerPage);
 
   return (
-    <div className="px-20 xl:px-48 lg:px-32 py-20 bg-lightGray">
-      <span className="font-work-sans font-medium text-xl">
+    <div className="px-6 md:px-20 xl:px-48 lg:px-32 py-20 bg-lightGray">
+      <span className="font-work-sans font-medium text-base md:text-xl">
         All Items on Kuwiya
       </span>
       <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10">
@@ -32,16 +33,17 @@ const AllRestaurants = () => {
             <img src={restaurant.image} alt="restaurant logo" />
             <div className="flex flex-col p-2 w-full">
               <div className="flex items-center justify-between font-work-sans">
-                <span className="font-lato md:text-sm xl:text-base font-medium">
+                <span className="font-lato text-xs md:text-sm xl:text-base font-medium">
                   {restaurant.title}
                 </span>
-                <img src={heart} alt="like" />
+                {/* <img src={heart} alt="like" /> */}
+                <LikeIcon />
               </div>
-              <div className="flex items-start flex-col md:flex-row md:items-center justify-between pt-4 font-work-sans">
-                <div className="xl:text-base md:text-sm text-black opacity-80">
+              <div className="flex items-start flex-col md:flex-row md:items-center justify-between pt-1 md:pt-4 font-work-sans">
+                <div className="md:text-base text-sm text-black opacity-80">
                   {restaurant.status}
                 </div>
-                <div className="text-base text-black opacity-80 flex items-center gap-2">
+                <div className="text-sm md:text-base text-black opacity-80 flex items-center gap-2">
                   <img src={star} alt="ratings" />
                   {restaurant.ratings}
                 </div>

@@ -82,7 +82,7 @@ const FeaturedCard = () => {
   };
 
   return (
-    <div className="relative mx-auto max-w-full px-10 flex-1 flex">
+    <div className="relative mx-auto max-w-full px-6 md:px-10 flex-1 flex">
       <div
         ref={scrollRef}
         onWheel={handleWheel}
@@ -91,7 +91,7 @@ const FeaturedCard = () => {
         {deals.map((deal) => (
           <Link
             to={`/featured/${deal.id}`}
-            className="relative my-6 md:my-0 min-w-[400px] flex flex-col items-center md:items-start gap-2 font-work-sans shadow-lg rounded-[10px] py-10 px-16 md:p-4 hover:scale-90 hover:cursor-pointer transition-all"
+            className="relative my-6 md:my-0 min-w-[340px] lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img
@@ -100,10 +100,10 @@ const FeaturedCard = () => {
               alt="deal_image"
             />
 
-            <span className="font-medium text-base md:text-2xl">
+            <span className="font-medium pl-3 text-base md:text-xl lg:text-2xl">
               {deal.title}
             </span>
-            <div className="md:space-x-4 space-x-2 relative">
+            <div className="md:space-x-4 pl-3 space-x-2 relative">
               <span className="text-sm md:text-base font-medium opacity-45">
                 ₦ {deal.old_price}
               </span>{" "}
@@ -116,13 +116,13 @@ const FeaturedCard = () => {
               </span>
             </div>
 
-            <div className="space-x-2">
+            <div className="space-x-2 pl-3">
               <span className="font-normal text-sm md:text-base">
                 {deal.brand} -
               </span>
               <span className="font-light text-xs">{deal.location}</span>
             </div>
-            <span className="font-normal text-sm md:text-base flex items-center gap-2">
+            <span className="font-normal pl-3 text-sm md:text-base flex items-center gap-2">
               {deal.rating}
               <span className="flex">
                 {/* <IoMdStar color="#FFCE31" size={20} /> */}
@@ -143,7 +143,7 @@ const FeaturedCard = () => {
           </Link>
         ))}
       </div>
-      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] hidden md:flex justify-between">
         <div
           onClick={handleLeftArrow}
           className={`${
@@ -157,6 +157,22 @@ const FeaturedCard = () => {
           className="bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]"
         >
           <ArrowIcon />
+        </div>
+      </div>
+      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between md:hidden">
+        <div
+          onClick={handleLeftArrow}
+          className={`${
+            isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
+          } cursor-pointer rotate-180 w-fit p-3 rounded-[100%]`}
+        >
+          {isLeftArrowVisible && <ArrowIcon width={14} height={14} />}
+        </div>
+        <div
+          onClick={handleRightArrow}
+          className="bg-[#101010] cursor-pointer w-fit p-3 rounded-[100%]"
+        >
+          <ArrowIcon width={14} height={14} />
         </div>
       </div>
     </div>

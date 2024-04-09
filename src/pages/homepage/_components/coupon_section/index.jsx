@@ -15,7 +15,7 @@ const CouponSection = () => {
         </span>
         <CouponCard />
       </div>
-      <Link to="/marketplace" className="my-2">
+      <Link to="/marketplace" className="-mt-10 md:my-2">
         <Button
           children="view all"
           className={

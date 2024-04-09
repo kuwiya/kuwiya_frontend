@@ -98,7 +98,9 @@ const AvailableDiscCard = () => {
 
   return (
     <section
-      className={`px-10 ${pathname !== "/marketplace" ? "px-0" : ""} space-y-4`}
+      className={`pl-6 md:pl-10 ${
+        pathname !== "/marketplace" ? "px-0" : ""
+      } space-y-4`}
     >
       {pathname === "/marketplace" && (
         <h1 className="lg:text-2xl md:text-xl text-base font-semibold text-[#000000] py-3 uppercase">
@@ -109,7 +111,7 @@ const AvailableDiscCard = () => {
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className={`bg-[#EFEFEF] flex gap-8 overflow-x-scroll no-scrollbar p-6`}
+          className={`bg-[#EFEFEF] flex gap-4 md:gap-8 overflow-x-scroll no-scrollbar p-4 md:p-6`}
           id="scroll"
         >
           {finalFilteredDiscounts.map((availableDisc) => (
@@ -122,9 +124,9 @@ const AvailableDiscCard = () => {
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
                 }}
-                className="relative bg-no-repeat bg-cover h-[256px] md:w-[300px] lg:w-[350px] rounded-t-xl"
+                className="relative bg-no-repeat bg-cover h-[256px] w-[300px] lg:w-[350px] rounded-t-xl"
               >
-                <p className="flex flex-col gap-1 justify-between text-white">
+                <p className="flex flex-col gap-1 justify-between text-white text-sm md:text-base">
                   <span className="bg-[#3187FA] w-fit p-3 pr-10 rounded-r-2xl mt-8">
                     #{availableDisc.id} most liked
                   </span>
@@ -137,7 +139,7 @@ const AvailableDiscCard = () => {
                 </div>
               </div>
               <div className="text-[#00000073] text-[13px] lg:text-base space-y-3 px-3 py-2">
-                <h1 className="text-2xl font-semibold text-black">
+                <h1 className="text-lg md:text-xl lg:text-2xl font-semibold text-black">
                   {availableDisc.mealName}
                 </h1>
                 <p className="text-[#E18000]">
@@ -165,7 +167,7 @@ const AvailableDiscCard = () => {
           ))}
         </div>
         {pathname === "/marketplace" && (
-          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] hidden md:flex justify-between">
             <div
               onClick={handleLeftArrow}
               className={`${
@@ -179,6 +181,22 @@ const AvailableDiscCard = () => {
               className={`bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]`}
             >
               <ArrowIcon />
+            </div>
+          </div>
+        )}
+        {pathname === "/marketplace" && (
+          <div className="mt-2 md:hidden flex gap-3 justify-center">
+            <div
+              onClick={handleLeftArrow}
+              className={`bg-[#10101070] cursor-pointer rotate-180 w-fit px-2 py-2 rounded-md`}
+            >
+              {<ArrowIcon width={14} height={14} />}
+            </div>
+            <div
+              onClick={handleRightArrow}
+              className={`bg-[#10101070] cursor-pointer w-fit px-2 py-2 rounded-md`}
+            >
+              <ArrowIcon width={14} height={14} />
             </div>
           </div>
         )}

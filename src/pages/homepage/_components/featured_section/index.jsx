@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const FeaturedSection = () => {
   return (
     <div className="py-24 text-center flex flex-col">
-      <div className="flex flex-col pb-10 md:pb-20 px-8 md:space-y-2 space-y-1">
+      <div className="flex flex-col pb-10 md:pb-20 px-6 md:px-8 md:space-y-2 space-y-1">
         <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
           featured deals
         </span>

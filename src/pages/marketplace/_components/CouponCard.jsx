@@ -50,7 +50,7 @@ const CouponCard = () => {
     }
   });
 
-  const couponsPerPage = finalFilteredCoupons.length > 6 ? 6 : 4; // number of coupons per page
+  const couponsPerPage = finalFilteredCoupons.length > 4 ? 4 : 2; // number of coupons per page
   // pagination
   const lastCouponIndex = currentPage * couponsPerPage;
   const firstCouponIndex = lastCouponIndex - couponsPerPage;
@@ -62,7 +62,7 @@ const CouponCard = () => {
   const nPages = Math.ceil(finalFilteredCoupons.length / couponsPerPage);
 
   return (
-    <section className="px-10 my-16 mb-20 space-y-5 font-work-sans">
+    <section className="px-6 md:px-10 my-16 mb-20 space-y-5 font-work-sans">
       <h1 className="lg:text-2xl md:text-xl text-base font-semibold text-[#000000] uppercase">
         Coupon
       </h1>
@@ -75,20 +75,22 @@ const CouponCard = () => {
           >
             <div className="w-10 h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
             <div className="flex">
-              <div className="flex-[70%] flex gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%]">
-                <div className="ml-10 text-2xl font-semibold text-[#000000] flex flex-col gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4">
+              <div className="flex-[70%] flex gap-4 items-center rounded-xl md:rounded-r-none text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%]">
+                <div className="ml-10 md:text-xl lg:text-2xl font-semibold text-[#000000] flex flex-col gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4">
                   <h1 className="-rotate-90">{detail.couponNum}</h1>
                   <span className="bg-[#000000] h-2 w-0.5"></span>
                   <h1 className="-rotate-90">{detail.couponCode}</h1>
                 </div>
                 <span className="h-full border-[1px] border-white border-dashed"></span>
                 <div className="p-5 space-y-2">
-                  <p className=" flex gap-2 items-center">
+                  <p className="flex gap-2 items-center">
                     <img src={detail.restLogo} alt="" />{" "}
                     <span>{detail.restName}</span>
                   </p>
-                  <h2 className="text-xl font-medium">{detail.mealName}</h2>
-                  <div className="space-y-1">
+                  <h2 className="text-lg md:text-xl font-medium">
+                    {detail.mealName}
+                  </h2>
+                  <div className="space-y-1 text-sm md:text-base">
                     <div className="flex gap-3 items-center">
                       <p className="">₦{detail.originalPrice}</p>
                       <p className="bg-[#000000] h-5 w-0.5"></p>
@@ -102,8 +104,8 @@ const CouponCard = () => {
                     <p className="text-[#00000038] font-medium">
                       {detail.mealInfo}
                     </p>
-                    <div className="flex gap-3 tems-center">
-                      <p className="flex gap-1 items-center justify-between">
+                    <div className="flex flex-col md:flex-row gap-3 md:items-center">
+                      <p className="flex gap-1 items-center md:justify-between">
                         <span>
                           <Clock />
                         </span>
@@ -120,7 +122,7 @@ const CouponCard = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex-[30%] relative">
+              <div className="flex-[30%] relative hidden md:block">
                 <img
                   src={detail.mealImage}
                   className="rounded-r-xl h-full object-cover"
@@ -135,7 +137,7 @@ const CouponCard = () => {
           </Link>
         ))}
       </div>
-      <div>
+      <div className="overflow-x-scroll no-scrollbar">
         <Pagination
           nPages={nPages}
           currentPage={currentPage}

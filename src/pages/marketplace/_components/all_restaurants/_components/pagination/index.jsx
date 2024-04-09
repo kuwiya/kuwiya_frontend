@@ -6,13 +6,13 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
 
   return (
     <nav>
-      <ul className="flex gap-6">
+      <ul className="flex gap-3 md:gap-6">
         {pageNumbers.map((pgNumber) => (
           <Link
             to={`?page=${pgNumber}`}
             onClick={() => setCurrentPage(pgNumber)}
             key={pgNumber}
-            className={`px-6 border rounded-md transition-all ease-out  py-4 font-lato  ${
+            className={`px-4 py-2 md:py-4 md:px-6 border rounded-md transition-all ease-out font-lato  ${
               currentPage == pgNumber
                 ? "border-none bg-darkyellow text-primary"
                 : "hover:bg-darkyellow hover:border-[#ffffff] hover:text-primary bg-transparent text-[#828282] border-[#828282]"
