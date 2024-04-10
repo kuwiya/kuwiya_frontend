@@ -6,13 +6,14 @@ import {
   IoPersonOutline,
   IoHelpCircleOutline,
 } from "react-icons/io5";
-import images, { gps } from "../../../constants/images";
+import images, { gps, play, store } from "../../../constants/images";
 import { Link } from "react-router-dom";
 import Button from "../button";
 import SearchIcon from "./_components/SearchIcon";
 import LocationIcon from "./_components/LocationIcon";
 import { ArrowDown } from "../../../pages/marketplace/_components";
 import { useHref } from "react-router-dom";
+import { FooterLogo } from "../../../assets/icons";
 
 const cities = [
   "Lagos",
@@ -183,57 +184,91 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
         </div>
       </div>
       {toggleMenu && (
-        <div className="fixed top-0 left-0 w-full bg-[#000] transition-all duration-150 flex flex-col z-50 justify-center items-center animate-slideBottom overflow-none h-full">
+        <div className="fixed px-6 top-0 left-0 w-full bg-primary transition-all duration-150 flex flex-col z-50 pt-6 items-center animate-slideBottom overflow-hidden h-full">
           <LuX
             className="text-2xl absolute top-5 right-6 cursor-pointer"
-            color="#fff"
+            color="#101010"
             fontSize={27}
             onClick={() => setToggleMenu(false)}
           />
-          <ul className="list-none w-full px-4">
-            <Link to="/" className="text-white ml-6">
-              <span className="uppercase text-xl md:text-3xl font-semibold">
-                Kuw
-                <span className="text-[#fac32a] tracking-wider font-bold">
-                  iya
-                </span>
-              </span>
-            </Link>
-            <hr className="z-20- h-6 my-8 text-[#395d88] w-[70%] mx-auto" />
-            <li className="m-6 mt-12 cursor-pointer text-primary text-xl">
+          <ul className="list-none w-full">
+            
+            <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/marketplace" className="text-white font-semibold">
+                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
                   Marketplace
                 </Link>
-                <IoPersonOutline color="#fff" size={23} />
+                
               </div>
             </li>
-            <li className="m-6 mt-12 cursor-pointer text-primary text-xl">
+            <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/" className="text-white font-semibold">
-                  Discounts
+                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
+                  near me
                 </Link>
-                <IoHelpCircleOutline color="#fff" size={23} />
+                
               </div>
             </li>
-            <li className="m-6 mt-12 cursor-pointer text-primary text-xl">
+            <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/" className="text-white font-semibold">
-                  Cart
+                <Link to="/about-us" className="text-[#101010B2] uppercase font-semibold">
+                  about us
                 </Link>
-                <IoCartOutline color="#fff" size={23} />
+                
+              </div>
+            </li>
+            <li className="mt-12 cursor-pointer text-primary text-xl">
+              <div className="flex justify-between items-center">
+                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
+                  contact us
+                </Link>
+                
               </div>
             </li>
           </ul>
-          <div className="flex items-center space-x-10 absolute bottom-0 my-6">
-            <Link to="/">
+          <div className="flex flex-col items-center space-y-6 my-6 w-full">
+            <Link to="/subscription-plan" className="w-[100%] mx-auto">
               <Button
-                className="hover:scale-95 font-extrabold duration-300 center"
-                textColor={"#000"}
-                children="Sign Up"
-                padding={"20px"}
+                className="hover:scale-95 font-extrabold uppercase text-primary w-full text-lg"
+                children="Subscribe"
+                padding={"15px 30px"}
               />
+              
             </Link>
+            <Link to="/add-restaurant" className="w-[100%] mx-auto">
+              <Button
+                className="hover:scale-95 font-extrabold uppercase text-primary w-full text-lg"
+                backgroundColor={'#000'}
+                children="add restaurant"
+                padding={"15px 30px"}
+              />
+              
+            </Link>
+            
+          </div>
+         
+          <div className="flex flex-col w-3/4 absolute bottom-6 left-0 px-6">
+            <div className="flex gap-2 items-center">
+            <img src={images.dark_logo} alt='logo' className="" />
+            <span className="font-medium">There's more to love in the app</span>
+            </div>
+            
+            <div className="flex gap-4 mt-3">
+          <Link
+            to="https://www.apple.com/app-store/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src={store} alt="apple store" />
+          </Link>
+          <Link
+            to="https://play.google.com/store/apps?hl=en&gl=US"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+           <img src={play} alt="apple store" />
+          </Link>
+        </div>
           </div>
         </div>
       )}

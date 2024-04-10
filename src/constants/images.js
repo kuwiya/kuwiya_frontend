@@ -55,6 +55,8 @@ export { default as value3 } from "../assets/images/value3.png";
 export { default as value4 } from "../assets/images/value4.png";
 export { default as value5 } from "../assets/images/value5.png";
 export { default as value6 } from "../assets/images/value6.png";
+export { default as play } from "../assets/images/play.png";
+export { default as store } from "../assets/images/store.png";
 export { default as dropdown } from "../assets/images/dropdown.png";
 export { default as AllYummy } from "../assets/images/allYummy.png";
 export { default as AllYummy2 } from "../assets/images/allYummy2.png";

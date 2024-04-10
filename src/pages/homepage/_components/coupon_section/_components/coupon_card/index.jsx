@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../../../../../components/ui";
 import { CouponDeals } from "../../../../../../constants";
 import { Link } from "react-router-dom";
 
 const CouponCard = () => {
+  const [width, setWidth] = useState(window.innerWidth)
+  const [coupons, setCoupons] = useState([])
+  const mobileCoupons = CouponDeals.slice(0, 3)
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    
+    if(width <= 500) {
+      setCoupons(mobileCoupons)
+    }
+    else {
+      setCoupons(CouponDeals)
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [width])
+
+
   return (
     <div className="py-10">
       <div className="grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-10 ">
-        {CouponDeals.map((deal) => (
+        {coupons?.map((deal) => (
           <div
             className="flex items-center justify-center w-full h-full relative transition-all duration-300 ease-in-out hover:cursor-pointer hover:scale-95"
             key={deal.id}

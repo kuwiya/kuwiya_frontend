@@ -10,6 +10,7 @@ import { useFeaturedDealsData } from "../../../../../../hooks";
 const FeaturedCard = () => {
   const scrollRef = useRef(null);
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
+  
 
   //Handles keyboard arrows movement
   useEffect(() => {
@@ -86,12 +87,12 @@ const FeaturedCard = () => {
       <div
         ref={scrollRef}
         onWheel={handleWheel}
-        className="flex w-fit no-scrollbar overflow-x-scroll overflow-y-hidden items-center md:gap-10 py-6 gap-8 md:pl-6"
+        className="flex w-fit no-scrollbar pl-[4rem] overflow-x-scroll overflow-y-hidden justify-start items-center md:gap-10 md:py-6 gap-8 md:pl-6"
       >
         {deals?.map((deal) => (
           <Link
             to={`/featured/${deal.id}`}
-            className="relative my-6 md:my-0 min-w-[340px] lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
+            className="relative my-6 md:my-0 min-w-[80%]  lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img
@@ -143,7 +144,7 @@ const FeaturedCard = () => {
           </Link>
         ))}
       </div>
-      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] hidden md:flex justify-between">
+      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-20 hidden md:flex justify-between">
         <div
           onClick={handleLeftArrow}
           className={`${
@@ -159,7 +160,7 @@ const FeaturedCard = () => {
           <ArrowIcon />
         </div>
       </div>
-      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between md:hidden">
+      <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-20 flex justify-between md:hidden">
         <div
           onClick={handleLeftArrow}
           className={`${

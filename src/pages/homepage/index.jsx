@@ -13,6 +13,18 @@ import {
 
 const Homepage = () => {
   const [scrolling, setScrolling] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [width]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -34,10 +46,14 @@ const Homepage = () => {
       <FeaturedSection />
       <CouponSection />
       <PopularResturants />
-      <InfoSection />
-      <BannerSection />
-      <NearmeSection />
-      <CitiesAndCountries />
+      <InfoSection />     
+      {!(width <= 500 )&& (
+        <>
+         <BannerSection />
+          <NearmeSection />
+          <CitiesAndCountries />
+        </>
+      )}
     </main>
   );
 };
