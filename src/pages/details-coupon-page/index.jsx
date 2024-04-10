@@ -30,7 +30,7 @@ const CouponDetailsPage = () => {
   return (
     <>
       <Navbar scrolling />
-      <main className="mt-24 font-work-sans text-[#000000] lg:px-32">
+      <main className="mt-32 font-work-sans text-[#000000] lg:px-32">
         <section className="px-8">
           <div className="flex gap-2 items-center font-medium lg:text-[23px]">
             <Link to="/marketplace">

@@ -41,7 +41,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
   return (
     <>
       <div
-        className={`flex items-center px-6 lg:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-3 animate-fade_in  ${
+        className={`flex items-center px-10 lg:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-3 animate-fade_in  ${
           scrolling ? "bg-primary transition-all ease  " : ""
         } ${shadow && "shadow-lg"}`}
       >
