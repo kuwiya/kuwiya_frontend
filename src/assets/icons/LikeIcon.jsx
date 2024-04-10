@@ -1,12 +1,12 @@
 import React from "react";
 
-const LikeIcon = ({ className, fillColor, onClick }) => {
+const LikeIcon = ({ className, fillColor, onClick, width, height }) => {
   return (
     <svg
       onClick={onClick}
       className={className}
-      width="21"
-      height="19"
+      width={width || "21"}
+      height={height || "19"}
       viewBox="0 0 21 19"
       fill={fillColor}
       xmlns="http://www.w3.org/2000/svg"

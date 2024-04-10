@@ -12,7 +12,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
             to={`?page=${pgNumber}`}
             onClick={() => setCurrentPage(pgNumber)}
             key={pgNumber}
-            className={`px-4 py-2 md:py-4 md:px-6 border rounded-md transition-all ease-out font-lato  ${
+            className={`px-4 py-2 lg:py-4 lg:px-6 border text-sm rounded-md transition-all ease-out font-lato  ${
               currentPage == pgNumber
                 ? "border-none bg-darkyellow text-primary"
                 : "hover:bg-darkyellow hover:border-[#ffffff] hover:text-primary bg-transparent text-[#828282] border-[#828282]"
