@@ -161,7 +161,7 @@ const AddRestaurantPage = () => {
                       subscriptionPlanIndex === index
                         ? "bg-[#F8A434]"
                         : "bg-[#FDFCFB]"
-                    } text-black font-work-sans flex flex-col gap-8 items-center"`}
+                    } text-black font-work-sans flex flex-col gap-8 items-center text-center`}
                     onClick={() => handleSubscriptionPlan(index)}
                   >
                     <h2 className="lg:text-2xl md:text-xl text-lg font-semibold">

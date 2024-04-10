@@ -1,10 +1,10 @@
 import React from "react";
 
-const Clock = ({ fillColor }) => {
+const Clock = ({ fillColor, width, height }) => {
   return (
     <svg
-      width="18"
-      height="19"
+      width={width || "18"}
+      height={height || "19"}
       viewBox="0 0 18 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

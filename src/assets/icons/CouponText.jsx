@@ -1,10 +1,10 @@
 import React from "react";
 
-const CouponText = () => {
+const CouponText = ({ width, height }) => {
   return (
     <svg
-      width="85"
-      height="350"
+      width={width || "85"}
+      height={height || "350"}
       viewBox="0 0 85 350"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

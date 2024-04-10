@@ -8,15 +8,21 @@ const CouponCard = ({ detail, claim }) => {
       <div className="w-10 h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
       <div className="flex">
         <div
-          style={{ background: claim && '#000' }}
-          className={`flex-[70%] flex gap-4 items-center rounded-l-xl ${
+          style={{ background: claim && "#000" }}
+          className={` flex ${
+            detail && "lg:flex-[70%] flex-[65%] gap-2 lg:gap-4"
+          } items-center rounded-l-xl ${
             !claim
               ? "bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] text-black"
-              : "text-primary"
+              : "text-primary flex-[70%] gap-4"
           } `}
         >
           <div
-            className={`ml-10 text-2xl font-semibold text-[#000000] flex flex-col gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4`}
+            className={`lg:ml-8 ml-6 text-2xl ${
+              detail && "lg:text-xl text-[11px]"
+            } font-semibold text-[#000000] flex flex-col gap-0 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] lg:rounded-xl ${
+              detail && "rounded-2xl p-1 lg:py-5"
+            } py-2`}
           >
             <h1
               className={`-rotate-90 ${claim ? "text-primary" : "text-black"}`}
@@ -33,53 +39,85 @@ const CouponCard = ({ detail, claim }) => {
             </h1>
           </div>
           <span className="h-full border-[1px] border-white border-dashed"></span>
-          <div className="p-5 space-y-2">
+          <div
+            className={`p-5 ${detail && "lg:py-5 md:py-3 py-1 px-0"} space-y-2`}
+          >
             <p className=" flex gap-2 items-center">
               <img src={detail.restLogo} alt="" />{" "}
-              <span>{detail.restName}</span>
+              <span className="lg:text-[13px] md:text-[10px] text-[8px] font-normal">
+                {detail.restName}
+              </span>
             </p>
-            <h2 className="text-xl font-medium">{detail.mealName}</h2>
+            <h2 className="lg:text-base md:text-[11px] text-[8px] font-medium">
+              {detail.mealName}
+            </h2>
             <div className="space-y-1">
               <div className="flex gap-3 items-center">
-                <p className="">₦{detail.originalPrice}</p>
+                <p className="text-[8px] lg:text-[13px]">
+                  ₦{detail.originalPrice}
+                </p>
                 <p
                   className={`${
-                    claim ? "bg-primary" : "bg-[#000000]"
-                  } h-5 w-[0.1rem]`}
+                    claim ? "bg-primary h-5 w-[0.1rem]" : "bg-[#000000]"
+                  } ${detail && "h-3 w-[0.1rem]"}`}
                 ></p>
-                <p className="">
+                <p className="text-[8px] lg:text-[13px]">
                   {detail.priceOff}{" "}
-                  <sup className="text-[9px] font-medium text-white uppercase">
+                  <sup className="lg:text-[8px] text-[6px] font-medium text-white uppercase">
                     off
                   </sup>
                 </p>
               </div>
-              {/* <p
+              <p
                 className={`${
                   claim ? "text-primary" : "text-[#00000038]"
-                } font-medium`}
+                } font-medium ${detail && "lg:text-[13px] text-[7px]"}`}
               >
                 {detail.mealInfo}
-              </p> */}
+              </p>
               <div className="flex gap-3 items-center">
                 <p className="flex gap-1 items-center justify-between">
-                  <span>
+                  <span className="hidden lg:block">
                     <Clock fillColor={`${claim ? "#ffffff" : "#292D32"}`} />
                   </span>
-                  <span>{detail.duration}</span>
+                  <span className="lg:hidden">
+                    <Clock
+                      fillColor={`${claim ? "#ffffff" : "#292D32"}`}
+                      width={6}
+                      height={6}
+                    />
+                  </span>
+                  <span className="lg:text-[13px] text-[7px]">
+                    {detail.duration}
+                  </span>
                 </p>
                 <p className="flex gap-1 items-center">
-                  <span>
+                  <span className="hidden lg:block">
                     <Star fillColor={`${claim ? "#ffffff" : "#292D32"}`} />
                   </span>
-                  <span>{detail.rating}</span>
-                  <span>({detail.rating_count})</span>
+                  <span className="lg:hidden">
+                    <Star
+                      fillColor={`${claim ? "#ffffff" : "#292D32"}`}
+                      width={6}
+                      height={6}
+                    />
+                  </span>
+                  <span className="lg:text-[13px] text-[7px]">
+                    {detail.rating}
+                  </span>
+                  <span className="lg:text-[13px] text-[7px]">
+                    ({detail.rating_count})
+                  </span>
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex-[30%] relative">
+        <div
+          className={`${claim && "flex-[30%]"} ${
+            detail && "lg:flex-[30%] flex-[35%]"
+          } relative`}
+        >
           <img
             src={detail.mealImage}
             className="rounded-r-xl h-full object-cover"
@@ -87,8 +125,10 @@ const CouponCard = ({ detail, claim }) => {
           />
           <span
             className={`absolute top-[10px] left-0 ${
+              detail && "lg:text-[13px] text-[5px]"
+            } ${
               claim ? "bg-[#000000]" : "bg-[#3187FA]"
-            } text-white w-fit p-3 pr-8 rounded-r-2xl mt-2 uppercase`}
+            } text-white w-fit lg:p-3 p-2 lg:pr-8 pr-5 rounded-r-2xl mt-2 uppercase`}
           >
             {!claim && "₦"} {detail.priceOff}
             {claim && "%"} off

@@ -6,7 +6,7 @@ import { Pagination } from "../../pages/marketplace/_components";
 const CouponsFiltering = ({ restName }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const couponsPerPage = 4;
+  const couponsPerPage = screen.width < 768 ? 2 : 4;
 
   const { isLoading, data, isError, error } = useCouponsMarketplaceData();
 
@@ -36,8 +36,8 @@ const CouponsFiltering = ({ restName }) => {
   const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
 
   return (
-    <section className="px-10 my-16 mb-20 space-y-5">
-      <div className="grid lg:grid-cols-2 gap-6">
+    <section className="my-16 mb-20 space-y-5">
+      <div className="grid md:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
           <CouponCard key={detail.id} detail={detail} />
         ))}

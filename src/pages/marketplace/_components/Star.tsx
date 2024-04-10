@@ -1,10 +1,10 @@
 import React from "react";
 
-const Star = ({ fillColor }) => {
+const Star = ({ fillColor, width, height }) => {
   return (
     <svg
-      width="17"
-      height="18"
+      width={width || "17"}
+      height={height || "18"}
       viewBox="0 0 17 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
