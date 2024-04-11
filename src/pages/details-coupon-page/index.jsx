@@ -42,10 +42,10 @@ const CouponDetailsPage = () => {
 
         <section className="py-7 space-y-5">
           <div className="flex relative">
-            <div className="w-12 h-12 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
+            <div className="w-7 h-7 md:w-12 md:h-12 rounded-full bg-white absolute top-[50%] -left-4 md:-left-5 -translate-y-[50%]"></div>
             <div className="flex bg-gradient-to-r from-[#000000] from-[0%] to-[#666666] to-[100%] rounded-lg p-1 md:p-2">
               <div className="flex-1 md:flex-[55%] lg:pt-12 md:pt-8 pt-2 md:pb-6 lg:pl-16 md:pl-10 pl-7 text-[#000000]">
-                <h1 className="lg:text-5xl md:text-[40px] font-bold text-white">
+                <h1 className="lg:text-5xl md:text-[40px] font-bold text-white -mb-4 md:mb-0">
                   {coupon.mealName}
                 </h1>
                 <h1 className="lg:text-8xl md:text-[64px] text-2xl font-bold text-darkyellow mt-3">
@@ -69,13 +69,13 @@ const CouponDetailsPage = () => {
                       setIsCopied(false);
                     }, 4000);
                   }}
-                  className="w-fit border-[1px] group flex items-center cursor-pointer hover:text-darkyellow hover:border-darkyellow border-white mt-4 rounded-[10px] lg:px-16 md:px-8 px-3 py-1 md:py-2 border-dashed text-white md:font-semibold font-medium lg:text-[40px] md:text-[30px] text-[23px]"
+                  className="w-fit border-[1px] group flex items-center cursor-pointer hover:text-darkyellow hover:border-darkyellow border-white mt-1 md:mt-4 rounded-[10px] lg:px-16 md:px-8 px-2.5 py-[2px] md:py-2 border-dashed text-white md:font-semibold font-medium lg:text-[40px] md:text-[30px] text-lg"
                 >
                   <h1 className="">{coupon.couponNum}</h1>
                   <span className="bg-[#FFFFFF] h-0.5 w-2 group-hover:bg-darkyellow"></span>
                   <h1 className="">{coupon.couponCode}</h1>
                 </div>
-                <div className="flex gap-1 md:gap-3 items-center mt-3 md:mt-5 lg:text-base md:text-sm text-[8px] font-normal text-[#FFFFFFBF]">
+                <div className="flex gap-1 md:gap-3 items-center mt-1 md:mt-5 lg:text-base md:text-sm text-[8px] font-normal text-[#FFFFFFBF]">
                   <p>{coupon.restName}</p>
                   <span className="h-4 w-[1px] bg-[#FFFFFFBF]"></span>
                   <p className="flex gap-[3px] items-center justify-between">
@@ -116,13 +116,13 @@ const CouponDetailsPage = () => {
                     className="rounded-lg h-full object-cover"
                     alt=""
                   />
-                  <span className="absolute top-5 right-5 z-10 p-[5px] bg-white rounded-full w-10 h-10 flex items-center justify-center">
+                  <span className="absolute top-2 right-2 md:top-5 md:right-5 z-10 p-[3px] md:p-[5px] bg-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
                     <img src={coupon.restLogo} alt="" />
                   </span>
                 </div>
               </div>
             </div>
-            <div className="w-12 h-12 rounded-full bg-white absolute top-[50%] -right-5 -translate-y-[50%]"></div>
+            <div className="w-7 h-7 md:w-12 md:h-12 rounded-full bg-white absolute top-[50%] -right-4 md:-right-5 -translate-y-[50%]"></div>
           </div>
           <div className="space-y-4">
             <div className="flex gap-3 justify-between items-center text-[19px] md:text-[23px] font-medium pr-8">
