@@ -4,6 +4,7 @@ import { heart, star, gps } from "../../../../constants/images";
 import Pagination from "./_components/pagination";
 import { Link } from "react-router-dom";
 import { LikeIcon } from "../../../../assets/icons";
+import { Star } from "../index";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,37 +20,58 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(RestaurantItems.length / restaurantPerPage);
 
   return (
-    <div className="px-6 md:px-20 xl:px-48 lg:px-32 py-20 bg-lightGray">
-      <span className="font-work-sans font-medium text-base md:text-xl">
+    <div className="px-6 md:px-16 lg:px-[136px] py-20 bg-lightGray">
+      <span className="font-work-sans font-medium text-[11px] md:text-xl lg:text-2xl">
         All Items on Kuwiya
       </span>
-      <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-3 md:gap-5">
         {currentRestaurant.map((restaurant) => (
-          <Link
-            to={`/restaurants/${restaurant.id}`}
-            className="flex flex-col bg-primary w-auto hover:cursor-pointer hover:scale-105 transition-all ease-in"
+          <div
+            // to={`/restaurants/${restaurant.id}`}
+            className="bg-primary rounded-t-lg flex flex-col hover:cursor-pointer hover:scale-105 transition-all ease-in"
             key={restaurant.id}
           >
-            <img src={restaurant.image} alt="restaurant logo" />
-            <div className="flex flex-col p-2 w-full">
+            <Link to={`/restaurants/${restaurant.id}`}>
+              <img
+                src={restaurant.image}
+                alt="restaurant logo"
+                className="w-full"
+              />
+            </Link>
+            <div className=" flex flex-col p-2 md:p-3">
               <div className="flex items-center justify-between font-work-sans">
-                <span className="font-lato text-xs md:text-sm xl:text-base font-medium">
+                <span className="font-lato text-[10px] md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
-                {/* <img src={heart} alt="like" /> */}
-                <LikeIcon />
+                <span className="hidden lg:block">
+                  <LikeIcon />
+                </span>
+                <span className="hidden md:block lg:hidden">
+                  <LikeIcon width={13} height={13} />
+                </span>
+                <span className="md:hidden">
+                  <LikeIcon width={10} height={10} />
+                </span>
               </div>
-              <div className="flex items-start flex-col md:flex-row md:items-center justify-between pt-1 md:pt-4 font-work-sans">
-                <div className="md:text-base text-sm text-black opacity-80">
+              <div className="text-[8px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
+                <div className=" text-black opacity-80">
                   {restaurant.status}
                 </div>
-                <div className="text-sm md:text-base text-black opacity-80 flex items-center gap-2">
-                  <img src={star} alt="ratings" />
+                <div className=" text-black opacity-80 flex items-center gap-2">
+                  <span className="hidden lg:block">
+                    <Star />
+                  </span>
+                  <span className="hidden md:block lg:hidden">
+                    <Star width={13} height={13} />
+                  </span>
+                  <span className="md:hidden">
+                    <Star width={10} height={10} />
+                  </span>
                   {restaurant.ratings}
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
       <Pagination

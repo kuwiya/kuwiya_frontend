@@ -98,12 +98,12 @@ const AvailableDiscCard = () => {
 
   return (
     <section
-      className={`pl-6 md:pl-10 ${
+      className={`px-6 md:px-16 lg:px-[136px] ${
         pathname !== "/marketplace" ? "px-0" : ""
       } space-y-4`}
     >
       {pathname === "/marketplace" && (
-        <h1 className="lg:text-2xl md:text-xl text-base font-semibold text-[#000000] py-3 uppercase">
+        <h1 className="lg:text-xl md:text-base text-[13px] font-semibold text-[#000000] pt-3">
           Available Discount
         </h1>
       )}
@@ -111,7 +111,7 @@ const AvailableDiscCard = () => {
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className={`bg-[#EFEFEF] flex gap-4 md:gap-8 overflow-x-scroll no-scrollbar p-4 md:p-6`}
+          className={`bg-[#EFEFEF] flex gap-[5px] md:gap-5 lg:gap-8 overflow-x-scroll no-scrollbar p-[5px] md:p-4 lg:p-6`}
           id="scroll"
         >
           {finalFilteredDiscounts.map((availableDisc) => (
@@ -124,39 +124,62 @@ const AvailableDiscCard = () => {
                 style={{
                   backgroundImage: `url(${availableDisc.mealImageUrl})`,
                 }}
-                className="relative bg-no-repeat bg-cover h-[256px] w-[300px] lg:w-[350px] rounded-t-xl"
+                className="relative bg-no-repeat bg-cover h-[82px] md:h-[151px] lg:h-[256px] w-[122px] md:w-[190px] lg:w-[310px] rounded-t-xl"
               >
-                <p className="flex flex-col gap-1 justify-between text-white text-sm md:text-base">
-                  <span className="bg-[#3187FA] w-fit p-3 pr-10 rounded-r-2xl mt-8">
+                <p className="flex flex-col gap-1 justify-between text-white text-[8px] md:text-[11px] lg:text-[13px]">
+                  <span className="bg-[#3187FA] w-fit p-1 md:p-2 lg:p-3 lg:pr-10 md:pr-7 pr-3 rounded-r-2xl mt-4 md:mt-8">
                     #{availableDisc.id} most liked
                   </span>
-                  <span className="bg-[#13B959] w-fit p-3 rounded-r-2xl">
+                  <span className="bg-[#13B959] w-fit p-1 md:p-2 lg:p-3 rounded-r-2xl">
                     {availableDisc.discPercentage}% Discount
                   </span>
                 </p>
-                <div className="absolute bottom-2 right-2 z-10 p-[5px] bg-white rounded-full w-10 h-10 flex items-center justify-center">
+                <div className="absolute bottom-2 right-2 z-10 p-[5px] bg-white rounded-full w-10 h-10 hidden lg:flex items-center justify-center">
                   <img src={availableDisc.restaurantLogoUrl} alt="" />
                 </div>
               </div>
-              <div className="text-[#00000073] text-[13px] lg:text-base space-y-3 px-3 py-2">
-                <h1 className="text-lg md:text-xl lg:text-2xl font-semibold text-black">
+              <div className="relative text-[#00000073] space-y-1 lg:space-y-3 p-1 md:px-3 md:py-2">
+                <h1 className="text-[7px] md:text-sm lg:text-base font-semibold text-black">
                   {availableDisc.mealName}
                 </h1>
-                <p className="text-[#E18000]">
+                <p className="text-[#E18000] text-[6px] md:text-[10px] lg:text-sm">
                   {availableDisc.restaurantName} - Restaurant
                 </p>
-                <div className="flex gap-2 justify-between items-center">
+                <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
+                  <img src={availableDisc.restaurantLogoUrl} alt="" />
+                </div>
+                <div className="flex md:gap-2 md:flex-wrap lg:flex-nowrap justify-between md:justify-normal lg:justify-between items-center text-[6px] md:text-[11px] lg:text-[13px] font-medium">
                   <p className="">₦{availableDisc.price}</p>
-                  <p className="bg-[#00000073] h-5 w-0.5"></p>
-                  <p className="flex gap-1 items-center justify-between">
-                    <span>
+                  <p className="bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
+                  <p className="hidden md:flex lg:hidden gap-[2px] items-center">
+                    <span className="">
+                      <Star width={11} height={11} />
+                    </span>
+                    <span>{availableDisc.rating}</span>
+                    <span>({availableDisc.reviewCount})</span>
+                  </p>
+                  <p className="flex gap-[2px] items-center justify-between">
+                    <span className="hidden lg:block">
                       <Clock />
+                    </span>
+                    <span className="hidden md:block lg:hidden">
+                      <Clock width={11} height={11} />
+                    </span>
+                    <span className="md:hidden">
+                      <Clock width={8} height={8} />
                     </span>
                     <span>{availableDisc.duration}</span>
                   </p>
-                  <p className="flex gap-1 items-center">
-                    <span>
+                  <p className="md:hidden bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
+                  <p className="flex md:hidden lg:flex gap-[2px] items-center">
+                    <span className="hidden lg:block">
                       <Star />
+                    </span>
+                    <span className="hidden md:block lg:hidden">
+                      <Star width={11} height={11} />
+                    </span>
+                    <span className="md:hidden">
+                      <Star width={8} height={8} />
                     </span>
                     <span>{availableDisc.rating}</span>
                     <span>({availableDisc.reviewCount})</span>
@@ -167,38 +190,28 @@ const AvailableDiscCard = () => {
           ))}
         </div>
         {pathname === "/marketplace" && (
-          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] hidden md:flex justify-between">
+          <div className="absolute top-[35%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
             <div
               onClick={handleLeftArrow}
               className={`${
                 isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
-              } cursor-pointer rotate-180 w-fit px-5 py-4 rounded-[100%]`}
+              } cursor-pointer rotate-180 w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
             >
-              {isLeftArrowVisible && <ArrowIcon />}
+              {isLeftArrowVisible && (
+                <ArrowIcon
+                  width={screen.width < 768 && 12}
+                  height={screen.width < 768 && 12}
+                />
+              )}
             </div>
             <div
               onClick={handleRightArrow}
-              className={`bg-[#101010] cursor-pointer w-fit px-5 py-4 rounded-[100%]`}
+              className={`bg-[#101010] cursor-pointer w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
             >
-              <ArrowIcon />
-            </div>
-          </div>
-        )}
-        {pathname === "/marketplace" && (
-          <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex md:hidden justify-between">
-            <div
-              onClick={handleLeftArrow}
-              className={`${
-                isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
-              } cursor-pointer rotate-180 w-fit px-2 py-2 rounded-[100%]`}
-            >
-              {isLeftArrowVisible && <ArrowIcon width={14} height={14} />}
-            </div>
-            <div
-              onClick={handleRightArrow}
-              className={`bg-[#101010] cursor-pointer w-fit px-2 py-2 rounded-[100%]`}
-            >
-              <ArrowIcon width={14} height={14} />
+              <ArrowIcon
+                width={screen.width < 768 && 12}
+                height={screen.width < 768 && 12}
+              />
             </div>
           </div>
         )}

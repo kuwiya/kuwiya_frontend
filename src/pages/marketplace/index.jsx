@@ -30,14 +30,14 @@ const MarketPlace = () => {
 
   return (
     <>
-      <Navbar scrolling shadow />
-      <main className="font-work-sans py-[9rem] overflow-hidden">
-        <section className="flex justify-between px-6 md:px-10 py-6">
+      <Navbar scrolling shadow={screen.width < 768 ? true : false} />
+      <main className="font-work-sans mt-16 md:mt-24 lg:mt-32 overflow-hidden">
+        <section className="flex justify-between px-6 md:px-16 lg:px-[136px] py-6">
           <div className="flex gap-3 items-center">
             <Link to="/">
               <ArrowLeft />
             </Link>
-            <h1 className="lg:text-xl md:text-lg font-semibold text-[#000000] uppercase">
+            <h1 className="lg:text-[23px] text-sm font-semibold text-[#000000]">
               Market Place
             </h1>
           </div>
@@ -50,7 +50,7 @@ const MarketPlace = () => {
             }}
             action="/marketplace"
             method="get"
-            className="border-[1px] border-[#292D32] rounded-xl px-3 py-1 hidden md:flex gap-1 items-center"
+            className="border-[1px] border-[#292D32] rounded-xl px-2 py-[2px] md:px-3 md:py-1 flex gap-1 items-center"
           >
             <LocationIcon />
             <input
@@ -58,7 +58,7 @@ const MarketPlace = () => {
               onChange={(e) => setLocationQueryValue(e.target.value)}
               type="text"
               placeholder="location"
-              className="outline-none"
+              className="outline-none w-[75px] md:w-auto"
             />
             {/* <ArrowDown /> */}
           </form>

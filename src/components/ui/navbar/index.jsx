@@ -42,26 +42,22 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
   return (
     <>
       <div
-        className={`flex items-center px-10 lg:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-3 animate-fade_in  ${
+        className={`flex items-center px-6 md:px-12 lg:px-24 justify-between h-16 md:h-24 fixed md:top-0 top-0 z-50 bg-none w-full transition-all ease-out duration-300 xl:gap-0 md:gap-3 animate-fade_in  ${
           scrolling ? "bg-primary transition-all ease  " : ""
         } ${shadow && "shadow-lg"}`}
       >
         <Link to="/" className="text-xl md:text-2xl">
           {scrolling ? (
-            <img
-              src={images.dark_logo}
-              alt="kuwiya_logo"
-              className="w-6 md:ml-10"
-            />
+            <img src={images.dark_logo} alt="kuwiya_logo" className="w-6 " />
           ) : (
-            <img src={images.logo} alt="kuwiya_logo" className="w-6 md:ml-10" />
+            <img src={images.logo} alt="kuwiya_logo" className="w-6 " />
           )}
         </Link>
         {scrolling && (
           <div className="relative hidden md:flex items-center gap-2 md:gap-4 font-work-sans font-medium text-[16px] xl:w-[700px] text-black">
             <div
               onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-              className="px-3 py-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
+              className="p-2 lg:p-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
             >
               <div className="flex items-center gap-2">
                 <LocationIcon />
@@ -102,7 +98,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               action="/marketplace"
               method="GET"
               autoComplete="off"
-              className="p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
+              className="p-1 lg:p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
             >
               <input
                 value={search}
@@ -126,7 +122,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
 
         <Link
           to="/marketplace"
-          className="mr-10 hidden md:block"
+          className=" hidden md:block"
           onClick={() => {
             pathName.includes("/marketplace")
               ? (window.location.href = "/marketplace")
