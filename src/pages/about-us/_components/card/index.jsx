@@ -3,26 +3,33 @@ import { mission0, mission1, mission2 } from "../../../../constants/images";
 
 const Card = ({ mission, vision, text, title }) => {
   return (
-    <div className="flex justify-between gap-6 py-24">
-      <div className={`flex flex-col gap-3 w-[50%] ${vision && "order-last"}`}>
-        <span className="uppercase font-bold text-[32px]">{title}</span>
-        <span className="font-normal text-xl">{text}</span>
+    <div className="flex flex-col items-start md:flex-row md:justify-between gap-6 py-8 md:py-24">
+      <div className={`flex flex-col gap-3 w-full ${vision && "order-last"}`}>
+        <span className="uppercase font-bold text-xl md:text-[32px]">{title}</span>
+        <span className="font-normal text-base md:text-base lg:text-xl">{text}</span>
       </div>
       {vision && (
         <img
           src={mission0}
           alt="mission_image"
-          className={`w-[50%] ${vision && "order-first"}`}
+          className={`md:max-w-[100%] w-full ${vision && "md:order-first order-last"}`}
         />
       )}
       {mission && (
-        <div className="flex flex-col gap-4 w-[50%]">
-          <div className="flex items-center gap-5">
-            <img src={mission0} alt="mission_image" className="w-[45%]" />
-            <img src={mission1} alt="mission_image" className="w-[45%]" />
+        <>
+        <div className="flex flex-col gap-4 w-[100%] md:flex">
+          <div className="flex items-center max-w-full gap-5 md:gap-[10px] lg:gap-5">
+            <img src={mission0} alt="mission_image" className="md:max-w-[45%] w-full max-w-[44%]" />
+            <img src={mission1} alt="mission_image" className="md:max-w-[45%] w-full max-w-[44%]" />
           </div>
-            <img src={mission2} alt="mission_image" className="w-full" />
+            <img src={mission2} alt="mission_image" className="max-w-full md:max-w-[100%]" />
         </div>
+        {/* <div className="md:hidden flex flex-col">
+           <img src={mission0} alt="mission_image" className="md:w-[45%]" />
+            <img src={mission1} alt="mission_image" className="md:w-[45%]" />
+            <img src={mission2} alt="mission_image" className="max-w-auto" />
+        </div> */}
+        </>
       )}
     </div>
   );

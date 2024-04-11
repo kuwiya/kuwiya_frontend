@@ -4,7 +4,7 @@ import { Button } from "../../../../components/ui";
 const BannerSection = () => {
   return (
     <div
-      className="xl:h-[400px] md:h-[300px] mx-6 md:mx-16 lg:mx-[136px] mb-10 mt-32 flex items-center justify-center rounded-[20px] bg-no-repeat bg-center bg-cover"
+      className="xl:h-[400px] md:h-[300px] mx-6 md:mx-16 lg:mx-[136px] mb-10 md:mt-32 flex items-center justify-center rounded-[20px] bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: "url('/banner_bg.png')" }}
     >
       <div className="flex justify-center py-8">
@@ -16,7 +16,7 @@ const BannerSection = () => {
             type="text"
             placeholder="enter your mail"
             name="email"
-            className="md:text-sm xl:text-base text-xs font-work-sans font-medium outline-none bg-primary rounded-[20px] px-4 md:px-8 py-2 md:py-4 w-[70%] xl:w-[80%] md:w-[60%] uppercase placeholder-slate-700"
+            className="md:text-sm xl:text-base text-xs font-work-sans font-medium outline-none bg-primary rounded-[20px] px-6 md:px-8 py-2 md:py-4 w-[70%] xl:w-[80%] md:w-[60%] uppercase placeholder-slate-700"
           />
           <div className="md:my-2">
             <Button

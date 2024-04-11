@@ -38,19 +38,19 @@ const CouponCard = () => {
           >
             <div className="flex items-center justify-between">
               <img src={deal.bg} className="" alt="" />
-              <div className="absolute flex items-center justify-start gap-10">
+              <div className="absolute flex items-center justify-start gap-10 md:gap-[20px] lg:gap-10">
                 <img src={deal.logo} className="pl-10" alt="brand_logo" />
                 <img src={deal.divider} alt="" />
                 <div className="flex items-start flex-col py-10">
                   <span
-                    className={`uppercase font-work-sans font-semibold text-2xl ${
+                    className={`uppercase font-work-sans font-semibold text-base lg:text-2xl ${
                       deal.id === 4 ? "text-[#1F1F1F]" : "text-[#FDFCFB]"
                     }`}
                   >
                     {deal.title}
                   </span>
                   <span
-                    className={`font-work-sans font-medium text-base ${
+                    className={`font-work-sans font-medium text-nowrap text-base ${
                       deal.id === 4 ? "text-[#1F1F1F]" : "text-[#FDFCFB] "
                     }`}
                   >
@@ -61,11 +61,10 @@ const CouponCard = () => {
                     children="claim"
                     backgroundColor={`${deal.id === 4 ? "#1F1F1F" : "#ffffff"}`}
                     textColor={`${deal.id === 4 ? "#ffffff" : "#1F1F1F"}`}
-                    padding={"8px 21px"}
                     border={"none"}
                     borderRadius={"15px"}
                     className={
-                      "uppercase font-work-sans font-medium text-[10.5px] w-fit mb-2"
+                      "uppercase !py-[5px] px-[10px] lg:!px-[8px] lg:!py-[5px] font-work-sans font-medium !text-[8px] md:!text-base w-fit mb-2"
                     }
                   />
                   </Link>

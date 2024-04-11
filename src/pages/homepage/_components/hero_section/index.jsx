@@ -40,7 +40,7 @@ const HeroSection = () => {
         <div className="mt-20 ">
           <div className="text-white flex flex-col space-y-20 md:space-y-40 transition-all ease-out duration-1000 ">
             <div className="flex flex-col space-y-4 w-full md:pr-52 xl:pr-56 animate-slide_up">
-              <span className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl uppercase font-bold md:leading-[73.14px]">
+              <span className="text-4xl lg:text-5xl xl:text-6xl uppercase font-bold ">
                 {bgSlides[currentBGSlideIndex]?.title || "welcome to kuwiya."}
               </span>
               <span className="font-medium text-xl lg:text-2xl font-work-sans">

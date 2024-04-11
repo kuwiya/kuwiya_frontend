@@ -46,10 +46,11 @@ const Homepage = () => {
       <FeaturedSection />
       <CouponSection />
       <PopularResturants />
-      <InfoSection />     
+      <InfoSection />
+      <BannerSection />    
       {!(width <= 500 )&& (
         <>
-         <BannerSection />
+         
           <NearmeSection />
           <CitiesAndCountries />
         </>

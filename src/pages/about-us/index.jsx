@@ -9,10 +9,10 @@ const AboutUs = () => {
   return (
     <>
       <Navbar scrolling />
-      <div className="px-40 py-20 pt-40">
-        <div className="flex flex-col text-center mx-auto md:px-10 xl:px-40">
-          <h2 className="font-bold text-[40px] uppercase">about us</h2>
-          <span className="text-xl font-normal">
+      <div className="lg:px-40 py-10 px-10 pt-28 md:py-20 md:pt-40">
+        <div className="flex flex-col text-center mx-auto md:px-10 xl:px-40 space-y-4">
+          <h2 className="font-bold text-[26px] md:text-[40px] uppercase">about us</h2>
+          <span className="md:text-xl text-base font-normal">
             KUWIYA is a dynamic discount finder application designed to cater to
             the needs of food enthusiasts and restaurant owners alike. Founded
             with the passion for enhancing dining experiences and fostering

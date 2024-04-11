@@ -92,7 +92,7 @@ const FeaturedCard = () => {
         {deals?.map((deal) => (
           <Link
             to={`/featured/${deal.id}`}
-            className="relative my-6 md:my-0 min-w-[80%]  lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
+            className="relative my-6 md:my-0 md:min-w-[60%]  min-w-[80%]  lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
             key={deal.id}
           >
             <img

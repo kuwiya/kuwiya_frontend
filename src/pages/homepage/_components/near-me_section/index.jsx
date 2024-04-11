@@ -31,7 +31,7 @@ const NearMeSection = () => {
   return (
     <div className="text-black py-10 px-6 md:py-20 md:px-16 lg:px-[136px] font-work-sans">
       <div className="flex flex-col">
-        <span className="text-xl md:text-[28px] lg::text-[32px] font-bold mb-2 uppercase">
+        <span className="text-xl md:text-[26px] lg:text-[32px] font-bold mb-2 uppercase">
           near me
         </span>
         <span className="text-sm md:text-base lg:text-lg ">
@@ -42,7 +42,7 @@ const NearMeSection = () => {
         <div className="flex-[60%]">
           <img src={images.map} className="w-full" alt="map" />
         </div>
-        <div className="space-y-6 flex-[40%]">
+        <div className="lg:space-y-6 space-y-3 flex-[40%]">
           {FeaturedResturants.map((restaurant) => (
             <Restaurants key={restaurant.id} restaurant={restaurant} />
           ))}

@@ -7,7 +7,7 @@ const CouponSection = () => {
   return (
     <div className="py-8 text-center flex flex-col lg:px-[136px] md:px-16 px-6">
       <div className="flex flex-col pb-10 md:pb-20 md:space-y-2 space-y-1">
-        <span className="uppercase font-bold text-base md:text-[28px] lg:text-[32px]">
+        <span className="uppercase font-bold text-[26px] md:text-[28px] lg:text-[32px]">
           coupon hot deals
         </span>
         <span className="text-sm md:text-base lg:text-lg font-normal font-work-sans">
