@@ -153,32 +153,32 @@ const AddRestaurantPage = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col lg:flex-row lg:gap-8 gap-5">
+              <div className="flex flex-col md:flex-row lg:gap-8 md:gap-3 gap-5">
                 {subscriptionPlans.map((plan, index) => (
                   <div
                     key={plan.id}
-                    className={`rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 shadow-md shadow-[#00000040] ${
+                    className={`rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 lg:px-8 shadow-md shadow-[#00000040] ${
                       subscriptionPlanIndex === index
                         ? "bg-[#F8A434]"
                         : "bg-[#FDFCFB]"
-                    } text-black font-work-sans flex flex-col gap-8 items-center text-center`}
+                    } text-black font-work-sans flex flex-col gap-8 items-center `}
                     onClick={() => handleSubscriptionPlan(index)}
                   >
-                    <h2 className="lg:text-2xl md:text-xl text-lg font-semibold">
+                    <h2 className="lg:text-2xl md:text-xl text-lg font-semibold -mb-6 lg:mb-0">
                       {plan.planType}
                     </h2>
-                    <p className="uppercase">
+                    <p className="uppercase text-center -mb-4 lg:mb-0">
                       <span className="font-semibold lg:text-4xl md:text-2xl text-xl">
                         $
                       </span>{" "}
-                      <span className="font-semibold lg:text-6xl md:text-3xl text-2xl">
+                      <span className="font-semibold lg:text-7xl md:text-4xl text-3xl">
                         {plan.amount}
                       </span>
                       <span className="font-normal lg:text-lg text-base">
                         /monthly
                       </span>
                     </p>
-                    <div className="lg:text-xl md:text-lg font-normal flex flex-col gap-5 items-center">
+                    <div className=" lg:text-lg font-normal flex flex-col gap-5 items-center">
                       <p>{plan.planDesc}</p>
                       <p>{plan.planDesc2}</p>
                       <p>{plan.planDesc3}</p>

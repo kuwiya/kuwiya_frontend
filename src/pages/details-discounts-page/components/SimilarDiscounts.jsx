@@ -1,28 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Clock, Star } from "./index";
-import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useDiscountedDealsData } from "../../../hooks";
-import { Link, useLocation } from "react-router-dom";
+import { Clock, Star } from "../../marketplace/_components";
+import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
 
-const AvailableDiscCard = () => {
+const SimilarDiscountCard = ({ restaurantName }) => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
-  const [query, setQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
 
   const scrollRef = useRef(null);
-  const location = useLocation();
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const queryValue = searchParams.get("q");
-    const locationQueryValue = searchParams.get("l");
-    if (queryValue) {
-      setQuery(queryValue);
-    }
-    if (locationQueryValue) {
-      setLocationQuery(locationQueryValue);
-    }
-  }, [location.search]);
 
   const { isLoading, data, isError, error } = useDiscountedDealsData();
 
@@ -37,26 +22,12 @@ const AvailableDiscCard = () => {
   const availableDiscounts = data?.data;
 
   const filteredDiscounts = () => {
-    if (query) {
-      return availableDiscounts.filter((availableDisc) => {
-        return availableDisc.mealName
-          .toLowerCase()
-          .includes(query.toLowerCase());
-      });
-    } else {
-      return availableDiscounts;
-    }
+    return availableDiscounts.filter((availableDisc) => {
+      return availableDisc.restaurantName === restaurantName;
+    });
   };
 
-  const finalFilteredDiscounts = filteredDiscounts().filter((availableDisc) => {
-    if (locationQuery && locationQuery !== "Location") {
-      return availableDisc.location
-        .toLowerCase()
-        .includes(locationQuery.toLowerCase());
-    } else {
-      return availableDisc;
-    }
-  });
+  //   console.log(filteredDiscounts());
 
   //To check for left scroll and to handle the arrow visibility change
   const handleWheel = (e) => {
@@ -96,18 +67,15 @@ const AvailableDiscCard = () => {
   // console.log(scrollCont.scrollWidth);
 
   return (
-    <section className={`px-6 md:px-16 lg:px-[136px] space-y-4`}>
-      <h1 className="lg:text-xl md:text-base text-[13px] font-semibold text-[#000000] pt-3">
-        Available Discount
-      </h1>
+    <section>
       <div className={`relative `}>
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className={`bg-[#EFEFEF] flex gap-[5px] md:gap-5 lg:gap-8 overflow-x-scroll no-scrollbar p-[5px] md:p-4 lg:p-6`}
+          className={`bg-[#EFEFEF] flex gap-[5px] md:gap-4 overflow-x-scroll no-scrollbar p-[5px] md:p-3 md:px-2 lg:p-6`}
           id="scroll"
         >
-          {finalFilteredDiscounts.map((availableDisc) => (
+          {filteredDiscounts().map((availableDisc) => (
             <Link
               to={`/marketplace/${availableDisc.id}`}
               key={availableDisc.id}
@@ -131,11 +99,11 @@ const AvailableDiscCard = () => {
                   <img src={availableDisc.restaurantLogoUrl} alt="" />
                 </div>
               </div>
-              <div className="relative h-[43px] md:h-auto text-[#00000073] space-y-[2px] lg:space-y-3 px-1 py-[2px] md:px-3 md:py-2">
-                <h1 className="text-[7px] md:text-sm lg:text-base font-semibold text-black">
+              <div className="relative text-[#00000073] space-y-1 lg:space-y-3 p-1 md:px-3 md:py-2">
+                <h1 className="text-[7px] md:text-base font-semibold text-black">
                   {availableDisc.mealName}
                 </h1>
-                <p className="text-[#E18000] text-[6px] md:text-[10px] lg:text-sm">
+                <p className="text-[#E18000] text-[6px] md:text-[10px]">
                   {availableDisc.restaurantName} - Restaurant
                 </p>
                 <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
@@ -182,12 +150,12 @@ const AvailableDiscCard = () => {
             </Link>
           ))}
         </div>
-        <div className="absolute top-[35%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+        <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
           <div
             onClick={handleLeftArrow}
             className={`${
               isLeftArrowVisible ? "bg-[#101010]" : "bg-transparent"
-            } cursor-pointer rotate-180 w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
+            } cursor-pointer rotate-180 w-fit p-2 md:px-4 md:py-3 rounded-[100%]`}
           >
             {isLeftArrowVisible && (
               <ArrowIcon
@@ -198,7 +166,7 @@ const AvailableDiscCard = () => {
           </div>
           <div
             onClick={handleRightArrow}
-            className={`bg-[#101010] cursor-pointer w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
+            className="bg-[#101010] cursor-pointer w-fit p-2 md:px-4 md:py-3 rounded-[100%]"
           >
             <ArrowIcon
               width={screen.width < 768 && 12}
@@ -211,4 +179,4 @@ const AvailableDiscCard = () => {
   );
 };
 
-export default AvailableDiscCard;
+export default SimilarDiscountCard;
