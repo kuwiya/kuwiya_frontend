@@ -12,7 +12,7 @@ const Values = () => {
   return (
     <div className="py-6 lg:py-28">
       <div className="flex flex-col text-center mx-auto md:px-4 lg:px-40">
-        <h2 className="font-semibold text-[26px] md:text-[28px] uppercase pb-4 md:pb-20">
+        <h2 className="font-bold text-xl md:text-[28px] uppercase pb-4 md:pb-20">
           core values
         </h2>
         <div className="flex flex-col gap-8 lg:hidden">
