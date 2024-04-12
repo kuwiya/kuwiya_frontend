@@ -18,31 +18,39 @@ const RestaurantHero = ({ restaurant }) => {
   };
 
   return (
-    <section className="lg:px-[9rem] md:px-[5rem] px-[2rem]">
+    <section className="">
       <div className="relative">
-        <div>
+        <div className="">
           <img
             src={bgImages[bgImageIndex]}
             alt=""
-            className="w-full object-cover"
+            className="w-full object-cover rounded-t-lg h-[153px] md:h-[350px] lg:h-[560px]"
           />
         </div>
-        <div className="absolute top-[50%] left-5 right-5 translate-y-[-50%] z-[999] flex justify-between">
+        <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-10 flex justify-between">
           <div
             onClick={handlePrev}
             className={`bg-[#FDFCFB] ${
               bgImageIndex === 0 ? "opacity-50" : "opacity-100"
-            } cursor-pointer rotate-180 w-fit px-5 py-4 rounded-[100%] hover:bg-[#000000] transition-all delay-150 ease-linear`}
+            } cursor-pointer rotate-180 w-fit p-3 md:px-5 md:py-4 rounded-[100%] hover:bg-[#000000] transition-all delay-150 ease-linear`}
           >
-            <ArrowIcon fillColor={"#F8A434"} />
+            <ArrowIcon
+              fillColor={"#F8A434"}
+              width={screen.width < 768 ? 16 : ""}
+              height={screen.width < 768 ? 16 : ""}
+            />
           </div>
           <div
             onClick={handleNext}
             className={`bg-[#FDFCFB] ${
               bgImageIndex === 3 ? "opacity-50" : "opacity-100"
-            } cursor-pointer w-fit px-5 py-4 rounded-[100%] hover:bg-[#000000] transition-all delay-150 ease-linear`}
+            } cursor-pointer w-fit p-3 md:px-5 md:py-4 rounded-[100%] hover:bg-[#000000] transition-all delay-150 ease-linear`}
           >
-            <ArrowIcon fillColor={"#F8A434"} />
+            <ArrowIcon
+              fillColor={"#F8A434"}
+              width={screen.width < 768 ? 16 : ""}
+              height={screen.width < 768 ? 16 : ""}
+            />
           </div>
         </div>
         <div className="absolute -bottom-5 lg:bottom-0 left-0 right-0  py-8 flex gap-1 justify-center items-center z-[999]">

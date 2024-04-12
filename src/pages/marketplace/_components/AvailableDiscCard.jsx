@@ -27,11 +27,19 @@ const AvailableDiscCard = () => {
   const { isLoading, data, isError, error } = useDiscountedDealsData();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   if (isError) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error}
+      </div>
+    );
   }
 
   const availableDiscounts = data?.data;
@@ -93,6 +101,14 @@ const AvailableDiscCard = () => {
     }
   };
 
+  if (finalFilteredDiscounts.length === 0) {
+    return (
+      <div className="text-center text-sm md:text-base lg:text-xl px-6 md:px-16 lg:px-[136px] font-work-sans text-[#000000] font-normal uppercase">
+        No discounts available for this restaurant/meal at the moment, please
+        check out other restaurants!
+      </div>
+    );
+  }
   // console.log(scrollCont.scrollWidth);
 
   return (
@@ -182,7 +198,7 @@ const AvailableDiscCard = () => {
             </Link>
           ))}
         </div>
-        <div className="absolute top-[35%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+        <div className="absolute top-[35%] left-0 right-0 translate-y-[-50%] z-10 flex justify-between">
           <div
             onClick={handleLeftArrow}
             className={`${

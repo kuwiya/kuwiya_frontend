@@ -50,8 +50,7 @@ const CouponCard = () => {
     }
   });
 
-  const couponsPerPage =
-    finalFilteredCoupons.length > 4 && screen.width > 768 ? 4 : 2; // number of coupons per page
+  const couponsPerPage = finalFilteredCoupons.length >= 4 ? 4 : 2; // number of coupons per page
 
   // const couponsPerPage = finalFilteredCoupons.length > 4 ? 4 : 2; // number of coupons per page
 
@@ -64,6 +63,15 @@ const CouponCard = () => {
   );
 
   const nPages = Math.ceil(finalFilteredCoupons.length / couponsPerPage);
+
+  if (currentCoupons.length === 0) {
+    return (
+      <div className="text-center text-sm md:text-base lg:text-xl font-work-sans text-[#000000] font-normal uppercase px-6 md:px-16 lg:px-[136px]">
+        No coupons available for this restaurant/meal at the moment, please
+        check out other restaurants!
+      </div>
+    );
+  }
 
   return (
     <section className="px-6 md:px-16 lg:px-[136px] my-16 mb-20 space-y-5 font-work-sans">

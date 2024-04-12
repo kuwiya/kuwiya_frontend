@@ -29,7 +29,7 @@ const RestFeatCard = ({ restaurant }) => {
     }
   };
 
-  console.log(filteredDeals());
+  // console.log(filteredDeals());
 
   return (
     <div className="flex items-center gap-8">

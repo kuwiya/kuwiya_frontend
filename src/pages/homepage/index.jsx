@@ -42,15 +42,14 @@ const Homepage = () => {
   return (
     <main>
       <Navbar scrolling={scrolling} />
-      <HeroSection />
+      <HeroSection scrolling={scrolling} />
       <FeaturedSection />
       <CouponSection />
       <PopularResturants />
       <InfoSection />
-      <BannerSection />    
-      {!(width <= 500 )&& (
+      <BannerSection />
+      {!(width <= 500) && (
         <>
-         
           <NearmeSection />
           <CitiesAndCountries />
         </>

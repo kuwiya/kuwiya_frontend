@@ -1014,6 +1014,70 @@ export const customersReviews = [
       "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
     rating_count: 5.0,
   },
+  {
+    id: 5,
+    customerImage: "/review1.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 6,
+    customerImage: "/review2.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 7,
+    customerImage: "/review3.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 8,
+    customerImage: "/review4.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 9,
+    customerImage: "/review1.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 10,
+    customerImage: "/review2.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 11,
+    customerImage: "/review3.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
+  {
+    id: 12,
+    customerImage: "/review4.png",
+    customerName: "john doe",
+    customerTexts:
+      "Lorem ipsum dolor sit amet consectetur. Dolor et diam egestas condimentum egestas nisi nibh dignissim. Placerat id sit mattis donec pharetra.",
+    rating_count: 5.0,
+  },
 ];
 
 export const subscriptionPlans = [
