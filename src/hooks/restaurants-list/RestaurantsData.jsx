@@ -2,7 +2,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchRestaurantsData = (restaurant_id) => {
-  return axios.get(`http://localhost:4000/Restaurants/${restaurant_id}`);
+  return axios.get(`https://elite-orange-cross.glitch.me/Restaurants/${restaurant_id}`);
 };
 export const useRestaurantsData = (restaurant_id) => {
   return useQuery({

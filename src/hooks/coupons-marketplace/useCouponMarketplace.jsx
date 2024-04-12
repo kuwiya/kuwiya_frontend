@@ -2,7 +2,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchCouponData = () => {
-  return axios.get("http://localhost:4000/couponMarketplace");
+  return axios.get("https://elite-orange-cross.glitch.me/couponMarketplace");
 };
 
 export const useCouponsMarketplaceData = () => {

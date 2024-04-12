@@ -2,7 +2,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchDiscountedData = (discount_id) => {
-  return axios.get(`http://localhost:4000/availableDiscounts/${discount_id}`);
+  return axios.get(`https://elite-orange-cross.glitch.me/availableDiscounts/${discount_id}`);
 };
 
 export const useDiscountedDealData = (discount_id) => {
