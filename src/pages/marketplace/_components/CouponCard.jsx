@@ -50,7 +50,8 @@ const CouponCard = () => {
     }
   });
 
-  const couponsPerPage = finalFilteredCoupons.length >= 4 ? 4 : 2; // number of coupons per page
+  const couponsPerPage =
+    finalFilteredCoupons.length && screen.width > 768 ? 4 : 2; // number of coupons per page
 
   // const couponsPerPage = finalFilteredCoupons.length > 4 ? 4 : 2; // number of coupons per page
 
@@ -78,7 +79,7 @@ const CouponCard = () => {
       <h1 className="lg:text-xl md:text-base text-[13px] font-semibold text-[#000000]">
         Coupon
       </h1>
-      <div className="grid grid-cols-2 gap-2 md:gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
           <Link
             to={`/coupon/${detail.id}`}
@@ -87,15 +88,15 @@ const CouponCard = () => {
           >
             <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
             <div className="flex w-auto">
-              <div className="flex-[70%] flex gap-1 md:gap-2 lg:gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%]">
-                <div className="ml-4 md:ml-7 lg:ml-8 text-[7px] md:text-[10px] lg:text-xl font-semibold text-[#000000] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4 md:px-1 lg:px-0">
+              <div className="flex-[70%] flex gap-2 lg:gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%]">
+                <div className="ml-7 lg:ml-8 text-[10px] lg:text-xl font-semibold text-[#000000] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4 px-1 lg:px-0">
                   <h1 className="-rotate-90">{detail.couponNum}</h1>
                   <span className="bg-[#000000] h-2 w-0.5"></span>
                   <h1 className="-rotate-90">{detail.couponCode}</h1>
                 </div>
                 <span className="h-full border-[1px] border-white border-dashed"></span>
                 <div className="py-3 space-y-0">
-                  <p className="flex gap-2 items-center text-[6px] md:text-[10px] lg:text-sm">
+                  <p className="flex gap-2 items-center text-[9px] md:text-[10px] lg:text-sm">
                     <img
                       src={detail.restLogo}
                       alt=""
@@ -103,24 +104,24 @@ const CouponCard = () => {
                     />{" "}
                     <span>{detail.restName}</span>
                   </p>
-                  <h2 className="text-[7px] md:text-[11px] lg:text-base font-medium">
+                  <h2 className="text-[8px] md:text-[11px] lg:text-base font-medium">
                     {detail.mealName}
                   </h2>
-                  <div className="space-y-1 text-[5px] md:text-[7px] lg:text-sm">
+                  <div className="space-y-1 text-[7px] lg:text-sm">
                     <div className="flex gap-3 items-center">
                       <p className="">₦{detail.originalPrice}</p>
                       <p className="bg-[#000000] h-3 lg:h-5 w-[1px]"></p>
                       <p className="">
                         ₦{detail.priceOff}{" "}
-                        <sup className="text-[5px] md:text-[7px] lg:text-[8px] font-medium text-white uppercase">
+                        <sup className="text-[7px] lg:text-[8px] font-medium text-white uppercase">
                           off
                         </sup>
                       </p>
                     </div>
-                    <p className="text-[#00000038] text-[5px] lg:text-sm font-medium">
+                    <p className="text-[#00000038] text-[6px] lg:text-sm font-medium">
                       {detail.mealInfo}
                     </p>
-                    <div className="flex gap-3 md:items-center text-[5px] md:text-[7px] lg:text-sm">
+                    <div className="flex gap-3 md:items-center text-[6px] md:text-[7px] lg:text-sm">
                       <p className="flex gap-1 items-center md:justify-between">
                         <span className="hidden lg:block">
                           <Clock />
