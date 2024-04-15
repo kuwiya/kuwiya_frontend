@@ -13,6 +13,9 @@ import CouponDetailsPage from "./pages/details-coupon-page";
 import AboutUs from "./pages/about-us";
 import ClaimCoupon from "./pages/claim-coupon";
 import AddRestaurantPage from "./pages/add-restaurant";
+import UserInvitation from "./pages/user-invitation";
+import Waitlist from "./pages/waitlist";
+import Error from "./pages/error-screen";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/claim-coupon/:id" element={<ClaimCoupon />} />
         <Route path="/add-restaurant" element={<AddRestaurantPage />} />
+        <Route path="/user-invitation" element={<UserInvitation />} />
+        <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
       <Footer />
     </>
