@@ -49,19 +49,19 @@ const RestaurantsListing = () => {
     <>
       <Navbar scrolling bgBlack />
 
-      <div className="px-10 bg-primary py-28">
+      <div className="md:px-10 px-10 bg-primary py-28">
         <div className="flex justify-between w-full font-work-sans py-10">
           <div className="flex items-center space-x-3">
             <Link to={"/"} className="hover:cursor-pointer">
               <ArrowLeft />
             </Link>
-            <span className="uppercase font-semibold text-xl">restaurant</span>
+            <span className="uppercase font-semibold md:text-base lg:text-xl">restaurant</span>
           </div>
           <div className="flex items-center space-x-3 relative">
             {sortItems && (
               <div className="bg-primary space-y-4 border px-6 py-4 absolute top-[4rem] right-[-12px] animate-slide_up z-50">
                 <div className="flex justify-between items-center">
-                  <span>Sort</span>
+                  <span class>Sort</span>
                   <span
                     onClick={handleSort}
                     className="hover:cursor-pointer text-xl"
@@ -143,11 +143,11 @@ const RestaurantsListing = () => {
             <span className="capitalize font-medium text-xl">sort</span>
           </div>
         </div>
-        <div className="xl:px-40 md:px-20">
+        <div className="xl:px-40 md:px-10 px-0">
           <span className="font-work-sans font-medium text-xl lg:px-[88px]">
             All Restaurants on Kuwiya
           </span>
-          <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-10 lg:px-[88px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-8 md:gap-12 lg:px-[88px]">
             {filteredItems?.map((restaurant) => (
               <Card restaurant={restaurant} key={restaurant.id} />
             ))}
