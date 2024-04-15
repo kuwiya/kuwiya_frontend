@@ -55,7 +55,7 @@ const RestaurantsListing = () => {
             <Link to={"/"} className="hover:cursor-pointer">
               <ArrowLeft />
             </Link>
-            <span className="uppercase font-semibold md:text-base lg:text-xl">restaurant</span>
+            <span className="uppercase font-semibold text-base lg:text-xl">restaurant</span>
           </div>
           <div className="flex items-center space-x-3 relative">
             {sortItems && (
@@ -77,7 +77,7 @@ const RestaurantsListing = () => {
                     value="fastfood"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="italian" className="text-[18px] font-normal">
+                  <label htmlFor="italian" className="md:text-[18px] text-sm font-normal">
                     Fast Food
                   </label>
                 </div>
@@ -89,7 +89,7 @@ const RestaurantsListing = () => {
                     value="local"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="text-[18px] font-normal">
+                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
                     Local Restaurants
                   </label>
                 </div>
@@ -101,7 +101,7 @@ const RestaurantsListing = () => {
                     value="chinese"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="text-[18px] font-normal">
+                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
                     Chinese Restaurants
                   </label>
                 </div>
@@ -113,7 +113,7 @@ const RestaurantsListing = () => {
                     value="italian"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="text-[18px] font-normal">
+                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
                     Italian Restaurants
                   </label>
                 </div>
@@ -140,11 +140,11 @@ const RestaurantsListing = () => {
               className="hover:cursor-pointer"
               onClick={handleSort}
             />
-            <span className="capitalize font-medium text-xl">sort</span>
+            <span className="capitalize font-medium md:text-base text-sm lg:text-xl">sort</span>
           </div>
         </div>
         <div className="xl:px-40 md:px-10 px-0">
-          <span className="font-work-sans font-medium text-xl lg:px-[88px]">
+          <span className="font-work-sans font-medium text-base lg:text-xl lg:px-[88px]">
             All Restaurants on Kuwiya
           </span>
           <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-8 md:gap-12 lg:px-[88px]">
