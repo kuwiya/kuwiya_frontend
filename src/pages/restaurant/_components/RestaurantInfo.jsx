@@ -6,8 +6,8 @@ import { Button } from "../../../components/ui";
 
 const RestaurantInfo = ({ restaurant }) => {
   return (
-    <section className="text-[#000000] font-normal flex justify-between px-10 py-20 lg:px-36 gap-5">
-      <div className="flex-[57.72%] space-y-4 lg:pr-20">
+    <section className="text-[#000000] font-normal flex flex-col lg:flex-row justify-between py-10 lg:py-16 gap-8 lg:gap-5">
+      <div className="flex-[57.72%] space-y-4 lg:pr-10">
         <div className="flex gap-2 justify-between items-start">
           <div className="space-y-4">
             <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold uppercase">
@@ -21,7 +21,9 @@ const RestaurantInfo = ({ restaurant }) => {
                 <StarIcon fillColor="black" />
                 <StarIcon fillColor="black" />
               </p>
-              <span>{restaurant.ratings.substring(0, 3)}/5.0</span>
+              <span className="text-[6px] text-base">
+                {restaurant.ratings.substring(0, 3)}/5.0
+              </span>
             </div>
           </div>
           <Button
@@ -32,11 +34,15 @@ const RestaurantInfo = ({ restaurant }) => {
             className="font-medium"
           />
         </div>
-        <p className="text-xl ">{restaurant.about}</p>
+        <p className="text-xs md:text-base lg:text-xl text-justify">
+          {restaurant.about}
+        </p>
       </div>
-      <div className="flex-[32.29%] space-y-4 text-base">
-        <img src={map} alt="" />
-        <div>
+      <div className="flex-[32.29%] flex flex-col md:flex-row lg:flex-col gap-4 text-xs md:text-sm lg:text-base">
+        <div className="flex-[55%]">
+          <img src={map} alt="" />
+        </div>
+        <div className="flex-[45%]">
           <p className="flex items-center gap-2 ">
             <span>
               <LocationIcon />

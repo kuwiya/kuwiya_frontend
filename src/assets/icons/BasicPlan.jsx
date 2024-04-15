@@ -1,10 +1,10 @@
 import React from "react";
 
-const BasicPlan = () => {
+const BasicPlan = ({ width, height }) => {
   return (
     <svg
-      width="158"
-      height="158"
+      width={width || "158"}
+      height={height || "158"}
       viewBox="0 0 158 158"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,28 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../../../../../../components/ui";
+import ArrowLeft from "../../../ArrowLeft";
 
 const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
   const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
 
+  const prevPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+    return currentPage;
+  };
+
+  const nextPage = () => {
+    if (currentPage !== nPages) {
+      setCurrentPage((prev) => prev + 1);
+    }
+    return currentPage;
+  };
+
   return (
-    <nav>
-      <ul className="flex gap-3 md:gap-6">
-        {pageNumbers.map((pgNumber) => (
-          <Link
-            to={`?page=${pgNumber}`}
-            onClick={() => setCurrentPage(pgNumber)}
-            key={pgNumber}
-            className={`px-4 py-2 lg:py-4 lg:px-6 border text-sm rounded-md transition-all ease-out font-lato  ${
-              currentPage == pgNumber
-                ? "border-none bg-darkyellow text-primary"
-                : "hover:bg-darkyellow hover:border-[#ffffff] hover:text-primary bg-transparent text-[#828282] border-[#828282]"
-            } `}
-          >
-            <li className="page-link">{pgNumber}</li>
-          </Link>
-        ))}
-      </ul>
-    </nav>
+    <div className="flex gap-3 md:gap-6">
+      <Button
+        children={<ArrowLeft width={screen.width < 768 && 18} />}
+        onClick={prevPage}
+        padding={screen.width < 768 ? "0px 5px" : "5px 10px"}
+      />
+      <Button
+        className="rotate-180"
+        children={<ArrowLeft width={screen.width < 768 && 18} />}
+        onClick={nextPage}
+        padding={screen.width < 768 ? "0px 5px" : "5px 10px"}
+      />
+    </div>
   );
 };
 

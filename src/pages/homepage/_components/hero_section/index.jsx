@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Button } from "../../../../components/ui";
 import { UserSubscriptionPopUp } from "../../../../components";
 
-const HeroSection = () => {
+const HeroSection = ({ scrolling }) => {
   const [bgSlides, setBGSlides] = useState([]);
   const [currentBGSlideIndex, setCurrentBGSlideIndex] = useState(-1);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
@@ -52,7 +52,12 @@ const HeroSection = () => {
                 backgroundColor={"transparent"}
                 className="w-fit uppercase font-work-sans font-medium transition-colors delay-200 ease-in-out hover:!bg-darkyellow  hover:!text-[#000] text-sm md:text-base"
                 padding={"10px 20px"}
-                onClick={() => setIsPopUpOpen(true)}
+                onClick={() => {
+                  if (scrolling) {
+                    window.scrollTo(0, 0);
+                  }
+                  setIsPopUpOpen(true);
+                }}
               />
             </div>
             <div className="flex md:flex-row flex-col gap-6 md:gap-10 items-start md:items-center font-work-sans">
@@ -109,7 +114,7 @@ const HeroSection = () => {
       </div>
       {isPopUpOpen && (
         <div
-          className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%]`}
+          className={`absolute top-[40%] md:top-[50%] lg:top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%]`}
         >
           <UserSubscriptionPopUp
             setIsOpen={setIsPopUpOpen}

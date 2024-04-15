@@ -1,10 +1,10 @@
 import React from "react";
 
-const FreePlan = () => {
+const FreePlan = ({ width, height }) => {
   return (
     <svg
-      width="104"
-      height="158"
+      width={width || "104"}
+      height={height || "158"}
       viewBox="0 0 104 158"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

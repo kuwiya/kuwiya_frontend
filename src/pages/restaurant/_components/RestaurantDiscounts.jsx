@@ -1,19 +1,22 @@
 import React from "react";
 import { RestaurantCouponCard, RestaurantFeaturedCard } from ".";
 import { Button } from "../../../components/ui";
+import SimilarDiscountCard from "../../details-discounts-page/components/SimilarDiscounts";
+import { CouponsFiltering } from "../../../components";
+import { Link } from "react-router-dom";
 
 const RestaurantDiscounts = ({ restaurant }) => {
   return (
-    <section className="px-10 py-4">
-      <div className="flex flex-col lg:flex-row gap-3">
+    <section className="py-4">
+      <div className="space-y-12 md:space-y-20">
         <div className="flex-[65%]">
-          <RestaurantFeaturedCard restaurant={restaurant} />
+          <SimilarDiscountCard restaurantName={restaurant.brand} />
         </div>
         <div className="flex-[35%]">
-          <RestaurantCouponCard restaurant={restaurant} />
+          <CouponsFiltering restName={restaurant.brand} />
         </div>
       </div>
-      <div className="flex justify-center mt-8">
+      <Link to="/marketplace" className="flex justify-center ">
         <Button
           children="VIEW ALL"
           padding="10px 30px"
@@ -21,7 +24,7 @@ const RestaurantDiscounts = ({ restaurant }) => {
           borderRadius="12px"
           className="font-medium"
         />
-      </div>
+      </Link>
     </section>
   );
 };

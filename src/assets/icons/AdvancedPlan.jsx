@@ -1,10 +1,10 @@
 import React from "react";
 
-const AdvancedPlan = () => {
+const AdvancedPlan = ({ width, height }) => {
   return (
     <svg
-      width="150"
-      height="150"
+      width={width || "150"}
+      height={height || "150"}
       viewBox="0 0 150 150"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

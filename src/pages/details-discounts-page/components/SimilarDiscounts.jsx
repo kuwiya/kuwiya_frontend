@@ -27,6 +27,15 @@ const SimilarDiscountCard = ({ restaurantName }) => {
     });
   };
 
+  if (filteredDiscounts().length === 0) {
+    return (
+      <div className="text-center text-sm md:text-base lg:text-xl font-work-sans text-[#000000] font-normal uppercase">
+        No discounts available for this restaurant at the moment, please check
+        out other restaurants!
+      </div>
+    );
+  }
+
   //   console.log(filteredDiscounts());
 
   //To check for left scroll and to handle the arrow visibility change
@@ -150,7 +159,7 @@ const SimilarDiscountCard = ({ restaurantName }) => {
             </Link>
           ))}
         </div>
-        <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[999] flex justify-between">
+        <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-10 flex justify-between">
           <div
             onClick={handleLeftArrow}
             className={`${

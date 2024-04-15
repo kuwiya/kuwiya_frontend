@@ -32,9 +32,9 @@ const RestaurantPage = () => {
   return (
     <>
       <Navbar scrolling bgBlack />
-      <main className="mt-32 font-work-sans">
-        <section className="pl-[9.5rem] py-10">
-          <div className="flex gap-3 items-center">
+      <main className="mt-32 font-work-sans px-6 md:px-16 lg:px-[136px]">
+        <section className="py-10">
+          <div className="flex gap-3">
             <Link to="/restaurants">
               <ArrowLeft />
             </Link>
