@@ -24,7 +24,7 @@ const SubscriptionPage = () => {
                   key={plan.id}
                   className="rounded-[10px] py-5 lg:py-12 px-6 shadow-md bg-[#FDFCFB] text-black font-work-sans"
                 >
-                  <div className="flex flex-row md:flex-col gap-8 md:gap-4 lg:gap-6 items-center">
+                  <div className="flex flex-row md:flex-col gap-6 md:gap-4 lg:gap-6 items-center">
                     <div className="flex flex-col gap-1 md:gap-3 items-center">
                       <div className="md:hidden lg:block">
                         {plan.planType === "FREE" ? (

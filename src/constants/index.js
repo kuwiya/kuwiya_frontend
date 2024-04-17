@@ -384,7 +384,7 @@ export const cities = [
   },
   {
     id: 2,
-    location: "porthacourt",
+    location: "p.hacourt",
   },
   {
     id: 3,
@@ -412,7 +412,7 @@ export const cities = [
   },
   {
     id: 9,
-    location: "porthacourt",
+    location: "p.hacourt",
   },
   {
     id: 10,
@@ -424,7 +424,7 @@ export const cities = [
   },
   {
     id: 12,
-    location: "porthacourt",
+    location: "p.hacourt",
   },
 ];
 
@@ -439,7 +439,7 @@ export const countries = [
   },
   {
     id: 2,
-    location: "south africa",
+    location: "s.africa",
   },
   {
     id: 3,
@@ -455,7 +455,7 @@ export const countries = [
   },
   {
     id: 6,
-    location: "united kingdom",
+    location: "u.kingdom",
   },
   {
     id: 7,

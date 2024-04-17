@@ -16,7 +16,7 @@ const BannerSection = () => {
             type="text"
             placeholder="enter your mail"
             name="email"
-            className="md:text-sm xl:text-base text-xs font-work-sans font-medium outline-none bg-primary rounded-[20px] px-6 md:px-8 py-2 md:py-4 w-[70%] xl:w-[80%] md:w-[60%] uppercase placeholder-slate-700"
+            className="md:text-sm xl:text-base text-xs font-work-sans font-medium outline-none bg-primary rounded-[20px] px-6 md:px-8 py-2 md:py-4 w-[70%] xl:w-[80%] md:w-[60%] placeholder:uppercase placeholder-slate-700"
           />
           <div className="md:my-2">
             <Button
