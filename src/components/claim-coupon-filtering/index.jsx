@@ -8,8 +8,7 @@ const ClaimCouponFiltering = ({ restName }) => {
     const { id } = useParams()
   const [currentPage, setCurrentPage] = useState(1);
 
-  const couponsPerPage = 4;
-
+  const couponsPerPage = screen.width < 768 ? 2 : 4;
   const { isLoading, data, isError, error } = useClaimCouponAll();
 
   if (isLoading) {
@@ -38,8 +37,8 @@ console.log(data.data)
   const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
 
   return (
-    <section className="px-10 my-16 mb-20 space-y-5">
-      <div className="grid lg:grid-cols-2 gap-6">
+    <section className="my-16 mb-20 space-y-5">
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
           <CouponCard claim detail={detail} />
         ))}
