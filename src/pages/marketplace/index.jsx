@@ -13,6 +13,7 @@ import { AllYummy, AllYummy2 } from "../../constants/images";
 import LocationIcon from "../../components/ui/navbar/_components/LocationIcon";
 import { Navbar } from "../../components/ui";
 import { useLocation } from "react-router-dom";
+import { CitiesAndCountries } from "../homepage/_components";
 
 const MarketPlace = () => {
   const [searchQueryValue, setSearchQueryValue] = useState("");
@@ -73,7 +74,10 @@ const MarketPlace = () => {
         <AffordableYummy image={AllYummy2} />
 
         <LogoBanner />
+
         <AllRestaurants />
+
+        <CitiesAndCountries />
       </main>
     </>
   );

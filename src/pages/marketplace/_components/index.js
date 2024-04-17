@@ -8,3 +8,4 @@ export { default as CouponCard } from "./CouponCard";
 export { default as LogoBanner } from "./logo_banner";
 export { default as AllRestaurants } from "./all_restaurants";
 export { default as Pagination } from "./all_restaurants/_components/pagination/index";
+export { default as CouponCardDetail } from "./CouponCardDetail";

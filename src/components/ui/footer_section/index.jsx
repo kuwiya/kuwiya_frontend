@@ -20,7 +20,7 @@ const Footer = () => {
             >
               Marketplace
             </Link>
-            <Link to="/" className="font-work-sans text-xl font-light">
+            <Link to="/waitlist" className="font-work-sans text-xl font-light">
               Subscribe
             </Link>
             <Link
@@ -29,7 +29,10 @@ const Footer = () => {
             >
               Subscription plans
             </Link>
-            <Link to="/" className="font-work-sans text-xl font-light">
+            <Link
+              to="/user-invitation"
+              className="font-work-sans text-xl font-light"
+            >
               Referrals
             </Link>
             <Link to="/" className="font-work-sans text-xl font-light">
@@ -48,6 +51,12 @@ const Footer = () => {
             >
               Add Restaurant
             </Link>
+            <Link
+              to="/restaurants"
+              className="font-work-sans text-xl  font-light"
+            >
+              All Restaurants
+            </Link>
           </div>
         </div>
         <div className="flex-col space-y-6 flex text-primary">
@@ -58,7 +67,7 @@ const Footer = () => {
             <Link to="/about-us" className="font-work-sans text-xl  font-light">
               About Us
             </Link>
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/error" className="font-work-sans text-xl  font-light">
               How It Works
             </Link>
             <Link to="/" className="font-work-sans text-xl  font-light">

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useCouponsMarketplaceData } from "../../hooks";
-import CouponCard from "../ui/coupon-card";
-import { Pagination } from "../../pages/marketplace/_components";
+import {
+  CouponCardDetail,
+  Pagination,
+} from "../../pages/marketplace/_components";
 
 const CouponsFiltering = ({ restName }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,11 +13,19 @@ const CouponsFiltering = ({ restName }) => {
   const { isLoading, data, isError, error } = useCouponsMarketplaceData();
 
   if (isLoading) {
-    return <div className="text-center uppercase">Loading...</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   if (isError) {
-    return <div className="text-center uppercase">Error: {error.message}</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error}
+      </div>
+    );
   }
 
   const coupons = data?.data.filter((detail) => detail.restName === restName);
@@ -36,10 +46,10 @@ const CouponsFiltering = ({ restName }) => {
   const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
 
   return (
-    <section className="my-16 mb-20 space-y-5">
+    <section className="my-16 mb-10 space-y-5">
       <div className="grid md:grid-cols-2 gap-6">
         {currentCoupons.map((detail) => (
-          <CouponCard key={detail.id} detail={detail} />
+          <CouponCardDetail key={detail.id} detail={detail} />
         ))}
       </div>
       <div>
