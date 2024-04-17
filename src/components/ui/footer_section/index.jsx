@@ -70,7 +70,7 @@ const Footer = () => {
             <Link to="/error" className="font-work-sans text-xl  font-light">
               How It Works
             </Link>
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/error" className="font-work-sans text-xl  font-light">
               FAQs
             </Link>
           </div>
@@ -80,13 +80,13 @@ const Footer = () => {
             support
           </div>
           <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/error" className="font-work-sans text-xl  font-light">
               Customer Care
             </Link>
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/error" className="font-work-sans text-xl  font-light">
               Help Center
             </Link>
-            <Link to="/" className="font-work-sans text-xl  font-light">
+            <Link to="/error" className="font-work-sans text-xl  font-light">
               Report an issue
             </Link>
           </div>
