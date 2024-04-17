@@ -12,7 +12,7 @@ const CouponCardDetail = ({ detail }) => {
       <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
       <div className="flex w-auto">
         <div
-          className={`flex-[70%] flex gap-2 lg:gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] ${
+          className={`flex gap-2 lg:gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] ${
             pathName.includes("/restaurants") &&
             "bg-gradient-to-r from-[#101010] from-[0%] to-[#101010] to-[100%] text-white"
           }`}
@@ -102,7 +102,7 @@ const CouponCardDetail = ({ detail }) => {
             </div>
           </div>
         </div>
-        <div className="flex-[30%] relative">
+        <div className="relative">
           <img
             src={detail.mealImage}
             className="rounded-r-xl h-full object-cover"
