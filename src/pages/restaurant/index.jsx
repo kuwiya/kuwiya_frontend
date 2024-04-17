@@ -18,11 +18,19 @@ const RestaurantPage = () => {
   const { isLoading, data, isError, error } = useRestaurantsData(id);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   if (isError) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error.message}
+      </div>
+    );
   }
 
   const restaurant = data?.data;
@@ -32,8 +40,8 @@ const RestaurantPage = () => {
   return (
     <>
       <Navbar scrolling bgBlack />
-      <main className="mt-32 font-work-sans px-6 md:px-16 lg:px-[136px]">
-        <section className="py-10">
+      <main className="mt-14 md:mt-24 font-work-sans px-6 md:px-16 lg:px-[136px]">
+        <section className="pt-10 pb-5 md:py-10">
           <div className="flex gap-3">
             <Link to="/restaurants">
               <ArrowLeft />

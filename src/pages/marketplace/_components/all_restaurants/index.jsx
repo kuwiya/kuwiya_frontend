@@ -20,7 +20,7 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(RestaurantItems.length / restaurantPerPage);
 
   return (
-    <div className="px-6 md:px-16 lg:px-[136px] py-20 bg-lightGray">
+    <div className="px-6 md:px-16 lg:px-[136px] pt-20 py-6 bg-lightGray">
       <span className="font-work-sans font-medium text-[11px] md:text-xl lg:text-2xl">
         All Items on Kuwiya
       </span>
@@ -40,7 +40,7 @@ const AllRestaurants = () => {
             </Link>
             <div className=" flex flex-col p-2 md:p-3">
               <div className="flex items-center justify-between font-work-sans">
-                <span className="font-lato text-[10px] md:text-sm lg:text-base font-medium">
+                <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
                 <span className="hidden lg:block">
@@ -53,7 +53,7 @@ const AllRestaurants = () => {
                   <LikeIcon width={10} height={10} />
                 </span>
               </div>
-              <div className="text-[8px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
+              <div className="text-[10px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
                 <div className=" text-black opacity-80">
                   {restaurant.status}
                 </div>

@@ -14,7 +14,7 @@ const AddRestaurantPage = () => {
     <>
       <Navbar scrolling />
 
-      <main className="font-work-sans bg-[#FDFCFB] space-y-20 mt-40 lg:px-[136px] md:px-16 px-6">
+      <main className="font-work-sans bg-[#FDFCFB] space-y-10 mt-20 md:mt-28 lg:px-[136px] md:px-16 px-6">
         <div className="text-black text-center space-y-4">
           <h1 className="uppercase lg:text-3xl md:text-2xl text-xl font-bold">
             add restaurant
@@ -32,7 +32,7 @@ const AddRestaurantPage = () => {
             className="flex flex-col gap-9 lg:text-lg text-base mb-20"
           >
             <div className="flex flex-col gap-5 rounded-md bg-[#E9E9E9] p-6 md:px-10 lg:px-16">
-              <div className="flex flex-col gap-6 py-10">
+              <div className="flex flex-col gap-6 pt-3 lg:pb-3">
                 <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-[#00000099]">
                   restaurant details
                 </h2>

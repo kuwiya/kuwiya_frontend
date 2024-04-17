@@ -127,72 +127,88 @@ const AvailableDiscCard = () => {
             <Link
               to={`/marketplace/${availableDisc.id}`}
               key={availableDisc.id}
-              className="bg-white rounded-[10px]"
+              className="bg-white rounded-[10px] h-fit"
             >
-              <div
-                style={{
-                  backgroundImage: `url(${availableDisc.mealImageUrl})`,
-                }}
-                className="relative bg-no-repeat bg-cover h-[82px] md:h-[151px] lg:h-[256px] w-[122px] md:w-[190px] lg:w-[310px] rounded-t-xl"
-              >
-                <p className="flex flex-col gap-1 justify-between text-white text-[8px] md:text-[11px] lg:text-[13px]">
-                  <span className="bg-[#3187FA] w-fit p-1 md:p-2 lg:p-3 lg:pr-10 md:pr-7 pr-3 rounded-r-2xl mt-4 md:mt-8">
-                    #{availableDisc.id} most liked
-                  </span>
-                  <span className="bg-[#13B959] w-fit p-1 md:p-2 lg:p-3 rounded-r-2xl">
-                    {availableDisc.discPercentage}% Discount
-                  </span>
-                </p>
-                <div className="absolute bottom-2 right-2 z-10 p-[5px] bg-white rounded-full w-10 h-10 hidden lg:flex items-center justify-center">
-                  <img src={availableDisc.restaurantLogoUrl} alt="" />
+              <div className="w-[148px] md:w-[190px] lg:w-[310px]">
+                <div
+                  style={{
+                    backgroundImage: `url(${availableDisc.mealImageUrl})`,
+                  }}
+                  className="relative bg-no-repeat bg-cover h-[82px] md:h-[151px] lg:h-[256px] rounded-t-xl"
+                >
+                  <p className="flex flex-col gap-1 justify-between text-white text-[8px] md:text-[11px] lg:text-[13px]">
+                    <span className="bg-[#3187FA] w-fit p-1 md:p-2 lg:p-3 lg:pr-10 md:pr-7 pr-3 rounded-r-2xl mt-4 md:mt-8">
+                      #{availableDisc.id} most liked
+                    </span>
+                    <span className="bg-[#13B959] w-fit p-1 md:p-2 lg:p-3 rounded-r-2xl">
+                      {availableDisc.discPercentage}% Discount
+                    </span>
+                  </p>
+                  <div className="absolute bottom-2 right-2 z-10 p-[5px] bg-white rounded-full w-10 h-10 hidden lg:flex items-center justify-center">
+                    <img src={availableDisc.restaurantLogoUrl} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="relative h-[43px] md:h-auto text-[#00000073] space-y-[2px] lg:space-y-3 px-1 py-[2px] md:px-3 md:py-2">
-                <h1 className="text-[7px] md:text-sm lg:text-base font-semibold text-black">
-                  {availableDisc.mealName}
-                </h1>
-                <p className="text-[#E18000] text-[6px] md:text-[10px] lg:text-sm">
-                  {availableDisc.restaurantName} - Restaurant
-                </p>
-                <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
-                  <img src={availableDisc.restaurantLogoUrl} alt="" />
-                </div>
-                <div className="flex md:gap-2 md:flex-wrap lg:flex-nowrap justify-between md:justify-normal lg:justify-between items-center text-[5px] md:text-[11px] lg:text-[13px] font-medium">
-                  <p className="">₦{availableDisc.price}</p>
-                  <p className="bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
-                  <p className="hidden md:flex lg:hidden gap-[2px] items-center">
-                    <span className="">
-                      <Star width={11} height={11} />
-                    </span>
-                    <span>{availableDisc.rating}</span>
-                    <span>({availableDisc.reviewCount})</span>
+                <div className="relative text-[#00000073] space-y-[2px] lg:space-y-3 px-1 pt-[2px] pb-2 md:px-3 md:py-2">
+                  <h1 className="hidden md:block md:text-base font-semibold text-black">
+                    {availableDisc.mealName}
+                  </h1>
+                  <h1 className="md:hidden text-[11px] font-semibold text-black">
+                    {availableDisc.mealName.length > 23
+                      ? availableDisc.mealName.slice(0, 23) + "..."
+                      : availableDisc.mealName}
+                  </h1>
+                  <p className="hidden md:block text-[#E18000] text-[10px]">
+                    {availableDisc.restaurantName}- Restaurant
                   </p>
-                  <p className="flex gap-[2px] items-center justify-between">
-                    <span className="hidden lg:block">
-                      <Clock />
-                    </span>
-                    <span className="hidden md:block lg:hidden">
-                      <Clock width={11} height={11} />
-                    </span>
-                    <span className="md:hidden">
-                      <Clock width={8} height={8} />
-                    </span>
-                    <span>{availableDisc.duration}</span>
+                  <p className="md:hidden text-[#E18000] text-[10px]">
+                    {availableDisc.restaurantName.length > 10
+                      ? availableDisc.restaurantName.slice(0, 10) + "..."
+                      : availableDisc.restaurantName}{" "}
+                    - Restaurant
                   </p>
-                  <p className="md:hidden bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
-                  <p className="flex md:hidden lg:flex gap-[2px] items-center">
-                    <span className="hidden lg:block">
-                      <Star />
-                    </span>
-                    <span className="hidden md:block lg:hidden">
-                      <Star width={11} height={11} />
-                    </span>
-                    <span className="md:hidden">
-                      <Star width={8} height={8} />
-                    </span>
-                    <span>{availableDisc.rating}</span>
-                    <span>({availableDisc.reviewCount})</span>
-                  </p>
+                  <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
+                    <img src={availableDisc.restaurantLogoUrl} alt="" />
+                  </div>
+                  <div className="flex gap-x-1 gap-y-[2px] md:gap-2 flex-wrap lg:flex-nowrap lg:justify-between items-center text-[10px] md:text-[11px] lg:text-[13px] font-medium">
+                    <p className="">₦{availableDisc.price}</p>
+                    <p className="bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
+                    <p className="flex lg:hidden gap-[2px] items-center">
+                      <span className="hidden md:block">
+                        <Star width={11} height={11} />
+                      </span>
+                      <span className="md:hidden">
+                        <Star width={8} height={8} />
+                      </span>
+                      <span>{availableDisc.rating}</span>
+                      <span>({availableDisc.reviewCount})</span>
+                    </p>
+                    <p className="flex gap-[2px] items-center justify-between">
+                      <span className="hidden lg:block">
+                        <Clock />
+                      </span>
+                      <span className="hidden md:block lg:hidden">
+                        <Clock width={11} height={11} />
+                      </span>
+                      <span className="md:hidden">
+                        <Clock width={8} height={8} />
+                      </span>
+                      <span>{availableDisc.duration}</span>
+                    </p>
+                    <p className="hidden bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
+                    <p className="hidden lg:flex gap-[2px] items-center">
+                      <span className="hidden lg:block">
+                        <Star />
+                      </span>
+                      <span className="hidden md:block lg:hidden">
+                        <Star width={11} height={11} />
+                      </span>
+                      <span className="md:hidden">
+                        <Star width={8} height={8} />
+                      </span>
+                      <span>{availableDisc.rating}</span>
+                      <span>({availableDisc.reviewCount})</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </Link>

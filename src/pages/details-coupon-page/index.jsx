@@ -16,11 +16,19 @@ const CouponDetailsPage = () => {
   const { isLoading, data, isError, error } = useCouponMarketplaceData(id);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   if (isError) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error}
+      </div>
+    );
   }
 
   const coupon = data?.data;
@@ -173,7 +181,7 @@ const CouponDetailsPage = () => {
           </div>
         </section>
 
-        <section className="space-y-3 mt-7 mb-24">
+        <section className="space-y-3 mt-7 mb-10">
           <p className="font-medium lg:text-[19px] text-[11px]">
             Similar Coupon
           </p>
