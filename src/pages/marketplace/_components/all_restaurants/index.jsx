@@ -8,7 +8,7 @@ import { Star } from "../index";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [restaurantPerPage] = useState(9);
+  const [restaurantPerPage] = useState(screen.width < 768 ? 4 : 9);
 
   // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
@@ -20,11 +20,11 @@ const AllRestaurants = () => {
   const nPages = Math.ceil(RestaurantItems.length / restaurantPerPage);
 
   return (
-    <div className="px-6 md:px-16 lg:px-[136px] pt-20 py-6 bg-lightGray">
+    <div className="px-6 md:px-16 lg:px-[136px] pt-4 md:pt-8 py-6 bg-lightGray">
       <span className="font-work-sans font-medium text-[11px] md:text-xl lg:text-2xl">
         All Items on Kuwiya
       </span>
-      <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-3 md:gap-5">
+      <div className="grid md:grid-cols-3 grid-cols-2 pt-4 pb-6 md:py-6 gap-3 md:gap-5">
         {currentRestaurant.map((restaurant) => (
           <div
             // to={`/restaurants/${restaurant.id}`}
@@ -53,7 +53,7 @@ const AllRestaurants = () => {
                   <LikeIcon width={10} height={10} />
                 </span>
               </div>
-              <div className="text-[10px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
+              <div className="text-[11px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
                 <div className=" text-black opacity-80">
                   {restaurant.status}
                 </div>
