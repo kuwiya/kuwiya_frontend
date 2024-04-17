@@ -16,6 +16,7 @@ import AddRestaurantPage from "./pages/add-restaurant";
 import UserInvitation from "./pages/user-invitation";
 import Waitlist from "./pages/waitlist";
 import Error from "./pages/error-screen";
+import Feedback from "./pages/feedback";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/user-invitation" element={<UserInvitation />} />
         <Route path="/waitlist" element={<Waitlist />} />
         <Route path="/error" element={<Error />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Routes>
       <Footer />
     </>
