@@ -6,7 +6,7 @@ const Card = ({ mission, vision, text, title }) => {
     <div className="flex flex-col items-start md:flex-row md:justify-between gap-6 py-8 md:py-24">
       <div className={`flex flex-col gap-3 w-full ${vision && "order-last"}`}>
         <span className="uppercase font-bold text-xl md:text-start text-center md:text-[32px]">{title}</span>
-        <span className="font-normal text-base md:text-base lg:text-xl">{text}</span>
+        <span className="font-normal text-center md:text-start text-base lg:text-xl">{text}</span>
       </div>
       {vision && (
         <img

@@ -4,7 +4,7 @@ import { dropdown } from "../../../../constants/images";
 const FAQS = () => {
   return (
     <div className="py-2 text-center flex flex-col lg:mt-28">
-      <div className="flex flex-col pb-10 md:pb-4 px-8 md:space-y-2 space-y-1">
+      <div className="flex flex-col pb-10 md:pb-4 md:space-y-2 space-y-1">
         <span className="uppercase font-bold text-[26px] md:text-[28px]">
           FAQS
         </span>
