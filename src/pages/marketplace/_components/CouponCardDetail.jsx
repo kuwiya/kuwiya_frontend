@@ -8,9 +8,9 @@ const CouponCardDetail = ({ detail }) => {
   const pathName = useHref();
 
   return (
-    <Link to={`/coupon/${detail.id}`} className="flex relative h-fit">
+    <Link to={`/coupon/${detail.id}`} className="flex relative">
       <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
-      <div className="flex w-auto h-fit">
+      <div className="flex w-auto">
         <div
           className={`flex gap-2 lg:gap-4 items-center rounded-l-xl text-[#000000] bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] ${
             pathName.includes("/restaurants") &&
