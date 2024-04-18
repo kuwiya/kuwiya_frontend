@@ -52,7 +52,7 @@ const CouponsFiltering = ({ restName }) => {
           <CouponCardDetail key={detail.id} detail={detail} />
         ))}
       </div>
-      <div className="pt-4 md:pt-0">
+      <div className="">
         <Pagination
           nPages={nPages}
           currentPage={currentPage}

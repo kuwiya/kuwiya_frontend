@@ -92,7 +92,7 @@ const CouponCard = () => {
           <CouponCardDetail key={detail.id} detail={detail} />
         ))}
       </div>
-      <div className="overflow-x-scroll no-scrollbar pt-4 md:pt-0">
+      <div className="overflow-x-scroll no-scrollbar">
         <Pagination
           nPages={nPages}
           currentPage={currentPage}

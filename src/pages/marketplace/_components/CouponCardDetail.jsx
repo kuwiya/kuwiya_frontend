@@ -134,10 +134,10 @@ const CouponCardDetail = ({ detail }) => {
           <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -right-5 -translate-y-[50%]"></div>
         </Link>
       </div>
-      <div className="md:hidden h-[124px] my-2">
+      <div className="md:hidden h-[124px]">
         <Link to={`/coupon/${detail.id}`} className="flex relative">
           <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
-          <div className="flex w-auto">
+          <div className="flex w-auto h-[124px]">
             <div
               className={`flex-[70%] flex gap-2 lg:gap-4 items-center rounded-l-xl ${
                 pathName.includes("/restaurants")
@@ -244,7 +244,7 @@ const CouponCardDetail = ({ detail }) => {
             <div className="flex-[30%] relative">
               <img
                 src={detail.mealImage}
-                className="rounded-r-xl h-[132px] object-cover"
+                className="rounded-r-xl h-[124px] object-cover"
                 alt=""
               />
               <span
