@@ -43,19 +43,18 @@ const AllRestaurants = () => {
                 <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
-                <span className="hidden lg:block">
-                  <LikeIcon />
-                </span>
-                <span className="hidden md:block lg:hidden">
-                  <LikeIcon width={13} height={13} />
-                </span>
-                <span className="md:hidden">
-                  <LikeIcon width={10} height={10} />
-                </span>
               </div>
               <div className="text-[11px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
                 <div className=" text-black opacity-80">
-                  {restaurant.status}
+                  <span className="hidden lg:block">
+                    <LikeIcon />
+                  </span>
+                  <span className="hidden md:block lg:hidden">
+                    <LikeIcon width={13} height={13} />
+                  </span>
+                  <span className="md:hidden">
+                    <LikeIcon width={10} height={10} />
+                  </span>
                 </div>
                 <div className=" text-black opacity-80 flex items-center gap-2">
                   <span className="hidden lg:block">

@@ -49,10 +49,10 @@ const CouponDetailsPage = () => {
         </section>
 
         <section className="py-7 space-y-5">
-          <div className="flex relative">
+          <div className="flex relative h-[169px] md:h-auto">
             <div className="w-7 h-7 md:w-12 md:h-12 rounded-full bg-white absolute top-[50%] -left-4 md:-left-5 -translate-y-[50%]"></div>
             <div className="flex bg-gradient-to-r from-[#000000] from-[0%] to-[#666666] to-[100%] rounded-lg p-1 md:p-2">
-              <div className="flex-1 md:flex-[55%] lg:pt-12 md:pt-8 pt-2 md:pb-6 lg:pl-16 md:pl-10 pl-7 text-[#000000]">
+              <div className="flex-1 md:flex-[55%] h-[169px] md:h-auto lg:pt-12 md:pt-8 pt-2 md:pb-6 lg:pl-16 md:pl-10 pl-7 text-[#000000]">
                 <h1 className="lg:text-5xl md:text-[40px] font-bold text-white -mb-4 md:mb-0">
                   {coupon.mealName}
                 </h1>
@@ -118,7 +118,7 @@ const CouponDetailsPage = () => {
                 <div className="md:hidden">
                   <CouponText width={38.1} height={120} />
                 </div>
-                <div className="relative h-full flex-[70%]">
+                <div className="relative h-[161px] md:h-full flex-[70%]">
                   <img
                     src={coupon.mealImage}
                     className="rounded-lg h-full object-cover"
