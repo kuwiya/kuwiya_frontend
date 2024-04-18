@@ -39,7 +39,7 @@ const AllRestaurants = () => {
               />
             </Link>
             <div className=" flex flex-col p-2 md:p-3">
-              <div className="flex items-center justify-between font-work-sans">
+              <div className="flex gap-x-2 justify-between font-work-sans">
                 <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
