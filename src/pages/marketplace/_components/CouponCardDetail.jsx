@@ -146,7 +146,7 @@ const CouponCardDetail = ({ detail }) => {
               }`}
             >
               <div
-                className={`ml-7 lg:ml-8 lg:text-xl font-semibold text-[#000000] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4 px-1 lg:px-0 ${
+                className={`ml-5 lg:ml-8 lg:text-xl font-semibold text-[#000000] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4  ${
                   pathName.includes("/restaurants") &&
                   "border-[#FFFFFF] text-white"
                 }`}
@@ -160,7 +160,7 @@ const CouponCardDetail = ({ detail }) => {
                 <h1 className="-rotate-90">{detail.couponCode}</h1>
               </div>
               <span className="h-full border-[1px] border-white border-dashed"></span>
-              <div className="py-3 space-y-0">
+              <div className="py-3 pr-1 space-y-0">
                 <p className="flex gap-2 items-center text-[11px] lg:text-sm">
                   <img
                     src={detail.restLogo}

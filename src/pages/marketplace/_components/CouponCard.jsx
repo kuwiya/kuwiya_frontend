@@ -84,7 +84,7 @@ const CouponCard = () => {
 
   return (
     <section className="px-6 md:px-16 lg:px-[136px] my-16 mb-20 space-y-5 font-work-sans">
-      <h1 className="lg:text-xl md:text-base text-[13px] font-semibold text-[#000000]">
+      <h1 className="lg:text-xl md:text-base text-[11px] font-semibold text-[#000000]">
         Coupon
       </h1>
       <div className="grid md:grid-cols-2 gap-6">

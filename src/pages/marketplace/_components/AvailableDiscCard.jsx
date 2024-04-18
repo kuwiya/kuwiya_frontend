@@ -113,7 +113,7 @@ const AvailableDiscCard = () => {
 
   return (
     <section className={`px-6 md:px-16 lg:px-[136px] space-y-4`}>
-      <h1 className="lg:text-xl md:text-base text-[13px] font-semibold text-[#000000] pt-3">
+      <h1 className="lg:text-xl md:text-base text-[11px] font-semibold text-[#000000] pt-3">
         Available Discount
       </h1>
       <div className={`relative `}>

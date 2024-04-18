@@ -21,7 +21,7 @@ const AllRestaurants = () => {
 
   return (
     <div className="px-6 md:px-16 lg:px-[136px] pt-4 md:pt-8 py-6 bg-lightGray">
-      <span className="font-work-sans font-medium text-[11px] md:text-xl lg:text-2xl">
+      <span className="font-work-sans font-semibold text-[11px] md:text-xl lg:text-2xl">
         All Items on Kuwiya
       </span>
       <div className="grid md:grid-cols-3 grid-cols-2 pt-4 pb-6 md:py-6 gap-3 md:gap-5">
