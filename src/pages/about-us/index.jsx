@@ -2,8 +2,8 @@ import React from "react";
 import { Navbar } from "../../components/ui";
 import Card from "./_components/card";
 import Values from "./_components/values";
-import InfoSection from '../../pages/homepage/_components/info_section'
 import FAQS from "./_components/faqs";
+import InfoSection from "./_components/info_section";
 
 const AboutUs = () => {
   return (
