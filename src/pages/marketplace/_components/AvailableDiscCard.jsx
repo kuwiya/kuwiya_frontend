@@ -148,7 +148,7 @@ const AvailableDiscCard = () => {
                     <img src={availableDisc.restaurantLogoUrl} alt="" />
                   </div>
                 </div>
-                <div className="relative text-[#00000073] space-y-[2px] lg:space-y-3 px-1 pt-[2px] pb-2 md:px-3 md:py-2">
+                <div className="relative text-[#00000073] space-y-[2px] lg:space-y-3 pl-2 pr-1 pt-[2px] pb-2 md:px-3 md:py-2">
                   <h1 className="hidden md:block md:text-base font-semibold text-black">
                     {availableDisc.mealName}
                   </h1>
