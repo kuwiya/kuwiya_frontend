@@ -83,7 +83,7 @@ const CouponDetailsPage = () => {
                   <span className="bg-[#FFFFFF] h-0.5 w-2 group-hover:bg-darkyellow"></span>
                   <h1 className="">{coupon.couponCode}</h1>
                 </div>
-                <div className="flex gap-1 md:gap-3 items-center mt-1 md:mt-5 lg:text-base md:text-sm text-[8px] font-normal text-[#FFFFFFBF]">
+                <div className="flex gap-3 md:gap-3 items-center mt-1 md:mt-5 lg:text-base md:text-sm text-[8px] font-normal text-[#FFFFFFBF]">
                   <p>{coupon.restName}</p>
                   <span className="h-4 w-[1px] bg-[#FFFFFFBF]"></span>
                   <p className="flex gap-[3px] items-center justify-between">
@@ -95,8 +95,8 @@ const CouponDetailsPage = () => {
                     </span>
                     <span>{coupon.duration}</span>
                   </p>
-                  <span className="h-4 w-[1px] bg-[#FFFFFFBF]"></span>
-                  <p className="flex gap-[3px] items-center">
+                  <span className="hidden md:block h-4 w-[1px] bg-[#FFFFFFBF]"></span>
+                  <p className="hidden md:flex gap-[3px] items-center">
                     <span className="hidden md:block">
                       <Star fillColor={"#FFFFFFBF"} />
                     </span>
