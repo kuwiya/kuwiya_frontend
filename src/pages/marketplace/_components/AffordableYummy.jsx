@@ -14,7 +14,7 @@ const AffordableYummy = ({ image }) => {
           <img
             src={image}
             alt=""
-            className=" rounded-r-[10px] object-cover h-full"
+            className=" rounded-r-[10px] object-cover h-[139px] md:h-full"
           />
         </div>
       </div>
