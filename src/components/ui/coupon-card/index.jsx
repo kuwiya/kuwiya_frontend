@@ -10,11 +10,11 @@ const CouponCard = ({ detail, claim }) => {
       <div
       style={{ background: claim && "#000" }}
        className={` flex ${
-        detail && "lg:flex-[70%] flex-[65%] gap-2 lg:gap-4"
+        detail && "lg:flex-[70%] gap-2 lg:gap-4"
       } items-center rounded-l-xl ${
         !claim
           ? "bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] text-black"
-          : "text-primary flex-[70%] gap-4"
+          : "text-primary gap-4"
       } `}
       >
        <div
@@ -98,7 +98,7 @@ const CouponCard = ({ detail, claim }) => {
           </div>
         </div>
       </div>
-      <div className="flex-[30%] relative">
+      <div className=" relative">
         <img
           src={detail.mealImage}
           className="rounded-r-xl h-full object-cover"
