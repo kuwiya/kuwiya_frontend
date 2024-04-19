@@ -6,7 +6,7 @@ import { Star } from "../../../marketplace/_components";
 
 const Card = ({ restaurant, id }) => {
   return (
-    <div className="w-[176px] h-[198px] lg:w-auto lg:h-[237px] rounded-[10px]">
+    <div className=" h-[198px] lg:h-[237px] rounded-[10px]">
       <Link
         to={`/restaurants/${restaurant?.id}`}
         className="flex flex-col bg-primary rounded-b-[10px] cursor-pointer hover:scale-105 transition-all ease-in shadow-xl "

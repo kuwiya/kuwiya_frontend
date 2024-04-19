@@ -164,7 +164,7 @@ const RestaurantsListing = () => {
           <span className="font-work-sans font-medium text-base lg:text-xl">
             All Restaurants on Kuwiya
           </span>
-          <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-x-8 gap-y-4 lg:gap-8">
+          <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-14 lg:gap-8">
             {filteredItems?.map((restaurant) => (
               <Card restaurant={restaurant} key={restaurant.id} />
             ))}
