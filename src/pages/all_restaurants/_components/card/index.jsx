@@ -1,38 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { gps, heart, star } from "../../../../constants/images";
+import { GpsIcon, LikeIcon } from "../../../../assets/icons";
+import { Star } from "../../../marketplace/_components";
 
 const Card = ({ restaurant, id }) => {
   return (
-    <Link
-      to={`/restaurants/${restaurant?.id}`}
-      className="flex flex-col bg-primary lg:w-auto hover:cursor-pointer hover:scale-105 transition-all ease-in shadow-xl justify-evenly w-full md:w-[120%] "
-      key={restaurant?.id}
-    >
-      <img src={restaurant?.image} alt="restaurant logo" />
-      <div className="flex flex-col p-2 w-full">
-        <div className="flex items-center justify-between font-work-sans">
-          <span className="font-lato md:text-sm xl:text-base text-[12px] font-medium">
-            {restaurant?.title}
-          </span>
-          <img src={heart} alt="like" />
-        </div>
-        <div className="flex items-start flex-col md:flex-row md:items-center justify-between pt-4 font-work-sans">
-          <div className="flex items-center xl:space-x-2 md:space-x-1">
-            <img src={gps} alt="distance" />
-            <div className="xl:text-base text-[12px] text-black opacity-80 flex items-center">
-              {restaurant?.distance}
-              <div className="bg-black  opacity-50 w-[0.1rem] h-6 mx-2 xl:mx-4" />
-              {restaurant?.status}
+    <div className="w-[176px] h-[198px] lg:w-auto lg:h-[237px] rounded-[10px]">
+      <Link
+        to={`/restaurants/${restaurant?.id}`}
+        className="flex flex-col bg-primary rounded-b-[10px] cursor-pointer hover:scale-105 transition-all ease-in shadow-xl "
+        key={restaurant?.id}
+      >
+        <img
+          src={restaurant?.image}
+          alt="restaurant logo"
+          className="h-[110px] md:h-[161px] w-full object-cover rounded-t-[10px]"
+        />
+        <div className="flex flex-col gap-2 md:gap-4 p-2 w-full">
+          <div className="flex md:items-center gap-4 justify-between font-work-sans">
+            <span className="font-lato md:text-sm xl:text-base text-xs font-medium line-clamp-1">
+              {restaurant?.title}
+            </span>
+            <LikeIcon
+              width={screen.width < 768 ? 13.33 : ""}
+              height={screen.width < 768 ? 12.84 : ""}
+            />
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center justify-between font-work-sans">
+            <div className="flex items-center xl:space-x-2 space-x-1">
+              <GpsIcon
+                width={screen.width < 768 ? 11 : ""}
+                height={screen.width < 768 ? 11 : ""}
+              />
+              <div className="xl:text-base text-[12px] text-[#000000BA] flex items-center gap-1 md:gap-2">
+                {restaurant?.distance}
+                <div className="bg-[#000000BA] w-[1px] h-3 md:h4" />
+                {restaurant?.status}
+              </div>
+            </div>
+            <div className="lg:text-base text-[12px] text-[#000000BA] flex items-center gap-1 md:gap-2">
+              <Star
+                width={screen.width < 768 ? 11 : ""}
+                height={screen.width < 768 ? 11 : ""}
+              />
+              {restaurant?.ratings}
             </div>
           </div>
-          <div className="lg:text-base text-[12px] text-black opacity-80 flex items-center gap-2">
-            <img src={star} alt="ratings" />
-            {restaurant?.ratings}
-          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

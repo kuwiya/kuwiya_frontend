@@ -3,9 +3,10 @@ import { Restaurants } from "../../constants";
 import Card from "./_components/card";
 import { Button, Navbar } from "../../components/ui";
 import { sort } from "../../constants/images";
-import Pagination from "./_components/pagination";
+// import Pagination from "./_components/pagination";
 import ArrowLeft from "./_components/arrow";
 import { Link } from "react-router-dom";
+import { Pagination } from "../marketplace/_components";
 
 const RestaurantsListing = () => {
   const [filterValue, setFilterValue] = useState("");
@@ -49,13 +50,15 @@ const RestaurantsListing = () => {
     <>
       <Navbar scrolling bgBlack />
 
-      <div className="md:px-10 px-10 bg-primary py-28">
-        <div className="flex justify-between w-full font-work-sans py-10">
+      <div className="md:px-16 lg:px-[136px] px-6 bg-primary py-24 md:py-32 space-y-5">
+        <div className="flex justify-between w-full font-work-sans">
           <div className="flex items-center space-x-3">
             <Link to={"/"} className="hover:cursor-pointer">
               <ArrowLeft />
             </Link>
-            <span className="uppercase font-semibold text-base lg:text-xl">restaurant</span>
+            <span className="uppercase font-semibold text-base lg:text-xl">
+              restaurants
+            </span>
           </div>
           <div className="flex items-center space-x-3 relative">
             {sortItems && (
@@ -77,7 +80,10 @@ const RestaurantsListing = () => {
                     value="fastfood"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="italian" className="md:text-[18px] text-sm font-normal">
+                  <label
+                    htmlFor="italian"
+                    className="md:text-[18px] text-sm font-normal"
+                  >
                     Fast Food
                   </label>
                 </div>
@@ -89,7 +95,10 @@ const RestaurantsListing = () => {
                     value="local"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
+                  <label
+                    htmlFor=""
+                    className="md:text-[18px] text-sm font-normal"
+                  >
                     Local Restaurants
                   </label>
                 </div>
@@ -101,7 +110,10 @@ const RestaurantsListing = () => {
                     value="chinese"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
+                  <label
+                    htmlFor=""
+                    className="md:text-[18px] text-sm font-normal"
+                  >
                     Chinese Restaurants
                   </label>
                 </div>
@@ -113,7 +125,10 @@ const RestaurantsListing = () => {
                     value="italian"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
-                  <label htmlFor="" className="md:text-[18px] text-sm font-normal">
+                  <label
+                    htmlFor=""
+                    className="md:text-[18px] text-sm font-normal"
+                  >
                     Italian Restaurants
                   </label>
                 </div>
@@ -140,24 +155,28 @@ const RestaurantsListing = () => {
               className="hover:cursor-pointer"
               onClick={handleSort}
             />
-            <span className="capitalize font-medium md:text-base text-sm lg:text-xl">sort</span>
+            <span className="capitalize font-medium md:text-base text-sm lg:text-xl">
+              sort
+            </span>
           </div>
         </div>
-        <div className="xl:px-40 md:px-10 px-0">
-          <span className="font-work-sans font-medium text-base lg:text-xl lg:px-[88px]">
+        <div className="">
+          <span className="font-work-sans font-medium text-base lg:text-xl">
             All Restaurants on Kuwiya
           </span>
-          <div className="grid md:grid-cols-3 grid-cols-2 w-full py-6 gap-8 md:gap-12 lg:px-[88px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-x-8 gap-y-4 lg:gap-8">
             {filteredItems?.map((restaurant) => (
               <Card restaurant={restaurant} key={restaurant.id} />
             ))}
           </div>
         </div>
-        <Pagination
-          nPages={nPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        <div className="">
+          <Pagination
+            nPages={nPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        </div>
       </div>
     </>
   );

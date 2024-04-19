@@ -188,37 +188,44 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
             onClick={() => setToggleMenu(false)}
           />
           <ul className="list-none w-full">
-            
             <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
+                <Link
+                  to="/marketplace"
+                  className="text-[#101010B2] uppercase font-semibold"
+                >
                   Marketplace
                 </Link>
-                
               </div>
             </li>
             <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
+                <Link
+                  to="/restaurants"
+                  className="text-[#101010B2] uppercase font-semibold"
+                >
                   near me
                 </Link>
-                
               </div>
             </li>
             <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/about-us" className="text-[#101010B2] uppercase font-semibold">
+                <Link
+                  to="/about-us"
+                  className="text-[#101010B2] uppercase font-semibold"
+                >
                   about us
                 </Link>
-                
               </div>
             </li>
             <li className="mt-12 cursor-pointer text-primary text-xl">
               <div className="flex justify-between items-center">
-                <Link to="/marketplace" className="text-[#101010B2] uppercase font-semibold">
+                <Link
+                  to="/marketplace"
+                  className="text-[#101010B2] uppercase font-semibold"
+                >
                   contact us
                 </Link>
-                
               </div>
             </li>
           </ul>
@@ -229,42 +236,41 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
                 children="Subscribe"
                 padding={"15px 30px"}
               />
-              
             </Link>
             <Link to="/add-restaurant" className="w-[100%] mx-auto">
               <Button
                 className="hover:scale-95 font-extrabold uppercase text-primary w-full !text-base"
-                backgroundColor={'#000'}
+                backgroundColor={"#000"}
                 children="add restaurant"
                 padding={"15px 30px"}
               />
-              
             </Link>
-            
           </div>
-         
+
           <div className="flex flex-col w-3/4 absolute bottom-6 left-0 px-6">
             <div className="flex gap-2 items-center">
-            <img src={images.dark_logo} alt='logo' className="" />
-            <span className="font-medium">There's more to love in the app</span>
+              <img src={images.dark_logo} alt="logo" className="" />
+              <span className="font-medium">
+                There's more to love in the app
+              </span>
             </div>
-            
+
             <div className="flex gap-4 mt-3">
-          <Link
-            to="https://www.apple.com/app-store/"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <img src={store} alt="apple store" />
-          </Link>
-          <Link
-            to="https://play.google.com/store/apps?hl=en&gl=US"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-           <img src={play} alt="apple store" />
-          </Link>
-        </div>
+              <Link
+                to="https://www.apple.com/app-store/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={store} alt="apple store" />
+              </Link>
+              <Link
+                to="https://play.google.com/store/apps?hl=en&gl=US"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={play} alt="apple store" />
+              </Link>
+            </div>
           </div>
         </div>
       )}
