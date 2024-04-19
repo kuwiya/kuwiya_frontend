@@ -22,20 +22,10 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "100" },
         },
-      },
-      animation: {
-        fade_in: "fade_in 0.8s ease-out",
-      },
-
-      keyframes: {
         spin: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "translate(360deg)" },
         },
-      },
-
-      // slide up animation
-      keyframes: {
         slide_up: {
           "0%": {
             opacity: "0",
@@ -52,6 +42,7 @@ export default {
         },
       },
       animation: {
+        fade_in: "fade_in 0.8s ease-out",
         slide_up: "slide_up .7s ease-out",
       },
     },
