@@ -144,7 +144,7 @@ const AddRestaurantPage = () => {
             </div>
 
             <div className="space-y-12 mt-3">
-              <div className="text-[#00000099]">
+              <div className="text-[#00000099] text-center">
                 <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-darkyellow">
                   subscription plan
                 </h2>

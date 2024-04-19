@@ -43,7 +43,7 @@ const UserInvitation = () => {
         </div>
 
         <section className="space-y-8">
-          <div className="flex flex-col items-center gap-20 lg:gap-8">
+          <div className="flex flex-col items-center gap-10 lg:gap-8">
             <h1 className="text-2xl lg:text-[33px] font-medium">
               Eat & Get Cashback
             </h1>

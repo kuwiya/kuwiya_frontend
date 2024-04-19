@@ -400,7 +400,7 @@ export const cities = [
   },
   {
     id: 6,
-    location: "oshogbo",
+    location: "osun",
   },
   {
     id: 7,
@@ -439,7 +439,7 @@ export const countries = [
   },
   {
     id: 2,
-    location: "s.africa",
+    location: "egypt",
   },
   {
     id: 3,
