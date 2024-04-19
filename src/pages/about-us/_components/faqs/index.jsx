@@ -46,7 +46,7 @@ const FAQS = () => {
               className="h-2 w-3 transition-all duration-500 group-open:-rotate-180"
             />
           </summary>
-          <p class="group-open:animate-fade_in bg-[#af7222] md:text-base text-sm  px-8 p-3 text-start text-primary">
+          <p class="group-open:animate-fade_in bg-[#af7222] md:text-base text-sm  md:px-8 px-4 p-3 text-start text-primary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -65,7 +65,7 @@ const FAQS = () => {
               className="h-2 w-3 transition-all duration-500 group-open:-rotate-180"
             />
           </summary>
-          <p class="group-open:animate-fade_in bg-[#af7222] md:text-base text-sm  px-8 p-3 text-start text-primary">
+          <p class="group-open:animate-fade_in bg-[#af7222] md:text-base text-sm  md:px-8 px-4 p-3 text-start text-primary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
