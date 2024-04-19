@@ -38,24 +38,13 @@ const AllRestaurants = () => {
                 className="w-full"
               />
             </Link>
-            <div className=" flex flex-col p-2 md:p-3">
+            <div className=" flex flex-col gap-2 justify-between p-2 md:p-3 h-fit">
               <div className="flex gap-x-2 justify-between font-work-sans">
                 <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
               </div>
               <div className="text-[11px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
-                <div className=" text-black opacity-80">
-                  <span className="hidden lg:block">
-                    <LikeIcon />
-                  </span>
-                  <span className="hidden md:block lg:hidden">
-                    <LikeIcon width={13} height={13} />
-                  </span>
-                  <span className="md:hidden">
-                    <LikeIcon width={10} height={10} />
-                  </span>
-                </div>
                 <div className=" text-black opacity-80 flex items-center gap-2">
                   <span className="hidden lg:block">
                     <Star />
@@ -67,6 +56,17 @@ const AllRestaurants = () => {
                     <Star width={10} height={10} />
                   </span>
                   {restaurant.ratings}
+                </div>
+                <div className=" text-black opacity-80">
+                  <span className="hidden lg:block">
+                    <LikeIcon />
+                  </span>
+                  <span className="hidden md:block lg:hidden">
+                    <LikeIcon width={13} height={13} />
+                  </span>
+                  <span className="md:hidden">
+                    <LikeIcon width={10} height={10} />
+                  </span>
                 </div>
               </div>
             </div>
