@@ -15,7 +15,7 @@ const FeaturedSection = () => {
         </span>
       </div>
       <FeaturedCard />
-      <div className="md:my-10">
+      <div className="my-10">
         <Link to="/marketplace">
           <Button
             children="view all"

@@ -10,7 +10,6 @@ import { useFeaturedDealsData } from "../../../../../../hooks";
 const FeaturedCard = () => {
   const scrollRef = useRef(null);
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
-  
 
   //Handles keyboard arrows movement
   useEffect(() => {
@@ -90,58 +89,61 @@ const FeaturedCard = () => {
         className="flex w-fit no-scrollbar pl-[4rem] overflow-x-scroll overflow-y-hidden justify-start items-center md:gap-10 md:py-6 gap-8 md:pl-6"
       >
         {deals?.map((deal) => (
-          <Link
-            to={`/featured/${deal.id}`}
-            className="relative my-6 md:my-0 md:min-w-[60%]  min-w-[80%]  lg:min-w-[400px] flex flex-col items-start gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
-            key={deal.id}
-          >
-            <img
-              src={deal.image}
-              className="w-full relative"
-              alt="deal_image"
-            />
+          <div className="text-start md:w-[60%] min-w-[225.38px] h-[300px] md:h-fit lg:min-w-[400px]">
+            <Link
+              to={`/featured/${deal.id}`}
+              className="relative my-6 md:my-0 flex flex-col items-start gap-1 lg:gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
+              key={deal.id}
+            >
+              <img
+                src={deal.image}
+                className="w-full relative h-[139.27px] md:h-auto"
+                alt="deal_image"
+              />
 
-            <span className="font-medium pl-3 text-base md:text-xl lg:text-2xl">
-              {deal.title}
-            </span>
-            <div className="md:space-x-4 pl-3 space-x-2 relative">
-              <span className="text-sm md:text-base font-medium opacity-45">
-                ₦ {deal.old_price}
-              </span>{" "}
-              <div className="absolute top-3 left-0">
-                <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{" "}
-                <p className="-rotate-[19.98deg] border-b-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>
+              <span className="font-medium pl-3 text-sm md:text-xl lg:text-2xl">
+                {deal.title}
+              </span>
+              <div className="md:space-x-4 pl-3 space-x-2 relative">
+                <span className="text-xs md:text-base font-medium opacity-45">
+                  ₦ {deal.old_price}
+                </span>{" "}
+                <div className="absolute top-3 left-0">
+                  <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{" "}
+                  <p className="-rotate-[19.98deg] border-b-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>
+                </div>
+                <span className="text-xs md:text-base font-medium">
+                  ₦ {deal.new_price}
+                </span>
               </div>
-              <span className="text-sm md:text-base font-medium">
-                ₦ {deal.new_price}
-              </span>
-            </div>
 
-            <div className="space-x-2 pl-3">
-              <span className="font-normal text-sm md:text-base">
-                {deal.brand} -
+              <div className="space-x-1 lg:space-x-2 pl-3">
+                <span className="font-normal text-xs md:text-base">
+                  {deal.brand} -
+                </span>
+                <span className="font-light text-[10px]">{deal.location}</span>
+              </div>
+              <span className="font-normal pl-3 text-xs md:text-base flex items-center gap-2">
+                {deal.rating}
+                <span className="flex">
+                  {/* <IoMdStar color="#FFCE31" size={20} /> */}
+                  <StarIcon />
+                </span>
               </span>
-              <span className="font-light text-xs">{deal.location}</span>
-            </div>
-            <span className="font-normal pl-3 text-sm md:text-base flex items-center gap-2">
-              {deal.rating}
-              <span className="flex">
-                {/* <IoMdStar color="#FFCE31" size={20} /> */}
-                <StarIcon />
-              </span>
-            </span>
-            <div className="absolute top-8 left-[2px]">
-              <DiscountTag />
-              <span className="text-white text-[11px] font-semibold absolute top-3 left-2">
-                {100 -
-                  Math.round(
-                    (parseInt(deal.new_price) / parseInt(deal.old_price)) * 100
-                  )}
-                %<br />
-                OFF
-              </span>
-            </div>
-          </Link>
+              <div className="absolute top-8 left-[2px]">
+                <DiscountTag />
+                <span className="text-white text-[11px] font-semibold absolute top-3 left-2">
+                  {100 -
+                    Math.round(
+                      (parseInt(deal.new_price) / parseInt(deal.old_price)) *
+                        100
+                    )}
+                  %<br />
+                  OFF
+                </span>
+              </div>
+            </Link>
+          </div>
         ))}
       </div>
       <div className="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-20 hidden md:flex justify-between">
