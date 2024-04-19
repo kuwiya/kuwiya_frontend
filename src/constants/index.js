@@ -467,11 +467,11 @@ export const countries = [
   },
   {
     id: 9,
-    location: "germany",
+    location: "togo",
   },
   {
     id: 10,
-    location: "jamaica",
+    location: "porto",
   },
   {
     id: 11,
