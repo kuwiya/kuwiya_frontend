@@ -28,36 +28,31 @@ const AllRestaurants = () => {
         {currentRestaurant.map((restaurant) => (
           <div
             // to={`/restaurants/${restaurant.id}`}
-            className="bg-primary rounded-t-lg flex flex-col hover:cursor-pointer hover:scale-105 transition-all ease-in"
+            className="bg-primary rounded-[10px] h-fit flex flex-col cursor-pointer hover:scale-105 transition-all ease-in pb-2"
             key={restaurant.id}
           >
-            <Link to={`/restaurants/${restaurant.id}`}>
-              <img
-                src={restaurant.image}
-                alt="restaurant logo"
-                className="w-full"
-              />
-            </Link>
-            <div className=" flex flex-col gap-2 justify-between p-2 md:p-3 h-fit">
+            <div className="h-[98px] md:h-[121px]">
+              <Link to={`/restaurants/${restaurant.id}`}>
+                <img
+                  src={restaurant.image}
+                  alt="restaurant logo"
+                  className="w-full h-full object-cover rounded-t-[10px]"
+                />
+              </Link>
+            </div>
+            <div className=" flex flex-col gap-2 px-2 md:px-3 lg:px-4 pt-2">
               <div className="flex gap-x-2 justify-between font-work-sans">
                 <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
                   {restaurant.title}
                 </span>
-              </div>
-              <div className="text-[11px] md:text-sm flex items-center justify-between pt-1 md:pt-4 font-work-sans">
-                <div className=" text-black opacity-80 flex items-center gap-2">
+                {/* <div className="hidden lg:block text-black opacity-80">
                   <span className="hidden lg:block">
-                    <Star />
+                    <LikeIcon />
                   </span>
-                  <span className="hidden md:block lg:hidden">
-                    <Star width={13} height={13} />
-                  </span>
-                  <span className="md:hidden">
-                    <Star width={10} height={10} />
-                  </span>
-                  {restaurant.ratings}
-                </div>
-                <div className=" text-black opacity-80">
+                </div> */}
+              </div>
+              <div className="text-[11px] md:text-sm flex items-center lg:justify-between gap-3 pt-1 md:pt-4 font-work-sans">
+                <div className="text-black">
                   <span className="hidden lg:block">
                     <LikeIcon />
                   </span>
@@ -67,6 +62,21 @@ const AllRestaurants = () => {
                   <span className="md:hidden">
                     <LikeIcon width={10} height={10} />
                   </span>
+                </div>
+                <p
+                  className={`lg:hidden h-[10px] border-[1px] border-[#00000080]`}
+                ></p>
+                <div className=" text-[#000000BA] flex items-center gap-[2px] lg:gap-1">
+                  <span className="hidden lg:block">
+                    <Star />
+                  </span>
+                  <span className="hidden md:block lg:hidden">
+                    <Star width={13} height={13} />
+                  </span>
+                  <span className="md:hidden">
+                    <Star width={11} height={11} />
+                  </span>
+                  {restaurant.ratings}
                 </div>
               </div>
             </div>

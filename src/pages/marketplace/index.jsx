@@ -77,6 +77,7 @@ const MarketPlace = () => {
 
         <AllRestaurants />
 
+        <CitiesAndCountries />
       </main>
     </>
   );

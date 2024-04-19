@@ -33,7 +33,7 @@ const AddRestaurantPage = () => {
           >
             <div className="flex flex-col gap-5 rounded-md bg-[#E9E9E9] p-6 md:px-10 lg:px-16">
               <div className="flex flex-col gap-6 pt-3 lg:pb-3">
-                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-[#00000099]">
+                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-darkyellow">
                   restaurant details
                 </h2>
                 <div className="flex flex-col md:flex-row md:items-center gap-2 w-full justify-between">
@@ -95,7 +95,7 @@ const AddRestaurantPage = () => {
               </div>
 
               <div className="flex flex-col gap-6 py-6">
-                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-[#00000099]">
+                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-darkyellow">
                   restaurant admin details
                 </h2>
                 <div className="flex flex-col md:flex-row md:items-center gap-2 w-full justify-between">
@@ -145,7 +145,7 @@ const AddRestaurantPage = () => {
 
             <div className="space-y-12 mt-3">
               <div className="text-[#00000099]">
-                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold">
+                <h2 className="uppercase lg:text-2xl md:text-xl text-lg font-semibold text-darkyellow">
                   subscription plan
                 </h2>
                 <p className="lg:text-xl text-base font-normal">
@@ -153,11 +153,11 @@ const AddRestaurantPage = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col md:flex-row lg:gap-8 md:gap-3 gap-5">
+              <div className="flex flex-col lg:flex-row lg:gap-8 gap-10 items-center">
                 {subscriptionPlans.map((plan, index) => (
                   <div
                     key={plan.id}
-                    className={`rounded-[10px] cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 lg:px-8 shadow-md shadow-[#00000040] ${
+                    className={`rounded-[10px] w-[262px] md:w-[400px] lg:w-auto cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 lg:px-8 shadow-md shadow-[#00000040] ${
                       subscriptionPlanIndex === index
                         ? "bg-[#F8A434]"
                         : "bg-[#FDFCFB]"
@@ -171,24 +171,39 @@ const AddRestaurantPage = () => {
                       <span className="font-semibold lg:text-4xl md:text-2xl text-xl">
                         $
                       </span>{" "}
-                      <span className="font-semibold lg:text-7xl md:text-4xl text-3xl">
+                      <span className="font-semibold lg:text-7xl text-4xl">
                         {plan.amount}
                       </span>
                       <span className="font-normal lg:text-lg text-base">
                         /monthly
                       </span>
                     </p>
-                    <div className=" lg:text-lg font-normal flex flex-col gap-5 items-center">
-                      <p>{plan.planDesc}</p>
-                      <p>{plan.planDesc2}</p>
-                      <p>{plan.planDesc3}</p>
+                    <div className=" lg:text-lg md:text-base text-sm font-normal flex flex-col gap-5 items-center text-center">
+                      <p>
+                        <span className="font-semibold">
+                          {plan.planDesc.slice(0, 11)}
+                        </span>{" "}
+                        <span>{plan.planDesc.slice(12)}</span>
+                      </p>
+                      <p>
+                        <span className="font-semibold">
+                          {plan.planDesc2.slice(0, 11)}
+                        </span>{" "}
+                        <span>{plan.planDesc2.slice(12)}</span>
+                      </p>
+                      <p>
+                        <span className="font-semibold">
+                          {plan.planDesc3.slice(0, 11)}
+                        </span>{" "}
+                        <span>{plan.planDesc3.slice(12)}</span>
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="text-center">
-                <p className="lg:text-lg font-medium text-base">
+              <div className="text-center lg:px-28">
+                <p className="lg:text-lg font-medium md:text-base text-sm">
                   By clicking &apos;SUBMIT&apos; you agree to{" "}
                   <Link to="/terms-and-conditions" className="font-semibold">
                     KUWIYA restaurant owners Terms and Conditions{" "}
@@ -207,7 +222,7 @@ const AddRestaurantPage = () => {
                 type="submit"
                 padding={"10px 40px"}
                 borderRadius={"10px"}
-                className="font-medium"
+                className="font-medium w-[160px] h-[45px]"
               />
             </div>
           </form>

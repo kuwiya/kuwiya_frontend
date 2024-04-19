@@ -7,7 +7,7 @@ const SubscriptionPage = () => {
   return (
     <>
       <Navbar scrolling />
-      <main className="font-work-sans mt-4 mb-28 md:mt-14 md:mb-32 lg::my-32 relative">
+      <main className="font-work-sans mt-4 mb-28 md:mt-28 md:mb-32 lg::my-32 relative">
         <section className="bg-gradient-to-b from-[80%] md:from-[65%] from-[#F8A434] to-[80%] md:to-[65%] to-[#FFFFFF] text-[#FDFCFB] text-center pt-20 space-y-5">
           <h1 className="lg:text-[40px] md:text-2xl font-bold uppercase -mb-3 md:mb-0">
             choose your plan
@@ -22,11 +22,11 @@ const SubscriptionPage = () => {
               {subscriptionPlans.map((plan) => (
                 <div
                   key={plan.id}
-                  className="rounded-[10px] py-5 lg:py-12 px-6 shadow-md bg-[#FDFCFB] text-black font-work-sans"
+                  className="rounded-[10px] py-8 lg:py-12 px-6 shadow-md bg-[#FDFCFB] text-black font-work-sans"
                 >
-                  <div className="flex flex-row md:flex-col gap-6 md:gap-4 lg:gap-6 items-center">
+                  <div className="flex flex-col gap-6 md:gap-4 lg:gap-6 items-center">
                     <div className="flex flex-col gap-1 md:gap-3 items-center">
-                      <div className="md:hidden lg:block">
+                      <div className="">
                         {plan.planType === "FREE" ? (
                           <FreePlan
                             width={screen.width < 768 && 33.43}
@@ -70,13 +70,28 @@ const SubscriptionPage = () => {
                         </span>
                       </p>
                       <div className="lg:text-xl md:text-sm text-xs font-normal flex flex-col gap-5 items-center text-start">
-                        <p>{plan.planDesc}</p>
-                        <p>{plan.planDesc2}</p>
-                        <p>{plan.planDesc3}</p>
+                        <p>
+                          <span className="font-semibold">
+                            {plan.planDesc.slice(0, 11)}
+                          </span>{" "}
+                          <span>{plan.planDesc.slice(12)}</span>
+                        </p>
+                        <p>
+                          <span className="font-semibold">
+                            {plan.planDesc2.slice(0, 11)}
+                          </span>{" "}
+                          <span>{plan.planDesc2.slice(12)}</span>
+                        </p>
+                        <p>
+                          <span className="font-semibold">
+                            {plan.planDesc3.slice(0, 11)}
+                          </span>{" "}
+                          <span>{plan.planDesc3.slice(12)}</span>
+                        </p>
                       </div>
                       <Button
                         children="subscribe"
-                        className="uppercase hidden md:block"
+                        className="uppercase mt-6 md:mt-0"
                         // padding={"8px 25px"}
                         borderRadius={"10px"}
                         backgroundColor={"#FDFCFB"}
@@ -85,7 +100,7 @@ const SubscriptionPage = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex justify-center md:hidden mt-5">
+                  {/* <div className="flex justify-center md:hidden mt-5">
                     <Button
                       children="subscribe"
                       className="uppercase"
@@ -95,7 +110,7 @@ const SubscriptionPage = () => {
                       border={"1px solid #10101099"}
                       textColor={"#10101099"}
                     />
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

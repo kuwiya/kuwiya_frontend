@@ -139,7 +139,7 @@ const CouponCardDetail = ({ detail }) => {
           <div className="w-8 h-7 md:w-10 md:h-10 rounded-full bg-white absolute top-[50%] -left-5 -translate-y-[50%]"></div>
           <div className="flex w-auto h-[124px]">
             <div
-              className={`flex-[70%] flex gap-2 lg:gap-4 items-center rounded-l-xl ${
+              className={`flex-[70%] flex gap-3 lg:gap-4 items-center rounded-l-xl ${
                 pathName.includes("/restaurants")
                   ? "bg-gradient-to-r from-[#101010] from-[0%] to-[#101010] to-[100%] text-white"
                   : "bg-gradient-to-r from-[#FBD199] from-[0%] to-[#E18000] to-[100%] text-[#000000]"
@@ -160,7 +160,7 @@ const CouponCardDetail = ({ detail }) => {
                 <h1 className="-rotate-90">{detail.couponCode}</h1>
               </div>
               <span className="h-full border-[1px] border-white border-dashed"></span>
-              <div className="py-3 pr-1 space-y-0">
+              <div className="py-3 pl-0.4 pr-3 space-y-0.5">
                 <p className="flex gap-2 items-center text-[11px] lg:text-sm">
                   <img
                     src={detail.restLogo}
@@ -192,9 +192,11 @@ const CouponCardDetail = ({ detail }) => {
                       pathName.includes("/restaurants") && "text-white"
                     }`}
                   >
-                    {detail.mealInfo}
+                    {detail.mealInfo.length > 50
+                      ? detail.mealInfo.slice(0, 50) + "..."
+                      : detail.mealInfo}
                   </p>
-                  <div className="flex gap-3 md:items-center text-[11px] lg:text-sm">
+                  <div className="flex gap-1 items-center text-[11px]">
                     <p className="flex gap-1 items-center md:justify-between">
                       <span className="hidden lg:block">
                         <Clock
@@ -208,14 +210,19 @@ const CouponCardDetail = ({ detail }) => {
                           fillColor={
                             pathName.includes("/restaurants") && "#FFFFFF"
                           }
-                          width={6}
-                          height={6}
+                          width={9}
+                          height={9}
                         />
                       </span>
                       <span className="whitespace-nowrap">
                         {detail.duration}
                       </span>
                     </p>
+                    <p
+                      className={`bg-[#000000] h-2 w-[0.5px] ${
+                        pathName.includes("/restaurants") && "bg-[#FFFFFF]"
+                      }`}
+                    ></p>
                     <p className="flex gap-1 items-center">
                       <span className="hidden lg:block">
                         <Star
@@ -230,8 +237,8 @@ const CouponCardDetail = ({ detail }) => {
                           fillColor={
                             pathName.includes("/restaurants") && "#FFFFFF"
                           }
-                          width={10}
-                          height={6}
+                          width={9}
+                          height={9}
                         />
                       </span>
                       <span>{detail.rating}</span>

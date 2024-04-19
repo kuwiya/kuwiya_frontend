@@ -237,7 +237,7 @@ export const availableDiscounts = [
     discPercentage: 85,
     mealImageUrl: "/avai-disc-meal1.png",
     restaurantLogoUrl: "/discount-theplace.png",
-    mealName: "Jollof Rice and Chicken",
+    mealName: "Jollof Rice & Chicken",
     restaurantName: "The Place",
     price: 1500,
     duration: "12:00-01:00 PM",
@@ -384,11 +384,11 @@ export const cities = [
   },
   {
     id: 2,
-    location: "p.hacourt",
+    location: "phc",
   },
   {
     id: 3,
-    location: "illorin",
+    location: "ilorin",
   },
   {
     id: 4,
@@ -412,7 +412,7 @@ export const cities = [
   },
   {
     id: 9,
-    location: "p.hacourt",
+    location: "phc",
   },
   {
     id: 10,
@@ -424,7 +424,7 @@ export const cities = [
   },
   {
     id: 12,
-    location: "p.hacourt",
+    location: "phc",
   },
 ];
 
@@ -455,7 +455,7 @@ export const countries = [
   },
   {
     id: 6,
-    location: "u.kingdom",
+    location: "uk",
   },
   {
     id: 7,
