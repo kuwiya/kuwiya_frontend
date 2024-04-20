@@ -11,7 +11,7 @@ const PopularResturants = () => {
         className="xl:w-[40%] md:w-1/2 w-full animate-[spin_4.5s_linear_infinite] mt-0"
         alt=""
       />
-      <div className="flex items-center md:items-start flex-col w-full md:w-[100%] xl:w-1/2 space-y-2 md:space-y-8 pt-14">
+      <div className="flex items-center md:items-start flex-col w-full md:w-[100%] xl:w-1/2 gap-2 md:space-y-8 pt-14">
         <span className="uppercase text-darkyellow font-bold md:text-xl xl:text-[28px]">
           our popular restaurants
         </span>
@@ -25,7 +25,7 @@ const PopularResturants = () => {
           Lorem ipsum dolor sit amet consectetur. Cras quisque ultrices arcu
           blandit tempor facilisi tellus. Amet in eget ornare sit egestas.
         </span>
-        <Link to="/restaurants">
+        <Link to="/restaurants" className='mt-[24px] md:mt-3'>
           <Button
             children="explore"
             borderRadius={"5px"}
