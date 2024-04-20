@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import images from "../../../../../constants/images";
 import Button from "../../../button";
-import { YoutubeIcon } from "../../../../../assets/icons";
+import {
+  AppStoreBtn,
+  PlayStoreBtn,
+  YoutubeIcon,
+} from "../../../../../assets/icons";
 
 const BottomFooter = () => {
   return (
     <div className="text-primary font-work-sans mt-10 lg:px-20">
       <div className="flex flex-col items-center gap-6">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-8 md:gap-4">
           <Link
             to="https://www.facebook.com/"
             target="_blank"
@@ -55,44 +59,14 @@ const BottomFooter = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Button
-              border={"none"}
-              borderRadius={"15px"}
-              backgroundColor={"#ffffff"}
-              textColor={"#000000"}
-              className={
-                "uppercase flex items-center justify-center gap-2 md:w-[195px] h-[50px] font-work-sans md:!pl-0 !p-2 md:!p-2 md:!px-3"
-              }
-            >
-              <img src={images.apple} className="w-[47px]" alt="" />{" "}
-              <span className="text-start text-xs">
-                <span className="!text-[10px] text-nowrap">
-                  Available on the{" "}
-                </span>
-                <br /> <span className=" font-medium">App Store</span>
-              </span>
-            </Button>
+            <AppStoreBtn />
           </Link>
           <Link
             to="https://play.google.com/store/apps?hl=en&gl=US"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Button
-              border={"none"}
-              borderRadius={"15px"}
-              backgroundColor={"#ffffff"}
-              textColor={"#000000"}
-              className={
-                "uppercase flex items-center justify-center gap-2 md:w-[195px] h-[50px] font-work-sans !p-2 md:!p-2 md:!px-3"
-              }
-            >
-              <img src={images.play_store} className="w-[30px]" alt="" />{" "}
-              <span className="text-start text-xs">
-                <span className="!text-[10px]">Get it on </span>
-                <br /> <span className=" font-medium">Google Play</span>
-              </span>
-            </Button>
+            <PlayStoreBtn />
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center gap-4 font-medium text-sm md:text-base">

@@ -8,7 +8,7 @@ const BannerSection = () => {
       style={{ backgroundImage: "url('/banner_bg.png')" }}
     >
       <div className="flex justify-center py-8">
-        <div className="flex flex-col justify-center items-center gap-2 md:gap-4">
+        <div className="flex flex-col justify-center items-center gap-6 md:gap-4">
           <span className="uppercase text-center text-primary font-semibold md:text-3xl xl:text-[40px] xl:leading-[3rem] xl:pb-10 ">
             SUBSCRIBE & GET EXCLUSIVE DISCOUNTS
           </span>

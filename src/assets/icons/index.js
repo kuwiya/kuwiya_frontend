@@ -17,3 +17,5 @@ export { default as ChatIcon } from "./ChatIcon";
 export { default as MessengerIcon } from "./MessengerIcon";
 export { default as WhatsAppIcon } from "./WhatsAppIcon";
 export { default as GoogleIcon2 } from "./GoogleIcon2";
+export { default as AppStoreBtn } from "./AppStoreBtn";
+export { default as PlayStoreBtn } from "./PlayStoreBtn";

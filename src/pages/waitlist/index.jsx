@@ -19,12 +19,12 @@ const Waitlist = () => {
           <h1 className="text-2xl md:text-[30px] lg:text-[40px] font-semibold">
             Join The Waitlist
           </h1>
-          <p className="text-base md:text-xl lg:text-[28px] lg:pr-16 lg:mt-2 font-normal font-lato text-[#00000099]">
+          <p className="text-base md:text-xl lg:text-[28px] lg:pr-16 lg:mt-2 font-normal text-[#00000099]">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim"
           </p>
-          <p className="text-sm md:text-base lg:text-[19px] lg:whitespace-nowrap font-normal font-lato text-darkyellow">
+          <p className="text-sm md:text-base lg:text-[19px] lg:whitespace-nowrap font-normal text-darkyellow">
             Join the waitlist and be the first to know when we get to your
             location.
           </p>

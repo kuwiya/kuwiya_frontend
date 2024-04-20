@@ -25,13 +25,13 @@ const PopularResturants = () => {
           Lorem ipsum dolor sit amet consectetur. Cras quisque ultrices arcu
           blandit tempor facilisi tellus. Amet in eget ornare sit egestas.
         </span>
-        <Link to="/restaurants" className='mt-[24px] md:mt-3'>
+        <Link to="/restaurants" className="">
           <Button
             children="explore"
             borderRadius={"5px"}
             padding={"10px 30px"}
             className={
-              "xl:text-base md:text-sm uppercase font-work-sans font-medium hover:scale-90 transition-transform delay-200 ease-linear"
+              "mt-8 md:mt-3 uppercase font-work-sans font-medium hover:scale-90 transition-transform delay-200 ease-linear"
             }
           />
         </Link>
