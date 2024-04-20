@@ -9,7 +9,7 @@ const InfoSectionCard = () => {
       <div className="flex md:flex-row pl-[4rem] md:pl-[32rem] lg:p-0 no-scrollbar py-4 overflow-x-scroll lg:overflow-hidden md:justify-around items-center gap-10 md:gap-12 md:py-6 w-[100%] md:w-full">
         {InfoDetails.map((info) => (
           <div
-            className="bg-[#FDFCFB] min-w-[218.82px] h-[255.6px] flex md:py-10 items-center flex-col md:min-w-[330px] lg:min-w-[380px]  p-5 lg:p-10 shadow-xl md:shadow-lg hover:scale-105 hover:cursor-pointer transition-all ease-in-out lg:w-[380px] md:h-[450px] rounded-[20px] gap-5 lg:gap-10"
+            className="bg-[#FDFCFB] min-w-[218.82px] h-[255.6px] flex md:py-10 items-center flex-col md:min-w-[330px] lg:min-w-[380px]  p-5 lg:p-10 shadow-2xl md:shadow-lg hover:scale-105 hover:cursor-pointer transition-all ease-in-out lg:w-[380px] md:h-[450px] rounded-[20px] gap-5 lg:gap-10"
             key={info.id}
           >
             <img

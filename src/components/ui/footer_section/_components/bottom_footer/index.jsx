@@ -7,7 +7,7 @@ const BottomFooter = () => {
   return (
     <div className="text-primary font-work-sans mt-10 lg:px-20">
       <div className="flex flex-col items-center gap-6">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-[24px]">
           <Link
             to="https://www.facebook.com/"
             target="_blank"
