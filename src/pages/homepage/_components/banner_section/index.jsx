@@ -23,9 +23,9 @@ const BannerSection = () => {
               children="subscribe"
               border={"none"}
               className={
-                "uppercase font-work-sans text-sm md:text-base rounded-[10px] w-auto md:w-fit text-center hover:scale-105 transition-all font-medium"
+                "uppercase font-work-sans text-sm md:text-base rounded-[10px] text-center hover:scale-105 transition-all font-medium"
               }
-              padding={"10px 35px"}
+              // padding={"10px 35px"}
               textColor={"#ffffff"}
               backgroundColor={"#000000"}
             />

@@ -20,7 +20,7 @@ const FeaturedSection = () => {
           <Button
             children="view all"
             className={"uppercase text-center hover:scale-105 transition-all "}
-            padding={"10px 30px"}
+            // padding={"10px 30px"}
           />
         </Link>
       </div>

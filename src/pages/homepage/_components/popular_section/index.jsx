@@ -28,8 +28,8 @@ const PopularResturants = () => {
         <Link to="/restaurants" className="">
           <Button
             children="explore"
-            borderRadius={"5px"}
-            padding={"10px 30px"}
+            // borderRadius={"5px"}
+            // padding={"10px 30px"}
             className={
               "mt-8 md:mt-3 uppercase font-work-sans font-medium hover:scale-90 transition-transform delay-200 ease-linear"
             }
