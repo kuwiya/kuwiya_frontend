@@ -5,7 +5,7 @@ import { useClaimCouponAll } from "../../hooks/claim-coupon/useClaimCoupon";
 import { useParams } from "react-router-dom";
 
 const ClaimCouponFiltering = ({ restName }) => {
-    const { id } = useParams()
+  const { id } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
 
   const couponsPerPage = screen.width < 768 ? 2 : 4;
@@ -19,8 +19,8 @@ const ClaimCouponFiltering = ({ restName }) => {
     return <div className="text-center uppercase">Error: {error.message}</div>;
   }
 
-  const coupons = data?.data.filter((detail) => detail.restName === restName && detail.id !== id);
-console.log(data.data)
+  const coupons = data?.data.filter((detail) => detail.restName === restName);
+  console.log(data.data);
   if (coupons.length === 0) {
     return (
       <div className="text-center uppercase">
