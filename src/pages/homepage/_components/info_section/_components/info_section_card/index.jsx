@@ -5,8 +5,8 @@ import { Button } from "../../../../../../components/ui";
 
 const InfoSectionCard = () => {
   return (
-    <div className="mx-3 md:mx-10 py-3">
-      <div className="flex md:flex-row pl-[4rem] md:pl-[32rem] lg:p-0 no-scrollbar py-4 overflow-x-scroll lg:overflow-hidden md:justify-around items-center gap-10 md:gap-12 md:py-6 w-[100%] md:w-full">
+    <div className="mx-3 lg:mx-10 py-3">
+      <div className="flex pl-[4rem] md:pl-0 lg:pb-10 no-scrollbar py-4 overflow-x-scroll lg:overflow-hidden md:justify-between items-center gap-10 md:gap-5 md:py-6 w-[100%] md:w-full">
         {InfoDetails.map((info) => (
           <div
             style={{
@@ -31,7 +31,7 @@ const InfoSectionCard = () => {
           </div>
         ))}
       </div>
-      <NavLink to="/about-us" className="flex justify-center py-6 lg:pt-12">
+      <NavLink to="/about-us" className="flex justify-center py-6 lg:pt-6">
         <Button
           children="learn more"
           className={

@@ -48,13 +48,13 @@ const NearMeSection = () => {
           ))}
         </div>
       </div>
-      <NavLink to="/restaurants" className="flex justify-center">
+      <NavLink to="/restaurants" className="flex justify-center lg:mt-10">
         <Button
           children="view all"
           className={
             "uppercase text-center hover:scale-105 transition-all font-medium"
           }
-          padding={"10px 30px"}
+          // padding={"10px 30px"}
         />
       </NavLink>
     </div>
