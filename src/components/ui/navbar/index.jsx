@@ -136,15 +136,15 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
                 scrolling ? "!bg-darkyellow hover:!bg-black" : ""
               }`}
-              padding={"10px 30px"}
+              // padding={"10px 30px"}
             />
           )}
           {bgBlack && (
             <Button
               children="Marketplace"
               backgroundColor={"#000000"}
-              className={`rounded-[10px] uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base `}
-              padding={"10px 30px"}
+              className={`rounded-[10px] border-black uppercase font-work-sans font-medium transition-colors ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base `}
+              // padding={"10px 30px"}
             />
           )}
           {/* <Button
