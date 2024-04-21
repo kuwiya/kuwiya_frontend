@@ -44,7 +44,7 @@ const ClaimCoupon = () => {
         </div>
 
         <section className="py-7 space-y-5 lg:px-20">
-          <div className="flex relative">
+          <div className="flex relative h-[169px] md:h-auto">
             <div className="w-7 h-7 md:w-12 md:h-12 rounded-full bg-white absolute top-[50%] -left-4 md:-left-5 -translate-y-[50%]"></div>
             {/* <div className="flex bg-gradient-to-r from-[#000000] from-[0%] to-[#666666] to-[100%] rounded-lg p-1 md:p-2">
               <div className="md:flex-[55%] lg:pt-12 md:pt-8 pt-2 md:pb-6 lg:pl-16 md:pl-10 pl-7 text-[#000000]">
