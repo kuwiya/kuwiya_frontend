@@ -145,7 +145,7 @@ const FeaturedCard = () => {
               </div>
               <div className="absolute md:hidden top-8 left-[2px]">
                 {/* <MobileDiscountTag /> */}
-                <span className="text-white text-[13px] font-semibold bg-[#F8A434E5] py-2 pl-2 pr-5 rounded-r-2xl">
+                <span className="text-white text-[13px] font-semibold bg-darkyellow py-2 pl-2 pr-5 rounded-r-2xl">
                   {100 -
                     Math.round(
                       (parseInt(deal.new_price) / parseInt(deal.old_price)) *

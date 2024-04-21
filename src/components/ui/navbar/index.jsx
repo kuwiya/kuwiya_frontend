@@ -232,14 +232,14 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
           <div className="flex flex-col items-center space-y-6 my-6 w-full">
             <Link to="/subscription-plan" className="w-[100%] mx-auto">
               <Button
-                className="hover:scale-95 font-extrabold uppercase text-primary w-full !text-base"
+                className="hover:scale-95 font-extrabold uppercase text-primary w-full !text-base flex justify-center items-center"
                 children="Subscribe"
                 padding={"15px 30px"}
               />
             </Link>
             <Link to="/add-restaurant" className="w-[100%] mx-auto">
               <Button
-                className="hover:scale-95 font-extrabold uppercase text-primary w-full !text-base"
+                className="hover:scale-95 font-extrabold uppercase text-primary w-full !text-base flex justify-center items-center"
                 backgroundColor={"#000"}
                 children="add restaurant"
                 padding={"15px 30px"}
