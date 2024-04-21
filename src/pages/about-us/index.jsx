@@ -9,8 +9,8 @@ const AboutUs = () => {
   return (
     <>
       <Navbar scrolling />
-      <div className="lg:px-[136px] md:px-16 py-10 px-6 pt-28 md:py-20 md:pt-40">
-        <div className="flex flex-col text-center mx-auto md:px-10 xl:px-40 space-y-4">
+      <div className="lg:px-[136px] md:px-16 py-10 px-6 pt-28 md:py-20 md:pt-40 font-work-sans">
+        <div className="flex flex-col text-center space-y-4">
           <h2 className="font-bold text-[26px] md:text-[40px] uppercase">
             about us
           </h2>

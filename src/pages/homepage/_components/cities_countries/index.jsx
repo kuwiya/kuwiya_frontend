@@ -26,7 +26,7 @@ const CitiesAndCountries = () => {
           ))}
         </div>
       </div>
-      <div className="space-y-6 lg:space-y-10">
+      <div className="space-y-6 lg:space-y-10 md:py-10">
         <h1 className="uppercase text-xl lg:text-[32px] font-[600] text-[#000000]">
           countries with kuwiya
         </h1>

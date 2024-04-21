@@ -51,7 +51,7 @@ const MarketPlace = () => {
             }}
             action="/marketplace"
             method="get"
-            className="border-[1px] border-[#292D32] rounded-xl px-2 py-[2px] md:px-3 md:py-1 flex gap-1 items-center"
+            className="border-[1px] border-[#33333380] rounded-xl px-2 py-[2px] md:px-3 md:py-1 flex gap-1 items-center"
           >
             <LocationIcon />
             <input

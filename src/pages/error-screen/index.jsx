@@ -24,7 +24,7 @@ const Error = () => {
             location.
           </p>
           <div className="lg:mt-10">
-            <Button children="Join The Waitlist" className="w-fit" />
+            <Button children="Join Waitlist" className="" />
           </div>
         </section>
 

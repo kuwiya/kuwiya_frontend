@@ -22,25 +22,25 @@ const SubscriptionPage = () => {
               {subscriptionPlans.map((plan) => (
                 <div
                   key={plan.id}
-                  className="rounded-[10px] py-8 lg:py-12 px-6 shadow-md bg-[#FDFCFB] text-black font-work-sans"
+                  className="rounded-[10px] py-8 px-6 shadow-md bg-[#FDFCFB] text-black font-work-sans"
                 >
                   <div className="flex flex-col gap-6 md:gap-4 lg:gap-6 items-center">
                     <div className="flex flex-col gap-1 md:gap-3 items-center">
-                      <div className="">
+                      <div className="block md:hidden lg:block">
                         {plan.planType === "FREE" ? (
                           <FreePlan
-                            width={screen.width < 768 && 33.43}
-                            height={screen.width < 768 && 60}
+                            width={screen.width < 768 ? 33.43 : 80}
+                            height={screen.width < 768 ? 60 : 100}
                           />
                         ) : plan.planType === "BASIC" ? (
                           <BasicPlan
-                            width={screen.width < 768 && 52.66}
-                            height={screen.width < 768 && 60}
+                            width={screen.width < 768 ? 52.66 : 80}
+                            height={screen.width < 768 ? 60 : 100}
                           />
                         ) : plan.planType === "ADVANCED" ? (
                           <AdvancedPlan
-                            width={screen.width < 768 && 52.66}
-                            height={screen.width < 768 && 60}
+                            width={screen.width < 768 ? 52.66 : 80}
+                            height={screen.width < 768 ? 60 : 100}
                           />
                         ) : null}
                       </div>
@@ -59,17 +59,17 @@ const SubscriptionPage = () => {
                     </div>
                     <div className="flex flex-col lg:gap-10 md:gap-6 gap-4 items-center justify-center">
                       <p className="uppercase">
-                        <span className="font-semibold lg:text-4xl md:text-[30px] text-lg">
+                        <span className="font-semibold lg:text-2xl md:text-[30px] text-lg">
                           $
                         </span>{" "}
-                        <span className="font-semibold lg:text-6xl md:text-4xl text-2xl">
+                        <span className="font-semibold lg:text-[40px] md:text-4xl text-2xl">
                           {plan.amount}
                         </span>
                         <span className="font-normal lg:text-base md:text-sm text-xs">
                           /monthly
                         </span>
                       </p>
-                      <div className="lg:text-xl md:text-sm text-xs font-normal flex flex-col gap-5 items-center text-start">
+                      <div className="lg:text-base md:text-sm text-xs font-normal flex flex-col gap-5 items-center text-center">
                         <p>
                           <span className="font-semibold">
                             {plan.planDesc.slice(0, 11)}
@@ -94,9 +94,9 @@ const SubscriptionPage = () => {
                         className="uppercase mt-6 md:mt-0"
                         // padding={"8px 25px"}
                         borderRadius={"10px"}
-                        backgroundColor={"#FDFCFB"}
-                        border={"1px solid #10101099"}
-                        textColor={"#10101099"}
+                        backgroundColor={"#F8A434"}
+                        border={"1px solid #F8A434"}
+                        textColor={"#FFFFFF"}
                       />
                     </div>
                   </div>

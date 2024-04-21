@@ -14,7 +14,7 @@ const AddRestaurantPage = () => {
     <>
       <Navbar scrolling />
 
-      <main className="font-work-sans bg-[#FDFCFB] space-y-10 mt-20 md:mt-28 lg:px-[136px] md:px-16 px-6">
+      <main className="font-work-sans bg-[#FDFCFB] space-y-10 lg:space-y-16 mt-20 md:mt-28 lg:px-[136px] md:px-16 px-6">
         <div className="text-black text-center space-y-4">
           <h1 className="uppercase lg:text-3xl md:text-2xl text-xl font-bold">
             add restaurant
@@ -157,7 +157,7 @@ const AddRestaurantPage = () => {
                 {subscriptionPlans.map((plan, index) => (
                   <div
                     key={plan.id}
-                    className={`rounded-[10px] w-[262px] md:w-[400px] lg:w-auto cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 lg:px-8 shadow-md shadow-[#00000040] ${
+                    className={`rounded-[10px] w-[262px] md:w-[400px] lg:w-auto cursor-pointer transition-all ease-in hover:scale-95 px-6 py-12 lg:pt-8 lg:px-8 shadow-md shadow-[#00000040] ${
                       subscriptionPlanIndex === index
                         ? "bg-[#F8A434]"
                         : "bg-[#FDFCFB]"
@@ -168,10 +168,10 @@ const AddRestaurantPage = () => {
                       {plan.planType}
                     </h2>
                     <p className="uppercase text-center -mb-4 lg:mb-0">
-                      <span className="font-semibold lg:text-4xl md:text-2xl text-xl">
+                      <span className="font-semibold lg:text-2xl md:text-2xl text-xl">
                         $
                       </span>{" "}
-                      <span className="font-semibold lg:text-7xl text-4xl">
+                      <span className="font-semibold lg:text-[40px] text-4xl">
                         {plan.amount}
                       </span>
                       <span className="font-normal lg:text-lg text-base">
@@ -203,7 +203,7 @@ const AddRestaurantPage = () => {
               </div>
 
               <div className="text-center lg:px-28">
-                <p className="lg:text-lg font-medium md:text-base text-sm">
+                <p className="font-medium md:text-base text-sm">
                   By clicking &apos;SUBMIT&apos; you agree to{" "}
                   <Link to="/terms-and-conditions" className="font-semibold">
                     KUWIYA restaurant owners Terms and Conditions{" "}

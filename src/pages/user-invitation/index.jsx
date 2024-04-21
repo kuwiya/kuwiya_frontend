@@ -83,7 +83,7 @@ const UserInvitation = () => {
             </p>
           </div>
           <div className="space-y-5 md:space-y-8 lg:px-20">
-            <h2 className="text-sm md:text-lg lg:text-2xl font-normal text-center">
+            <h2 className="text-sm md:text-lg lg:text-2xl font-normal text-center lg:pt-2">
               Share:
             </h2>
             <div className="flex items-center gap-6 justify-center lg:gap-1 lg:justify-between">

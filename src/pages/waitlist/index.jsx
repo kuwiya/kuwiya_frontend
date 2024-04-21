@@ -19,7 +19,7 @@ const Waitlist = () => {
           <h1 className="text-2xl md:text-[30px] lg:text-[40px] font-semibold">
             Join The Waitlist
           </h1>
-          <p className="text-base md:text-xl lg:text-[28px] lg:pr-16 lg:mt-2 font-normal text-[#00000099]">
+          <p className="text-base md:text-xl lg:text-2xl lg:pr-16 lg:mt-2 font-normal text-[#00000099]">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim"
@@ -28,7 +28,7 @@ const Waitlist = () => {
             Join the waitlist and be the first to know when we get to your
             location.
           </p>
-          <form className="bg-[#FBD199] flex items-center gap-4 px-4 h-[54px] md:h-[73px] justify-between border border-[#FFFFFF] rounded-[10px] lg:mr-16 lg:mt-2">
+          <form className="bg-[#FBD199] flex items-center gap-4 px-4 h-[54px] md:h-[65px] justify-between border border-[#FFFFFF] rounded-[10px] lg:mr-16 lg:mt-2">
             <input
               type="email"
               placeholder="Enter Email Address"
