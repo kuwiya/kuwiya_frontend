@@ -1,10 +1,10 @@
 import React from "react";
 
-const FooterLogo = () => {
+const FooterLogo = ({ width, height }) => {
   return (
     <svg
-      width="40"
-      height="70"
+      width={width || "40"}
+      height={height || "70"}
       viewBox="0 0 40 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

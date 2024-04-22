@@ -1,6 +1,6 @@
 // import { IoMdStar } from "react-icons/io";
 import DiscountTag from "./discount_tag";
-import MobileDiscountTag from './mobile-discount_tag'
+import MobileDiscountTag from "./mobile-discount_tag";
 import ArrowIcon from "./arrow_icon";
 import { useEffect, useRef, useState } from "react";
 import StarIcon from "./start_icon";
@@ -144,16 +144,15 @@ const FeaturedCard = () => {
                 </span>
               </div>
               <div className="absolute md:hidden top-8 left-[2px]">
-                <MobileDiscountTag />
-                {/* <span className="text-white text-[11px] font-semibold absolute top-3 left-2">
+                {/* <MobileDiscountTag /> */}
+                <span className="text-white text-[13px] font-semibold bg-darkyellow py-2 pl-2 pr-5 rounded-r-2xl">
                   {100 -
                     Math.round(
                       (parseInt(deal.new_price) / parseInt(deal.old_price)) *
                         100
                     )}
-                  %<br />
-                  OFF
-                </span> */}
+                  % OFF
+                </span>
               </div>
             </Link>
           </div>

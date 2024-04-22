@@ -9,10 +9,12 @@ const AboutUs = () => {
   return (
     <>
       <Navbar scrolling />
-      <div className="lg:px-40 py-10 px-10 pt-28 md:py-20 md:pt-40">
-        <div className="flex flex-col text-center mx-auto md:px-10 xl:px-40 space-y-4">
-          <h2 className="font-bold text-[26px] md:text-[40px] uppercase">about us</h2>
-          <span className="md:text-xl text-base font-normal">
+      <div className="lg:px-[136px] md:px-16 py-10 px-6 pt-28 md:py-20 md:pt-40 font-work-sans">
+        <div className="flex flex-col text-center space-y-4">
+          <h2 className="font-bold text-[26px] md:text-[40px] uppercase text-[#000000]">
+            about us
+          </h2>
+          <span className="md:text-xl text-base font-normal text-[#00000080]">
             KUWIYA is a dynamic discount finder application designed to cater to
             the needs of food enthusiasts and restaurant owners alike. Founded
             with the passion for enhancing dining experiences and fostering
@@ -31,15 +33,18 @@ const AboutUs = () => {
           to support restaurant owners by offering them a powerful marketing
           channel to showcase their offerings, connect with their target
           audience, and cultivate lasting relationships with customers."
-          title='our mission'
+          title="our mission"
           mission
         />
-        <Card text="At KUWIYA, our vision is to revolutionize the way people discover and engage with discounts in the food industry. We aspire to become the go-to platform for foodies seeking exciting deals and for restaurant owners aiming to attract and retain loyal customers. By leveraging technology and fostering a sense of community, we envision a future where everyone can indulge in delightful dining experiences without breaking the bank." title='our vision' vision />
+        <Card
+          text="At KUWIYA, our vision is to revolutionize the way people discover and engage with discounts in the food industry. We aspire to become the go-to platform for foodies seeking exciting deals and for restaurant owners aiming to attract and retain loyal customers. By leveraging technology and fostering a sense of community, we envision a future where everyone can indulge in delightful dining experiences without breaking the bank."
+          title="our vision"
+          vision
+        />
         <Values />
         <InfoSection />
         <FAQS />
       </div>
-      
     </>
   );
 };

@@ -6,7 +6,7 @@ import { Star } from "../../../marketplace/_components";
 
 const Card = ({ restaurant, id }) => {
   return (
-    <div className=" h-[198px] lg:h-[237px] rounded-[10px]">
+    <div className="h-[178px] md:h-[198px] lg:h-[237px] rounded-[10px]">
       <Link
         to={`/restaurants/${restaurant?.id}`}
         className="flex flex-col bg-primary rounded-b-[10px] cursor-pointer hover:scale-105 transition-all ease-in shadow-xl "
@@ -15,7 +15,7 @@ const Card = ({ restaurant, id }) => {
         <img
           src={restaurant?.image}
           alt="restaurant logo"
-          className="h-[110px] md:h-[161px] w-full object-cover rounded-t-[10px]"
+          className="h-[90px] md:h-[161px] w-full object-cover rounded-t-[10px]"
         />
         <div className="flex flex-col gap-2 md:gap-4 p-2 w-full">
           <div className="flex md:items-center gap-4 justify-between font-work-sans">

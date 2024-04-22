@@ -22,18 +22,19 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
 
   return (
     <div className="flex gap-2">
-      <Button
-        children={<ArrowLeft width={14} />}
+      <button
         onClick={prevPage}
-        padding={"0px 0px"}
-        className="w-[30px] h-[30px] flex justify-center items-center"
-      />
-      <Button
-        className="rotate-180 w-[30px] h-[30px] flex justify-center items-center"
-        children={<ArrowLeft width={14} />}
+        className="w-[30px] h-[30px] flex justify-center items-center bg-darkyellow rounded"
+      >
+        {<ArrowLeft width={14} />}
+      </button>
+
+      <button
         onClick={nextPage}
-        padding={"0px 0px"}
-      />
+        className="rotate-180 w-[30px] h-[30px] flex justify-center items-center bg-darkyellow rounded"
+      >
+        {<ArrowLeft width={14} />}
+      </button>
     </div>
   );
 };

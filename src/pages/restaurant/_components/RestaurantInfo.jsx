@@ -28,7 +28,7 @@ const RestaurantInfo = ({ restaurant }) => {
           </div>
           <Button
             children="SUBSCRIBE"
-            padding="10px 30px"
+            // padding="10px 30px"
             backgroundColor="#F8A434"
             borderRadius="12px"
             className="font-medium"

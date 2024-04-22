@@ -19,9 +19,9 @@ const CouponSection = () => {
         <Button
           children="view all"
           className={
-            "uppercase w-auto md:w-fit text-center hover:scale-105 transition-all font-medium"
+            "uppercase text-center hover:scale-105 transition-all font-medium"
           }
-          padding={"10px 30px"}
+          // padding={"10px 30px"}
         />
       </Link>
     </div>

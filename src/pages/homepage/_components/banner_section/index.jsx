@@ -8,7 +8,7 @@ const BannerSection = () => {
       style={{ backgroundImage: "url('/banner_bg.png')" }}
     >
       <div className="flex justify-center py-8">
-        <div className="flex flex-col justify-center items-center gap-2 md:gap-4">
+        <div className="flex flex-col justify-center items-center gap-6 md:gap-4">
           <span className="uppercase text-center text-primary font-semibold md:text-3xl xl:text-[40px] xl:leading-[3rem] xl:pb-10 ">
             SUBSCRIBE & GET EXCLUSIVE DISCOUNTS
           </span>
@@ -23,9 +23,9 @@ const BannerSection = () => {
               children="subscribe"
               border={"none"}
               className={
-                "uppercase font-work-sans text-sm md:text-base rounded-[10px] w-auto md:w-fit text-center hover:scale-105 transition-all font-medium"
+                "uppercase font-work-sans text-sm md:text-base rounded-[10px] text-center hover:scale-105 transition-all font-medium"
               }
-              padding={"10px 35px"}
+              // padding={"10px 35px"}
               textColor={"#ffffff"}
               backgroundColor={"#000000"}
             />

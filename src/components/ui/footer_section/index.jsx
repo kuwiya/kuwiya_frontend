@@ -95,7 +95,7 @@ const Footer = () => {
 
       <div className="md:hidden space-y-10">
         <Link to="/">
-          <FooterLogo />
+          <FooterLogo width={22.65} height={40} />
         </Link>
         <div className="grid grid-cols-2 gap-y-7">
           <div className="flex-col space-y-6 flex text-primary">
