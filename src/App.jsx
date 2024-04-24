@@ -16,7 +16,6 @@ import AddRestaurantPage from "./pages/add-restaurant";
 import UserInvitation from "./pages/user-invitation";
 import Waitlist from "./pages/waitlist";
 import Error from "./pages/error-screen";
-import Feedback from "./pages/feedback";
 import HelpCenter from "./pages/help-center";
 
 function App() {
