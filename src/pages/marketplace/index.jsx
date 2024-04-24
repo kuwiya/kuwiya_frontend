@@ -47,7 +47,7 @@ const MarketPlace = () => {
               e.preventDefault();
               window.location.href = `/marketplace?${
                 searchQueryValue ? `q=${searchQueryValue}&` : ""
-              }l=${locationQueryValue}`;
+              }${locationQueryValue ? `l=${locationQueryValue}` : ""}`;
             }}
             action="/marketplace"
             method="get"

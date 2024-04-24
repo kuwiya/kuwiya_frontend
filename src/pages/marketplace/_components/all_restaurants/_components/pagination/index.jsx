@@ -4,7 +4,7 @@ import { Button } from "../../../../../../components/ui";
 import ArrowLeft from "../../../ArrowLeft";
 
 const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
-  const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
+  // const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
 
   const prevPage = () => {
     if (currentPage !== 1) {

@@ -1,29 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import map from "../../../assets/images/map.svg";
 import LocationIcon from "../../../components/ui/navbar/_components/LocationIcon";
 import StarIcon from "../../homepage/_components/featured_section/_components/featured_card/start_icon";
 import { Button } from "../../../components/ui";
+import { AverageStarsRating } from "../../../components";
 
 const RestaurantInfo = ({ restaurant }) => {
+  const [rating, setRating] = useState(null); // rating
+  const [ratings, setRatings] = useState([]);
+
+  const handleRatingChange = (value) => {
+    setRating(value);
+    setRatings([...ratings, value]);
+  };
+
   return (
+    // swagger endpoint
     <section className="text-[#000000] font-normal flex flex-col lg:flex-row justify-between py-10 lg:py-16 gap-8 lg:gap-5">
       <div className="flex-[57.72%] space-y-4 lg:pr-10">
         <div className="flex gap-2 justify-between items-start">
           <div className="space-y-4">
             <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold uppercase">
-              {restaurant.brand}
+              {restaurant?.name}
             </h1>
             <div className="flex gap-2 items-baseline">
-              <p className="flex">
-                <StarIcon fillColor="black" />
-                <StarIcon fillColor="black" />
-                <StarIcon fillColor="black" />
-                <StarIcon fillColor="black" />
-                <StarIcon fillColor="black" />
-              </p>
               <span className="text-[6px] text-base">
-                {restaurant.ratings.substring(0, 3)}/5.0
+                {restaurant?.number_of_likes} likes
               </span>
+              <span className="bg-[#000000BA] w-[1px] h-3 md:h-4" />
+              <div className="flex gap-1 items-center md:text-[13px] text-xs font-normal">
+                <div className="mr-3">
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <span
+                      key={value}
+                      className={`cursor-pointer text-base ${
+                        value <= rating ? "text-darkyellow" : "text-[#E0E0E0]"
+                      }`}
+                      onClick={() => handleRatingChange(value)}
+                    >
+                      &#9733;
+                    </span>
+                  ))}
+                </div>
+                <AverageStarsRating ratings={ratings} />
+                <span>({restaurant?.number_of_ratings})</span>
+              </div>
             </div>
           </div>
           <Button
@@ -34,9 +55,26 @@ const RestaurantInfo = ({ restaurant }) => {
             className="font-medium"
           />
         </div>
-        <p className="text-xs md:text-base lg:text-xl text-justify">
-          {restaurant.about}
-        </p>
+        <div className="text-xs md:text-base lg:text-xl text-justify flex flex-col gap-2">
+          <p>{restaurant?.description}</p>
+          <p>{restaurant?.more_info}</p>
+          <p>
+            <span className="font-semibold">Opening days: </span>
+            {restaurant?.days_open}
+          </p>
+          <p>
+            <span className="font-semibold">Opening hours: </span>
+            {restaurant?.opening_hours}
+          </p>
+          <p>
+            <span className="font-semibold">Website: </span>
+            {restaurant?.website}
+          </p>
+          <p>
+            <span className="font-semibold">Tel: </span>
+            {restaurant?.contact}
+          </p>
+        </div>
       </div>
       <div className="flex-[32.29%] flex flex-col md:flex-row lg:flex-col gap-4 text-xs md:text-sm lg:text-base">
         <div className="flex-[55%]">
@@ -47,13 +85,13 @@ const RestaurantInfo = ({ restaurant }) => {
             <span>
               <LocationIcon />
             </span>
-            <span>{restaurant.location}</span>
+            <span>{restaurant?.location}</span>
           </p>
           <p className="flex items-center gap-2">
             <span>
               <LocationIcon />
             </span>
-            <span>{restaurant.location}</span>
+            <span>{restaurant?.address}</span>
           </p>
         </div>
       </div>

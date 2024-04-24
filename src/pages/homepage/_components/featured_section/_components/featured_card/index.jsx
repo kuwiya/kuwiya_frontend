@@ -38,11 +38,19 @@ const FeaturedCard = () => {
   const { isError, error, isLoading, data } = useFeaturedDealsData();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
   }
 
   if (isError) {
-    return <p>{error.message}</p>;
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error}
+      </div>
+    );
   }
 
   const deals = data?.data;
@@ -90,68 +98,67 @@ const FeaturedCard = () => {
         className="flex w-fit no-scrollbar pl-[4rem] overflow-x-scroll overflow-y-hidden justify-start items-center md:gap-10 md:py-6 gap-8 md:pl-6"
       >
         {deals?.map((deal) => (
-          <div className="text-start md:w-[60%] min-w-[225.38px] h-[300px] md:h-fit lg:min-w-[400px]">
+          <div
+            key={deal?.id}
+            className="text-start md:w-[60%] min-w-[225.38px] h-[300px] md:h-fit lg:min-w-[398px]"
+          >
             <Link
-              to={`/featured/${deal.id}`}
+              to={`/featured/${deal?.id}`}
               className="relative my-6 md:my-0 flex flex-col items-start gap-1 lg:gap-2 font-work-sans shadow-lg rounded-[10px] p-4 hover:scale-90 hover:cursor-pointer transition-all"
-              key={deal.id}
             >
               <img
-                src={deal.image}
+                src={deal?.item?.images[0]?.image}
                 className="w-full relative h-[139.27px] md:h-auto"
                 alt="deal_image"
               />
 
-              <span className="font-medium pl-3 text-sm md:text-xl lg:text-2xl">
-                {deal.title}
+              <span className="font-medium pl-3 text-sm md:text-xl lg:text-2xl line-clamp-1">
+                {deal?.item?.item}
               </span>
               <div className="md:space-x-4 pl-3 space-x-2 relative">
                 <span className="text-xs md:text-base font-medium opacity-45">
-                  ₦ {deal.old_price}
+                  ₦ {deal?.item?.price}
                 </span>{" "}
                 <div className="absolute top-3 left-0">
                   <p className="-rotate-[165.11deg] border-t-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>{" "}
                   <p className="-rotate-[19.98deg] border-b-[1px] border-[#DE1F05] border-solid w-[70.23px]"></p>
                 </div>
                 <span className="text-xs md:text-base font-medium">
-                  ₦ {deal.new_price}
+                  ₦ {deal?.discounted_price_of_featured_deal}
                 </span>
               </div>
 
-              <div className="space-x-1 lg:space-x-2 pl-3">
+              <div className="space-x-1 lg:space-x-2 pl-3 line-clamp-1">
                 <span className="font-normal text-xs md:text-base">
-                  {deal.brand} -
+                  {deal?.restaurant?.name} -
                 </span>
-                <span className="font-light text-[10px]">{deal.location}</span>
+                <span className="font-light text-[10px]">
+                  {deal?.restaurant?.location}
+                </span>
               </div>
-              <span className="font-normal pl-3 text-xs md:text-base flex items-center gap-2">
-                {deal.rating}
-                <span className="flex">
-                  {/* <IoMdStar color="#FFCE31" size={20} /> */}
-                  <StarIcon />
+              <div className="flex items-center gap-2">
+                <span className="font-normal pl-3 text-xs md:text-base flex items-center gap-2">
+                  {deal?.number_of_likes} likes
                 </span>
-              </span>
+                <span className="border border-[#00000080] h-4"></span>
+                <span className="font-normal pl-3 text-xs md:text-base flex items-center gap-2">
+                  {deal?.number_of_ratings}
+                  <span className="flex">
+                    <StarIcon />
+                  </span>
+                </span>
+              </div>
               <div className="md:absolute md:inline hidden top-8 left-[2px]">
                 <DiscountTag />
                 <span className="text-white text-[11px] font-semibold absolute top-3 left-2">
-                  {100 -
-                    Math.round(
-                      (parseInt(deal.new_price) / parseInt(deal.old_price)) *
-                        100
-                    )}
+                  {parseInt(deal?.percentage_off_of_featured_deal)}
                   %<br />
                   OFF
                 </span>
               </div>
               <div className="absolute md:hidden top-8 left-[2px]">
-                {/* <MobileDiscountTag /> */}
                 <span className="text-white text-[13px] font-semibold bg-darkyellow py-2 pl-2 pr-5 rounded-r-2xl">
-                  {100 -
-                    Math.round(
-                      (parseInt(deal.new_price) / parseInt(deal.old_price)) *
-                        100
-                    )}
-                  % OFF
+                  {parseInt(deal?.percentage_off_of_featured_deal)}% OFF
                 </span>
               </div>
             </Link>

@@ -10,12 +10,13 @@ import {
   RestaurantInfo,
   RestaurantReviews,
 } from "./_components";
-import { useRestaurantsData } from "../../hooks";
+import { useRestaurantData, useRestaurantsData } from "../../hooks";
 
 const RestaurantPage = () => {
   const { id } = useParams();
 
-  const { isLoading, data, isError, error } = useRestaurantsData(id);
+  // const { isLoading, data, isError, error } = useRestaurantsData(id);
+  const { isLoading, data, isError, error } = useRestaurantData(id);
 
   if (isLoading) {
     return (
@@ -58,7 +59,7 @@ const RestaurantPage = () => {
 
         <RestaurantDiscounts restaurant={restaurant} />
 
-        <RestaurantReviews />
+        <RestaurantReviews restaurant={restaurant} />
       </main>
     </>
   );

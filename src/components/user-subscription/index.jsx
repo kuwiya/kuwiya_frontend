@@ -27,7 +27,7 @@ const UserSubscriptionPopUp = ({ setIsOpen }) => {
             type="submit"
             children="subscribe"
             borderRadius={"5px"}
-            padding={"7px 35px"}
+            // padding={"7px 35px"}
             className={
               "lg:text-base md:text-sm uppercase font-work-sans font-medium hover:scale-90 transition-all delay-200 ease-linear"
             }

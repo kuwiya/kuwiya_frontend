@@ -28,9 +28,11 @@ const CouponsFiltering = ({ restName }) => {
     );
   }
 
-  const coupons = data?.data.filter((detail) => detail.restName === restName);
+  const coupons = data?.data?.filter(
+    (detail) => detail?.restaurant?.name === restName
+  );
   // console.log(data.data)
-  if (coupons.length === 0) {
+  if (coupons?.length === 0) {
     return (
       <div className="text-center uppercase">
         No similar coupons available at this moment
@@ -38,17 +40,17 @@ const CouponsFiltering = ({ restName }) => {
     );
   }
 
-  const nPages = Math.ceil(coupons.length / couponsPerPage);
+  const nPages = Math.ceil(coupons?.length / couponsPerPage);
 
   // pagination
   const lastCouponIndex = currentPage * couponsPerPage;
   const firstCouponIndex = lastCouponIndex - couponsPerPage;
-  const currentCoupons = coupons.slice(firstCouponIndex, lastCouponIndex);
+  const currentCoupons = coupons?.slice(firstCouponIndex, lastCouponIndex);
 
   return (
     <section className="my-16 mb-10 space-y-5">
       <div className="grid md:grid-cols-2 gap-6">
-        {currentCoupons.map((detail) => (
+        {currentCoupons?.map((detail) => (
           <CouponCardDetail key={detail.id} detail={detail} />
         ))}
       </div>

@@ -43,37 +43,36 @@ const CouponCard = () => {
   const coupons = data?.data;
 
   const filteredCoupons = query
-    ? coupons.filter((availableCoupon) =>
-        availableCoupon.mealName.toLowerCase().includes(query.toLowerCase())
+    ? coupons?.filter((availableCoupon) =>
+        availableCoupon?.item?.item?.toLowerCase().includes(query.toLowerCase())
       )
     : coupons;
 
-  const finalFilteredCoupons = filteredCoupons.filter((availableCoupon) => {
+  const finalFilteredCoupons = filteredCoupons?.filter((availableCoupon) => {
     if (locationQuery && locationQuery !== "Location") {
-      return availableCoupon.location
-        .toLowerCase()
+      return availableCoupon?.restaurant?.address
+        ?.toLowerCase()
         .includes(locationQuery.toLowerCase());
     } else {
       return availableCoupon;
     }
   });
 
-  const couponsPerPage =
-    finalFilteredCoupons.length && screen.width > 768 ? 4 : 2; // number of coupons per page
+  const couponsPerPage = finalFilteredCoupons && screen.width > 768 ? 4 : 2; // number of coupons per page
 
-  // const couponsPerPage = finalFilteredCoupons.length > 4 ? 4 : 2; // number of coupons per page
+  // const couponsPerPage = coupons?.length && screen.width > 768 ? 4 : 2; // number of coupons per page
 
   // pagination
   const lastCouponIndex = currentPage * couponsPerPage;
   const firstCouponIndex = lastCouponIndex - couponsPerPage;
-  const currentCoupons = finalFilteredCoupons.slice(
+  const currentCoupons = finalFilteredCoupons?.slice(
     firstCouponIndex,
     lastCouponIndex
   );
 
-  const nPages = Math.ceil(finalFilteredCoupons.length / couponsPerPage);
+  const nPages = Math.ceil(finalFilteredCoupons?.length / couponsPerPage);
 
-  if (currentCoupons.length === 0) {
+  if (currentCoupons?.length === 0) {
     return (
       <div className="text-center text-sm md:text-base lg:text-xl font-work-sans text-[#000000] font-normal uppercase px-6 md:px-16 lg:px-[136px]">
         No coupons available for this restaurant/meal at the moment, please
@@ -88,8 +87,8 @@ const CouponCard = () => {
         Coupon
       </h1>
       <div className="grid md:grid-cols-2 gap-6">
-        {currentCoupons.map((detail) => (
-          <CouponCardDetail key={detail.id} detail={detail} />
+        {currentCoupons?.map((detail) => (
+          <CouponCardDetail key={detail?.id} detail={detail} />
         ))}
       </div>
       <div className="overflow-x-scroll no-scrollbar">

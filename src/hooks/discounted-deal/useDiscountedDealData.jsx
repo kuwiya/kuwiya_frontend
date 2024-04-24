@@ -1,8 +1,10 @@
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { AxiosInstance } from "../../utils";
 
 const fetchDiscountedData = (discount_id) => {
-  return axios.get(`https://elite-orange-cross.glitch.me/availableDiscounts/${discount_id}`);
+  return AxiosInstance.get(
+    `discount/discount-read-only-single-item/${discount_id}`
+  );
 };
 
 export const useDiscountedDealData = (discount_id) => {

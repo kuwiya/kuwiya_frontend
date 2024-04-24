@@ -10,10 +10,10 @@ const RestaurantDiscounts = ({ restaurant }) => {
     <section className="py-4">
       <div className="space-y-12 md:space-y-20">
         <div className="flex-[65%]">
-          <SimilarDiscountCard restaurantName={restaurant.brand} />
+          <SimilarDiscountCard restaurantName={restaurant?.name} />
         </div>
         <div className="flex-[35%]">
-          <CouponsFiltering restName={restaurant.brand} />
+          <CouponsFiltering restName={restaurant?.name} />
         </div>
       </div>
       <Link to="/marketplace" className="flex justify-center ">

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Navbar } from "../../components/ui";
 import errorImg from "../../assets/images/Sad heart.png";
+import { AverageStarsRating } from "../../components";
 
 const Error = () => {
   return (
@@ -25,6 +26,9 @@ const Error = () => {
           </p>
           <div className="lg:mt-10">
             <Button children="Join Waitlist" className="" />
+          </div>
+          <div>
+            <AverageStarsRating ratings={[4, 5, 5, 4, 5, 5, 4, 4, 4, 5]} />
           </div>
         </section>
 

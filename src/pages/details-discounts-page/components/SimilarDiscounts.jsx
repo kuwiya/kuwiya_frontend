@@ -30,12 +30,12 @@ const SimilarDiscountCard = ({ restaurantName }) => {
   const availableDiscounts = data?.data;
 
   const filteredDiscounts = () => {
-    return availableDiscounts.filter((availableDisc) => {
-      return availableDisc.restaurantName === restaurantName;
+    return availableDiscounts?.filter((availableDisc) => {
+      return availableDisc?.restaurant?.name === restaurantName;
     });
   };
 
-  if (filteredDiscounts().length === 0) {
+  if (filteredDiscounts()?.length === 0) {
     return (
       <div className="text-center text-sm md:text-base lg:text-xl font-work-sans text-[#000000] font-normal uppercase">
         No discounts available for this restaurant at the moment, please check
@@ -92,64 +92,53 @@ const SimilarDiscountCard = ({ restaurantName }) => {
           className={`bg-[#EFEFEF] flex gap-[5px] md:gap-4 overflow-x-scroll no-scrollbar p-[5px] md:p-3 md:px-2 lg:p-6`}
           id="scroll"
         >
-          {filteredDiscounts().map((availableDisc) => (
+          {filteredDiscounts()?.map((availableDisc, index) => (
             <Link
-              to={`/marketplace/${availableDisc.id}`}
-              key={availableDisc.id}
+              to={`/marketplace/${availableDisc?.id}`}
+              key={availableDisc?.id}
               className="bg-white rounded-[10px]"
             >
               <div className="w-[148px] md:w-[190px] lg:w-[310px]">
                 <div
                   style={{
-                    backgroundImage: `url(${availableDisc.mealImageUrl})`,
+                    backgroundImage: `url(${availableDisc?.item?.images[0]?.image})`,
                   }}
                   className="relative bg-no-repeat bg-cover h-[82px] md:h-[151px] lg:h-[256px] rounded-t-xl"
                 >
                   <p className="flex flex-col gap-1 justify-between text-white text-[8px] md:text-[11px] lg:text-[13px]">
                     <span className="bg-[#3187FA] w-fit p-1 md:p-2 lg:p-3 lg:pr-10 md:pr-7 pr-3 rounded-r-2xl mt-4 md:mt-8">
-                      #{availableDisc.id} most liked
+                      #{index + 1} most liked
                     </span>
                     <span className="bg-[#13B959] w-fit p-1 md:p-2 lg:p-3 rounded-r-2xl">
-                      {availableDisc.discPercentage}% Discount
+                      {parseInt(availableDisc?.percentage_off)}% Discount
                     </span>
                   </p>
                   <div className="absolute bottom-2 right-2 z-10 p-[5px] bg-white rounded-full w-10 h-10 hidden lg:flex items-center justify-center">
-                    <img src={availableDisc.restaurantLogoUrl} alt="" />
+                    <img src={availableDisc?.restaurant?.logo} alt="" />
                   </div>
                 </div>
                 <div className="relative text-[#00000073] space-y-1 lg:space-y-3 p-1 md:px-3 md:py-2">
-                  <h1 className="hidden md:block md:text-base font-semibold text-black">
-                    {availableDisc.mealName}
+                  <h1 className="text-[11px] md:text-base font-semibold text-black line-clamp-1">
+                    {availableDisc?.item?.item}
                   </h1>
-                  <h1 className="md:hidden text-[11px] font-semibold text-black">
-                    {availableDisc.mealName.length > 23
-                      ? availableDisc.mealName.slice(0, 23) + "..."
-                      : availableDisc.mealName}
-                  </h1>
-                  <p className="hidden md:block text-[#E18000] text-[10px]">
-                    {availableDisc.restaurantName}- Restaurant
-                  </p>
-                  <p className="md:hidden text-[#E18000] text-[10px]">
-                    {availableDisc.restaurantName.length > 10
-                      ? availableDisc.restaurantName.slice(0, 10) + "..."
-                      : availableDisc.restaurantName}{" "}
-                    - Restaurant
+                  <p className="text-[#E18000] text-[10px] line-clamp-1">
+                    {availableDisc?.restaurant?.name}- Restaurant
                   </p>
                   <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
-                    <img src={availableDisc.restaurantLogoUrl} alt="" />
+                    <img src={availableDisc?.restaurant?.logo} alt="" />
                   </div>
                   <div className="flex gap-x-1 gap-y-[2px] md:gap-2 flex-wrap lg:flex-nowrap lg:justify-between items-center text-[10px] md:text-[11px] lg:text-[13px] font-medium">
-                    <p className="">₦{availableDisc.price}</p>
+                    <p className="">₦{availableDisc?.discounted_price}</p>
                     <p className="bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
                     <p className="flex lg:hidden gap-[2px] items-center">
+                      <span>{availableDisc?.number_of_likes} likes</span>
                       <span className="hidden md:block">
                         <Star width={11} height={11} />
                       </span>
                       <span className="md:hidden">
                         <Star width={8} height={8} />
                       </span>
-                      <span>{availableDisc.rating}</span>
-                      <span>({availableDisc.reviewCount})</span>
+                      <span>({availableDisc?.number_of_ratings})</span>
                     </p>
                     <p className="flex gap-[2px] items-center justify-between">
                       <span className="hidden lg:block">
@@ -161,10 +150,13 @@ const SimilarDiscountCard = ({ restaurantName }) => {
                       <span className="md:hidden">
                         <Clock width={8} height={8} />
                       </span>
-                      <span>{availableDisc.duration}</span>
+                      <span>
+                        {availableDisc?.start_date} - {availableDisc?.end_date}
+                      </span>
                     </p>
                     <p className="hidden bg-[#00000073] h-3 md:h-5 w-[1px]"></p>
                     <p className="hidden lg:flex gap-[2px] items-center">
+                      <span>{availableDisc?.number_of_likes} likes</span>
                       <span className="hidden lg:block">
                         <Star />
                       </span>
@@ -174,8 +166,7 @@ const SimilarDiscountCard = ({ restaurantName }) => {
                       <span className="md:hidden">
                         <Star width={8} height={8} />
                       </span>
-                      <span>{availableDisc.rating}</span>
-                      <span>({availableDisc.reviewCount})</span>
+                      <span>({availableDisc?.number_of_ratings})</span>
                     </p>
                   </div>
                 </div>

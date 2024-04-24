@@ -5,19 +5,37 @@ import Pagination from "./_components/pagination";
 import { Link } from "react-router-dom";
 import { LikeIcon } from "../../../../assets/icons";
 import { Star } from "../index";
+import { useAllItemsData } from "../../../../hooks";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [restaurantPerPage] = useState(screen.width < 768 ? 4 : 9);
+  const [AllItemsPerPage] = useState(screen.width < 768 ? 4 : 9);
+
+  const { isLoading, data, isError, error } = useAllItemsData();
+
+  if (isLoading) {
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error}
+      </div>
+    );
+  }
+
+  const AllItems = data?.data;
 
   // pagination
-  const indexOfLastRestaurant = currentPage * restaurantPerPage;
-  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
-  const currentRestaurant = RestaurantItems.slice(
-    indexOfFirstRestaurant,
-    indexOfLastRestaurant
-  );
-  const nPages = Math.ceil(RestaurantItems.length / restaurantPerPage);
+  const indexOfLastItem = currentPage * AllItemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - AllItemsPerPage;
+  const currentItems = AllItems?.slice(indexOfFirstItem, indexOfLastItem);
+  const nPages = Math.ceil(AllItems?.length / AllItemsPerPage);
 
   return (
     <div className="px-6 md:px-16 lg:px-[136px] pt-4 md:pt-8 py-6 bg-lightGray">
@@ -25,25 +43,24 @@ const AllRestaurants = () => {
         All Items on Kuwiya
       </span>
       <div className="grid md:grid-cols-3 grid-cols-2 pt-4 pb-6 md:py-6 gap-3 md:gap-5">
-        {currentRestaurant.map((restaurant) => (
+        {currentItems?.map((item) => (
           <div
-            // to={`/restaurants/${restaurant.id}`}
             className="bg-primary rounded-[10px] h-fit flex flex-col cursor-pointer hover:scale-105 transition-all ease-in pb-2"
-            key={restaurant.id}
+            key={item?.id}
           >
             <div className="h-[98px] md:h-[121px]">
-              <Link to={`/restaurants/${restaurant.id}`}>
-                <img
-                  src={restaurant.image}
-                  alt="restaurant logo"
-                  className="w-full h-full object-cover rounded-t-[10px]"
-                />
-              </Link>
+              {/* <Link to={`/restaurants/${restaurant.id}`}> */}
+              <img
+                src={item?.images[0].image}
+                alt="restaurant logo"
+                className="w-full h-full object-cover rounded-t-[10px]"
+              />
+              {/* </Link> */}
             </div>
             <div className=" flex flex-col gap-2 px-2 md:px-3 lg:px-4 pt-2">
               <div className="flex gap-x-2 justify-between font-work-sans">
-                <span className="font-lato text-xs md:text-sm lg:text-base font-medium">
-                  {restaurant.title}
+                <span className="font-lato text-xs md:text-sm lg:text-base font-medium line-clamp-1">
+                  {item?.item}
                 </span>
                 {/* <div className="hidden lg:block text-black opacity-80">
                   <span className="hidden lg:block">
@@ -51,6 +68,9 @@ const AllRestaurants = () => {
                   </span>
                 </div> */}
               </div>
+              <span className="font-lato text-xs md:text-sm lg:text-base font-medium line-clamp-1">
+                {item?.restaurant?.name} - {item?.restaurant?.location}
+              </span>
               <div className="text-[11px] md:text-sm flex items-center lg:justify-between gap-3 pt-1 md:pt-4 font-work-sans">
                 <div className="text-black">
                   <span className="hidden lg:block">
@@ -76,7 +96,7 @@ const AllRestaurants = () => {
                   <span className="md:hidden">
                     <Star width={11} height={11} />
                   </span>
-                  {restaurant.ratings}
+                  {item?.ratings}
                 </div>
               </div>
             </div>

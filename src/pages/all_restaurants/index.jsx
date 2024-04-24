@@ -7,49 +7,87 @@ import { sort } from "../../constants/images";
 import ArrowLeft from "./_components/arrow";
 import { Link } from "react-router-dom";
 import { Pagination } from "../marketplace/_components";
+import { useAllRestaurantsData } from "../../hooks";
 
 const RestaurantsListing = () => {
   const [filterValue, setFilterValue] = useState("");
   const [sortItems, setSortItems] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [filteredItems, setFilteredItems] = useState([]);
+  // const [filteredItems, setFilteredItems] = useState([]);
   const [restaurantPerPage] = useState(9);
+
+  const { isLoading, data, isError, error } = useAllRestaurantsData();
+
+  const AllRestaurants = data?.data;
+  // console.log(AllRestaurants);
 
   // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
   const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
-  const currentRestaurant = Restaurants.slice(
+  const currentRestaurant = AllRestaurants?.slice(
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );
 
-  useEffect(() => {
-    setFilteredItems(currentRestaurant);
-  }, []);
+  // useEffect(() => {
+  //   setFilteredItems(currentRestaurant);
+  // }, [currentRestaurant]);
 
-  const nPages = Math.ceil(Restaurants.length / restaurantPerPage);
+  if (isLoading) {
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Loading...
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="text-base md:text-xl lg:text-2xl text-center font-semibold">
+        Error: {error.message}
+      </div>
+    );
+  }
+
+  const nPages = Math.ceil(currentRestaurant?.length / restaurantPerPage);
 
   const handleSort = () => {
     setSortItems(!sortItems);
   };
-  const handleApply = () => {
-    setSortItems(false);
-    handleFilter(filterValue);
-  };
-  const handleReset = () => {
-    setSortItems(false);
-    setFilteredItems(currentRestaurant);
-  };
+  // const handleApply = () => {
+  //   setSortItems(false);
+  //   handleFilter(filterValue);
+  // };
+  // const handleReset = () => {
+  //   setSortItems(false);
+  //   setFilterValue("");
+  //   return currentRestaurant;
+  //   // setFilteredItems(currentRestaurant);
+  // };
 
-  const handleFilter = (e) => {
-    const items = currentRestaurant.filter((res) => e === res.type);
-    setFilteredItems(items);
-  };
+  const sortedRestaurants =
+    filterValue && filterValue !== "All"
+      ? currentRestaurant?.filter((rest) => {
+          return rest?.category
+            ?.toLowerCase()
+            .includes(filterValue.toLowerCase());
+        })
+      : currentRestaurant;
+
+  // const handleFilter = (e) => {
+  //   if (e !== "") {
+  //     setFilterValue(e);
+  //   } else {
+  //     setFilterValue("");
+  //     return currentRestaurant;
+  //   }
+  // };
 
   return (
     <>
       <Navbar scrolling bgBlack />
 
+      {/* swagger endpoint */}
       <div className="md:px-16 lg:px-[136px] px-6 bg-primary py-24 md:py-32 space-y-5">
         <div className="flex justify-between w-full font-work-sans">
           <div className="flex items-center space-x-3">
@@ -62,9 +100,9 @@ const RestaurantsListing = () => {
           </div>
           <div className="flex items-center space-x-3 relative">
             {sortItems && (
-              <div className="bg-primary space-y-4 border px-6 py-4 absolute top-[4rem] right-[-12px] animate-slide_up z-50">
-                <div className="flex justify-between items-center">
-                  <span class>Sort</span>
+              <div className="bg-primary space-y-4 border px-6 py-4 absolute top-[4rem] right-[-12px] animate-slide_up z-50 w-[200px]">
+                <div className="flex justify-between items-center font-semibold">
+                  <span className="">Sort</span>
                   <span
                     onClick={handleSort}
                     className="hover:cursor-pointer text-xl"
@@ -76,12 +114,27 @@ const RestaurantsListing = () => {
                   <input
                     type="radio"
                     name="sort"
-                    id="fastfood"
-                    value="fastfood"
+                    id="all"
+                    value="All"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
                   <label
-                    htmlFor="italian"
+                    htmlFor="all"
+                    className="md:text-[18px] text-sm font-normal"
+                  >
+                    All
+                  </label>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="fastfood"
+                    value="Fast food"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label
+                    htmlFor="fastfood"
                     className="md:text-[18px] text-sm font-normal"
                   >
                     Fast Food
@@ -92,47 +145,77 @@ const RestaurantsListing = () => {
                     type="radio"
                     name="sort"
                     id="local"
-                    value="local"
+                    value="Local"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
                   <label
-                    htmlFor=""
+                    htmlFor="local"
                     className="md:text-[18px] text-sm font-normal"
                   >
-                    Local Restaurants
+                    Local
                   </label>
                 </div>
                 <div className="flex gap-4 items-center">
                   <input
                     type="radio"
                     name="sort"
-                    id="chinese"
-                    value="chinese"
+                    id="african"
+                    value="African"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
                   <label
-                    htmlFor=""
+                    htmlFor="local"
                     className="md:text-[18px] text-sm font-normal"
                   >
-                    Chinese Restaurants
+                    African
                   </label>
                 </div>
                 <div className="flex gap-4 items-center">
                   <input
                     type="radio"
                     name="sort"
-                    id="italian"
-                    value="italian"
+                    id="casual"
+                    value="Casual Dining"
                     onChange={(e) => setFilterValue(e.target.value)}
                   />
                   <label
-                    htmlFor=""
+                    htmlFor="casual"
                     className="md:text-[18px] text-sm font-normal"
                   >
-                    Italian Restaurants
+                    Casual
                   </label>
                 </div>
-                <div className="flex justify-center items-center gap-4">
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="mexican"
+                    value="Mexican"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label
+                    htmlFor="mexican"
+                    className="md:text-[18px] text-sm font-normal"
+                  >
+                    Mexican
+                  </label>
+                </div>
+                <div className="flex gap-4 items-center">
+                  <input
+                    type="radio"
+                    name="sort"
+                    id="american"
+                    value="American"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                  />
+                  <label
+                    htmlFor="american"
+                    className="md:text-[18px] text-sm font-normal"
+                  >
+                    American
+                  </label>
+                </div>
+                {/* <div className="flex justify-center items-center gap-4">
                   <Button
                     children="Reset"
                     padding="5px 15px"
@@ -146,7 +229,7 @@ const RestaurantsListing = () => {
                     className="uppercase"
                     onClick={handleApply}
                   />
-                </div>
+                </div> */}
               </div>
             )}
             <img
@@ -165,8 +248,8 @@ const RestaurantsListing = () => {
             All Restaurants on Kuwiya
           </span>
           <div className="grid md:grid-cols-3 grid-cols-2 py-6 gap-x-4 md:gap-x-8 gap-y-1.5 md:gap-y-14 lg:gap-8">
-            {filteredItems?.map((restaurant) => (
-              <Card restaurant={restaurant} key={restaurant.id} />
+            {sortedRestaurants?.map((restaurant) => (
+              <Card restaurant={restaurant} key={restaurant?.id} />
             ))}
           </div>
         </div>
