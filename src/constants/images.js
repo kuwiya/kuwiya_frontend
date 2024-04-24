@@ -56,7 +56,19 @@ export { default as value4 } from "../assets/images/value4.png";
 export { default as value5 } from "../assets/images/value5.png";
 export { default as value6 } from "../assets/images/value6.png";
 export { default as play } from "../assets/images/play.png";
+export {default as home} from '../assets/images/home.png'
+export {default as message} from '../assets/images/message.png'
+export {default as help} from '../assets/images/help.png'
+export {default as send} from '../assets/images/send.png'
+export {default as leftwhite} from '../assets/images/left-white.png'
+export {default as messageimg} from '../assets/images/messageimg.png'
+export {default as searchicon} from '../assets/images/searchicon.png'
+export {default as arrowright} from '../assets/images/arrow-right.png'
+export {default as mail} from '../assets/images/mail.png'
+export {default as phone} from '../assets/images/phone.png'
+export {default as helplocation} from '../assets/images/helplocation.png'
 export { default as store } from "../assets/images/store.png";
 export { default as dropdown } from "../assets/images/dropdown.png";
 export { default as AllYummy } from "../assets/images/allYummy.png";
 export { default as AllYummy2 } from "../assets/images/allYummy2.png";
+

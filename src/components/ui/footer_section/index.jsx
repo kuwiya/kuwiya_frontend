@@ -80,13 +80,13 @@ const Footer = () => {
             support
           </div>
           <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-            <Link to="/error" className="font-work-sans text-xl  font-light">
+            <Link to="/help-center" className="font-work-sans text-xl  font-light">
               Customer Care
             </Link>
-            <Link to="/error" className="font-work-sans text-xl  font-light">
+            <Link to="/help-center" className="font-work-sans text-xl  font-light">
               Help Center
             </Link>
-            <Link to="/error" className="font-work-sans text-xl  font-light">
+            <Link to="/help-center" className="font-work-sans text-xl  font-light">
               Report an issue
             </Link>
           </div>
@@ -175,13 +175,13 @@ const Footer = () => {
               support
             </div>
             <div className="text-[16px] flex flex-col space-y-4 text-primary font-semibold">
-              <Link to="/error" className="font-work-sans text-xl  font-light">
+              <Link to="/help-center" className="font-work-sans text-xl  font-light">
                 Customer Care
               </Link>
-              <Link to="/error" className="font-work-sans text-xl  font-light">
+              <Link to="/help-center" className="font-work-sans text-xl  font-light">
                 Help Center
               </Link>
-              <Link to="/error" className="font-work-sans text-xl  font-light">
+              <Link to="/help-center" className="font-work-sans text-xl  font-light">
                 Report an issue
               </Link>
             </div>
