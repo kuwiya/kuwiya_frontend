@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // base URL and other configurations
-const baseURL = "http://54.245.47.73:8000/";
+const baseURL = "http://34.211.210.115:8000/";
 const timeout = 5000;
 const token = "ZWF6eTpxd2VydHl1aW9w";
 
