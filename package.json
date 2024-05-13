@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 35.86.144.64",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "serve-json": "json-server --watch db.json --port 4000"
+    "serve-json": "json-server --watch db.json --port 4000",
+    "host": "vite --host 35.86.144.64"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
