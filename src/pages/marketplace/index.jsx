@@ -12,22 +12,34 @@ import {
 import { AllYummy, AllYummy2 } from "../../constants/images";
 import LocationIcon from "../../components/ui/navbar/_components/LocationIcon";
 import { Navbar } from "../../components/ui";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { CitiesAndCountries } from "../homepage/_components";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLocation, setLocation } from "../../redux/slice/locationSlice";
+import { selectSearch } from "../../redux/slice/searchSlice";
 
 const MarketPlace = () => {
-  const [searchQueryValue, setSearchQueryValue] = useState("");
-  const [locationQueryValue, setLocationQueryValue] = useState("");
+  // const [searchQueryValue, setSearchQueryValue] = useState("");
+  // const [locationQueryValue, setLocationQueryValue] = useState("");
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const searchQuery = searchParams.get("q");
-    setSearchQueryValue(searchQuery);
-    const locationQuery = searchParams.get("l");
-    setLocationQueryValue(locationQuery);
-  }, [location.search]);
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const searchQuery = searchParams.get("q");
+  //   setSearchQueryValue(searchQuery);
+  //   const locationQuery = searchParams.get("l");
+  //   setLocationQueryValue(locationQuery);
+  // }, [location.search]);
+
+  const dispatch = useDispatch();
+  const location = useSelector(selectLocation);
+  // const search = useSelector(selectSearch);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.reload();
+  };
 
   return (
     <>
@@ -43,20 +55,23 @@ const MarketPlace = () => {
             </h1>
           </div>
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.location.href = `/marketplace?${
-                searchQueryValue ? `q=${searchQueryValue}&` : ""
-              }${locationQueryValue ? `l=${locationQueryValue}` : ""}`;
-            }}
+            // onSubmit={(e) => {
+            //   e.preventDefault();
+            //   window.location.href = `/marketplace?${
+            //     searchQueryValue ? `q=${searchQueryValue}&` : ""
+            //   }${locationQueryValue ? `l=${locationQueryValue}` : ""}`;
+            // }}
+            onSubmit={handleSubmit}
             action="/marketplace"
             method="get"
             className="border-[1px] border-[#33333380] rounded-xl px-2 py-[2px] md:px-3 md:py-1 flex gap-1 items-center"
           >
             <LocationIcon />
             <input
-              value={locationQueryValue || ""}
-              onChange={(e) => setLocationQueryValue(e.target.value)}
+              // value={locationQueryValue || ""}
+              // onChange={(e) => setLocationQueryValue(e.target.value)}
+              value={location}
+              onChange={(e) => dispatch(setLocation(e.target.value))}
               type="text"
               placeholder="location"
               className="outline-none w-[75px] md:w-auto"

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { baseUrl } from "../../hooks/baseUrl";
 
 // base URL and other configurations
-const baseURL = "http://34.211.210.115:8000/";
+const baseURL = baseUrl;
 const timeout = 5000;
 const token = "ZWF6eTpxd2VydHl1aW9w";
 

@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 import { LikeIcon } from "../../../../assets/icons";
 import { Star } from "../index";
 import { useAllItemsData } from "../../../../hooks";
+import { selectLocation } from "../../../../redux/slice/locationSlice";
+import { useSelector } from "react-redux";
+import { selectSearch } from "../../../../redux/slice/searchSlice";
 
 const AllRestaurants = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [AllItemsPerPage] = useState(screen.width < 768 ? 4 : 9);
+
+  const location = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
 
   const { isLoading, data, isError, error } = useAllItemsData();
 
@@ -31,11 +37,40 @@ const AllRestaurants = () => {
 
   const AllItems = data?.data;
 
+  const filteredItems =
+    location === "Location"
+      ? AllItems
+      : AllItems.filter((item) => {
+          return item?.restaurant?.address
+            ?.toLowerCase()
+            .includes(location.toLowerCase());
+        });
+
+  const finalFilteredItems =
+    search === ""
+      ? filteredItems
+      : filteredItems.filter((item) => {
+          return (
+            item?.item?.toLowerCase().includes(search.toLowerCase()) ||
+            item?.restaurant?.name?.toLowerCase().includes(search.toLowerCase())
+          );
+        });
+
+  // console.log(finalFilteredItems);
+
   // pagination
+  // const indexOfLastItem = currentPage * AllItemsPerPage;
+  // const indexOfFirstItem = indexOfLastItem - AllItemsPerPage;
+  // const currentItems = AllItems?.slice(indexOfFirstItem, indexOfLastItem);
+  // const nPages = Math.ceil(AllItems?.length / AllItemsPerPage);
+
   const indexOfLastItem = currentPage * AllItemsPerPage;
   const indexOfFirstItem = indexOfLastItem - AllItemsPerPage;
-  const currentItems = AllItems?.slice(indexOfFirstItem, indexOfLastItem);
-  const nPages = Math.ceil(AllItems?.length / AllItemsPerPage);
+  const currentItems = finalFilteredItems?.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+  const nPages = Math.ceil(finalFilteredItems?.length / AllItemsPerPage);
 
   return (
     <div className="px-6 md:px-16 lg:px-[136px] pt-4 md:pt-8 py-6 bg-lightGray">

@@ -3,26 +3,31 @@ import { Clock, Star } from "./index";
 import ArrowIcon from "../../homepage/_components/featured_section/_components/featured_card/arrow_icon";
 import { useDiscountedDealsData } from "../../../hooks";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectLocation } from "../../../redux/slice/locationSlice";
+import { selectSearch } from "../../../redux/slice/searchSlice";
 
 const AvailableDiscCard = () => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
-  const [query, setQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
+  // const [query, setQuery] = useState("");
+  // const [locationQuery, setLocationQuery] = useState("");
 
   const scrollRef = useRef(null);
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const queryValue = searchParams.get("q");
-    const locationQueryValue = searchParams.get("l");
-    if (queryValue) {
-      setQuery(queryValue);
-    }
-    if (locationQueryValue) {
-      setLocationQuery(locationQueryValue);
-    }
-  }, [location.search]);
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const queryValue = searchParams.get("q");
+  //   const locationQueryValue = searchParams.get("l");
+  //   if (queryValue) {
+  //     setQuery(queryValue);
+  //   }
+  //   if (locationQueryValue) {
+  //     setLocationQuery(locationQueryValue);
+  //   }
+  // }, [location.search]);
+  const location = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
 
   const { isLoading, data, isError, error } = useDiscountedDealsData();
 
@@ -45,23 +50,46 @@ const AvailableDiscCard = () => {
   const availableDiscounts = data?.data;
   // console.log(availableDiscounts);
 
-  const filteredDiscounts = query
-    ? availableDiscounts.filter((availableCoupon) =>
-        availableCoupon?.item?.item?.toLowerCase().includes(query.toLowerCase())
-      )
-    : availableDiscounts;
+  // const filteredDiscounts = query
+  //   ? availableDiscounts.filter((availableCoupon) =>
+  //       availableCoupon?.item?.item?.toLowerCase().includes(query.toLowerCase())
+  //     )
+  //   : availableDiscounts;
 
-  const finalFilteredDiscounts = filteredDiscounts?.filter(
-    (availableCoupon) => {
-      if (locationQuery && locationQuery !== "Location") {
-        return availableCoupon?.restaurant?.address
-          ?.toLowerCase()
-          .includes(locationQuery.toLowerCase());
-      } else {
-        return availableCoupon;
-      }
-    }
-  );
+  // const finalFilteredDiscounts = filteredDiscounts?.filter(
+  //   (availableCoupon) => {
+  //     if (locationQuery && locationQuery !== "Location") {
+  //       return availableCoupon?.restaurant?.address
+  //         ?.toLowerCase()
+  //         .includes(locationQuery.toLowerCase());
+  //     } else {
+  //       return availableCoupon;
+  //     }
+  //   }
+  // );
+
+  const filteredDiscounts =
+    location === "Location"
+      ? availableDiscounts
+      : availableDiscounts.filter((availableDiscount) => {
+          return availableDiscount?.restaurant?.address
+            ?.toLowerCase()
+            .includes(location.toLowerCase());
+        });
+
+  const finalFilteredDiscounts =
+    search === ""
+      ? filteredDiscounts
+      : filteredDiscounts.filter((discount) => {
+          return (
+            discount?.item?.item
+              ?.toLowerCase()
+              .includes(search.toLowerCase()) ||
+            discount?.item?.restaurant?.name
+              ?.toLowerCase()
+              .includes(search.toLowerCase())
+          );
+        });
 
   //To check for left scroll and to handle the arrow visibility change
   const handleWheel = (e) => {

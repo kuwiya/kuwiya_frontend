@@ -22,7 +22,7 @@ const CouponCardDetail = ({ detail }) => {
               }`}
             >
               <div
-                className={`ml-7 lg:ml-8 lg:text-xl font-semibold text-[#000000] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#000000] rounded-xl py-4 px-1 lg:px-0 ${
+                className={`ml-7 lg:ml-8 lg:text-xl font-semibold text-[#00000080] flex flex-col gap-1 lg:gap-2 justify-between items-center border-[1.5px] border-dashed border-[#00000080] rounded-xl py-4 px-1 lg:px-0 ${
                   pathName.includes("/restaurants") &&
                   "border-[#FFFFFF] text-white"
                 }`}

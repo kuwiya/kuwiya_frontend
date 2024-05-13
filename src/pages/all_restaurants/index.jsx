@@ -8,6 +8,9 @@ import ArrowLeft from "./_components/arrow";
 import { Link } from "react-router-dom";
 import { Pagination } from "../marketplace/_components";
 import { useAllRestaurantsData } from "../../hooks";
+import { useSelector } from "react-redux";
+import { selectLocation } from "../../redux/slice/locationSlice";
+import { selectSearch } from "../../redux/slice/searchSlice";
 
 const RestaurantsListing = () => {
   const [filterValue, setFilterValue] = useState("");
@@ -16,15 +19,34 @@ const RestaurantsListing = () => {
   // const [filteredItems, setFilteredItems] = useState([]);
   const [restaurantPerPage] = useState(9);
 
+  const location = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
+
   const { isLoading, data, isError, error } = useAllRestaurantsData();
 
   const AllRestaurants = data?.data;
   // console.log(AllRestaurants);
 
+  const filteredRestaurants =
+    location === "Location"
+      ? AllRestaurants
+      : AllRestaurants.filter((restaurant) => {
+          return restaurant?.address
+            ?.toLowerCase()
+            .includes(location.toLowerCase());
+        });
+
+  const finalFilteredRestaurants =
+    search === ""
+      ? filteredRestaurants
+      : filteredRestaurants.filter((restaurant) => {
+          return restaurant?.name?.toLowerCase().includes(search.toLowerCase());
+        });
+
   // pagination
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
   const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
-  const currentRestaurant = AllRestaurants?.slice(
+  const currentRestaurant = finalFilteredRestaurants?.slice(
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );

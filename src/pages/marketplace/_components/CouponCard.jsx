@@ -2,25 +2,31 @@ import React, { useEffect, useState } from "react";
 import { Star, Clock, Pagination, CouponCardDetail } from "./index";
 import { Link, useLocation } from "react-router-dom";
 import { useCouponsMarketplaceData } from "../../../hooks";
+import { useSelector } from "react-redux";
+import { selectLocation } from "../../../redux/slice/locationSlice";
+import { selectSearch } from "../../../redux/slice/searchSlice";
 
 const CouponCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [locationQuery, setLocationQuery] = useState("");
+  // const [query, setQuery] = useState("");
+  // const [locationQuery, setLocationQuery] = useState("");
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const queryValue = searchParams.get("q");
-    const locationQueryValue = searchParams.get("l");
-    if (queryValue) {
-      setQuery(queryValue);
-    }
-    if (locationQueryValue) {
-      setLocationQuery(locationQueryValue);
-    }
-  }, [location.search]);
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const queryValue = searchParams.get("q");
+  //   const locationQueryValue = searchParams.get("l");
+  //   if (queryValue) {
+  //     setQuery(queryValue);
+  //   }
+  //   if (locationQueryValue) {
+  //     setLocationQuery(locationQueryValue);
+  //   }
+  // }, [location.search]);
+
+  const location = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
 
   const { isLoading, data, isError, error } = useCouponsMarketplaceData();
 
@@ -42,21 +48,44 @@ const CouponCard = () => {
 
   const coupons = data?.data;
 
-  const filteredCoupons = query
-    ? coupons?.filter((availableCoupon) =>
-        availableCoupon?.item?.item?.toLowerCase().includes(query.toLowerCase())
-      )
-    : coupons;
+  // const filteredCoupons = query
+  //   ? coupons?.filter((availableCoupon) =>
+  //       availableCoupon?.item?.item?.toLowerCase().includes(query.toLowerCase())
+  //     )
+  //   : coupons;
 
-  const finalFilteredCoupons = filteredCoupons?.filter((availableCoupon) => {
-    if (locationQuery && locationQuery !== "Location") {
-      return availableCoupon?.restaurant?.address
-        ?.toLowerCase()
-        .includes(locationQuery.toLowerCase());
-    } else {
-      return availableCoupon;
-    }
-  });
+  // const finalFilteredCoupons = filteredCoupons?.filter((availableCoupon) => {
+  //   if (locationQuery && locationQuery !== "Location") {
+  //     return availableCoupon?.restaurant?.address
+  //       ?.toLowerCase()
+  //       .includes(locationQuery.toLowerCase());
+  //   } else {
+  //     return availableCoupon;
+  //   }
+  // });
+
+  const filteredCoupons =
+    location === "Location"
+      ? coupons
+      : coupons?.filter((availableCoupon) => {
+          return availableCoupon?.restaurant?.address
+            ?.toLowerCase()
+            .includes(location.toLowerCase());
+        });
+
+  const finalFilteredCoupons =
+    search === ""
+      ? filteredCoupons
+      : filteredCoupons?.filter((availableCoupon) => {
+          return (
+            availableCoupon?.item?.item
+              ?.toLowerCase()
+              .includes(search.toLowerCase()) ||
+            availableCoupon?.item?.restaurant?.name
+              ?.toLowerCase()
+              .includes(search.toLowerCase())
+          );
+        });
 
   const couponsPerPage = finalFilteredCoupons && screen.width > 768 ? 4 : 2; // number of coupons per page
 

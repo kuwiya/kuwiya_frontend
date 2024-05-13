@@ -14,6 +14,12 @@ import LocationIcon from "./_components/LocationIcon";
 import { ArrowDown } from "../../../pages/marketplace/_components";
 import { useHref } from "react-router-dom";
 import { FooterLogo } from "../../../assets/icons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectLocation,
+  setLocation,
+} from "../../../redux/slice/locationSlice";
+import { selectSearch, setSearch } from "../../../redux/slice/searchSlice";
 
 const cities = [
   "Lagos",
@@ -34,10 +40,21 @@ const cities = [
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
   const [isDropDownOpen, setIsDropDownOpen] = useState(false); // initialize the dropdown for choosing location
-  const [location, setLocation] = useState("Location");
-  const [search, setSearch] = useState(""); // initialize search state to keep track of search input
-
+  // const [location, setLocation] = useState("Location");
+  // const [search, setSearch] = useState("");
   const pathName = useHref();
+  const dispatch = useDispatch();
+  const location = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
+  const handleLocationChange = (loc) => {
+    dispatch(setLocation(loc));
+    setIsDropDownOpen(false);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // dispatch(setSearch(search));
+    window.location.href = "/marketplace";
+  };
 
   return (
     <>
@@ -73,10 +90,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
                   {cities.map((city, index) => (
                     <span
                       key={index}
-                      onClick={() => {
-                        setLocation(city);
-                        setIsDropDownOpen(false);
-                      }}
+                      onClick={() => handleLocationChange(city)}
                       className="hover:text-black cursor-pointer flex items-center px-[34px] last-of-type:pl-[10px] gap-2"
                     >
                       {city === "Current" && <img src={gps} alt="" />}
@@ -89,12 +103,7 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               )}
             </div>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                // redirect to marketplace page with search query in the url using window.location.href
-                window.location.href = `/marketplace?q=${search}&l=${location}`;
-                // setSearch(""); // clear search input after submitting
-              }}
+              onSubmit={handleSubmit}
               action="/marketplace"
               method="GET"
               autoComplete="off"
@@ -102,11 +111,11 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
             >
               <input
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => dispatch(setSearch(e.target.value))}
                 id="search"
                 type="text"
                 placeholder="Enter your search..."
-                name="resturant_name"
+                name="restaurant_name"
                 className="outline-none w-full"
               />
               <button
@@ -147,28 +156,6 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               // padding={"10px 30px"}
             />
           )}
-          {/* <Button
-            children="Discounts"
-            backgroundColor={'#ffffff'}
-            textColor={'#000000'}
-            border={'0'}
-            className={`xl:w-[160px] md:w-[110px]  w-[10%] outline-none rounded-[10px] my-6 uppercase font-work-sans font-medium transition-all duration-75 ease-in-out hover:!bg-darkyellow md:text-xs xl:text-base ${
-              scrolling ? '!bg-black !text-primary' : ''
-            }`}
-            padding={'10px'}
-          /> */}
-          {/* <Link to="/" className="text-white text-xl flex gap-2 items-center">
-        <IoPersonOutline color="#fff" size={30} />
-      </Link>
-      <Link to="/" className="text-white text-xl flex gap-2 items-center">
-        <IoHelpCircleOutline color="#fff" size={30} />
-      </Link>
-      <Link to="/" className="text-white text-xl flex gap-2 items-center">
-        <IoCartOutline color="#fff" size={30} />
-      </Link>
-      <Link to="/" className="text-white text-xl flex gap-2 items-center">
-        <IoNotificationsOutline color="#fff" size={30} />
-      </Link> */}
         </Link>
 
         <div className="md:hidden block cursor-pointer">
