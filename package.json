@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "serve-json": "json-server --watch db.json --port 4000",
-    "host": "vite --host 35.86.144.64"
+    "start": "vite -- --host"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
