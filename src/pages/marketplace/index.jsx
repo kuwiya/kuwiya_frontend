@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   AffordableYummy,
   AllRestaurants,
@@ -12,33 +12,36 @@ import {
 import { AllYummy, AllYummy2 } from "../../constants/images";
 import LocationIcon from "../../components/ui/navbar/_components/LocationIcon";
 import { Navbar } from "../../components/ui";
-// import { useLocation } from "react-router-dom";
 import { CitiesAndCountries } from "../homepage/_components";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLocation, setLocation } from "../../redux/slice/locationSlice";
-import { selectSearch } from "../../redux/slice/searchSlice";
+import { selectSearch, setSearch } from "../../redux/slice/searchSlice";
 
 const MarketPlace = () => {
-  // const [searchQueryValue, setSearchQueryValue] = useState("");
-  // const [locationQueryValue, setLocationQueryValue] = useState("");
+  const [searchQueryValue, setSearchQueryValue] = useState("");
+  const [locationQueryValue, setLocationQueryValue] = useState("");
 
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   const searchParams = new URLSearchParams(location.search);
-  //   const searchQuery = searchParams.get("q");
-  //   setSearchQueryValue(searchQuery);
-  //   const locationQuery = searchParams.get("l");
-  //   setLocationQueryValue(locationQuery);
-  // }, [location.search]);
-
+  const location = useLocation();
   const dispatch = useDispatch();
-  const location = useSelector(selectLocation);
-  // const search = useSelector(selectSearch);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get("query");
+    setSearchQueryValue(searchQuery);
+    dispatch(setSearch(searchQuery));
+    const locationQuery = searchParams.get("loc");
+    setLocationQueryValue(locationQuery);
+    dispatch(setLocation(locationQuery));
+  }, [location.search]);
+
+  const loc = useSelector(selectLocation);
+  const search = useSelector(selectSearch);
+
+  const urlQueries = `/marketplace?loc=${loc}&query=${search}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.reload();
+    window.location.href = urlQueries;
   };
 
   return (
@@ -70,7 +73,7 @@ const MarketPlace = () => {
             <input
               // value={locationQueryValue || ""}
               // onChange={(e) => setLocationQueryValue(e.target.value)}
-              value={location}
+              value={loc || ""}
               onChange={(e) => dispatch(setLocation(e.target.value))}
               type="text"
               placeholder="location"

@@ -11,3 +11,7 @@ export { useAllItemsData } from "./all-items/useAllItemsData";
 export { useDiscountLike } from "./likes-post-request/useDiscountLike";
 export { useCouponLike } from "./likes-post-request/useCouponLike";
 export { useFeaturedLike } from "./likes-post-request/useFeatured";
+export { useFeaturedRating } from "./ratings-post-request/useFeaturedRating";
+export { useCouponRating } from "./ratings-post-request/useCouponRating";
+export { useDiscountRating } from "./ratings-post-request/useDiscountRating";
+export { useRestaurantRating } from "./ratings-post-request/useRestaurantRating";

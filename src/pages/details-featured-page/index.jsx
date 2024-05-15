@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Navbar } from "../../components/ui";
 import { ArrowLeft, AvailableDiscCard, Star } from "../marketplace/_components";
-import { useFeaturedDealData, useFeaturedLike } from "../../hooks";
+import {
+  useFeaturedDealData,
+  useFeaturedLike,
+  useFeaturedRating,
+} from "../../hooks";
 import { GpsIcon, LikeIcon } from "../../assets/icons";
 import SimilarDiscountCard from "../details-discounts-page/components/SimilarDiscounts";
 import { AverageStarsRating } from "../../components";
@@ -10,12 +14,8 @@ import { AverageStarsRating } from "../../components";
 const DetailPage = () => {
   const [rating, setRating] = useState(null); // rating
   const [ratings, setRatings] = useState([]);
-  const [fillColor, setFillColor] = useState("#292D32");
-
-  const handleRatingChange = (value) => {
-    setRating(value);
-    setRatings([...ratings, value]);
-  };
+  const [like, setLike] = useState(false);
+  const [fillColor] = like ? "#DE1F05" : "#292D32";
 
   const { id } = useParams();
 
@@ -41,8 +41,39 @@ const DetailPage = () => {
 
   const user = "2";
   const handleLike = (user, user_likes) => {
-    useFeaturedLike({ user, user_likes });
-    setFillColor("#DE1F05");
+    useFeaturedLike({ user, user_likes })
+      .then((response) => {
+        if (response.status === 201) {
+          setLike((prev) => !prev); // toggle like state
+          console.log("Like featured successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error liking featured product:",
+          error.response ? error.response.data : error.message
+        );
+      });
+  };
+  const handleRatingChange = (value) => {
+    setRating(value);
+    setRatings([...ratings, value]);
+  };
+
+  const handleRating = (rating, user, user_ratings) => {
+    useFeaturedRating({ rating, user, user_ratings })
+      .then((response) => {
+        if (response.status === 201) {
+          handleRatingChange(rating);
+          console.log("Rating action successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error rating product:",
+          error.response ? error.response.data : error.message
+        );
+      });
   };
 
   return (
@@ -82,7 +113,6 @@ const DetailPage = () => {
                   width={screen.width < 768 ? 20 : ""}
                   height={screen.width < 768 ? 18 : ""}
                   fillColor={fillColor}
-                  setFillColor={setFillColor}
                   className="cursor-pointer"
                   onClick={() => handleLike(user, deal?.id)}
                 />
@@ -113,7 +143,7 @@ const DetailPage = () => {
                     className={`cursor-pointer text-base ${
                       value <= rating ? "text-darkyellow" : "text-[#E0E0E0]"
                     }`}
-                    onClick={() => handleRatingChange(value)}
+                    onClick={() => handleRating(value, user, deal?.id)}
                   >
                     &#9733;
                   </span>

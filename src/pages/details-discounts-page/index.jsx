@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Navbar } from "../../components/ui";
 import { ArrowLeft, Clock, Star } from "../marketplace/_components";
-import { useDiscountLike, useDiscountedDealData } from "../../hooks";
+import {
+  useDiscountLike,
+  useDiscountRating,
+  useDiscountedDealData,
+} from "../../hooks";
 import { GpsIcon, LikeIcon } from "../../assets/icons";
 import SimilarDiscountCard from "./components/SimilarDiscounts";
 import { AverageStarsRating } from "../../components";
@@ -10,11 +14,8 @@ import { AverageStarsRating } from "../../components";
 const DiscountDetailsPage = () => {
   const [rating, setRating] = useState(null); // rating
   const [ratings, setRatings] = useState([]);
-  const handleRatingChange = (value) => {
-    setRating(value);
-    setRatings([...ratings, value]);
-  };
-  const [fillColor, setFillColor] = useState("#292D32");
+  const [like, setLike] = useState(false);
+  const [fillColor] = like ? "#DE1F05" : "#292D32";
 
   const { id } = useParams();
 
@@ -38,15 +39,46 @@ const DiscountDetailsPage = () => {
 
   const deal = data?.data;
 
-  const user = "Israel";
+  const user = "2";
 
   // console.log(deal);
 
   const handleLike = (user, discount_likes) => {
-    useDiscountLike({ user, discount_likes });
-    setFillColor("#DE1F05");
+    useDiscountLike({ user, discount_likes })
+      .then((response) => {
+        if (response.status === 201) {
+          setLike((prev) => !prev); // toggle like state
+          console.log("Like discount action successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error liking discount product:",
+          error.response ? error.response.data : error.message
+        );
+      });
   };
 
+  const handleRatingChange = (value) => {
+    setRating(value);
+    setRatings([...ratings, value]);
+  };
+
+  const handleRating = (rating, user, discount_ratings) => {
+    useDiscountRating({ rating, user, discount_ratings })
+      .then((response) => {
+        if (response.status === 201) {
+          handleRatingChange(rating);
+          console.log("Rating action successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error rating product:",
+          error.response ? error.response.data : error.message
+        );
+      });
+  };
   return (
     <>
       <Navbar scrolling />
@@ -87,7 +119,6 @@ const DiscountDetailsPage = () => {
                   width={screen.width < 768 ? 20 : ""}
                   height={screen.width < 768 ? 18 : ""}
                   fillColor={fillColor}
-                  setFillColor={setFillColor}
                   className="cursor-pointer"
                   onClick={() => handleLike(user, id)}
                 />
@@ -136,7 +167,7 @@ const DiscountDetailsPage = () => {
                     className={`cursor-pointer text-base ${
                       value <= rating ? "text-darkyellow" : "text-[#E0E0E0]"
                     }`}
-                    onClick={() => handleRatingChange(value)}
+                    onClick={() => handleRating(value, user, deal?.id)}
                   >
                     &#9733;
                   </span>

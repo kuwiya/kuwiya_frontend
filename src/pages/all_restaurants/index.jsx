@@ -5,22 +5,40 @@ import { Button, Navbar } from "../../components/ui";
 import { sort } from "../../constants/images";
 // import Pagination from "./_components/pagination";
 import ArrowLeft from "./_components/arrow";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Pagination } from "../marketplace/_components";
 import { useAllRestaurantsData } from "../../hooks";
-import { useSelector } from "react-redux";
-import { selectLocation } from "../../redux/slice/locationSlice";
-import { selectSearch } from "../../redux/slice/searchSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLocation, setLocation } from "../../redux/slice/locationSlice";
+import { selectSearch, setSearch } from "../../redux/slice/searchSlice";
 
 const RestaurantsListing = () => {
   const [filterValue, setFilterValue] = useState("");
   const [sortItems, setSortItems] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  // const [filteredItems, setFilteredItems] = useState([]);
   const [restaurantPerPage] = useState(9);
+  const [query, setQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
 
-  const location = useSelector(selectLocation);
-  const search = useSelector(selectSearch);
+  const loct = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(loct.search);
+    const queryValue = searchParams.get("query");
+    const locationQueryValue = searchParams.get("loc");
+    if (queryValue) {
+      setQuery(queryValue);
+      dispatch(setSearch(queryValue));
+    }
+    if (locationQueryValue) {
+      setLocationQuery(locationQueryValue);
+      dispatch(setLocation(locationQueryValue));
+    }
+  }, [loct.search]);
+
+  const location = locationQuery;
+  const search = query;
 
   const { isLoading, data, isError, error } = useAllRestaurantsData();
 
@@ -28,9 +46,9 @@ const RestaurantsListing = () => {
   // console.log(AllRestaurants);
 
   const filteredRestaurants =
-    location === "Location"
+    location === "Location" || ""
       ? AllRestaurants
-      : AllRestaurants.filter((restaurant) => {
+      : AllRestaurants?.filter((restaurant) => {
           return restaurant?.address
             ?.toLowerCase()
             .includes(location.toLowerCase());
@@ -39,7 +57,7 @@ const RestaurantsListing = () => {
   const finalFilteredRestaurants =
     search === ""
       ? filteredRestaurants
-      : filteredRestaurants.filter((restaurant) => {
+      : filteredRestaurants?.filter((restaurant) => {
           return restaurant?.name?.toLowerCase().includes(search.toLowerCase());
         });
 
@@ -50,10 +68,6 @@ const RestaurantsListing = () => {
     indexOfFirstRestaurant,
     indexOfLastRestaurant
   );
-
-  // useEffect(() => {
-  //   setFilteredItems(currentRestaurant);
-  // }, [currentRestaurant]);
 
   if (isLoading) {
     return (
@@ -76,16 +90,6 @@ const RestaurantsListing = () => {
   const handleSort = () => {
     setSortItems(!sortItems);
   };
-  // const handleApply = () => {
-  //   setSortItems(false);
-  //   handleFilter(filterValue);
-  // };
-  // const handleReset = () => {
-  //   setSortItems(false);
-  //   setFilterValue("");
-  //   return currentRestaurant;
-  //   // setFilteredItems(currentRestaurant);
-  // };
 
   const sortedRestaurants =
     filterValue && filterValue !== "All"
@@ -95,15 +99,6 @@ const RestaurantsListing = () => {
             .includes(filterValue.toLowerCase());
         })
       : currentRestaurant;
-
-  // const handleFilter = (e) => {
-  //   if (e !== "") {
-  //     setFilterValue(e);
-  //   } else {
-  //     setFilterValue("");
-  //     return currentRestaurant;
-  //   }
-  // };
 
   return (
     <>

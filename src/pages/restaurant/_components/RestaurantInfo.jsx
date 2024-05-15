@@ -4,14 +4,33 @@ import LocationIcon from "../../../components/ui/navbar/_components/LocationIcon
 import StarIcon from "../../homepage/_components/featured_section/_components/featured_card/start_icon";
 import { Button } from "../../../components/ui";
 import { AverageStarsRating } from "../../../components";
+import { useRestaurantRating } from "../../../hooks";
 
 const RestaurantInfo = ({ restaurant }) => {
   const [rating, setRating] = useState(null); // rating
   const [ratings, setRatings] = useState([]);
 
+  const user = "2";
+
   const handleRatingChange = (value) => {
     setRating(value);
     setRatings([...ratings, value]);
+  };
+
+  const handleRating = (rating, user, ratings) => {
+    useRestaurantRating({ rating, user, ratings })
+      .then((response) => {
+        if (response.status === 201) {
+          handleRatingChange(rating); // Update the rating state
+          console.log("Rating action successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error rating product:",
+          error.response ? error.response.data : error.message
+        );
+      });
   };
 
   return (
@@ -36,7 +55,7 @@ const RestaurantInfo = ({ restaurant }) => {
                       className={`cursor-pointer text-base ${
                         value <= rating ? "text-darkyellow" : "text-[#E0E0E0]"
                       }`}
-                      onClick={() => handleRatingChange(value)}
+                      onClick={() => handleRating(value, user, restaurant?.id)}
                     >
                       &#9733;
                     </span>

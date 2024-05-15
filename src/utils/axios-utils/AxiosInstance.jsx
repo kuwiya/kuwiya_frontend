@@ -4,7 +4,7 @@ import { baseUrl } from "../../hooks/baseUrl";
 // base URL and other configurations
 const baseURL = baseUrl;
 const timeout = 5000;
-const token = "ZWF6eTpxd2VydHl1aW9w";
+export const token = "SXNyYWVsOnF3ZXJ0eXVpb3A=";
 
 // instance of Axios with default configuration
 const axiosInstance = axios.create({
@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
-    // Authorization: `Basic ${token}`,
+    Authorization: `Basic ${token}`,
   },
 });
 

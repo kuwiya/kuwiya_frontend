@@ -22,6 +22,7 @@ import {
 import { selectSearch, setSearch } from "../../../redux/slice/searchSlice";
 
 const cities = [
+  "Location",
   "Lagos",
   "Abuja",
   "Ibadan",
@@ -40,20 +41,30 @@ const cities = [
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
   const [isDropDownOpen, setIsDropDownOpen] = useState(false); // initialize the dropdown for choosing location
-  // const [location, setLocation] = useState("Location");
-  // const [search, setSearch] = useState("");
+  const [locationValue, setLocationValue] = useState("Location");
+  const [searchValue, setSearchValue] = useState("");
   const pathName = useHref();
   const dispatch = useDispatch();
   const location = useSelector(selectLocation);
-  const search = useSelector(selectSearch);
+  // const search = useSelector(selectSearch);
+
+  const nextPageUrl = `/marketplace?${
+    locationValue && locationValue !== "Location" ? `loc=${locationValue}` : ""
+  }${searchValue ? `&query=${searchValue}` : ""}`;
   const handleLocationChange = (loc) => {
+    setLocationValue(loc);
     dispatch(setLocation(loc));
     setIsDropDownOpen(false);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(setSearch(search));
-    window.location.href = "/marketplace";
+    dispatch(setLocation(locationValue));
+    dispatch(setSearch(searchValue));
+    if ((locationValue === "Location" || "") && searchValue === "") {
+      window.location.href = "/marketplace";
+    }
+    window.location.href = nextPageUrl;
+    // console.log(search, location);
   };
 
   return (
@@ -74,13 +85,20 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
           <div className="relative hidden md:flex items-center gap-2 md:gap-4 font-work-sans font-medium text-[16px] xl:w-[700px] text-black">
             <div
               onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-              className="p-2 lg:p-3 flex items-center gap-7 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
+              className="p-2 lg:p-3 flex items-center gap-2 cursor-pointer border-[1px] border-[#B2B1B0] rounded-[10px]"
             >
               <div className="flex items-center gap-2">
                 <LocationIcon />
-                <span className="text-slate-500 whitespace-nowrap">
+                {/* <span className="text-slate-500 whitespace-nowrap">
                   {location}
-                </span>
+                </span> */}
+                <input
+                  type="text"
+                  value={location || ""}
+                  readOnly
+                  className="text-slate-500 whitespace-nowrap outline-none border-none w-full"
+                  placeholder="location"
+                />
               </div>
               <div className={`${isDropDownOpen ? "rotate-180" : ""}`}>
                 <ArrowDown />
@@ -110,8 +128,8 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               className="p-1 lg:p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
             >
               <input
-                value={search}
-                onChange={(e) => dispatch(setSearch(e.target.value))}
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
                 id="search"
                 type="text"
                 placeholder="Enter your search..."

@@ -6,13 +6,26 @@ import { Star } from "../../../marketplace/_components";
 import { useRestaurantLike } from "../../../../hooks/likes-post-request/useRestaurantLike";
 
 const Card = ({ restaurant }) => {
-  const [fillColor, setFillColor] = useState("#292D32");
+  const [like, setLike] = useState(false);
+  const [fillColor] = like ? "#DE1F05" : "#292D32";
 
-  const user = "Israel";
+  const user = "2";
   const handleLike = (user, likes) => {
-    useRestaurantLike({ user, likes });
-    setFillColor("#DE1F05");
+    useRestaurantLike({ user, likes })
+      .then((response) => {
+        if (response.status === 201) {
+          setLike((prev) => !prev);
+          console.log("Like restaurant request successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error liking restaurant:",
+          error.response ? error.response.data : error.message
+        );
+      });
   };
+
   return (
     // swagger endpoint data
     <div className="h-[178px] md:h-[198px] lg:h-[237px] rounded-[10px] flex flex-col bg-primary rounded-b-[10px] cursor-pointer hover:scale-105 transition-all ease-in shadow-xl">

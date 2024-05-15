@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Navbar } from "../../components/ui";
 import { ArrowLeft, Clock, Star } from "../marketplace/_components";
-import { useCouponLike, useCouponMarketplaceData } from "../../hooks";
+import {
+  useCouponLike,
+  useCouponMarketplaceData,
+  useCouponRating,
+} from "../../hooks";
 import { CouponText, GpsIcon, LikeIcon } from "../../assets/icons";
 import { AverageStarsRating, CouponsFiltering } from "../../components";
 
@@ -10,12 +14,8 @@ const CouponDetailsPage = () => {
   const [rating, setRating] = useState(null); // rating
   const [ratings, setRatings] = useState([]);
   const [isCopied, setIsCopied] = useState(false);
-  const [fillColor, setFillColor] = useState("#292D32");
-
-  const handleRatingChange = (value) => {
-    setRating(value);
-    setRatings([...ratings, value]);
-  };
+  const [like, setLike] = useState(false);
+  const [fillColor] = like ? "#DE1F05" : "#292D32";
 
   const { id } = useParams();
 
@@ -39,10 +39,42 @@ const CouponDetailsPage = () => {
 
   const coupon = data?.data;
 
-  const user = "Israel";
+  const user = "2";
   const handleLike = (user, coupon_likes) => {
-    useCouponLike({ user, coupon_likes });
-    setFillColor("#DE1F05");
+    useCouponLike({ user, coupon_likes })
+      .then((response) => {
+        if (response.status === 201) {
+          setLike((prev) => !prev); // toggle like state
+          console.log("Like coupon successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error liking coupon product:",
+          error.response ? error.response.data : error.message
+        );
+      });
+  };
+
+  const handleRatingChange = (value) => {
+    setRating(value);
+    setRatings([...ratings, value]);
+  };
+
+  const handleRating = (rating, user, coupon_ratings) => {
+    useCouponRating({ rating, user, coupon_ratings })
+      .then((response) => {
+        if (response.status === 201) {
+          handleRatingChange(rating);
+          console.log("Rating action successful:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error rating product:",
+          error.response ? error.response.data : error.message
+        );
+      });
   };
 
   return (
@@ -150,7 +182,6 @@ const CouponDetailsPage = () => {
               <div>
                 <LikeIcon
                   fillColor={fillColor}
-                  setFillColor={setFillColor}
                   className="cursor-pointer"
                   onClick={() => handleLike(user, id)}
                 />
@@ -177,7 +208,7 @@ const CouponDetailsPage = () => {
                     className={`cursor-pointer text-base ${
                       value <= rating ? "text-darkyellow" : "text-[#E0E0E0]"
                     }`}
-                    onClick={() => handleRatingChange(value)}
+                    onClick={() => handleRating(value, user, coupon.id)}
                   >
                     &#9733;
                   </span>
