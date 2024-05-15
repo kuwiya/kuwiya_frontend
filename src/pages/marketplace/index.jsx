@@ -37,10 +37,15 @@ const MarketPlace = () => {
   const loc = useSelector(selectLocation);
   const search = useSelector(selectSearch);
 
-  const urlQueries = `/marketplace?loc=${loc}&query=${search}`;
+  const urlQueries = `/marketplace?${loc ? `loc=${loc}` : ""}${
+    search ? `&query=${search}` : ""
+  }`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (loc === "Location" || ("" && search === "")) {
+      window.location.href = "/marketplace";
+    }
     window.location.href = urlQueries;
   };
 
