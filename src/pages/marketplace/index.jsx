@@ -43,7 +43,7 @@ const MarketPlace = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (loc === "Location" || ("" && search === "")) {
+    if ((loc === "Location" || "") && search === "") {
       window.location.href = "/marketplace";
     }
     window.location.href = urlQueries;

@@ -20,22 +20,34 @@ const RestaurantsListing = () => {
   const [query, setQuery] = useState("");
   const [locationQuery, setLocationQuery] = useState("");
 
-  const loct = useLocation();
-  const dispatch = useDispatch();
+  // const loct = useLocation();
+  // const dispatch = useDispatch();
+  const locationValue = useSelector(selectLocation);
+  const searchValue = useSelector(selectSearch);
+  // console.log(locationValue, searchValue);
+
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(loct.search);
+  //   const queryValue = searchParams.get("query");
+  //   const locationQueryValue = searchParams.get("loc");
+  //   if (queryValue) {
+  //     setQuery(queryValue);
+  //     dispatch(setSearch(queryValue));
+  //   }
+  //   if (locationQueryValue) {
+  //     setLocationQuery(locationQueryValue);
+  //     dispatch(setLocation(locationQueryValue));
+  //   }
+  // }, [loct.search]);
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(loct.search);
-    const queryValue = searchParams.get("query");
-    const locationQueryValue = searchParams.get("loc");
-    if (queryValue) {
-      setQuery(queryValue);
-      dispatch(setSearch(queryValue));
+    if (locationValue) {
+      setLocationQuery(locationValue);
     }
-    if (locationQueryValue) {
-      setLocationQuery(locationQueryValue);
-      dispatch(setLocation(locationQueryValue));
+    if (searchValue) {
+      setQuery(searchValue);
     }
-  }, [loct.search]);
+  }, [locationValue, searchValue]);
 
   const location = locationQuery;
   const search = query;
@@ -46,7 +58,7 @@ const RestaurantsListing = () => {
   // console.log(AllRestaurants);
 
   const filteredRestaurants =
-    location === "Location" || ""
+    locationQuery === "Location" || ""
       ? AllRestaurants
       : AllRestaurants?.filter((restaurant) => {
           return restaurant?.address
@@ -55,7 +67,7 @@ const RestaurantsListing = () => {
         });
 
   const finalFilteredRestaurants =
-    search === ""
+    query === ""
       ? filteredRestaurants
       : filteredRestaurants?.filter((restaurant) => {
           return restaurant?.name?.toLowerCase().includes(search.toLowerCase());

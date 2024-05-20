@@ -14,6 +14,7 @@ const AvailableDiscCard = () => {
   const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
   const [query, setQuery] = useState("");
   const [locationQuery, setLocationQuery] = useState("");
+  const [isScrollabe, setIsScrollabe] = useState(true);
 
   const scrollRef = useRef(null);
   const loct = useLocation();
@@ -32,6 +33,18 @@ const AvailableDiscCard = () => {
       dispatch(setLocation(locationQueryValue));
     }
   }, [loct.search]);
+
+  useEffect(() => {
+    if (scrollRef?.current) {
+      const { scrollWidth, clientWidth } = scrollRef?.current;
+      // console.log(scrollWidth, clientWidth);
+      if (scrollWidth > clientWidth) {
+        setIsScrollabe(true);
+      } else {
+        setIsScrollabe(false);
+      }
+    }
+  }, [scrollRef?.current, setIsScrollabe]);
 
   const search = query;
   const location = locationQuery;
@@ -133,7 +146,9 @@ const AvailableDiscCard = () => {
         <div
           ref={scrollRef}
           onWheel={handleWheel}
-          className={`bg-[#EFEFEF] flex gap-[5px] md:gap-5 lg:gap-8 overflow-x-scroll no-scrollbar p-[5px] md:p-4 lg:p-6`}
+          className={`bg-[#EFEFEF] flex gap-[5px] md:gap-5 lg:gap-8 overflow-x-scroll no-scrollbar p-[5px] md:p-4 lg:p-6 ${
+            !isScrollabe && "overflow-x-hidden w-fit"
+          }`}
           id="scroll"
         >
           {finalFilteredDiscounts?.map((availableDisc, index) => (
@@ -165,7 +180,7 @@ const AvailableDiscCard = () => {
                   <h1 className="text-[11px] md:text-base font-semibold text-black line-clamp-1">
                     {availableDisc?.item?.item}
                   </h1>
-                  <p className="text-[#E18000] text-[10px] line-clamp-1">
+                  <p className="text-[#E18000] text-[10px] lg:text-sm line-clamp-1">
                     {availableDisc?.restaurant?.name} - Restaurant
                   </p>
                   <div className="absolute top-16 right-2 z-10 bg-white rounded-full w-[23px] h-[23px] hidden md:flex lg:hidden items-center justify-center">
@@ -234,7 +249,9 @@ const AvailableDiscCard = () => {
           </div>
           <div
             onClick={handleRightArrow}
-            className={`bg-[#101010] cursor-pointer w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
+            className={`${
+              isScrollabe ? "block" : "hidden"
+            } bg-[#101010] cursor-pointer w-fit p-2 md:px-5 md:py-4 rounded-[100%]`}
           >
             <ArrowIcon
               width={screen.width < 768 && 12}

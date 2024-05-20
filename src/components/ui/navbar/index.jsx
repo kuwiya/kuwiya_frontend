@@ -41,26 +41,26 @@ const cities = [
 const Navbar = ({ scrolling, shadow, bgBlack }) => {
   const [toggleMenu, setToggleMenu] = useState(false); // initialize togglemenu state to keep track if mobile menu is open
   const [isDropDownOpen, setIsDropDownOpen] = useState(false); // initialize the dropdown for choosing location
-  const [locationValue, setLocationValue] = useState("Location");
-  const [searchValue, setSearchValue] = useState("");
+  // const [locationValue, setLocationValue] = useState("Location");
+  // const [searchValue, setSearchValue] = useState("");
   const pathName = useHref();
   const dispatch = useDispatch();
   const location = useSelector(selectLocation);
-  // const search = useSelector(selectSearch);
+  const search = useSelector(selectSearch);
 
   const nextPageUrl = `/marketplace?${
-    locationValue && locationValue !== "Location" ? `loc=${locationValue}` : ""
-  }${searchValue ? `&query=${searchValue}` : ""}`;
+    location && location !== "Location" ? `loc=${location}` : ""
+  }${search ? `&query=${search}` : ""}`;
   const handleLocationChange = (loc) => {
-    setLocationValue(loc);
+    // setLocationValue(loc);
     dispatch(setLocation(loc));
     setIsDropDownOpen(false);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setLocation(locationValue));
-    dispatch(setSearch(searchValue));
-    if ((locationValue === "Location" || "") && searchValue === "") {
+    dispatch(setLocation(location));
+    dispatch(setSearch(search));
+    if ((location === "Location" || "") && search === "") {
       window.location.href = "/marketplace";
     }
     window.location.href = nextPageUrl;
@@ -128,11 +128,18 @@ const Navbar = ({ scrolling, shadow, bgBlack }) => {
               className="p-1 lg:p-2 w-full pl-3 flex items-center justify-between gap-5 border-[1px] border-[#B2B1B0] rounded-[10px] placeholder-slate-500"
             >
               <input
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={search || ""}
+                onChange={(e) => {
+                  // setSearchValue(e.target.value);
+                  dispatch(setSearch(e.target.value));
+                }}
                 id="search"
                 type="text"
-                placeholder="Enter your search..."
+                placeholder={`Enter your ${
+                  pathName.includes("/restaurants")
+                    ? "restaurant name"
+                    : "search"
+                }...`}
                 name="restaurant_name"
                 className="outline-none w-full"
               />
